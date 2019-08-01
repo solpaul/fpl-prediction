@@ -1,4 +1,4 @@
-# fpl-prediction
+# FPL Prediction
 This is a project to generate ongoing player forecasts for Fantasy Premier League. Credit to https://github.com/vaastav/Fantasy-Premier-League, from where all the FPL data is taken.
 
 The data folder contains the following:

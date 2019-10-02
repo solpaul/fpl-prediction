@@ -8,8 +8,12 @@ The data folder contains the following:
 + train.csv - The current training dataset containing all historic data (generated from the player data folders)
 + remaining_season.csv - The dataset to use for predicting the remainder of the 2019/20 season
 
-There are two jupyter notebooks:
-+ fpl_data_clean.ipynb - The process to take the raw data and create training and prediction datasets
+There are three jupyter notebooks:
++ initial_fpl_data_clean.ipynb - The original process to take the raw data and create training and prediction datasets
++ update_data_weekly.ipynb - The notebook run each week to take the raw data and create updated training and prediction datasets
 + fpl_predict_fastai_tabular.ipynb - The process to train a model and apply it to predict the remainder of the 2019/20 season
 
-Finally, predictions.csv contains the latest predictions for the remainder of th 2019/20 season.
+And one supporting python script:
++ helpers.py - functions used in the above notebooks to process data
+
+Finally, predictions for all previous gameweeks are provided in predictions_<gw>.csv along with the the latest predictions in predictions.csv.

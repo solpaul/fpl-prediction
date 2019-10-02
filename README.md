@@ -16,4 +16,4 @@ There are three jupyter notebooks:
 And one supporting python script:
 + helpers.py - functions used in the above notebooks to process data
 
-Finally, predictions for all previous gameweeks are provided in predictions_<gw>.csv along with the the latest predictions in predictions.csv.
+Finally, predictions for all previous gameweeks are provided in predictions_[gw].csv along with the the latest predictions in predictions.csv.

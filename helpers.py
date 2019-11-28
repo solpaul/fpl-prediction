@@ -102,7 +102,8 @@ def build_season_mv(season, header_row, team_rows):
     df=pd.DataFrame(Dict)
     
     # convert market value string to float for millions of euros
-    values = [float(item[0].replace(',', '.')) for item in df['Total MV'].str.split(" ", 1)]
+    values = [float(item[0].replace(',', '.').replace('€', '').replace('bn', '').replace('m', '')) 
+              for item in df['Total MV'].str.split(" ", 1)]
     values = [item*10**3 if item < 3 else item for item in values]
     
     # to remove effect of inflation, take relative market value for each season

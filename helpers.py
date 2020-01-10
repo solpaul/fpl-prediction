@@ -164,11 +164,23 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
     df_season = df_season[['full_name', 'gw', 
                            id_position, 'minutes', 'team_y', 
                            'team_x', 'relative_market_value_y', 
-                           'relative_market_value_x', 'was_home', 'total_points']]
+                           'relative_market_value_x', 'was_home', 'total_points',
+                           'assists', 'bonus', 'bps', 'clean_sheets', 'creativity', 
+                           'goals_conceded', 'goals_scored', 'ict_index', 'influence', 
+                           'own_goals', 'penalties_missed', 'penalties_saved', 'red_cards', 
+                           'saves', 'selected', 'team_a_score', 'team_h_score', 'threat', 
+                           'transfers_balance', 'transfers_in', 'transfers_out', 
+                           'yellow_cards', 'kickoff_time']]
     df_season.columns = ['player', 'gw', 
-                          'position', 'minutes', 'team', 
-                          'opponent_team', 'relative_market_value_team', 
-                          'relative_market_value_opponent_team', 'was_home', 'total_points']
+                         'position', 'minutes', 'team', 
+                         'opponent_team', 'relative_market_value_team', 
+                         'relative_market_value_opponent_team', 'was_home', 'total_points',
+                         'assists', 'bonus', 'bps', 'clean_sheets', 'creativity', 
+                         'goals_conceded', 'goals_scored', 'ict_index', 'influence', 
+                         'own_goals', 'penalties_missed', 'penalties_saved', 'red_cards', 
+                         'saves', 'selected', 'team_a_score', 'team_h_score', 'threat', 
+                         'transfers_balance', 'transfers_in', 'transfers_out', 
+                         'yellow_cards', 'kickoff_time']
     df_season['season'] = season
     df_season['position'] = df_season['position'].astype(int)
     

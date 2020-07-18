@@ -1,1963 +1,1323 @@
 ,gw,player,team,position,price,play_proba,predicted_points
-0,36,Shkodran_Mustafi,Arsenal,2,5.1,1.0,2.1235423
-1,36,Héctor_Bellerín,Arsenal,2,5.3,1.0,1.675885
-2,36,Sead_Kolasinac,Arsenal,2,5.2,1.0,1.9060612
-3,36,Ainsley_Maitland-Niles,Arsenal,2,4.5,1.0,0.63087726
-4,36,Sokratis_Papastathopoulos,Arsenal,2,4.8,1.0,0.14179075
-5,36,Nacho_Monreal,Arsenal,2,5.0,0.0,0.10478485
-6,36,Laurent_Koscielny,Arsenal,2,5.0,0.0,0.09237456
-7,36,Konstantinos_Mavropanos,Arsenal,2,4.3,0.0,0.069298625
-8,36,Carl_Jenkinson,Arsenal,2,4.5,0.0,0.007318735
-9,36,Rob_Holding,Arsenal,2,4.4,1.0,0.7849431
-10,36,Pierre-Emerick_Aubameyang,Arsenal,4,10.9,1.0,4.6513176
-11,36,Alexandre_Lacazette,Arsenal,4,9.2,1.0,2.6173053
-12,36,Edward_Nketiah,Arsenal,4,4.3,0.0,0.09887862
-13,36,Bernd_Leno,Arsenal,1,4.8,0.0,0.08759308
-14,36,Mesut_Özil,Arsenal,3,7.0,0.75,0.051364064
-15,36,Henrikh_Mkhitaryan,Arsenal,3,6.7,0.0,0.11187124
-16,36,Granit_Xhaka,Arsenal,3,5.1,1.0,2.5823312
-17,36,Lucas_Torreira,Arsenal,3,4.7,1.0,0.549778
-18,36,Mohamed_Elneny,Arsenal,3,4.2,0.0,0.024416447
-19,36,Matteo_Guendouzi,Arsenal,3,4.1,1.0,0.032556653
-20,36,David_Luiz Moreira Marinho,Arsenal,2,5.7,1.0,2.3527474
-21,36,Emiliano_Martínez,Arsenal,1,4.3,1.0,3.0297632
-22,36,Calum_Chambers,Arsenal,2,4.3,0.0,0.08608842
-23,36,Daniel_Ceballos Fernández,Arsenal,3,5.2,1.0,2.928632
-24,36,Cédric_Soares,Arsenal,2,4.8,1.0,0.96111524
-25,36,Nicolas_Pépé,Arsenal,3,8.9,1.0,1.3135283
-26,36,Reiss_Nelson,Arsenal,3,5.3,1.0,1.082756
-27,36,Joseph_Willock,Arsenal,3,4.7,1.0,1.272609
-28,36,Gabriel Teodoro_Martinelli Silva,Arsenal,4,4.3,0.0,0.07211995
-29,36,Kieran_Tierney,Arsenal,2,5.3,1.0,2.1031551
-30,36,Bukayo_Saka,Arsenal,3,4.7,1.0,2.0155559
-31,36,Emile_Smith Rowe,Arsenal,3,4.3,0.0,0.056974053
-32,36,Tyreece_John-Jules,Arsenal,4,4.4,0.0,0.05520904
-33,36,Pablo_Marí,Arsenal,2,4.4,0.0,0.043732166
-34,36,Zech_Medley,Arsenal,2,4.0,1.0,0.05402851
-35,36,Matt_Macey,Arsenal,1,4.0,1.0,0.09020913
-36,36,Matthew_Smith,Arsenal,2,4.0,1.0,0.06306636
-37,36,Ben_Mee,Burnley,2,5.0,0.0,0.12353492
-38,36,James_Tarkowski,Burnley,2,5.3,1.0,3.4889107
-39,36,Matthew_Lowton,Burnley,2,4.2,0.0,0.13936913
-40,36,Phil_Bardsley,Burnley,2,4.3,1.0,2.368755
-41,36,Charlie_Taylor,Burnley,2,4.4,1.0,3.0451775
-42,36,Kevin_Long,Burnley,2,4.3,1.0,2.0541804
-43,36,Ben_Gibson,Burnley,2,3.9,0.0,0.08959329
-44,36,Ashley_Barnes,Burnley,4,6.1,0.0,0.16844046
-45,36,Chris_Wood,Burnley,4,6.1,1.0,2.5986466
-46,36,Matej_Vydra,Burnley,4,5.1,1.0,2.991157
-47,36,Nick_Pope,Burnley,1,5.0,1.0,4.31763
-48,36,Joe_Hart,Burnley,1,4.2,0.0,0.113049984
-49,36,Johann Berg_Gudmundsson,Burnley,3,5.9,1.0,1.2133019
-50,36,Dwight_McNeil,Burnley,3,6.0,1.0,3.7409325
-51,36,Robbie_Brady,Burnley,3,5.5,1.0,0.12608874
-52,36,Steven_Defour,Burnley,3,5.5,0.0,0.061869025
-53,36,Jeff_Hendrick,Burnley,3,5.4,0.0,0.16349852
-54,36,Ashley_Westwood,Burnley,3,5.5,1.0,3.1005187
-55,36,Jack_Cork,Burnley,3,4.9,0.0,0.10907912
-56,36,Aaron_Lennon,Burnley,3,4.6,0.0,0.1173172
-57,36,Erik_Pieters,Burnley,2,4.2,1.0,2.0370505
-58,36,Jay_Rodriguez,Burnley,4,5.7,1.0,4.2485805
-59,36,Bailey_Peacock-Farrell,Burnley,1,4.3,1.0,0.028354406
-60,36,Mace_Goodridge,Burnley,3,4.5,1.0,0.1036458
-61,36,Anthony_Driscoll-Glennon,Burnley,2,3.9,0.0,0.034686923
-62,36,Abd-Al-Ali Morakinyo Olaposi_Koiki,Burnley,2,4.0,0.0,0.09038997
-63,36,Josh_Brownhill,Burnley,3,4.8,1.0,3.3291059
-64,36,Jimmy_Dunne,Burnley,2,4.0,1.0,0.1122849
-65,36,Bobby_Thomas,Burnley,2,4.0,1.0,0.06407499
-66,36,Max_Thompson,Burnley,4,4.5,1.0,0.17807412
-67,36,Lukas_Jensen,Burnley,1,4.0,1.0,0.03825271
-68,36,Josh_Benson,Burnley,3,4.5,1.0,0.029979706
-69,36,Marcos_Alonso,Chelsea,2,6.1,1.0,4.2921047
-70,36,Antonio_Rüdiger,Chelsea,2,5.9,1.0,2.6366596
-71,36,César_Azpilicueta,Chelsea,2,6.1,1.0,5.7902923
-72,36,Emerson_Palmieri dos Santos,Chelsea,2,5.4,1.0,0.07837558
-73,36,Andreas_Christensen,Chelsea,2,4.8,1.0,4.088
-74,36,Davide_Zappacosta,Chelsea,2,4.2,0.0,0.1163702
-75,36,Olivier_Giroud,Chelsea,4,6.7,1.0,4.1154857
-76,36,Kepa_Arrizabalaga,Chelsea,1,5.4,1.0,4.6973853
-77,36,Willy_Caballero,Chelsea,1,4.8,1.0,0.020598173
-78,36,Willian_Borges Da Silva,Chelsea,3,7.4,1.0,6.502474
-79,36,Pedro_Rodríguez Ledesma,Chelsea,3,6.8,1.0,0.20935667
-80,36,Ruben_Loftus-Cheek,Chelsea,3,5.9,1.0,1.6264362
-81,36,Callum_Hudson-Odoi,Chelsea,3,5.1,1.0,0.52949524
-82,36,Ross_Barkley,Chelsea,3,5.6,1.0,5.372326
-83,36,Jorge Luiz_Frello Filho,Chelsea,3,4.9,1.0,1.2338452
-84,36,N'Golo_Kanté,Chelsea,3,5.0,0.0,-0.046715736
-85,36,Ethan_Ampadu,Chelsea,3,4.3,0.0,0.059005022
-86,36,Christian_Pulisic,Chelsea,3,7.3,1.0,7.17144
-87,36,Mateo_Kovacic,Chelsea,3,5.3,1.0,1.8404646
-88,36,Kurt_Zouma,Chelsea,2,4.7,1.0,3.0138202
-89,36,Tammy_Abraham,Chelsea,4,7.4,1.0,3.945252
-90,36,Michy_Batshuayi,Chelsea,4,6.6,1.0,0.22964549
-91,36,Robert Kenedy_Nunes do Nascimento,Chelsea,3,5.2,0.0,-0.043845654
-92,36,Mason_Mount,Chelsea,3,6.1,1.0,3.8976083
-93,36,Reece_James,Chelsea,2,4.9,1.0,2.7280931
-94,36,Fikayo_Tomori,Chelsea,2,4.2,0.0,0.093013406
-95,36,Billy_Gilmour,Chelsea,3,4.2,0.0,-0.007941544
-96,36,Addji Keaninkin Marc-Israel_Guehi,Chelsea,2,3.9,0.0,0.032444477
-97,36,Faustino_Anjorin,Chelsea,3,4.5,1.0,0.040685892
-98,36,Armando_Broja,Chelsea,4,4.5,1.0,0.053111553
-99,36,Lewis_Bate,Chelsea,3,4.5,1.0,0.067831635
-100,36,Patrick_van Aanholt,Crystal Palace,2,5.6,1.0,3.6635952
-101,36,James_Tomkins,Crystal Palace,2,5.0,0.0,0.049808502
-102,36,Mamadou_Sakho,Crystal Palace,2,5.0,1.0,2.2780328
-103,36,Joel_Ward,Crystal Palace,2,4.3,1.0,2.3686287
-104,36,Scott_Dann,Crystal Palace,2,4.3,1.0,1.7269192
-105,36,Martin_Kelly,Crystal Palace,2,4.1,1.0,0.10733783
-106,36,Christian_Benteke,Crystal Palace,4,5.7,0.0,0.13614869
-107,36,Connor_Wickham,Crystal Palace,4,4.3,0.0,0.10156369
-108,36,Vicente_Guaita,Crystal Palace,1,4.9,1.0,2.7410684
-109,36,Wayne_Hennessey,Crystal Palace,1,4.2,1.0,0.95911384
-110,36,Wilfried_Zaha,Crystal Palace,3,6.6,1.0,3.1560674
-111,36,Luka_Milivojevic,Crystal Palace,3,6.7,1.0,3.0199628
-112,36,Andros_Townsend,Crystal Palace,3,5.6,1.0,1.8757029
-113,36,Max_Meyer,Crystal Palace,3,5.2,1.0,1.2723191
-114,36,Jeffrey_Schlupp,Crystal Palace,3,5.4,0.0,0.06647146
-115,36,James_McArthur,Crystal Palace,3,5.2,1.0,2.6054218
-116,36,Cheikhou_Kouyaté,Crystal Palace,3,4.9,1.0,1.9252834
-117,36,Luke_Dreher,Crystal Palace,3,4.3,1.0,0.06969106
-118,36,James_McCarthy,Crystal Palace,3,4.2,1.0,1.4304016
-119,36,Jordan_Ayew,Crystal Palace,4,5.1,1.0,3.2483258
-120,36,Gary_Cahill,Crystal Palace,2,4.4,0.0,0.088861346
-121,36,Víctor_Camarasa,Crystal Palace,3,4.5,0.0,0.059063077
-122,36,Jairo_Riedewald,Crystal Palace,3,4.5,1.0,1.2140238
-123,36,Stephen_Henderson,Crystal Palace,1,4.0,1.0,0.020206094
-124,36,Sam_Woods,Crystal Palace,2,3.9,0.0,0.041876316
-125,36,Tyrick_Mitchell,Crystal Palace,2,4.0,1.0,0.15274417
-126,36,Brandon_Pierrick,Crystal Palace,3,4.5,1.0,0.23432958
-127,36,James_Daly,Crystal Palace,4,4.5,0.0,0.04801488
-128,36,Nya_Kirby,Crystal Palace,3,4.5,1.0,0.12051022
-129,36,Giovanni_McGregor,Crystal Palace,3,4.5,0.0,0.034395576
-130,36,Nikola_Tavares,Crystal Palace,2,4.0,0.0,0.076063395
-131,36,Alex_Iwobi,Everton,3,5.6,1.0,2.793151
-132,36,Lucas_Digne,Everton,2,5.8,1.0,4.836235
-133,36,Yerry_Mina,Everton,2,5.3,0.75,2.164701
-134,36,Michael_Keane,Everton,2,5.2,1.0,4.734521
-135,36,Seamus_Coleman,Everton,2,5.3,1.0,4.964784
-136,36,Leighton_Baines,Everton,2,4.9,1.0,0.9637722
-137,36,Cenk_Tosun,Everton,4,5.7,0.0,0.08014667
-138,36,Dominic_Calvert-Lewin,Everton,4,6.2,1.0,4.4051256
-139,36,Jordan_Pickford,Everton,1,5.2,1.0,5.083157
-140,36,Maarten_Stekelenburg,Everton,1,3.9,1.0,0.054608822
-141,36,Richarlison_de Andrade,Everton,3,8.2,1.0,5.199159
-142,36,Gylfi_Sigurdsson,Everton,3,7.3,1.0,3.852643
-143,36,Bernard_Anício Caldeira Duarte,Everton,3,6.4,1.0,1.9864676
-144,36,Theo_Walcott,Everton,3,6.2,1.0,3.201696
-145,36,Tom_Davies,Everton,3,5.3,1.0,2.267821
-146,36,Ademola_Lookman,Everton,3,5.0,0.0,0.14141607
-147,36,Idrissa_Gueye,Everton,3,5.0,0.0,0.13066077
-148,36,Morgan_Schneiderlin,Everton,3,4.4,0.0,0.07120466
-149,36,Fabian_Delph,Everton,2,5.3,0.0,0.11469853
-150,36,André Filipe_Tavares Gomes,Everton,3,5.2,0.75,1.9405384
-151,36,Lewis_Gibson,Everton,2,4.2,0.0,-0.0096030235
-152,36,Mason_Holgate,Everton,2,4.3,0.75,2.500003
-153,36,Jonas_Lössl,Everton,1,4.2,0.0,0.13666296
-154,36,Moise_Kean,Everton,4,6.3,1.0,1.5242031
-155,36,Jean-Philippe_Gbamin,Everton,3,4.8,0.0,0.032028675
-156,36,Djibril_Sidibé,Everton,2,5.0,1.0,1.4593108
-157,36,Beni_Baningime,Everton,3,4.4,1.0,0.06946206
-158,36,Anthony_Gordon,Everton,4,4.5,1.0,2.852497
-159,36,Oumar_Niasse,Everton,4,4.5,0.0,0.10893071
-160,36,Rhu-endly_Martina,Everton,2,4.0,0.0,0.12725472
-161,36,João Manuel_Neves Virgínia,Everton,1,4.0,1.0,0.10795522
-162,36,Jarrad_Branthwaite,Everton,2,4.0,1.0,0.9461154
-163,36,Ricardo Domingos_Barbosa Pereira,Leicester City,2,6.2,0.0,0.11697459
-164,36,Benjamin_Chilwell,Leicester City,2,5.5,0.5,1.6876357
-165,36,Jonny_Evans,Leicester City,2,5.3,1.0,3.7313337
-166,36,Christian_Fuchs,Leicester City,2,4.2,1.0,1.1907754
-167,36,Çaglar_Söyüncü,Leicester City,2,5.0,0.0,0.006679654
-168,36,Wes_Morgan,Leicester City,2,4.1,1.0,0.08606756
-169,36,Jamie_Vardy,Leicester City,4,9.8,1.0,5.0895696
-170,36,Kelechi_Iheanacho,Leicester City,4,5.7,1.0,3.026144
-171,36,Kasper_Schmeichel,Leicester City,1,5.5,1.0,4.2171407
-172,36,Eldin_Jakupovic,Leicester City,1,4.2,1.0,0.066369414
-173,36,Danny_Ward,Leicester City,1,4.2,1.0,0.020765305
-174,36,James_Maddison,Leicester City,3,7.3,0.5,1.8486767
-175,36,Harvey_Barnes,Leicester City,3,5.9,1.0,1.6833761
-176,36,Rachid_Ghezzal,Leicester City,3,5.1,0.0,0.08060384
-177,36,Marc_Albrighton,Leicester City,3,5.1,0.75,1.7069709
-178,36,Demarai_Gray,Leicester City,3,5.0,1.0,1.3261721
-179,36,Wilfred_Ndidi,Leicester City,3,5.0,1.0,2.747259
-180,36,Matty_James,Leicester City,3,4.3,1.0,0.047902226
-181,36,Daniel_Amartey,Leicester City,3,4.2,0.0,0.05051899
-182,36,Nampalys_Mendy,Leicester City,3,4.3,1.0,1.0077856
-183,36,Hamza_Choudhury,Leicester City,3,4.3,1.0,0.13687634
-184,36,Ayoze_Pérez,Leicester City,3,6.0,1.0,2.7135243
-185,36,Ryan_Bennett,Leicester City,2,4.8,1.0,1.4580424
-186,36,James_Justin,Leicester City,2,4.7,1.0,3.6230698
-187,36,Youri_Tielemans,Leicester City,3,6.1,1.0,3.4549832
-188,36,Andy_King,Leicester City,3,4.2,0.0,0.05978608
-189,36,Dennis_Praet,Leicester City,3,5.2,1.0,1.6624308
-190,36,Filip_Benkovic,Leicester City,2,3.9,0.0,0.06218791
-191,36,Aymeric_Laporte,Manchester City,2,6.3,1.0,4.4676595
-192,36,Kyle_Walker,Manchester City,2,5.6,1.0,3.5497503
-193,36,Benjamin_Mendy,Manchester City,2,5.5,1.0,2.7536964
-194,36,Oleksandr_Zinchenko,Manchester City,2,5.2,1.0,2.0386229
-195,36,John_Stones,Manchester City,2,5.3,1.0,1.7777219
-196,36,Nicolás_Otamendi,Manchester City,2,4.8,1.0,1.697124
-197,36,Danilo Luiz_da Silva,Manchester City,2,5.0,0.0,0.19860673
-198,36,Sergio_Agüero,Manchester City,4,11.7,0.0,0.20627892
-199,36,Gabriel Fernando_de Jesus,Manchester City,4,9.8,1.0,4.3883805
-200,36,Ederson_Santana de Moraes,Manchester City,1,6.0,1.0,4.5267134
-201,36,Claudio_Bravo,Manchester City,1,4.7,1.0,0.1061002
-202,36,Raheem_Sterling,Manchester City,3,11.8,1.0,7.2182446
-203,36,Kevin_De Bruyne,Manchester City,3,10.8,1.0,6.8612666
-204,36,Leroy_Sané,Manchester City,3,9.1,0.0,0.025026798
-205,36,Riyad_Mahrez,Manchester City,3,8.6,1.0,6.3000903
-206,36,Bernardo Mota_Veiga de Carvalho e Silva,Manchester City,3,7.6,1.0,3.3372064
-207,36,David_Silva,Manchester City,3,7.3,1.0,3.6048412
-208,36,Phil_Foden,Manchester City,3,5.5,1.0,2.7117386
-209,36,Fernando_Luiz Rosa,Manchester City,3,5.1,1.0,1.7244132
-210,36,Ilkay_Gündogan,Manchester City,3,5.1,1.0,2.2884037
-211,36,José Ángel_Esmorís Tasende,Manchester City,2,4.6,0.0,0.13603592
-212,36,Rodrigo_Hernandez,Manchester City,3,5.3,1.0,2.3153913
-213,36,João Pedro Cavaco_Cancelo,Manchester City,2,5.1,1.0,1.5819676
-214,36,Eric_Garcia,Manchester City,2,4.5,1.0,3.9896665
-215,36,Scott_Carson,Manchester City,1,4.0,1.0,0.07214999
-216,36,Taylor_Harwood-Bellis,Manchester City,2,4.0,1.0,0.13279068
-217,36,Cole_Palmer,Manchester City,3,4.5,1.0,0.17361903
-218,36,Tommy_Doyle,Manchester City,3,4.5,1.0,0.42494404
-219,36,Matt_Ritchie,Newcastle United,2,5.3,1.0,1.9786913
-220,36,Fabian_Schär,Newcastle United,2,5.0,1.0,0.9771781
-221,36,DeAndre_Yedlin,Newcastle United,2,4.4,1.0,0.7836292
-222,36,Federico_Fernández,Newcastle United,2,4.6,1.0,2.5639062
-223,36,Paul_Dummett,Newcastle United,2,4.3,0.0,0.096726656
-224,36,Javier_Manquillo,Newcastle United,2,4.3,1.0,1.7284837
-225,36,Florian_Lejeune,Newcastle United,2,4.3,0.0,0.0554657
-226,36,Jamaal_Lascelles,Newcastle United,2,4.3,1.0,1.6634398
-227,36,Ciaran_Clark,Newcastle United,2,4.3,0.0,0.033495188
-228,36,Yoshinori_Muto,Newcastle United,4,5.1,1.0,0.06743431
-229,36,Jose Luis_Mato Sanmartín,Newcastle United,4,5.0,0.0,0.0055675507
-230,36,Martin_Dubravka,Newcastle United,1,5.1,1.0,3.252964
-231,36,Karl_Darlow,Newcastle United,1,4.3,1.0,-0.020369887
-232,36,Frederick_Woodman,Newcastle United,1,3.9,0.0,-0.011614382
-233,36,Miguel_Almirón,Newcastle United,3,5.8,1.0,2.4592087
-234,36,Christian_Atsu,Newcastle United,3,5.3,1.0,0.24516869
-235,36,Sung-yueng_Ki,Newcastle United,3,4.7,0.0,0.088664174
-236,36,Jonjo_Shelvey,Newcastle United,3,4.9,1.0,3.3487873
-237,36,Sean_Longstaff,Newcastle United,3,5.0,0.0,0.091389894
-238,36,Isaac_Hayden,Newcastle United,3,4.4,0.0,0.11170483
-239,36,Danny_Rose,Newcastle United,2,5.3,1.0,1.5046914
-240,36,Joelinton Cássio_Apolinário de Lira,Newcastle United,4,5.5,1.0,1.7248127
-241,36,Jack_Colback,Newcastle United,3,4.3,0.0,0.020305634
-242,36,Jacob_Murphy,Newcastle United,3,4.7,0.0,0.067005634
-243,36,Jetro_Willems,Newcastle United,2,4.3,0.0,-0.021878362
-244,36,Rolando_Aarons,Newcastle United,3,4.8,0.0,-0.022484243
-245,36,Allan_Saint-Maximin,Newcastle United,3,5.4,1.0,2.115986
-246,36,Emil_Krafth,Newcastle United,2,4.3,1.0,2.0449114
-247,36,Andy_Carroll,Newcastle United,4,5.4,0.75,1.1460514
-248,36,Matthew_Longstaff,Newcastle United,3,4.5,1.0,0.93333364
-249,36,Dwight_Gayle,Newcastle United,4,5.0,1.0,2.363407
-250,36,Robert_Elliot,Newcastle United,1,4.0,0.0,-0.010218263
-251,36,Thomas_Allan,Newcastle United,3,4.5,1.0,0.08794904
-252,36,Kelland_Watts,Newcastle United,2,3.9,0.0,0.023882389
-253,36,Liam_Gibson,Newcastle United,2,4.0,0.0,0.049713016
-254,36,Nabil_Bentaleb,Newcastle United,3,4.7,1.0,1.8527799
-255,36,Valentino_Lazaro,Newcastle United,3,5.3,1.0,1.5340152
-256,36,Jack_Young,Newcastle United,3,4.5,1.0,0.10318446
-257,36,Jannik_Vestergaard,Southampton,2,4.5,1.0,1.6265244
-258,36,Ryan_Bertrand,Southampton,2,4.8,1.0,3.8147354
-259,36,Yan_Valery,Southampton,2,4.6,0.0,0.01531148
-260,36,Jan_Bednarek,Southampton,2,4.4,1.0,2.5897942
-261,36,Jack_Stephens,Southampton,2,4.4,1.0,3.5278635
-262,36,Maya_Yoshida,Southampton,2,4.1,0.0,0.0007791519
-263,36,Kayne_Ramsay,Southampton,2,3.9,0.0,0.018823981
-264,36,Charlie_Austin,Southampton,4,6.0,0.0,0.123273015
-265,36,Danny_Ings,Southampton,4,7.5,1.0,5.7641597
-266,36,Michael_Obafemi,Southampton,4,4.9,1.0,1.173173
-267,36,Shane_Long,Southampton,4,4.6,1.0,1.946377
-268,36,Sam_Gallagher,Southampton,4,4.5,0.0,0.057082653
-269,36,Fraser_Forster,Southampton,1,4.2,0.0,0.036462426
-270,36,Alex_McCarthy,Southampton,1,4.5,1.0,3.3596287
-271,36,Angus_Gunn,Southampton,1,4.2,1.0,-0.02319634
-272,36,Nathan_Redmond,Southampton,3,6.2,1.0,3.9843178
-273,36,James_Ward-Prowse,Southampton,3,5.7,1.0,4.3466206
-274,36,Mohamed_Elyounoussi,Southampton,3,5.2,0.0,0.0234586
-275,36,Stuart_Armstrong,Southampton,3,5.2,1.0,3.7199802
-276,36,Mario_Lemina,Southampton,3,4.6,0.0,0.022943377
-277,36,Pierre-Emile_Højbjerg,Southampton,3,4.8,1.0,1.5115647
-278,36,Tyreke_Johnson,Southampton,3,4.4,0.0,-0.017050862
-279,36,Callum_Slattery,Southampton,3,4.4,0.0,0.043559074
-280,36,Oriol_Romeu Vidal,Southampton,3,4.3,1.0,1.8217044
-281,36,Kyle_Walker-Peters,Southampton,2,4.4,1.0,3.8426137
-282,36,Che_Adams,Southampton,4,5.3,1.0,2.5818846
-283,36,Moussa_Djenepo,Southampton,3,5.2,0.0,-0.0017336607
-284,36,Wesley_Hoedt,Southampton,2,4.2,0.0,0.0013092756
-285,36,Sofiane_Boufal,Southampton,3,5.5,0.0,0.04986179
-286,36,Kevin_Danso,Southampton,2,4.2,1.0,0.061023712
-287,36,Daniel_N'Lundulu,Southampton,4,4.4,1.0,0.088620305
-288,36,Harry_Lewis,Southampton,1,4.0,1.0,-0.0030783415
-289,36,William_Smallbone,Southampton,3,4.5,1.0,1.5527399
-290,36,Nathan_Tella,Southampton,3,4.5,0.0,0.07249045
-291,36,Jake_Vokins,Southampton,2,4.0,1.0,0.08952975
-292,36,Alexandre_Jankewitz,Southampton,3,4.5,1.0,0.086746216
-293,36,Will_Ferry,Southampton,3,4.5,1.0,0.08156288
-294,36,Aaron_Cresswell,West Ham United,2,4.5,1.0,3.3878083
-295,36,Angelo_Ogbonna,West Ham United,2,4.5,1.0,3.0826793
-296,36,Arthur_Masuaku,West Ham United,2,4.1,1.0,0.4009006
-297,36,Pablo_Zabaleta,West Ham United,2,4.1,0.0,0.048264146
-298,36,Ryan_Fredericks,West Ham United,2,4.4,1.0,4.6019797
-299,36,Issa_Diop,West Ham United,2,4.3,1.0,3.7915306
-300,36,Fabián_Balbuena,West Ham United,2,4.3,1.0,1.1789179
-301,36,Winston_Reid,West Ham United,2,3.9,0.0,0.12210214
-302,36,Ben_Johnson,West Ham United,2,4.0,1.0,0.030575752
-303,36,Marko_Arnautovic,West Ham United,4,7.0,0.0,0.07751405
-304,36,Javier_Hernández Balcázar,West Ham United,4,6.0,0.0,0.16472602
-305,36,Alexandre Nascimento_Costa Silva,West Ham United,4,4.3,1.0,0.05626607
-306,36,Lukasz_Fabianski,West Ham United,1,4.9,1.0,4.270675
-307,36,Michail_Antonio,West Ham United,3,7.0,1.0,5.7691336
-308,36,Felipe Anderson_Pereira Gomes,West Ham United,3,6.6,0.5,0.6454325
-309,36,Manuel_Lanzini,West Ham United,3,6.1,1.0,1.7578061
-310,36,Andriy_Yarmolenko,West Ham United,3,5.2,1.0,1.7583387
-311,36,Robert_Snodgrass,West Ham United,3,5.0,0.5,0.10503495
-312,36,Jack_Wilshere,West Ham United,3,4.6,1.0,0.74124813
-313,36,Declan_Rice,West Ham United,3,4.7,1.0,3.106072
-314,36,Mark_Noble,West Ham United,3,4.9,1.0,1.7972233
-315,36,Carlos_Sánchez,West Ham United,3,4.3,0.0,0.07971573
-316,36,Grady_Diangana,West Ham United,3,4.3,0.0,0.033494353
-317,36,Pablo_Fornals,West Ham United,3,6.0,1.0,4.206665
-318,36,Pedro_Obiang,West Ham United,3,4.5,0.0,0.103598356
-319,36,Roberto_Jimenez Gago,West Ham United,1,4.4,0.0,0.06332207
-320,36,Sébastien_Haller,West Ham United,4,6.8,1.0,1.291462
-321,36,Albian_Ajeti,West Ham United,4,5.6,1.0,0.17434442
-322,36,David_Martin,West Ham United,1,3.9,1.0,0.03709054
-323,36,Nathan_Holland,West Ham United,3,4.4,1.0,0.1181072
-324,36,Joseph_Anang,West Ham United,1,4.0,1.0,0.03223753
-325,36,Jeremy_Ngakia,West Ham United,2,4.0,0.0,0.039669156
-326,36,Gonçalo Bento_Soares Cardoso,West Ham United,2,4.0,1.0,0.012298346
-327,36,Bernardo_Costa Da Rosa,West Ham United,3,4.5,1.0,0.1042248
-328,36,Darren_Randolph,West Ham United,1,4.0,1.0,0.053907156
-329,36,Tomas_Soucek,West Ham United,3,4.8,1.0,3.9557333
-330,36,Jarrod_Bowen,West Ham United,3,6.4,1.0,3.6236143
-331,36,Alfie_Lewis,West Ham United,3,4.5,1.0,0.11671531
-332,37,Ahmed_El Mohamady,Aston Villa,2,4.1,1.0,0.98513913
-333,37,James_Chester,Aston Villa,2,4.2,0.0,0.004262686
-334,37,Neil_Taylor,Aston Villa,2,4.2,0.75,1.0037477
-335,37,Kortney_Hause,Aston Villa,2,4.4,0.75,0.86968195
-336,37,Jonathan_Kodjia,Aston Villa,4,5.4,0.0,0.064836025
-337,37,Ørjan_Nyland,Aston Villa,1,4.3,1.0,1.2293344
-338,37,Conor_Hourihane,Aston Villa,3,5.7,1.0,1.9000695
-339,37,Jack_Grealish,Aston Villa,3,5.9,1.0,3.6389995
-340,37,Anwar_El Ghazi,Aston Villa,3,5.3,1.0,1.6258867
-341,37,John_McGinn,Aston Villa,3,5.3,1.0,2.423672
-342,37,Andre_Green,Aston Villa,3,4.8,0.0,0.021058917
-343,37,Birkir_Bjarnason,Aston Villa,3,4.5,0.0,0.07466483
-344,37,Keinan_Davis,Aston Villa,3,4.3,1.0,1.955524
-345,37,Henri_Lansbury,Aston Villa,3,4.4,1.0,0.072921515
-346,37,José Ignacio_Peleteiro Romallo,Aston Villa,3,5.7,1.0,0.41214025
-347,37,Tom_Heaton,Aston Villa,1,4.3,0.0,0.0673244
-348,37,Daniel_Drinkwater,Aston Villa,3,4.4,1.0,0.112784624
-349,37,Matt_Targett,Aston Villa,2,4.3,1.0,1.3846872
-350,37,Wesley_Moraes,Aston Villa,4,5.4,0.0,0.15777075
-351,37,Jed_Steer,Aston Villa,1,4.3,1.0,0.033162594
-352,37,Tyrone_Mings,Aston Villa,2,4.4,1.0,2.3470604
-353,37,Ezri_Konsa Ngoyo,Aston Villa,2,4.3,1.0,1.951997
-354,37,Bjorn_Engels,Aston Villa,2,4.3,0.25,0.09763551
-355,37,Frédéric_Guilbert,Aston Villa,2,4.3,1.0,0.045425177
-356,37,Mahmoud Ahmed_Ibrahim Hassan,Aston Villa,3,5.2,1.0,2.5844872
-357,37,Douglas Luiz_Soares de Paulo,Aston Villa,3,4.3,1.0,2.9027388
-358,37,Lovre_Kalinic,Aston Villa,1,4.2,0.0,0.09457362
-359,37,Marvelous_Nakamba,Aston Villa,3,4.4,1.0,1.178611
-360,37,Indiana_Vassilev,Aston Villa,3,4.5,1.0,0.36987424
-361,37,José_Reina,Aston Villa,1,4.2,1.0,1.6813922
-362,37,Mbwana_Samatta,Aston Villa,4,5.2,1.0,2.7156236
-363,37,Borja_González Tomás,Aston Villa,4,5.3,0.0,0.0705837
-364,37,Steve_Cook,Bournemouth,2,5.0,1.0,2.0133545
-365,37,Nathan_Aké,Bournemouth,2,4.8,0.25,1.2797258
-366,37,Charlie_Daniels,Bournemouth,2,4.2,0.0,0.074849725
-367,37,Chris_Mepham,Bournemouth,2,4.3,0.75,0.3324759
-368,37,Simon_Francis,Bournemouth,2,4.3,0.25,0.11151993
-369,37,Adam_Smith,Bournemouth,2,4.3,0.0,0.029408932
-370,37,Lloyd_Kelly,Bournemouth,2,4.4,1.0,3.2538786
-371,37,Diego_Rico,Bournemouth,2,4.2,1.0,2.3133805
-372,37,Jack_Simpson,Bournemouth,2,3.9,1.0,0.0682677
-373,37,Callum_Wilson,Bournemouth,4,7.4,1.0,4.8078313
-374,37,Joshua_King,Bournemouth,4,6.1,0.75,2.948656
-375,37,Dominic_Solanke,Bournemouth,4,5.1,1.0,2.516489
-376,37,Sam_Surridge,Bournemouth,4,4.3,1.0,0.12488711
-377,37,Asmir_Begovic,Bournemouth,1,4.2,0.0,-0.0028140545
-378,37,Artur_Boruc,Bournemouth,1,4.2,1.0,-0.00039690733
-379,37,Mark_Travers,Bournemouth,1,4.2,1.0,0.024096966
-380,37,Ryan_Fraser,Bournemouth,3,6.8,0.0,0.16083872
-381,37,David_Brooks,Bournemouth,3,6.1,1.0,2.8846345
-382,37,Junior_Stanislas,Bournemouth,3,5.8,1.0,3.7472782
-383,37,Jordon_Ibe,Bournemouth,3,4.6,0.0,0.13234615
-384,37,Lewis_Cook,Bournemouth,3,5.0,1.0,1.4727678
-385,37,Andrew_Surman,Bournemouth,3,4.7,1.0,0.07524347
-386,37,Dan_Gosling,Bournemouth,3,4.8,1.0,1.7413936
-387,37,Jefferson_Lerma,Bournemouth,3,4.8,1.0,2.371932
-388,37,Jack_Stacey,Bournemouth,2,4.3,1.0,1.5304444
-389,37,Philip_Billing,Bournemouth,3,4.9,1.0,1.1458769
-390,37,Arnaut_Danjuma Groeneveld,Bournemouth,3,5.8,1.0,1.6303608
-391,37,Aaron_Ramsdale,Bournemouth,1,4.5,1.0,4.0004945
-392,37,Harry_Wilson,Bournemouth,3,5.7,1.0,1.4094801
-393,37,Christian_Saydee,Bournemouth,3,4.5,1.0,0.06811154
-394,37,Gavin_Kilkenny,Bournemouth,3,4.5,1.0,0.07036221
-395,37,Mihai-Alexandru_Dobre,Bournemouth,3,4.4,0.0,0.02914095
-396,37,Shane_Duffy,Brighton and Hove Albion,2,4.8,1.0,1.548517
-397,37,Martín_Montoya,Brighton and Hove Albion,2,4.3,1.0,1.2825937
-398,37,Bernardo_Fernandes da Silva Junior,Brighton and Hove Albion,2,4.3,1.0,1.0740869
-399,37,Leon_Balogun,Brighton and Hove Albion,2,4.3,0.0,-0.010013998
-400,37,Gaëtan_Bong,Brighton and Hove Albion,2,4.2,0.0,-0.010391951
-401,37,Lewis_Dunk,Brighton and Hove Albion,2,4.8,1.0,3.3834176
-402,37,Matthew_Clarke,Brighton and Hove Albion,2,4.3,0.0,0.024831057
-403,37,Glenn_Murray,Brighton and Hove Albion,4,5.4,1.0,0.24599338
-404,37,Jürgen_Locadia,Brighton and Hove Albion,4,5.2,0.0,0.0018507242
-405,37,Florin_Andone,Brighton and Hove Albion,4,4.7,0.0,0.007818222
-406,37,Mathew_Ryan,Brighton and Hove Albion,1,4.7,1.0,3.904562
-407,37,David_Button,Brighton and Hove Albion,1,3.9,1.0,0.001737237
-408,37,Pascal_Groß,Brighton and Hove Albion,3,6.2,1.0,2.0082653
-409,37,Alireza_Jahanbakhsh,Brighton and Hove Albion,3,5.8,1.0,0.4188025
-410,37,José Heriberto_Izquierdo Mena,Brighton and Hove Albion,3,5.4,0.0,0.018341184
-411,37,Anthony_Knockaert,Brighton and Hove Albion,3,5.3,0.0,0.03396225
-412,37,Yves_Bissouma,Brighton and Hove Albion,3,5.0,1.0,1.7598517
-413,37,Davy_Pröpper,Brighton and Hove Albion,3,4.8,1.0,1.660882
-414,37,Solomon_March,Brighton and Hove Albion,3,4.6,1.0,0.872936
-415,37,Beram_Kayal,Brighton and Hove Albion,3,4.3,1.0,0.053144813
-416,37,Dale_Stephens,Brighton and Hove Albion,3,4.4,1.0,1.9142334
-417,37,Leandro_Trossard,Brighton and Hove Albion,3,5.8,1.0,3.2378664
-418,37,Dan_Burn,Brighton and Hove Albion,2,4.5,1.0,2.4724529
-419,37,Adam_Webster,Brighton and Hove Albion,2,4.4,1.0,3.1215358
-420,37,Neal_Maupay,Brighton and Hove Albion,4,5.7,1.0,3.157514
-421,37,Aaron_Mooy,Brighton and Hove Albion,3,4.7,1.0,2.2794266
-422,37,Aaron_Connolly,Brighton and Hove Albion,4,4.2,1.0,2.5592372
-423,37,Tudor_Baluta,Brighton and Hove Albion,2,4.0,0.0,0.02414012
-424,37,Steven_Alzate,Brighton and Hove Albion,3,4.4,1.0,0.11658573
-425,37,Ezequiel_Schelotto,Brighton and Hove Albion,2,4.0,1.0,0.08608699
-426,37,Tariq_Lamptey,Brighton and Hove Albion,2,4.0,1.0,3.287682
-427,37,Alexis_Mac Allister,Brighton and Hove Albion,3,5.5,1.0,2.4179618
-428,37,Andrew_Robertson,Liverpool,2,7.0,1.0,4.4098716
-429,37,Trent_Alexander-Arnold,Liverpool,2,7.8,1.0,4.828135
-430,37,Virgil_van Dijk,Liverpool,2,6.5,1.0,4.8071384
-431,37,Joseph_Gomez,Liverpool,2,5.3,1.0,3.9729915
-432,37,Joel_Matip,Liverpool,2,5.2,0.0,0.12917459
-433,37,Dejan_Lovren,Liverpool,2,5.3,1.0,0.099912405
-434,37,Roberto_Firmino,Liverpool,4,9.3,1.0,3.4700365
-435,37,Divock_Origi,Liverpool,4,5.1,1.0,1.5930188
-436,37,Alisson_Ramses Becker,Liverpool,1,6.2,1.0,4.4929395
-437,37,Simon_Mignolet,Liverpool,1,4.5,0.0,0.07028496
-438,37,Mohamed_Salah,Liverpool,3,12.6,1.0,8.111393
-439,37,Sadio_Mané,Liverpool,3,12.2,1.0,5.594653
-440,37,Alex_Oxlade-Chamberlain,Liverpool,3,6.1,1.0,2.0651176
-441,37,Xherdan_Shaqiri,Liverpool,3,6.3,1.0,0.1835525
-442,37,Adam_Lallana,Liverpool,3,5.7,1.0,0.18155515
-443,37,Naby_Keita,Liverpool,3,5.8,1.0,2.0403109
-444,37,Fabio Henrique_Tavares,Liverpool,3,5.4,1.0,2.326831
-445,37,Jordan_Henderson,Liverpool,3,5.2,0.0,0.14559782
-446,37,Georginio_Wijnaldum,Liverpool,3,5.4,1.0,2.5585709
-447,37,James_Milner,Liverpool,3,5.3,0.75,0.23133934
-448,37,Rafael_Camacho,Liverpool,3,4.5,0.0,0.0059245825
-449,37,Rhian_Brewster,Liverpool,4,4.2,0.0,0.14035249
-450,37,Adrián_San Miguel del Castillo,Liverpool,1,4.0,1.0,0.13170385
-451,37,Andy_Lonergan,Liverpool,1,4.2,1.0,-0.010465145
-452,37,Caoimhin_Kelleher,Liverpool,1,4.4,1.0,0.12348831
-453,37,Harvey_Elliott,Liverpool,3,4.5,1.0,0.3050195
-454,37,Curtis_Jones,Liverpool,3,4.5,1.0,1.3842978
-455,37,Neco_Williams,Liverpool,2,4.0,1.0,1.5779703
-456,37,Nathaniel_Phillips,Liverpool,2,3.9,0.0,0.1476996
-457,37,Takumi_Minamino,Liverpool,3,5.9,1.0,0.81261957
-458,37,Ki-Jana_Hoever,Liverpool,2,4.0,1.0,0.09568727
-459,37,Aaron_Wan-Bissaka,Manchester United,2,5.5,1.0,4.3902073
-460,37,Harry_Maguire,Manchester United,2,5.3,1.0,3.8173761
-461,37,Chris_Smalling,Manchester United,2,5.2,0.0,0.0368762
-462,37,Ashley_Young,Manchester United,2,5.4,0.0,0.06576574
-463,37,Victor_Lindelöf,Manchester United,2,5.3,1.0,3.1553621
-464,37,Luke_Shaw,Manchester United,2,5.4,0.75,3.007474
-465,37,Marcos_Rojo,Manchester United,2,4.8,0.0,-0.027815342
-466,37,Eric_Bailly,Manchester United,2,4.8,1.0,0.9180162
-467,37,José Diogo_Dalot Teixeira,Manchester United,2,4.9,1.0,0.04418528
-468,37,Matteo_Darmian,Manchester United,2,4.9,0.0,0.082769156
-469,37,Phil_Jones,Manchester United,2,4.7,0.0,0.051728845
-470,37,Romelu_Lukaku,Manchester United,4,8.5,0.0,0.14517748
-471,37,Marcus_Rashford,Manchester United,4,9.0,1.0,4.765458
-472,37,Mason_Greenwood,Manchester United,4,4.9,1.0,6.403995
-473,37,David_de Gea,Manchester United,1,5.3,1.0,3.5342345
-474,37,Sergio_Romero,Manchester United,1,4.6,1.0,0.02184558
-475,37,Lee_Grant,Manchester United,1,4.7,1.0,0.02736342
-476,37,Paul_Pogba,Manchester United,3,8.3,1.0,4.138242
-477,37,Anthony_Martial,Manchester United,3,8.4,1.0,6.5087037
-478,37,Alexis_Sánchez,Manchester United,3,6.8,0.0,0.13976741
-479,37,Jesse_Lingard,Manchester United,3,6.3,1.0,0.1348958
-480,37,Juan_Mata,Manchester United,3,6.1,1.0,0.6014297
-481,37,Daniel_James,Manchester United,3,5.7,1.0,1.1930294
-482,37,Frederico_Rodrigues de Paula Santos,Manchester United,3,5.1,1.0,0.98056483
-483,37,Angel_Gomes,Manchester United,3,4.7,0.0,0.13186753
-484,37,Andreas_Pereira,Manchester United,3,4.8,1.0,0.83752334
-485,37,Nemanja_Matic,Manchester United,3,4.8,1.0,2.8263938
-486,37,Scott_McTominay,Manchester United,3,4.8,1.0,1.1551423
-487,37,Tahith_Chong,Manchester United,3,4.2,1.0,0.083590984
-488,37,James_Garner,Manchester United,3,4.3,1.0,0.110792875
-489,37,Axel_Tuanzebe,Manchester United,2,4.4,0.0,0.06393576
-490,37,Brandon_Williams,Manchester United,2,3.9,0.75,1.0989418
-491,37,Bruno Miguel_Borges Fernandes,Manchester United,3,9.0,1.0,6.3171306
-492,37,Odion_Ighalo,Manchester United,4,6.0,1.0,0.9085269
-493,37,Timm_Klose,Norwich,2,4.3,1.0,2.3268664
-494,37,Ben_Godfrey,Norwich,2,4.4,1.0,1.9576602
-495,37,Maximillian_Aarons,Norwich,2,4.3,1.0,2.6595922
-496,37,Christoph_Zimmermann,Norwich,2,4.4,0.0,-0.00044852495
-497,37,Jamal_Lewis,Norwich,2,4.4,1.0,2.999054
-498,37,Grant_Hanley,Norwich,2,4.0,0.0,0.021667242
-499,37,Teemu_Pukki,Norwich,4,6.4,1.0,2.226487
-500,37,Dennis_Srbeny,Norwich,4,5.2,0.0,0.024146557
-501,37,Tim_Krul,Norwich,1,4.6,1.0,3.174552
-502,37,Michael_McGovern,Norwich,1,4.1,1.0,0.040160775
-503,37,Mario_Vrancic,Norwich,3,6.2,1.0,1.6974976
-504,37,Emiliano_Buendía,Norwich,3,6.0,1.0,2.7018504
-505,37,Onel_Hernández,Norwich,3,5.3,1.0,2.6435108
-506,37,Marco_Stiepermann,Norwich,3,5.0,1.0,1.2436485
-507,37,Kenny_McLean,Norwich,3,4.8,1.0,2.2225537
-508,37,Todd_Cantwell,Norwich,3,4.5,1.0,2.1412125
-509,37,Moritz_Leitner,Norwich,3,4.3,0.0,0.0028631687
-510,37,Alexander_Tettey,Norwich,3,4.4,1.0,2.8997908
-511,37,Tom_Trybull,Norwich,3,4.3,1.0,0.8220632
-512,37,Josip_Drmic,Norwich,4,5.3,1.0,1.8111217
-513,37,Patrick_Roberts,Norwich,3,5.0,0.0,0.03533578
-514,37,Ralf_Fahrmann,Norwich,1,4.4,0.0,0.08579433
-515,37,Sam_Byram,Norwich,2,4.3,0.0,0.086913586
-516,37,Philip_Heise,Norwich,2,3.9,0.0,0.043283105
-517,37,Ibrahim_Amadou,Norwich,3,4.5,0.0,0.088846564
-518,37,Adam_Idah,Norwich,4,4.4,1.0,1.4144228
-519,37,Archie_Mair,Norwich,1,4.0,1.0,0.047393084
-520,37,Akin_Famewo,Norwich,2,3.9,0.0,0.09266484
-521,37,Ondrej_Duda,Norwich,3,4.4,0.0,0.066375375
-522,37,Lukas_Rupp,Norwich,3,4.4,1.0,1.5857203
-523,37,Josh_Martin,Norwich,3,4.5,1.0,0.6510489
-524,37,Jordan_Thomas,Norwich,2,4.0,1.0,0.08355069
-525,37,Lys_Mousset,Sheffield United,4,4.4,1.0,2.1205635
-526,37,Enda_Stevens,Sheffield United,2,5.1,1.0,4.906157
-527,37,Kieron_Freeman,Sheffield United,2,4.2,1.0,0.12414539
-528,37,Jack_O'Connell,Sheffield United,2,4.5,1.0,4.357794
-529,37,George_Baldock,Sheffield United,2,5.0,1.0,4.5416594
-530,37,John_Egan,Sheffield United,2,4.6,1.0,4.969193
-531,37,Richard_Stearman,Sheffield United,2,3.9,0.0,0.07802892
-532,37,John_Lundstram,Sheffield United,2,4.6,1.0,2.2063165
-533,37,Billy_Sharp,Sheffield United,4,5.3,1.0,1.456219
-534,37,Jake_Eastwood,Sheffield United,1,4.3,1.0,0.08654094
-535,37,Mark_Duffy,Sheffield United,3,5.2,0.0,0.16422403
-536,37,John_Fleck,Sheffield United,3,4.7,0.75,1.5734255
-537,37,Oliver_Norwood,Sheffield United,3,4.7,1.0,2.3304994
-538,37,David_McGoldrick,Sheffield United,4,5.4,1.0,2.070193
-539,37,Chris_Basham,Sheffield United,2,4.6,0.75,3.1385503
-540,37,Simon_Moore,Sheffield United,1,4.3,1.0,1.2480717
-541,37,Luke_Freeman,Sheffield United,3,5.0,0.0,0.15947437
-542,37,Phil_Jagielka,Sheffield United,2,4.1,1.0,1.419163
-543,37,Callum_Robinson,Sheffield United,3,4.9,0.0,0.1463548
-544,37,Ravel_Morrison,Sheffield United,3,4.5,0.0,0.09681916
-545,37,Dean_Henderson,Sheffield United,1,5.2,1.0,4.79046
-546,37,Ben_Osborn,Sheffield United,3,4.7,1.0,3.103448
-547,37,Oliver_McBurnie,Sheffield United,4,5.5,1.0,2.6043513
-548,37,Michael_Verrips,Sheffield United,1,4.4,1.0,0.09558964
-549,37,Muhamed_Bešić,Sheffield United,3,4.3,0.0,0.10655069
-550,37,Leon_Clarke,Sheffield United,4,4.4,0.0,0.18070161
-551,37,Jack_Rodwell,Sheffield United,3,4.5,1.0,0.42729425
-552,37,Jack_Robinson,Sheffield United,2,4.0,1.0,1.8771958
-553,37,Sander_Berge,Sheffield United,3,4.7,1.0,3.2579694
-554,37,Richairo_Zivkovic,Sheffield United,4,4.7,1.0,1.1376414
-555,37,Panagiotis_Retsos,Sheffield United,2,4.5,0.0,0.11902964
-556,37,Ben_Davies,Tottenham Hotspur,2,5.3,1.0,4.3827143
-557,37,Jan_Vertonghen,Tottenham Hotspur,2,5.2,1.0,1.2003632
-558,37,Toby_Alderweireld,Tottenham Hotspur,2,5.3,1.0,2.2839463
-559,37,Davinson_Sánchez,Tottenham Hotspur,2,5.3,1.0,2.1035185
-560,37,Kieran_Trippier,Tottenham Hotspur,2,5.5,0.0,0.16880262
-561,37,Juan_Foyth,Tottenham Hotspur,2,4.8,0.0,0.092252016
-562,37,Serge_Aurier,Tottenham Hotspur,2,5.1,1.0,4.4566464
-563,37,Harry_Kane,Tottenham Hotspur,4,10.9,1.0,5.4431496
-564,37,Vincent_Janssen,Tottenham Hotspur,4,4.5,0.0,0.21783376
-565,37,Hugo_Lloris,Tottenham Hotspur,1,5.3,1.0,4.202423
-566,37,Paulo_Gazzaniga,Tottenham Hotspur,1,4.1,1.0,0.01723802
-567,37,Heung-Min_Son,Tottenham Hotspur,3,9.6,1.0,5.918965
-568,37,Christian_Eriksen,Tottenham Hotspur,3,8.6,0.0,0.23471737
-569,37,Bamidele_Alli,Tottenham Hotspur,3,8.3,0.0,0.12276816
-570,37,Lucas_Rodrigues Moura da Silva,Tottenham Hotspur,3,7.0,1.0,3.1715417
-571,37,Erik_Lamela,Tottenham Hotspur,3,5.7,1.0,1.9429395
-572,37,Harry_Winks,Tottenham Hotspur,3,5.2,1.0,1.7829602
-573,37,Victor_Wanyama,Tottenham Hotspur,3,4.7,0.0,0.14786649
-574,37,Moussa_Sissoko,Tottenham Hotspur,3,4.8,1.0,2.5853043
-575,37,Eric_Dier,Tottenham Hotspur,3,4.8,0.0,0.14840484
-576,37,Luke_Amos,Tottenham Hotspur,3,4.4,0.0,0.057674646
-577,37,Oliver_Skipp,Tottenham Hotspur,3,4.3,1.0,0.2685963
-578,37,Tanguy_Ndombele,Tottenham Hotspur,3,5.8,1.0,1.2189586
-579,37,Troy_Parrott,Tottenham Hotspur,4,4.3,0.25,0.12520766
-580,37,Giovani_Lo Celso,Tottenham Hotspur,3,7.3,1.0,2.5240543
-581,37,Ryan_Sessegnon,Tottenham Hotspur,3,5.4,1.0,0.15667105
-582,37,Georges-Kévin_Nkoudou,Tottenham Hotspur,3,5.0,0.0,0.098266125
-583,37,Alfie_Whiteman,Tottenham Hotspur,1,4.0,1.0,0.069913745
-584,37,Michel_Vorm,Tottenham Hotspur,1,4.2,1.0,0.07797384
-585,37,Brandon_Austin,Tottenham Hotspur,1,4.0,1.0,0.10340047
-586,37,Japhet_Tanganga,Tottenham Hotspur,2,3.9,1.0,0.063289404
-587,37,Gedson_Carvalho Fernandes,Tottenham Hotspur,3,4.6,1.0,0.18277991
-588,37,Steven_Bergwijn,Tottenham Hotspur,3,7.0,1.0,1.7129884
-589,37,Harvey_White,Tottenham Hotspur,3,4.5,1.0,0.10045242
-590,37,Dennis_Cirkin,Tottenham Hotspur,2,4.0,1.0,0.08575344
-591,37,José_Holebas,Watford,2,4.6,1.0,0.30335903
-592,37,Christian_Kabasele,Watford,2,4.3,1.0,1.2277799
-593,37,Adam_Masina,Watford,2,4.3,1.0,1.2209396
-594,37,Adrian_Mariappa,Watford,2,4.2,1.0,0.7092848
-595,37,Francisco_Femenía Far,Watford,2,4.2,1.0,1.7374694
-596,37,Craig_Cathcart,Watford,2,4.2,1.0,0.6699486
-597,37,Daryl_Janmaat,Watford,2,4.0,0.0,0.12029302
-598,37,Marc_Navarro,Watford,2,3.9,0.0,0.09495664
-599,37,Sebastian_Prödl,Watford,2,3.9,0.0,0.127936
-600,37,Troy_Deeney,Watford,4,6.2,1.0,3.2610254
-601,37,Gerard_Deulofeu,Watford,4,6.1,0.0,0.025385737
-602,37,Andre_Gray,Watford,4,5.5,1.0,0.25773668
-603,37,Isaac_Success Ajayi,Watford,4,4.7,0.0,0.16040444
-604,37,Ben_Foster,Watford,1,4.9,1.0,2.6935155
-605,37,Pontus_Dahlberg,Watford,1,4.2,0.0,0.103896976
-606,37,Abdoulaye_Doucouré,Watford,3,5.5,1.0,2.5348861
-607,37,Roberto_Pereyra,Watford,3,5.6,1.0,1.093858
-608,37,Will_Hughes,Watford,3,5.3,1.0,2.215282
-609,37,Tom_Cleverley,Watford,3,4.8,1.0,1.1430881
-610,37,Ken_Sema,Watford,3,4.7,0.0,0.1141659
-611,37,Etienne_Capoue,Watford,3,4.8,1.0,2.375311
-612,37,Nathaniel_Chalobah,Watford,3,4.4,1.0,1.1671207
-613,37,Domingos_Quina,Watford,3,4.3,1.0,0.0682708
-614,37,Craig_Dawson,Watford,2,4.8,1.0,1.6526022
-615,37,Danny_Welbeck,Watford,4,5.8,1.0,2.1883721
-616,37,Heurelho da Silva_Gomes,Watford,1,4.3,1.0,0.09148824
-617,37,Ismaïla_Sarr,Watford,3,6.0,1.0,3.3337903
-618,37,Dimitri_Foulquier,Watford,2,3.9,0.0,0.08058119
-619,37,Ayotomiwa_Dele-Bashiru,Watford,3,4.5,1.0,0.04209423
-620,37,João Pedro_Junqueira de Jesus,Watford,4,4.9,1.0,0.44048035
-621,37,Ignacio_Pussetto,Watford,3,4.6,1.0,0.34775376
-622,37,Adalberto_Peñaranda,Watford,4,4.5,1.0,0.081783414
-623,37,Matt_Doherty,Wolverhampton Wanderers,2,6.5,1.0,5.3382196
-624,37,Jonathan_Castro Otto,Wolverhampton Wanderers,2,5.5,1.0,4.418101
-625,37,Conor_Coady,Wolverhampton Wanderers,2,5.1,1.0,4.4669986
-626,37,Willy_Boly,Wolverhampton Wanderers,2,4.8,1.0,4.5552096
-627,37,Rúben Gonçalo_Silva Nascimento Vinagre,Wolverhampton Wanderers,2,4.1,1.0,0.12551832
-628,37,Romain_Saïss,Wolverhampton Wanderers,2,4.7,1.0,4.732823
-629,37,Max_Kilman,Wolverhampton Wanderers,2,3.9,1.0,0.06613219
-630,37,Raúl_Jiménez,Wolverhampton Wanderers,4,8.1,1.0,4.964515
-631,37,Diogo_Jota,Wolverhampton Wanderers,4,6.0,1.0,3.553214
-632,37,Rui Pedro_dos Santos Patrício,Wolverhampton Wanderers,1,5.3,1.0,4.4016247
-633,37,John_Ruddy,Wolverhampton Wanderers,1,4.2,1.0,0.09634471
-634,37,Will_Norris,Wolverhampton Wanderers,1,3.9,0.0,0.12898135
-635,37,Rúben Diogo_da Silva Neves,Wolverhampton Wanderers,3,5.2,1.0,2.9302619
-636,37,João Filipe Iria_Santos Moutinho,Wolverhampton Wanderers,3,5.4,1.0,2.9450555
-637,37,Morgan_Gibbs-White,Wolverhampton Wanderers,3,4.7,1.0,0.20593691
-638,37,Adama_Traoré,Wolverhampton Wanderers,3,5.6,1.0,2.4525256
-639,37,Hélder_Costa,Wolverhampton Wanderers,3,4.8,0.0,-0.046114624
-640,37,Ivan_Cavaleiro,Wolverhampton Wanderers,3,4.9,0.0,0.0023956299
-641,37,Leander_Dendoncker,Wolverhampton Wanderers,3,4.4,1.0,1.933459
-642,37,Jesús_Vallejo Lázaro,Wolverhampton Wanderers,2,4.6,0.0,0.050268173
-643,37,Patrick_Cutrone,Wolverhampton Wanderers,4,5.4,0.0,0.19479275
-644,37,Pedro_Lomba Neto,Wolverhampton Wanderers,3,5.0,0.75,1.2454965
-645,37,Bernard_Ashley-Seal,Wolverhampton Wanderers,4,4.5,0.0,0.07256997
-646,37,Taylor_Perry,Wolverhampton Wanderers,3,4.5,1.0,0.045750737
-647,37,Owen_Otasowie,Wolverhampton Wanderers,3,4.5,1.0,0.08984494
-648,37,Luke_Cundle,Wolverhampton Wanderers,3,4.5,1.0,0.05404234
-649,37,Oskar_Buur,Wolverhampton Wanderers,2,4.0,1.0,0.036274195
-650,37,Ryan_Giles,Wolverhampton Wanderers,2,3.9,0.0,0.12809491
-651,37,Bruno André_Cavaco Jordao,Wolverhampton Wanderers,3,4.5,1.0,0.004324913
-652,37,Daniel_Castelo Podence,Wolverhampton Wanderers,3,4.9,1.0,1.3866978
-653,37,Leonardo_Campana,Wolverhampton Wanderers,4,4.5,1.0,0.08184576
-654,38,Shkodran_Mustafi,Arsenal,2,5.1,1.0,3.7565002
-655,38,Héctor_Bellerín,Arsenal,2,5.3,1.0,3.257738
-656,38,Sead_Kolasinac,Arsenal,2,5.2,1.0,4.8903556
-657,38,Ainsley_Maitland-Niles,Arsenal,2,4.5,1.0,0.71705544
-658,38,Sokratis_Papastathopoulos,Arsenal,2,4.8,1.0,0.045885444
-659,38,Nacho_Monreal,Arsenal,2,5.0,0.0,0.10564494
-660,38,Laurent_Koscielny,Arsenal,2,5.0,0.0,0.06882644
-661,38,Konstantinos_Mavropanos,Arsenal,2,4.3,0.0,-0.0118303895
-662,38,Carl_Jenkinson,Arsenal,2,4.5,0.0,0.16946495
-663,38,Rob_Holding,Arsenal,2,4.4,1.0,1.5088115
-664,38,Pierre-Emerick_Aubameyang,Arsenal,4,10.9,1.0,7.4838276
-665,38,Alexandre_Lacazette,Arsenal,4,9.2,1.0,4.3134966
-666,38,Edward_Nketiah,Arsenal,4,4.3,0.0,0.19771397
-667,38,Bernd_Leno,Arsenal,1,4.8,0.0,0.11214495
-668,38,Mesut_Özil,Arsenal,3,7.0,0.75,0.14182556
-669,38,Henrikh_Mkhitaryan,Arsenal,3,6.7,0.0,0.2408843
-670,38,Granit_Xhaka,Arsenal,3,5.1,1.0,3.1701345
-671,38,Lucas_Torreira,Arsenal,3,4.7,1.0,0.61325014
-672,38,Mohamed_Elneny,Arsenal,3,4.2,0.0,0.0697186
-673,38,Matteo_Guendouzi,Arsenal,3,4.1,1.0,-0.020475388
-674,38,David_Luiz Moreira Marinho,Arsenal,2,5.7,1.0,4.480294
-675,38,Emiliano_Martínez,Arsenal,1,4.3,1.0,4.9492526
-676,38,Calum_Chambers,Arsenal,2,4.3,0.0,-0.04291439
-677,38,Daniel_Ceballos Fernández,Arsenal,3,5.2,1.0,3.8695698
-678,38,Cédric_Soares,Arsenal,2,4.8,1.0,1.611172
-679,38,Nicolas_Pépé,Arsenal,3,8.9,1.0,2.0612278
-680,38,Reiss_Nelson,Arsenal,3,5.3,1.0,1.2023623
-681,38,Joseph_Willock,Arsenal,3,4.7,1.0,1.4623117
-682,38,Gabriel Teodoro_Martinelli Silva,Arsenal,4,4.3,0.0,0.13149774
-683,38,Kieran_Tierney,Arsenal,2,5.3,1.0,3.8052282
-684,38,Bukayo_Saka,Arsenal,3,4.7,1.0,2.8717508
-685,38,Emile_Smith Rowe,Arsenal,3,4.3,0.0,0.04319668
-686,38,Tyreece_John-Jules,Arsenal,4,4.4,0.0,0.110327005
-687,38,Pablo_Marí,Arsenal,2,4.4,0.0,-0.022040308
-688,38,Zech_Medley,Arsenal,2,4.0,1.0,0.075668454
-689,38,Matt_Macey,Arsenal,1,4.0,1.0,0.15117061
-690,38,Matthew_Smith,Arsenal,2,4.0,1.0,0.04875946
-691,38,Ben_Mee,Burnley,2,5.0,0.0,0.0229038
-692,38,James_Tarkowski,Burnley,2,5.3,1.0,4.8604918
-693,38,Matthew_Lowton,Burnley,2,4.2,0.0,0.07722688
-694,38,Phil_Bardsley,Burnley,2,4.3,1.0,2.9207141
-695,38,Charlie_Taylor,Burnley,2,4.4,1.0,3.790627
-696,38,Kevin_Long,Burnley,2,4.3,1.0,2.6760755
-697,38,Ben_Gibson,Burnley,2,3.9,0.0,0.071804285
-698,38,Ashley_Barnes,Burnley,4,6.1,0.0,0.16087651
-699,38,Chris_Wood,Burnley,4,6.1,1.0,3.0455036
-700,38,Matej_Vydra,Burnley,4,5.1,1.0,3.2979689
-701,38,Nick_Pope,Burnley,1,5.0,1.0,5.631503
-702,38,Joe_Hart,Burnley,1,4.2,0.0,0.06690943
-703,38,Johann Berg_Gudmundsson,Burnley,3,5.9,1.0,1.2430534
-704,38,Dwight_McNeil,Burnley,3,6.0,1.0,4.279979
-705,38,Robbie_Brady,Burnley,3,5.5,1.0,0.10647428
-706,38,Steven_Defour,Burnley,3,5.5,0.0,0.01614225
-707,38,Jeff_Hendrick,Burnley,3,5.4,0.0,0.10914087
-708,38,Ashley_Westwood,Burnley,3,5.5,1.0,3.624218
-709,38,Jack_Cork,Burnley,3,4.9,0.0,0.0804863
-710,38,Aaron_Lennon,Burnley,3,4.6,0.0,0.0628047
-711,38,Erik_Pieters,Burnley,2,4.2,1.0,2.6850817
-712,38,Jay_Rodriguez,Burnley,4,5.7,1.0,5.051437
-713,38,Bailey_Peacock-Farrell,Burnley,1,4.3,1.0,0.048750997
-714,38,Mace_Goodridge,Burnley,3,4.5,1.0,0.15899348
-715,38,Anthony_Driscoll-Glennon,Burnley,2,3.9,0.0,0.044816613
-716,38,Abd-Al-Ali Morakinyo Olaposi_Koiki,Burnley,2,4.0,0.0,0.09518075
-717,38,Josh_Brownhill,Burnley,3,4.8,1.0,3.6593723
-718,38,Jimmy_Dunne,Burnley,2,4.0,1.0,0.058250904
-719,38,Bobby_Thomas,Burnley,2,4.0,1.0,0.04799986
-720,38,Max_Thompson,Burnley,4,4.5,1.0,0.2329632
-721,38,Lukas_Jensen,Burnley,1,4.0,1.0,0.052487373
-722,38,Josh_Benson,Burnley,3,4.5,1.0,0.03155434
-723,38,Marcos_Alonso,Chelsea,2,6.1,1.0,2.8726542
-724,38,Antonio_Rüdiger,Chelsea,2,5.9,1.0,1.8181589
-725,38,César_Azpilicueta,Chelsea,2,6.1,1.0,4.0139155
-726,38,Emerson_Palmieri dos Santos,Chelsea,2,5.4,1.0,0.138654
-727,38,Andreas_Christensen,Chelsea,2,4.8,1.0,2.389381
-728,38,Davide_Zappacosta,Chelsea,2,4.2,0.0,0.09775913
-729,38,Olivier_Giroud,Chelsea,4,6.7,1.0,3.0950642
-730,38,Kepa_Arrizabalaga,Chelsea,1,5.4,1.0,3.4477324
-731,38,Willy_Caballero,Chelsea,1,4.8,1.0,0.08551955
-732,38,Willian_Borges Da Silva,Chelsea,3,7.4,1.0,4.869798
-733,38,Pedro_Rodríguez Ledesma,Chelsea,3,6.8,1.0,0.29224193
-734,38,Ruben_Loftus-Cheek,Chelsea,3,5.9,1.0,1.4431057
-735,38,Callum_Hudson-Odoi,Chelsea,3,5.1,1.0,0.94761944
-736,38,Ross_Barkley,Chelsea,3,5.6,1.0,4.0119815
-737,38,Jorge Luiz_Frello Filho,Chelsea,3,4.9,1.0,1.1441884
-738,38,N'Golo_Kanté,Chelsea,3,5.0,0.0,0.069689035
-739,38,Ethan_Ampadu,Chelsea,3,4.3,0.0,0.08573115
-740,38,Christian_Pulisic,Chelsea,3,7.3,1.0,5.496591
-741,38,Mateo_Kovacic,Chelsea,3,5.3,1.0,1.5376921
-742,38,Kurt_Zouma,Chelsea,2,4.7,1.0,2.0263107
-743,38,Tammy_Abraham,Chelsea,4,7.4,1.0,2.8798783
-744,38,Michy_Batshuayi,Chelsea,4,6.6,1.0,0.37940025
-745,38,Robert Kenedy_Nunes do Nascimento,Chelsea,3,5.2,0.0,0.113616705
-746,38,Mason_Mount,Chelsea,3,6.1,1.0,2.9817362
-747,38,Reece_James,Chelsea,2,4.9,1.0,1.7279484
-748,38,Fikayo_Tomori,Chelsea,2,4.2,0.0,0.07379258
-749,38,Billy_Gilmour,Chelsea,3,4.2,0.0,0.1137594
-750,38,Addji Keaninkin Marc-Israel_Guehi,Chelsea,2,3.9,0.0,0.10123241
-751,38,Faustino_Anjorin,Chelsea,3,4.5,1.0,0.14064372
-752,38,Armando_Broja,Chelsea,4,4.5,1.0,0.15052915
-753,38,Lewis_Bate,Chelsea,3,4.5,1.0,0.16256464
-754,38,Patrick_van Aanholt,Crystal Palace,2,5.6,1.0,2.9414687
-755,38,James_Tomkins,Crystal Palace,2,5.0,0.0,0.059238672
-756,38,Mamadou_Sakho,Crystal Palace,2,5.0,1.0,1.7488921
-757,38,Joel_Ward,Crystal Palace,2,4.3,1.0,1.9006288
-758,38,Scott_Dann,Crystal Palace,2,4.3,1.0,1.3877277
-759,38,Martin_Kelly,Crystal Palace,2,4.1,1.0,0.09699035
-760,38,Christian_Benteke,Crystal Palace,4,5.7,0.0,0.1214385
-761,38,Connor_Wickham,Crystal Palace,4,4.3,0.0,0.110599875
-762,38,Vicente_Guaita,Crystal Palace,1,4.9,1.0,2.2300634
-763,38,Wayne_Hennessey,Crystal Palace,1,4.2,1.0,0.8050016
-764,38,Wilfried_Zaha,Crystal Palace,3,6.6,1.0,2.9836705
-765,38,Luka_Milivojevic,Crystal Palace,3,6.7,1.0,2.9058895
-766,38,Andros_Townsend,Crystal Palace,3,5.6,1.0,1.7378426
-767,38,Max_Meyer,Crystal Palace,3,5.2,1.0,1.233268
-768,38,Jeffrey_Schlupp,Crystal Palace,3,5.4,0.0,0.027132988
-769,38,James_McArthur,Crystal Palace,3,5.2,1.0,2.4980066
-770,38,Cheikhou_Kouyaté,Crystal Palace,3,4.9,1.0,1.8361669
-771,38,Luke_Dreher,Crystal Palace,3,4.3,1.0,0.05294442
-772,38,James_McCarthy,Crystal Palace,3,4.2,1.0,1.3910728
-773,38,Jordan_Ayew,Crystal Palace,4,5.1,1.0,3.147488
-774,38,Gary_Cahill,Crystal Palace,2,4.4,0.0,0.07044351
-775,38,Víctor_Camarasa,Crystal Palace,3,4.5,0.0,0.038099766
-776,38,Jairo_Riedewald,Crystal Palace,3,4.5,1.0,1.1752827
-777,38,Stephen_Henderson,Crystal Palace,1,4.0,1.0,0.03283608
-778,38,Sam_Woods,Crystal Palace,2,3.9,0.0,0.056088924
-779,38,Tyrick_Mitchell,Crystal Palace,2,4.0,1.0,0.16305888
-780,38,Brandon_Pierrick,Crystal Palace,3,4.5,1.0,0.20725012
-781,38,James_Daly,Crystal Palace,4,4.5,0.0,0.05596459
-782,38,Nya_Kirby,Crystal Palace,3,4.5,1.0,0.14548635
-783,38,Giovanni_McGregor,Crystal Palace,3,4.5,0.0,0.005479455
-784,38,Nikola_Tavares,Crystal Palace,2,4.0,0.0,0.07970512
-785,38,Alex_Iwobi,Everton,3,5.6,1.0,2.7627192
-786,38,Lucas_Digne,Everton,2,5.8,1.0,4.63074
-787,38,Yerry_Mina,Everton,2,5.3,0.75,1.9542477
-788,38,Michael_Keane,Everton,2,5.2,1.0,4.252942
-789,38,Seamus_Coleman,Everton,2,5.3,1.0,4.6370497
-790,38,Leighton_Baines,Everton,2,4.9,1.0,0.8944417
-791,38,Cenk_Tosun,Everton,4,5.7,0.0,0.13505375
-792,38,Dominic_Calvert-Lewin,Everton,4,6.2,1.0,4.3985906
-793,38,Jordan_Pickford,Everton,1,5.2,1.0,4.929097
-794,38,Maarten_Stekelenburg,Everton,1,3.9,1.0,0.044752717
-795,38,Richarlison_de Andrade,Everton,3,8.2,1.0,5.251048
-796,38,Gylfi_Sigurdsson,Everton,3,7.3,1.0,3.8361769
-797,38,Bernard_Anício Caldeira Duarte,Everton,3,6.4,1.0,1.9022601
-798,38,Theo_Walcott,Everton,3,6.2,1.0,3.177206
-799,38,Tom_Davies,Everton,3,5.3,1.0,2.2570412
-800,38,Ademola_Lookman,Everton,3,5.0,0.0,0.16542041
-801,38,Idrissa_Gueye,Everton,3,5.0,0.0,0.16768193
-802,38,Morgan_Schneiderlin,Everton,3,4.4,0.0,0.112864494
-803,38,Fabian_Delph,Everton,2,5.3,0.0,0.12770748
-804,38,André Filipe_Tavares Gomes,Everton,3,5.2,0.75,1.9633336
-805,38,Lewis_Gibson,Everton,2,4.2,0.0,-0.017547846
-806,38,Mason_Holgate,Everton,2,4.3,0.75,2.287451
-807,38,Jonas_Lössl,Everton,1,4.2,0.0,0.14935482
-808,38,Moise_Kean,Everton,4,6.3,1.0,1.5864935
-809,38,Jean-Philippe_Gbamin,Everton,3,4.8,0.0,0.066046596
-810,38,Djibril_Sidibé,Everton,2,5.0,1.0,1.3706985
-811,38,Beni_Baningime,Everton,3,4.4,1.0,0.1370064
-812,38,Anthony_Gordon,Everton,4,4.5,1.0,2.9100466
-813,38,Oumar_Niasse,Everton,4,4.5,0.0,0.17270565
-814,38,Rhu-endly_Martina,Everton,2,4.0,0.0,0.13528454
-815,38,João Manuel_Neves Virgínia,Everton,1,4.0,1.0,0.12765443
-816,38,Jarrad_Branthwaite,Everton,2,4.0,1.0,0.85937285
-817,38,Ricardo Domingos_Barbosa Pereira,Leicester City,2,6.2,0.0,0.09685373
-818,38,Benjamin_Chilwell,Leicester City,2,5.5,0.5,1.5256209
-819,38,Jonny_Evans,Leicester City,2,5.3,1.0,3.1528983
-820,38,Christian_Fuchs,Leicester City,2,4.2,1.0,1.0190241
-821,38,Çaglar_Söyüncü,Leicester City,2,5.0,0.0,0.030988574
-822,38,Wes_Morgan,Leicester City,2,4.1,1.0,0.11478305
-823,38,Jamie_Vardy,Leicester City,4,9.8,1.0,4.8605776
-824,38,Kelechi_Iheanacho,Leicester City,4,5.7,1.0,2.9311614
-825,38,Kasper_Schmeichel,Leicester City,1,5.5,1.0,3.8895817
-826,38,Eldin_Jakupovic,Leicester City,1,4.2,1.0,0.06374109
-827,38,Danny_Ward,Leicester City,1,4.2,1.0,-0.013314128
-828,38,James_Maddison,Leicester City,3,7.3,0.5,1.8039527
-829,38,Harvey_Barnes,Leicester City,3,5.9,1.0,1.6053679
-830,38,Rachid_Ghezzal,Leicester City,3,5.1,0.0,0.06648028
-831,38,Marc_Albrighton,Leicester City,3,5.1,0.75,1.6345532
-832,38,Demarai_Gray,Leicester City,3,5.0,1.0,1.3542202
-833,38,Wilfred_Ndidi,Leicester City,3,5.0,1.0,2.6323924
-834,38,Matty_James,Leicester City,3,4.3,1.0,0.053251386
-835,38,Daniel_Amartey,Leicester City,3,4.2,0.0,0.038963556
-836,38,Nampalys_Mendy,Leicester City,3,4.3,1.0,1.0075417
-837,38,Hamza_Choudhury,Leicester City,3,4.3,1.0,0.13030756
-838,38,Ayoze_Pérez,Leicester City,3,6.0,1.0,2.5320883
-839,38,Ryan_Bennett,Leicester City,2,4.8,1.0,1.2667208
-840,38,James_Justin,Leicester City,2,4.7,1.0,3.0246239
-841,38,Youri_Tielemans,Leicester City,3,6.1,1.0,3.2681613
-842,38,Andy_King,Leicester City,3,4.2,0.0,0.09420967
-843,38,Dennis_Praet,Leicester City,3,5.2,1.0,1.6009877
-844,38,Filip_Benkovic,Leicester City,2,3.9,0.0,0.051695704
-845,38,Aymeric_Laporte,Manchester City,2,6.3,1.0,5.3921185
-846,38,Kyle_Walker,Manchester City,2,5.6,1.0,4.5469294
-847,38,Benjamin_Mendy,Manchester City,2,5.5,1.0,3.6265259
-848,38,Oleksandr_Zinchenko,Manchester City,2,5.2,1.0,2.6237268
-849,38,John_Stones,Manchester City,2,5.3,1.0,2.1667407
-850,38,Nicolás_Otamendi,Manchester City,2,4.8,1.0,1.9986136
-851,38,Danilo Luiz_da Silva,Manchester City,2,5.0,0.0,0.051910162
-852,38,Sergio_Agüero,Manchester City,4,11.7,0.0,0.060742855
-853,38,Gabriel Fernando_de Jesus,Manchester City,4,9.8,1.0,5.165572
-854,38,Ederson_Santana de Moraes,Manchester City,1,6.0,1.0,5.4228244
-855,38,Claudio_Bravo,Manchester City,1,4.7,1.0,0.095691085
-856,38,Raheem_Sterling,Manchester City,3,11.8,1.0,8.03807
-857,38,Kevin_De Bruyne,Manchester City,3,10.8,1.0,7.847458
-858,38,Leroy_Sané,Manchester City,3,9.1,0.0,-0.1411066
-859,38,Riyad_Mahrez,Manchester City,3,8.6,1.0,7.178998
-860,38,Bernardo Mota_Veiga de Carvalho e Silva,Manchester City,3,7.6,1.0,4.0430117
-861,38,David_Silva,Manchester City,3,7.3,1.0,4.305456
-862,38,Phil_Foden,Manchester City,3,5.5,1.0,2.6812944
-863,38,Fernando_Luiz Rosa,Manchester City,3,5.1,1.0,1.8706653
-864,38,Ilkay_Gündogan,Manchester City,3,5.1,1.0,2.6093662
-865,38,José Ángel_Esmorís Tasende,Manchester City,2,4.6,0.0,-0.006373763
-866,38,Rodrigo_Hernandez,Manchester City,3,5.3,1.0,2.8197536
-867,38,João Pedro Cavaco_Cancelo,Manchester City,2,5.1,1.0,2.1393416
-868,38,Eric_Garcia,Manchester City,2,4.5,1.0,4.99516
-869,38,Scott_Carson,Manchester City,1,4.0,1.0,-0.03293264
-870,38,Taylor_Harwood-Bellis,Manchester City,2,4.0,1.0,0.025044084
-871,38,Cole_Palmer,Manchester City,3,4.5,1.0,-0.026832998
-872,38,Tommy_Doyle,Manchester City,3,4.5,1.0,0.2240771
-873,38,Matt_Ritchie,Newcastle United,2,5.3,1.0,1.4981265
-874,38,Fabian_Schär,Newcastle United,2,5.0,1.0,0.7688354
-875,38,DeAndre_Yedlin,Newcastle United,2,4.4,1.0,0.6855583
-876,38,Federico_Fernández,Newcastle United,2,4.6,1.0,1.8890443
-877,38,Paul_Dummett,Newcastle United,2,4.3,0.0,0.050231934
-878,38,Javier_Manquillo,Newcastle United,2,4.3,1.0,1.2615469
-879,38,Florian_Lejeune,Newcastle United,2,4.3,0.0,0.04474628
-880,38,Jamaal_Lascelles,Newcastle United,2,4.3,1.0,1.1715462
-881,38,Ciaran_Clark,Newcastle United,2,4.3,0.0,0.026257038
-882,38,Yoshinori_Muto,Newcastle United,4,5.1,1.0,0.10919595
-883,38,Jose Luis_Mato Sanmartín,Newcastle United,4,5.0,0.0,-0.007952809
-884,38,Martin_Dubravka,Newcastle United,1,5.1,1.0,2.5286856
-885,38,Karl_Darlow,Newcastle United,1,4.3,1.0,-0.013016701
-886,38,Frederick_Woodman,Newcastle United,1,3.9,0.0,-0.026269615
-887,38,Miguel_Almirón,Newcastle United,3,5.8,1.0,2.272636
-888,38,Christian_Atsu,Newcastle United,3,5.3,1.0,0.22922504
-889,38,Sung-yueng_Ki,Newcastle United,3,4.7,0.0,0.11392951
-890,38,Jonjo_Shelvey,Newcastle United,3,4.9,1.0,3.0696106
-891,38,Sean_Longstaff,Newcastle United,3,5.0,0.0,0.098326206
-892,38,Isaac_Hayden,Newcastle United,3,4.4,0.0,0.13720572
-893,38,Danny_Rose,Newcastle United,2,5.3,1.0,1.129638
-894,38,Joelinton Cássio_Apolinário de Lira,Newcastle United,4,5.5,1.0,1.6416478
-895,38,Jack_Colback,Newcastle United,3,4.3,0.0,0.043009162
-896,38,Jacob_Murphy,Newcastle United,3,4.7,0.0,0.07840216
-897,38,Jetro_Willems,Newcastle United,2,4.3,0.0,-0.045805395
-898,38,Rolando_Aarons,Newcastle United,3,4.8,0.0,-0.0136166215
-899,38,Allan_Saint-Maximin,Newcastle United,3,5.4,1.0,1.8614941
-900,38,Emil_Krafth,Newcastle United,2,4.3,1.0,1.459511
-901,38,Andy_Carroll,Newcastle United,4,5.4,0.75,1.1044612
-902,38,Matthew_Longstaff,Newcastle United,3,4.5,1.0,0.8490995
-903,38,Dwight_Gayle,Newcastle United,4,5.0,1.0,2.1238027
-904,38,Robert_Elliot,Newcastle United,1,4.0,0.0,-0.0067300797
-905,38,Thomas_Allan,Newcastle United,3,4.5,1.0,0.06804359
-906,38,Kelland_Watts,Newcastle United,2,3.9,0.0,0.03359759
-907,38,Liam_Gibson,Newcastle United,2,4.0,0.0,0.042997718
-908,38,Nabil_Bentaleb,Newcastle United,3,4.7,1.0,1.6491022
-909,38,Valentino_Lazaro,Newcastle United,3,5.3,1.0,1.4826503
-910,38,Jack_Young,Newcastle United,3,4.5,1.0,0.098027825
-911,38,Jannik_Vestergaard,Southampton,2,4.5,1.0,1.5082321
-912,38,Ryan_Bertrand,Southampton,2,4.8,1.0,3.0892587
-913,38,Yan_Valery,Southampton,2,4.6,0.0,0.026465654
-914,38,Jan_Bednarek,Southampton,2,4.4,1.0,2.3093033
-915,38,Jack_Stephens,Southampton,2,4.4,1.0,2.933552
-916,38,Maya_Yoshida,Southampton,2,4.1,0.0,0.02815795
-917,38,Kayne_Ramsay,Southampton,2,3.9,0.0,0.05429566
-918,38,Charlie_Austin,Southampton,4,6.0,0.0,0.113220215
-919,38,Danny_Ings,Southampton,4,7.5,1.0,5.2957997
-920,38,Michael_Obafemi,Southampton,4,4.9,1.0,1.219249
-921,38,Shane_Long,Southampton,4,4.6,1.0,1.7988863
-922,38,Sam_Gallagher,Southampton,4,4.5,0.0,0.020944715
-923,38,Fraser_Forster,Southampton,1,4.2,0.0,0.04514134
-924,38,Alex_McCarthy,Southampton,1,4.5,1.0,3.0458755
-925,38,Angus_Gunn,Southampton,1,4.2,1.0,-0.035905242
-926,38,Nathan_Redmond,Southampton,3,6.2,1.0,3.6681318
-927,38,James_Ward-Prowse,Southampton,3,5.7,1.0,3.9480572
-928,38,Mohamed_Elyounoussi,Southampton,3,5.2,0.0,0.04006183
-929,38,Stuart_Armstrong,Southampton,3,5.2,1.0,3.3667688
-930,38,Mario_Lemina,Southampton,3,4.6,0.0,0.035660505
-931,38,Pierre-Emile_Højbjerg,Southampton,3,4.8,1.0,1.4288077
-932,38,Tyreke_Johnson,Southampton,3,4.4,0.0,-0.043126404
-933,38,Callum_Slattery,Southampton,3,4.4,0.0,0.025080442
-934,38,Oriol_Romeu Vidal,Southampton,3,4.3,1.0,1.7132313
-935,38,Kyle_Walker-Peters,Southampton,2,4.4,1.0,3.176869
-936,38,Che_Adams,Southampton,4,5.3,1.0,2.3298078
-937,38,Moussa_Djenepo,Southampton,3,5.2,0.0,0.010470867
-938,38,Wesley_Hoedt,Southampton,2,4.2,0.0,0.039685488
-939,38,Sofiane_Boufal,Southampton,3,5.5,0.0,0.05423808
-940,38,Kevin_Danso,Southampton,2,4.2,1.0,0.09650743
-941,38,Daniel_N'Lundulu,Southampton,4,4.4,1.0,0.078780055
-942,38,Harry_Lewis,Southampton,1,4.0,1.0,0.018904805
-943,38,William_Smallbone,Southampton,3,4.5,1.0,1.3875117
-944,38,Nathan_Tella,Southampton,3,4.5,0.0,0.07070041
-945,38,Jake_Vokins,Southampton,2,4.0,1.0,0.11670518
-946,38,Alexandre_Jankewitz,Southampton,3,4.5,1.0,0.055865407
-947,38,Will_Ferry,Southampton,3,4.5,1.0,0.0665462
-948,38,Aaron_Cresswell,West Ham United,2,4.5,1.0,3.4074273
-949,38,Angelo_Ogbonna,West Ham United,2,4.5,1.0,3.1043425
-950,38,Arthur_Masuaku,West Ham United,2,4.1,1.0,0.38200855
-951,38,Pablo_Zabaleta,West Ham United,2,4.1,0.0,0.022597551
-952,38,Ryan_Fredericks,West Ham United,2,4.4,1.0,4.6665955
-953,38,Issa_Diop,West Ham United,2,4.3,1.0,3.8368988
-954,38,Fabián_Balbuena,West Ham United,2,4.3,1.0,1.239474
-955,38,Winston_Reid,West Ham United,2,3.9,0.0,0.12006605
-956,38,Ben_Johnson,West Ham United,2,4.0,1.0,0.02406919
-957,38,Marko_Arnautovic,West Ham United,4,7.0,0.0,0.04739189
-958,38,Javier_Hernández Balcázar,West Ham United,4,6.0,0.0,0.13800919
-959,38,Alexandre Nascimento_Costa Silva,West Ham United,4,4.3,1.0,0.04360974
-960,38,Lukasz_Fabianski,West Ham United,1,4.9,1.0,4.2817407
-961,38,Michail_Antonio,West Ham United,3,7.0,1.0,5.876442
-962,38,Felipe Anderson_Pereira Gomes,West Ham United,3,6.6,0.5,0.5915066
-963,38,Manuel_Lanzini,West Ham United,3,6.1,1.0,1.7477596
-964,38,Andriy_Yarmolenko,West Ham United,3,5.2,1.0,1.7045822
-965,38,Robert_Snodgrass,West Ham United,3,5.0,0.5,0.08741176
-966,38,Jack_Wilshere,West Ham United,3,4.6,1.0,0.7333696
-967,38,Declan_Rice,West Ham United,3,4.7,1.0,3.107378
-968,38,Mark_Noble,West Ham United,3,4.9,1.0,1.7837663
-969,38,Carlos_Sánchez,West Ham United,3,4.3,0.0,0.055241466
-970,38,Grady_Diangana,West Ham United,3,4.3,0.0,0.025923967
-971,38,Pablo_Fornals,West Ham United,3,6.0,1.0,4.281335
-972,38,Pedro_Obiang,West Ham United,3,4.5,0.0,0.079327226
-973,38,Roberto_Jimenez Gago,West Ham United,1,4.4,0.0,0.04871404
-974,38,Sébastien_Haller,West Ham United,4,6.8,1.0,1.2983813
-975,38,Albian_Ajeti,West Ham United,4,5.6,1.0,0.14722109
-976,38,David_Martin,West Ham United,1,3.9,1.0,0.043055534
-977,38,Nathan_Holland,West Ham United,3,4.4,1.0,0.11018455
-978,38,Joseph_Anang,West Ham United,1,4.0,1.0,0.030412436
-979,38,Jeremy_Ngakia,West Ham United,2,4.0,0.0,0.032770395
-980,38,Gonçalo Bento_Soares Cardoso,West Ham United,2,4.0,1.0,0.0120869875
-981,38,Bernardo_Costa Da Rosa,West Ham United,3,4.5,1.0,0.1060487
-982,38,Darren_Randolph,West Ham United,1,4.0,1.0,0.06347096
-983,38,Tomas_Soucek,West Ham United,3,4.8,1.0,4.0296607
-984,38,Jarrod_Bowen,West Ham United,3,6.4,1.0,3.619955
-985,38,Alfie_Lewis,West Ham United,3,4.5,1.0,0.09793639
-986,36,Andrew_Robertson,Liverpool,2,7.0,1.0,3.5271964
-987,36,Trent_Alexander-Arnold,Liverpool,2,7.8,1.0,3.8961134
-988,36,Virgil_van Dijk,Liverpool,2,6.5,1.0,3.8624935
-989,36,Joseph_Gomez,Liverpool,2,5.3,1.0,3.190065
-990,36,Joel_Matip,Liverpool,2,5.2,0.0,0.08334279
-991,36,Dejan_Lovren,Liverpool,2,5.3,1.0,0.08674121
-992,36,Roberto_Firmino,Liverpool,4,9.3,1.0,3.4619408
-993,36,Divock_Origi,Liverpool,4,5.1,1.0,1.4631438
-994,36,Alisson_Ramses Becker,Liverpool,1,6.2,1.0,4.062245
-995,36,Simon_Mignolet,Liverpool,1,4.5,0.0,0.020631552
-996,36,Mohamed_Salah,Liverpool,3,12.6,1.0,7.213833
-997,36,Sadio_Mané,Liverpool,3,12.2,1.0,4.95808
-998,36,Alex_Oxlade-Chamberlain,Liverpool,3,6.1,1.0,1.9564636
-999,36,Xherdan_Shaqiri,Liverpool,3,6.3,1.0,0.19986475
-1000,36,Adam_Lallana,Liverpool,3,5.7,1.0,0.15137756
-1001,36,Naby_Keita,Liverpool,3,5.8,1.0,1.8616934
-1002,36,Fabio Henrique_Tavares,Liverpool,3,5.4,1.0,2.2345562
-1003,36,Jordan_Henderson,Liverpool,3,5.2,0.0,0.1564722
-1004,36,Georginio_Wijnaldum,Liverpool,3,5.4,1.0,2.4902205
-1005,36,James_Milner,Liverpool,3,5.3,0.75,0.14324522
-1006,36,Rafael_Camacho,Liverpool,3,4.5,0.0,0.023908973
-1007,36,Rhian_Brewster,Liverpool,4,4.2,0.0,0.14117861
-1008,36,Adrián_San Miguel del Castillo,Liverpool,1,4.0,1.0,0.054549336
-1009,36,Andy_Lonergan,Liverpool,1,4.2,1.0,-0.03161013
-1010,36,Caoimhin_Kelleher,Liverpool,1,4.4,1.0,0.07435799
-1011,36,Harvey_Elliott,Liverpool,3,4.5,1.0,0.2624128
-1012,36,Curtis_Jones,Liverpool,3,4.5,1.0,1.3855023
-1013,36,Neco_Williams,Liverpool,2,4.0,1.0,1.1905024
-1014,36,Nathaniel_Phillips,Liverpool,2,3.9,0.0,0.14842892
-1015,36,Takumi_Minamino,Liverpool,3,5.9,1.0,0.697029
-1016,36,Ki-Jana_Hoever,Liverpool,2,4.0,1.0,0.06118405
-1017,36,Matt_Doherty,Wolverhampton Wanderers,2,6.5,1.0,4.4161615
-1018,36,Jonathan_Castro Otto,Wolverhampton Wanderers,2,5.5,1.0,3.6715221
-1019,36,Conor_Coady,Wolverhampton Wanderers,2,5.1,1.0,3.183895
-1020,36,Willy_Boly,Wolverhampton Wanderers,2,4.8,1.0,3.859624
-1021,36,Rúben Gonçalo_Silva Nascimento Vinagre,Wolverhampton Wanderers,2,4.1,1.0,0.10967946
-1022,36,Romain_Saïss,Wolverhampton Wanderers,2,4.7,1.0,3.5342317
-1023,36,Max_Kilman,Wolverhampton Wanderers,2,3.9,1.0,0.036299944
-1024,36,Raúl_Jiménez,Wolverhampton Wanderers,4,8.1,1.0,4.7132497
-1025,36,Diogo_Jota,Wolverhampton Wanderers,4,6.0,1.0,3.182969
-1026,36,Rui Pedro_dos Santos Patrício,Wolverhampton Wanderers,1,5.3,1.0,3.7110033
-1027,36,John_Ruddy,Wolverhampton Wanderers,1,4.2,1.0,0.092911005
-1028,36,Will_Norris,Wolverhampton Wanderers,1,3.9,0.0,0.114973545
-1029,36,Rúben Diogo_da Silva Neves,Wolverhampton Wanderers,3,5.2,1.0,2.7624612
-1030,36,João Filipe Iria_Santos Moutinho,Wolverhampton Wanderers,3,5.4,1.0,2.8360913
-1031,36,Morgan_Gibbs-White,Wolverhampton Wanderers,3,4.7,1.0,0.23536539
-1032,36,Adama_Traoré,Wolverhampton Wanderers,3,5.6,1.0,2.3932931
-1033,36,Hélder_Costa,Wolverhampton Wanderers,3,4.8,0.0,0.09571719
-1034,36,Ivan_Cavaleiro,Wolverhampton Wanderers,3,4.9,0.0,0.13286245
-1035,36,Leander_Dendoncker,Wolverhampton Wanderers,3,4.4,1.0,1.8152843
-1036,36,Jesús_Vallejo Lázaro,Wolverhampton Wanderers,2,4.6,0.0,0.042291045
-1037,36,Patrick_Cutrone,Wolverhampton Wanderers,4,5.4,0.0,0.13710535
-1038,36,Pedro_Lomba Neto,Wolverhampton Wanderers,3,5.0,0.75,1.1183283
-1039,36,Bernard_Ashley-Seal,Wolverhampton Wanderers,4,4.5,0.0,0.057460666
-1040,36,Taylor_Perry,Wolverhampton Wanderers,3,4.5,1.0,0.10967517
-1041,36,Owen_Otasowie,Wolverhampton Wanderers,3,4.5,1.0,0.08450973
-1042,36,Luke_Cundle,Wolverhampton Wanderers,3,4.5,1.0,0.045938373
-1043,36,Oskar_Buur,Wolverhampton Wanderers,2,4.0,1.0,0.010284901
-1044,36,Ryan_Giles,Wolverhampton Wanderers,2,3.9,0.0,0.058982372
-1045,36,Bruno André_Cavaco Jordao,Wolverhampton Wanderers,3,4.5,1.0,0.039923906
-1046,36,Daniel_Castelo Podence,Wolverhampton Wanderers,3,4.9,1.0,1.3835244
-1047,36,Leonardo_Campana,Wolverhampton Wanderers,4,4.5,1.0,0.06863701
-1048,36,Timm_Klose,Norwich,2,4.3,1.0,0.8477241
-1049,36,Ben_Godfrey,Norwich,2,4.4,1.0,1.1715791
-1050,36,Maximillian_Aarons,Norwich,2,4.3,1.0,1.2771704
-1051,36,Christoph_Zimmermann,Norwich,2,4.4,0.0,0.08613241
-1052,36,Jamal_Lewis,Norwich,2,4.4,1.0,1.4475367
-1053,36,Grant_Hanley,Norwich,2,4.0,0.0,0.1246171
-1054,36,Teemu_Pukki,Norwich,4,6.4,1.0,1.8162441
-1055,36,Dennis_Srbeny,Norwich,4,5.2,0.0,0.060680628
-1056,36,Tim_Krul,Norwich,1,4.6,1.0,1.9975169
-1057,36,Michael_McGovern,Norwich,1,4.1,1.0,0.11089945
-1058,36,Mario_Vrancic,Norwich,3,6.2,1.0,1.4429677
-1059,36,Emiliano_Buendía,Norwich,3,6.0,1.0,1.9361324
-1060,36,Onel_Hernández,Norwich,3,5.3,1.0,2.088613
-1061,36,Marco_Stiepermann,Norwich,3,5.0,1.0,1.0649385
-1062,36,Kenny_McLean,Norwich,3,4.8,1.0,1.7779405
-1063,36,Todd_Cantwell,Norwich,3,4.5,1.0,1.2589116
-1064,36,Moritz_Leitner,Norwich,3,4.3,0.0,0.11882508
-1065,36,Alexander_Tettey,Norwich,3,4.4,1.0,2.2707005
-1066,36,Tom_Trybull,Norwich,3,4.3,1.0,0.7446071
-1067,36,Josip_Drmic,Norwich,4,5.3,1.0,1.4334309
-1068,36,Patrick_Roberts,Norwich,3,5.0,0.0,0.10937166
-1069,36,Ralf_Fahrmann,Norwich,1,4.4,0.0,0.15526342
-1070,36,Sam_Byram,Norwich,2,4.3,0.0,0.14987731
-1071,36,Philip_Heise,Norwich,2,3.9,0.0,0.09582722
-1072,36,Ibrahim_Amadou,Norwich,3,4.5,0.0,0.2575482
-1073,36,Adam_Idah,Norwich,4,4.4,1.0,1.1684408
-1074,36,Archie_Mair,Norwich,1,4.0,1.0,0.09476447
-1075,36,Akin_Famewo,Norwich,2,3.9,0.0,0.07656658
-1076,36,Ondrej_Duda,Norwich,3,4.4,0.0,0.18664885
-1077,36,Lukas_Rupp,Norwich,3,4.4,1.0,1.1739423
-1078,36,Josh_Martin,Norwich,3,4.5,1.0,0.52030766
-1079,36,Jordan_Thomas,Norwich,2,4.0,1.0,0.11919546
-1080,36,Aaron_Wan-Bissaka,Manchester United,2,5.5,1.0,3.7341952
-1081,36,Harry_Maguire,Manchester United,2,5.3,1.0,3.4623313
-1082,36,Chris_Smalling,Manchester United,2,5.2,0.0,0.0422678
-1083,36,Ashley_Young,Manchester United,2,5.4,0.0,0.09270668
-1084,36,Victor_Lindelöf,Manchester United,2,5.3,1.0,2.7413974
-1085,36,Luke_Shaw,Manchester United,2,5.4,0.75,2.639516
-1086,36,Marcos_Rojo,Manchester United,2,4.8,0.0,-0.035755336
-1087,36,Eric_Bailly,Manchester United,2,4.8,1.0,0.8286642
-1088,36,José Diogo_Dalot Teixeira,Manchester United,2,4.9,1.0,0.059069872
-1089,36,Matteo_Darmian,Manchester United,2,4.9,0.0,0.05913019
-1090,36,Phil_Jones,Manchester United,2,4.7,0.0,0.06996071
-1091,36,Romelu_Lukaku,Manchester United,4,8.5,0.0,0.09858465
-1092,36,Marcus_Rashford,Manchester United,4,9.0,1.0,4.3636756
-1093,36,Mason_Greenwood,Manchester United,4,4.9,1.0,5.5685573
-1094,36,David_de Gea,Manchester United,1,5.3,1.0,3.2999349
-1095,36,Sergio_Romero,Manchester United,1,4.6,1.0,0.08725071
-1096,36,Lee_Grant,Manchester United,1,4.7,1.0,-0.0059075356
-1097,36,Paul_Pogba,Manchester United,3,8.3,1.0,3.808083
-1098,36,Anthony_Martial,Manchester United,3,8.4,1.0,5.643788
-1099,36,Alexis_Sánchez,Manchester United,3,6.8,0.0,0.16270804
-1100,36,Jesse_Lingard,Manchester United,3,6.3,1.0,0.06289184
-1101,36,Juan_Mata,Manchester United,3,6.1,1.0,0.5458236
-1102,36,Daniel_James,Manchester United,3,5.7,1.0,1.1119437
-1103,36,Frederico_Rodrigues de Paula Santos,Manchester United,3,5.1,1.0,0.9334073
-1104,36,Angel_Gomes,Manchester United,3,4.7,0.0,0.06890535
-1105,36,Andreas_Pereira,Manchester United,3,4.8,1.0,0.8563993
-1106,36,Nemanja_Matic,Manchester United,3,4.8,1.0,2.5925074
-1107,36,Scott_McTominay,Manchester United,3,4.8,1.0,1.0973163
-1108,36,Tahith_Chong,Manchester United,3,4.2,1.0,0.053573728
-1109,36,James_Garner,Manchester United,3,4.3,1.0,0.071941614
-1110,36,Axel_Tuanzebe,Manchester United,2,4.4,0.0,0.07708299
-1111,36,Brandon_Williams,Manchester United,2,3.9,0.75,1.0253503
-1112,36,Bruno Miguel_Borges Fernandes,Manchester United,3,9.0,1.0,5.550882
-1113,36,Odion_Ighalo,Manchester United,4,6.0,1.0,0.9643631
-1114,36,Ahmed_El Mohamady,Aston Villa,2,4.1,1.0,0.9290601
-1115,36,James_Chester,Aston Villa,2,4.2,0.0,0.03535962
-1116,36,Neil_Taylor,Aston Villa,2,4.2,0.75,0.9282646
-1117,36,Kortney_Hause,Aston Villa,2,4.4,0.75,0.79264355
-1118,36,Jonathan_Kodjia,Aston Villa,4,5.4,0.0,0.10339558
-1119,36,Ørjan_Nyland,Aston Villa,1,4.3,1.0,1.1625519
-1120,36,Conor_Hourihane,Aston Villa,3,5.7,1.0,1.7685661
-1121,36,Jack_Grealish,Aston Villa,3,5.9,1.0,3.475659
-1122,36,Anwar_El Ghazi,Aston Villa,3,5.3,1.0,1.5124731
-1123,36,John_McGinn,Aston Villa,3,5.3,1.0,2.3036306
-1124,36,Andre_Green,Aston Villa,3,4.8,0.0,0.02510643
-1125,36,Birkir_Bjarnason,Aston Villa,3,4.5,0.0,0.07013488
-1126,36,Keinan_Davis,Aston Villa,3,4.3,1.0,1.8141713
-1127,36,Henri_Lansbury,Aston Villa,3,4.4,1.0,0.06127584
-1128,36,José Ignacio_Peleteiro Romallo,Aston Villa,3,5.7,1.0,0.3739667
-1129,36,Tom_Heaton,Aston Villa,1,4.3,0.0,0.09642017
-1130,36,Daniel_Drinkwater,Aston Villa,3,4.4,1.0,0.112303734
-1131,36,Matt_Targett,Aston Villa,2,4.3,1.0,1.2326732
-1132,36,Wesley_Moraes,Aston Villa,4,5.4,0.0,0.1428709
-1133,36,Jed_Steer,Aston Villa,1,4.3,1.0,0.0433321
-1134,36,Tyrone_Mings,Aston Villa,2,4.4,1.0,2.0890965
-1135,36,Ezri_Konsa Ngoyo,Aston Villa,2,4.3,1.0,1.7146907
-1136,36,Bjorn_Engels,Aston Villa,2,4.3,0.25,0.108728886
-1137,36,Frédéric_Guilbert,Aston Villa,2,4.3,1.0,0.09053111
-1138,36,Mahmoud Ahmed_Ibrahim Hassan,Aston Villa,3,5.2,1.0,2.5540516
-1139,36,Douglas Luiz_Soares de Paulo,Aston Villa,3,4.3,1.0,2.7245426
-1140,36,Lovre_Kalinic,Aston Villa,1,4.2,0.0,0.11301553
-1141,36,Marvelous_Nakamba,Aston Villa,3,4.4,1.0,1.1552415
-1142,36,Indiana_Vassilev,Aston Villa,3,4.5,1.0,0.34427178
-1143,36,José_Reina,Aston Villa,1,4.2,1.0,1.521321
-1144,36,Mbwana_Samatta,Aston Villa,4,5.2,1.0,2.6384146
-1145,36,Borja_González Tomás,Aston Villa,4,5.3,0.0,0.06332505
-1146,36,Lys_Mousset,Sheffield United,4,4.4,1.0,1.8337321
-1147,36,Enda_Stevens,Sheffield United,2,5.1,1.0,3.2934847
-1148,36,Kieron_Freeman,Sheffield United,2,4.2,1.0,0.16384542
-1149,36,Jack_O'Connell,Sheffield United,2,4.5,1.0,3.2732377
-1150,36,George_Baldock,Sheffield United,2,5.0,1.0,3.2302542
-1151,36,John_Egan,Sheffield United,2,4.6,1.0,3.4087954
-1152,36,Richard_Stearman,Sheffield United,2,3.9,0.0,0.048074007
-1153,36,John_Lundstram,Sheffield United,2,4.6,1.0,1.3226466
-1154,36,Billy_Sharp,Sheffield United,4,5.3,1.0,1.4746022
-1155,36,Jake_Eastwood,Sheffield United,1,4.3,1.0,0.090943694
-1156,36,Mark_Duffy,Sheffield United,3,5.2,0.0,0.12999535
-1157,36,John_Fleck,Sheffield United,3,4.7,0.75,1.4346406
-1158,36,Oliver_Norwood,Sheffield United,3,4.7,1.0,2.104163
-1159,36,David_McGoldrick,Sheffield United,4,5.4,1.0,1.927238
-1160,36,Chris_Basham,Sheffield United,2,4.6,0.75,2.1198854
-1161,36,Simon_Moore,Sheffield United,1,4.3,1.0,1.0604849
-1162,36,Luke_Freeman,Sheffield United,3,5.0,0.0,0.12534487
-1163,36,Phil_Jagielka,Sheffield United,2,4.1,1.0,1.1175838
-1164,36,Callum_Robinson,Sheffield United,3,4.9,0.0,0.16753769
-1165,36,Ravel_Morrison,Sheffield United,3,4.5,0.0,0.042004704
-1166,36,Dean_Henderson,Sheffield United,1,5.2,1.0,3.8124614
-1167,36,Ben_Osborn,Sheffield United,3,4.7,1.0,2.8248234
-1168,36,Oliver_McBurnie,Sheffield United,4,5.5,1.0,2.4230266
-1169,36,Michael_Verrips,Sheffield United,1,4.4,1.0,0.084656596
-1170,36,Muhamed_Bešić,Sheffield United,3,4.3,0.0,0.09833288
-1171,36,Leon_Clarke,Sheffield United,4,4.4,0.0,0.111133575
-1172,36,Jack_Rodwell,Sheffield United,3,4.5,1.0,0.3979919
-1173,36,Jack_Robinson,Sheffield United,2,4.0,1.0,1.3801711
-1174,36,Sander_Berge,Sheffield United,3,4.7,1.0,2.8995323
-1175,36,Richairo_Zivkovic,Sheffield United,4,4.7,1.0,0.9840338
-1176,36,Panagiotis_Retsos,Sheffield United,2,4.5,0.0,0.10939646
-1177,36,Steve_Cook,Bournemouth,2,5.0,1.0,0.96039367
-1178,36,Nathan_Aké,Bournemouth,2,4.8,0.25,0.59755886
-1179,36,Charlie_Daniels,Bournemouth,2,4.2,0.0,0.11997366
-1180,36,Chris_Mepham,Bournemouth,2,4.3,0.75,0.41164434
-1181,36,Simon_Francis,Bournemouth,2,4.3,0.25,0.1116786
-1182,36,Adam_Smith,Bournemouth,2,4.3,0.0,0.02031684
-1183,36,Lloyd_Kelly,Bournemouth,2,4.4,1.0,1.1056507
-1184,36,Diego_Rico,Bournemouth,2,4.2,1.0,0.8442339
-1185,36,Jack_Simpson,Bournemouth,2,3.9,1.0,0.10339916
-1186,36,Callum_Wilson,Bournemouth,4,7.4,1.0,3.0955381
-1187,36,Joshua_King,Bournemouth,4,6.1,0.75,1.4454405
-1188,36,Dominic_Solanke,Bournemouth,4,5.1,1.0,1.7294228
-1189,36,Sam_Surridge,Bournemouth,4,4.3,1.0,0.079375625
-1190,36,Asmir_Begovic,Bournemouth,1,4.2,0.0,0.120435715
-1191,36,Artur_Boruc,Bournemouth,1,4.2,1.0,0.0538944
-1192,36,Mark_Travers,Bournemouth,1,4.2,1.0,0.07419348
-1193,36,Ryan_Fraser,Bournemouth,3,6.8,0.0,0.22065961
-1194,36,David_Brooks,Bournemouth,3,6.1,1.0,1.67243
-1195,36,Junior_Stanislas,Bournemouth,3,5.8,1.0,1.8576427
-1196,36,Jordon_Ibe,Bournemouth,3,4.6,0.0,0.17876053
-1197,36,Lewis_Cook,Bournemouth,3,5.0,1.0,1.3728099
-1198,36,Andrew_Surman,Bournemouth,3,4.7,1.0,0.21498132
-1199,36,Dan_Gosling,Bournemouth,3,4.8,1.0,1.2409804
-1200,36,Jefferson_Lerma,Bournemouth,3,4.8,1.0,1.6184185
-1201,36,Jack_Stacey,Bournemouth,2,4.3,1.0,0.7789298
-1202,36,Philip_Billing,Bournemouth,3,4.9,1.0,1.1064918
-1203,36,Arnaut_Danjuma Groeneveld,Bournemouth,3,5.8,1.0,1.3664029
-1204,36,Aaron_Ramsdale,Bournemouth,1,4.5,1.0,1.8151455
-1205,36,Harry_Wilson,Bournemouth,3,5.7,1.0,1.1367843
-1206,36,Christian_Saydee,Bournemouth,3,4.5,1.0,0.15674865
-1207,36,Gavin_Kilkenny,Bournemouth,3,4.5,1.0,0.109972954
-1208,36,Mihai-Alexandru_Dobre,Bournemouth,3,4.4,0.0,0.07725906
-1209,36,Ben_Davies,Tottenham Hotspur,2,5.3,1.0,4.286044
-1210,36,Jan_Vertonghen,Tottenham Hotspur,2,5.2,1.0,1.2010579
-1211,36,Toby_Alderweireld,Tottenham Hotspur,2,5.3,1.0,2.1353345
-1212,36,Davinson_Sánchez,Tottenham Hotspur,2,5.3,1.0,2.0269523
-1213,36,Kieran_Trippier,Tottenham Hotspur,2,5.5,0.0,0.20706761
-1214,36,Juan_Foyth,Tottenham Hotspur,2,4.8,0.0,0.08532512
-1215,36,Serge_Aurier,Tottenham Hotspur,2,5.1,1.0,4.31005
-1216,36,Harry_Kane,Tottenham Hotspur,4,10.9,1.0,5.3930607
-1217,36,Vincent_Janssen,Tottenham Hotspur,4,4.5,0.0,0.16842997
-1218,36,Hugo_Lloris,Tottenham Hotspur,1,5.3,1.0,4.1277337
-1219,36,Paulo_Gazzaniga,Tottenham Hotspur,1,4.1,1.0,-0.0053442717
-1220,36,Heung-Min_Son,Tottenham Hotspur,3,9.6,1.0,5.7271986
-1221,36,Christian_Eriksen,Tottenham Hotspur,3,8.6,0.0,0.19353473
-1222,36,Bamidele_Alli,Tottenham Hotspur,3,8.3,0.0,0.10380316
-1223,36,Lucas_Rodrigues Moura da Silva,Tottenham Hotspur,3,7.0,1.0,3.0703773
-1224,36,Erik_Lamela,Tottenham Hotspur,3,5.7,1.0,1.8524678
-1225,36,Harry_Winks,Tottenham Hotspur,3,5.2,1.0,1.7042074
-1226,36,Victor_Wanyama,Tottenham Hotspur,3,4.7,0.0,0.1210742
-1227,36,Moussa_Sissoko,Tottenham Hotspur,3,4.8,1.0,2.4640586
-1228,36,Eric_Dier,Tottenham Hotspur,3,4.8,0.0,0.14086461
-1229,36,Luke_Amos,Tottenham Hotspur,3,4.4,0.0,0.041597843
-1230,36,Oliver_Skipp,Tottenham Hotspur,3,4.3,1.0,0.24455428
-1231,36,Tanguy_Ndombele,Tottenham Hotspur,3,5.8,1.0,1.1882124
-1232,36,Troy_Parrott,Tottenham Hotspur,4,4.3,0.25,0.07947385
-1233,36,Giovani_Lo Celso,Tottenham Hotspur,3,7.3,1.0,2.411262
-1234,36,Ryan_Sessegnon,Tottenham Hotspur,3,5.4,1.0,0.1317805
-1235,36,Georges-Kévin_Nkoudou,Tottenham Hotspur,3,5.0,0.0,0.12941086
-1236,36,Alfie_Whiteman,Tottenham Hotspur,1,4.0,1.0,0.06723952
-1237,36,Michel_Vorm,Tottenham Hotspur,1,4.2,1.0,0.040592074
-1238,36,Brandon_Austin,Tottenham Hotspur,1,4.0,1.0,0.08506799
-1239,36,Japhet_Tanganga,Tottenham Hotspur,2,3.9,1.0,0.048449874
-1240,36,Gedson_Carvalho Fernandes,Tottenham Hotspur,3,4.6,1.0,0.16342711
-1241,36,Steven_Bergwijn,Tottenham Hotspur,3,7.0,1.0,1.63941
-1242,36,Harvey_White,Tottenham Hotspur,3,4.5,1.0,0.06755996
-1243,36,Dennis_Cirkin,Tottenham Hotspur,2,4.0,1.0,0.085256934
-1244,36,Shane_Duffy,Brighton and Hove Albion,2,4.8,1.0,1.257487
-1245,36,Martín_Montoya,Brighton and Hove Albion,2,4.3,1.0,0.98933315
-1246,36,Bernardo_Fernandes da Silva Junior,Brighton and Hove Albion,2,4.3,1.0,0.8955518
-1247,36,Leon_Balogun,Brighton and Hove Albion,2,4.3,0.0,0.06863439
-1248,36,Gaëtan_Bong,Brighton and Hove Albion,2,4.2,0.0,0.044376135
-1249,36,Lewis_Dunk,Brighton and Hove Albion,2,4.8,1.0,3.0041108
-1250,36,Matthew_Clarke,Brighton and Hove Albion,2,4.3,0.0,0.014390826
-1251,36,Glenn_Murray,Brighton and Hove Albion,4,5.4,1.0,0.23950696
-1252,36,Jürgen_Locadia,Brighton and Hove Albion,4,5.2,0.0,0.0251621
-1253,36,Florin_Andone,Brighton and Hove Albion,4,4.7,0.0,-0.010295808
-1254,36,Mathew_Ryan,Brighton and Hove Albion,1,4.7,1.0,3.7844067
-1255,36,David_Button,Brighton and Hove Albion,1,3.9,1.0,-0.05045253
-1256,36,Pascal_Groß,Brighton and Hove Albion,3,6.2,1.0,1.7544672
-1257,36,Alireza_Jahanbakhsh,Brighton and Hove Albion,3,5.8,1.0,0.4493183
-1258,36,José Heriberto_Izquierdo Mena,Brighton and Hove Albion,3,5.4,0.0,0.009703159
-1259,36,Anthony_Knockaert,Brighton and Hove Albion,3,5.3,0.0,0.04739487
-1260,36,Yves_Bissouma,Brighton and Hove Albion,3,5.0,1.0,1.6638198
-1261,36,Davy_Pröpper,Brighton and Hove Albion,3,4.8,1.0,1.6524615
-1262,36,Solomon_March,Brighton and Hove Albion,3,4.6,1.0,0.8326149
-1263,36,Beram_Kayal,Brighton and Hove Albion,3,4.3,1.0,0.06681311
-1264,36,Dale_Stephens,Brighton and Hove Albion,3,4.4,1.0,1.8767071
-1265,36,Leandro_Trossard,Brighton and Hove Albion,3,5.8,1.0,3.0119386
-1266,36,Dan_Burn,Brighton and Hove Albion,2,4.5,1.0,2.1318767
-1267,36,Adam_Webster,Brighton and Hove Albion,2,4.4,1.0,2.339316
-1268,36,Neal_Maupay,Brighton and Hove Albion,4,5.7,1.0,3.1336823
-1269,36,Aaron_Mooy,Brighton and Hove Albion,3,4.7,1.0,2.1498806
-1270,36,Aaron_Connolly,Brighton and Hove Albion,4,4.2,1.0,2.4088893
-1271,36,Tudor_Baluta,Brighton and Hove Albion,2,4.0,0.0,0.06604922
-1272,36,Steven_Alzate,Brighton and Hove Albion,3,4.4,1.0,0.15882266
-1273,36,Ezequiel_Schelotto,Brighton and Hove Albion,2,4.0,1.0,0.15401924
-1274,36,Tariq_Lamptey,Brighton and Hove Albion,2,4.0,1.0,2.8571002
-1275,36,Alexis_Mac Allister,Brighton and Hove Albion,3,5.5,1.0,2.1483035
-1276,36,José_Holebas,Watford,2,4.6,1.0,0.3129208
-1277,36,Christian_Kabasele,Watford,2,4.3,1.0,1.9796898
-1278,36,Adam_Masina,Watford,2,4.3,1.0,2.0709372
-1279,36,Adrian_Mariappa,Watford,2,4.2,1.0,0.78434896
-1280,36,Francisco_Femenía Far,Watford,2,4.2,1.0,2.769859
-1281,36,Craig_Cathcart,Watford,2,4.2,1.0,0.8630465
-1282,36,Daryl_Janmaat,Watford,2,4.0,0.0,0.103517175
-1283,36,Marc_Navarro,Watford,2,3.9,0.0,0.060537696
-1284,36,Sebastian_Prödl,Watford,2,3.9,0.0,0.079334974
-1285,36,Troy_Deeney,Watford,4,6.2,1.0,3.944296
-1286,36,Gerard_Deulofeu,Watford,4,6.1,0.0,0.056090236
-1287,36,Andre_Gray,Watford,4,5.5,1.0,0.26309156
-1288,36,Isaac_Success Ajayi,Watford,4,4.7,0.0,0.10865295
-1289,36,Ben_Foster,Watford,1,4.9,1.0,3.4263697
-1290,36,Pontus_Dahlberg,Watford,1,4.2,0.0,0.027173877
-1291,36,Abdoulaye_Doucouré,Watford,3,5.5,1.0,3.1015482
-1292,36,Roberto_Pereyra,Watford,3,5.6,1.0,1.2009718
-1293,36,Will_Hughes,Watford,3,5.3,1.0,2.7623332
-1294,36,Tom_Cleverley,Watford,3,4.8,1.0,1.2079282
-1295,36,Ken_Sema,Watford,3,4.7,0.0,0.08649707
-1296,36,Etienne_Capoue,Watford,3,4.8,1.0,2.8076108
-1297,36,Nathaniel_Chalobah,Watford,3,4.4,1.0,1.2440734
-1298,36,Domingos_Quina,Watford,3,4.3,1.0,0.00024676323
-1299,36,Craig_Dawson,Watford,2,4.8,1.0,2.6618338
-1300,36,Danny_Welbeck,Watford,4,5.8,1.0,2.580415
-1301,36,Heurelho da Silva_Gomes,Watford,1,4.3,1.0,0.05675006
-1302,36,Ismaïla_Sarr,Watford,3,6.0,1.0,4.608597
-1303,36,Dimitri_Foulquier,Watford,2,3.9,0.0,0.025531411
-1304,36,Ayotomiwa_Dele-Bashiru,Watford,3,4.5,1.0,0.10338724
-1305,36,João Pedro_Junqueira de Jesus,Watford,4,4.9,1.0,0.38711464
-1306,36,Ignacio_Pussetto,Watford,3,4.6,1.0,0.34020364
-1307,36,Adalberto_Peñaranda,Watford,4,4.5,1.0,0.023666501
-1308,37,Shkodran_Mustafi,Arsenal,2,5.1,1.0,3.2059608
-1309,37,Héctor_Bellerín,Arsenal,2,5.3,1.0,2.656482
-1310,37,Sead_Kolasinac,Arsenal,2,5.2,1.0,3.4937859
-1311,37,Ainsley_Maitland-Niles,Arsenal,2,4.5,1.0,0.63452137
-1312,37,Sokratis_Papastathopoulos,Arsenal,2,4.8,1.0,0.1148833
-1313,37,Nacho_Monreal,Arsenal,2,5.0,0.0,0.11176312
-1314,37,Laurent_Koscielny,Arsenal,2,5.0,0.0,0.07197261
-1315,37,Konstantinos_Mavropanos,Arsenal,2,4.3,0.0,0.04909587
-1316,37,Carl_Jenkinson,Arsenal,2,4.5,0.0,0.08793795
-1317,37,Rob_Holding,Arsenal,2,4.4,1.0,1.1102018
-1318,37,Pierre-Emerick_Aubameyang,Arsenal,4,10.9,1.0,6.1306686
-1319,37,Alexandre_Lacazette,Arsenal,4,9.2,1.0,3.3337297
-1320,37,Edward_Nketiah,Arsenal,4,4.3,0.0,0.16183841
-1321,37,Bernd_Leno,Arsenal,1,4.8,0.0,0.06941736
-1322,37,Mesut_Özil,Arsenal,3,7.0,0.75,0.083978295
-1323,37,Henrikh_Mkhitaryan,Arsenal,3,6.7,0.0,0.1464889
-1324,37,Granit_Xhaka,Arsenal,3,5.1,1.0,2.8437567
-1325,37,Lucas_Torreira,Arsenal,3,4.7,1.0,0.58481
-1326,37,Mohamed_Elneny,Arsenal,3,4.2,0.0,0.09991586
-1327,37,Matteo_Guendouzi,Arsenal,3,4.1,1.0,0.046667814
-1328,37,David_Luiz Moreira Marinho,Arsenal,2,5.7,1.0,3.6156178
-1329,37,Emiliano_Martínez,Arsenal,1,4.3,1.0,4.1756973
-1330,37,Calum_Chambers,Arsenal,2,4.3,0.0,0.005598545
-1331,37,Daniel_Ceballos Fernández,Arsenal,3,5.2,1.0,3.3450918
-1332,37,Cédric_Soares,Arsenal,2,4.8,1.0,1.3939712
-1333,37,Nicolas_Pépé,Arsenal,3,8.9,1.0,1.6152282
-1334,37,Reiss_Nelson,Arsenal,3,5.3,1.0,1.1515391
-1335,37,Joseph_Willock,Arsenal,3,4.7,1.0,1.3220112
-1336,37,Gabriel Teodoro_Martinelli Silva,Arsenal,4,4.3,0.0,0.078816056
-1337,37,Kieran_Tierney,Arsenal,2,5.3,1.0,3.0339375
-1338,37,Bukayo_Saka,Arsenal,3,4.7,1.0,2.296738
-1339,37,Emile_Smith Rowe,Arsenal,3,4.3,0.0,0.038429618
-1340,37,Tyreece_John-Jules,Arsenal,4,4.4,0.0,0.091407776
-1341,37,Pablo_Marí,Arsenal,2,4.4,0.0,0.104475856
-1342,37,Zech_Medley,Arsenal,2,4.0,1.0,0.053099155
-1343,37,Matt_Macey,Arsenal,1,4.0,1.0,0.07880449
-1344,37,Matthew_Smith,Arsenal,2,4.0,1.0,0.021412015
-1345,37,Jannik_Vestergaard,Southampton,2,4.5,1.0,1.4643025
-1346,37,Ryan_Bertrand,Southampton,2,4.8,1.0,2.640582
-1347,37,Yan_Valery,Southampton,2,4.6,0.0,0.06945801
-1348,37,Jan_Bednarek,Southampton,2,4.4,1.0,2.1689825
-1349,37,Jack_Stephens,Southampton,2,4.4,1.0,2.5514672
-1350,37,Maya_Yoshida,Southampton,2,4.1,0.0,0.091445446
-1351,37,Kayne_Ramsay,Southampton,2,3.9,0.0,0.07299948
-1352,37,Charlie_Austin,Southampton,4,6.0,0.0,0.14833009
-1353,37,Danny_Ings,Southampton,4,7.5,1.0,5.041833
-1354,37,Michael_Obafemi,Southampton,4,4.9,1.0,1.1774762
-1355,37,Shane_Long,Southampton,4,4.6,1.0,1.7500603
-1356,37,Sam_Gallagher,Southampton,4,4.5,0.0,0.042309284
-1357,37,Fraser_Forster,Southampton,1,4.2,0.0,0.09165478
-1358,37,Alex_McCarthy,Southampton,1,4.5,1.0,2.9389322
-1359,37,Angus_Gunn,Southampton,1,4.2,1.0,-0.010048628
-1360,37,Nathan_Redmond,Southampton,3,6.2,1.0,3.6394148
-1361,37,James_Ward-Prowse,Southampton,3,5.7,1.0,3.8416414
-1362,37,Mohamed_Elyounoussi,Southampton,3,5.2,0.0,0.07842958
-1363,37,Stuart_Armstrong,Southampton,3,5.2,1.0,3.332007
-1364,37,Mario_Lemina,Southampton,3,4.6,0.0,0.062244534
-1365,37,Pierre-Emile_Højbjerg,Southampton,3,4.8,1.0,1.3896735
-1366,37,Tyreke_Johnson,Southampton,3,4.4,0.0,-0.030333638
-1367,37,Callum_Slattery,Southampton,3,4.4,0.0,0.025908351
-1368,37,Oriol_Romeu Vidal,Southampton,3,4.3,1.0,1.6860912
-1369,37,Kyle_Walker-Peters,Southampton,2,4.4,1.0,2.6962132
-1370,37,Che_Adams,Southampton,4,5.3,1.0,2.229119
-1371,37,Moussa_Djenepo,Southampton,3,5.2,0.0,0.04288447
-1372,37,Wesley_Hoedt,Southampton,2,4.2,0.0,0.080614924
-1373,37,Sofiane_Boufal,Southampton,3,5.5,0.0,0.08349419
-1374,37,Kevin_Danso,Southampton,2,4.2,1.0,0.10794878
-1375,37,Daniel_N'Lundulu,Southampton,4,4.4,1.0,0.11074042
-1376,37,Harry_Lewis,Southampton,1,4.0,1.0,0.058451533
-1377,37,William_Smallbone,Southampton,3,4.5,1.0,1.3050122
-1378,37,Nathan_Tella,Southampton,3,4.5,0.0,0.09977257
-1379,37,Jake_Vokins,Southampton,2,4.0,1.0,0.13833034
-1380,37,Alexandre_Jankewitz,Southampton,3,4.5,1.0,0.054874897
-1381,37,Will_Ferry,Southampton,3,4.5,1.0,0.07893574
-1382,37,Matt_Ritchie,Newcastle United,2,5.3,1.0,2.45704
-1383,37,Fabian_Schär,Newcastle United,2,5.0,1.0,1.2848284
-1384,37,DeAndre_Yedlin,Newcastle United,2,4.4,1.0,0.9602715
-1385,37,Federico_Fernández,Newcastle United,2,4.6,1.0,3.2357397
-1386,37,Paul_Dummett,Newcastle United,2,4.3,0.0,0.12016606
-1387,37,Javier_Manquillo,Newcastle United,2,4.3,1.0,2.2883918
-1388,37,Florian_Lejeune,Newcastle United,2,4.3,0.0,0.050565004
-1389,37,Jamaal_Lascelles,Newcastle United,2,4.3,1.0,2.289596
-1390,37,Ciaran_Clark,Newcastle United,2,4.3,0.0,0.065888405
-1391,37,Yoshinori_Muto,Newcastle United,4,5.1,1.0,0.058350563
-1392,37,Jose Luis_Mato Sanmartín,Newcastle United,4,5.0,0.0,0.04314065
-1393,37,Martin_Dubravka,Newcastle United,1,5.1,1.0,3.916552
-1394,37,Karl_Darlow,Newcastle United,1,4.3,1.0,-0.01309514
-1395,37,Frederick_Woodman,Newcastle United,1,3.9,0.0,0.008301139
-1396,37,Miguel_Almirón,Newcastle United,3,5.8,1.0,2.6506722
-1397,37,Christian_Atsu,Newcastle United,3,5.3,1.0,0.2587707
-1398,37,Sung-yueng_Ki,Newcastle United,3,4.7,0.0,0.08725655
-1399,37,Jonjo_Shelvey,Newcastle United,3,4.9,1.0,3.5840902
-1400,37,Sean_Longstaff,Newcastle United,3,5.0,0.0,0.13243449
-1401,37,Isaac_Hayden,Newcastle United,3,4.4,0.0,0.11886525
-1402,37,Danny_Rose,Newcastle United,2,5.3,1.0,1.926208
-1403,37,Joelinton Cássio_Apolinário de Lira,Newcastle United,4,5.5,1.0,1.7519436
-1404,37,Jack_Colback,Newcastle United,3,4.3,0.0,0.03172624
-1405,37,Jacob_Murphy,Newcastle United,3,4.7,0.0,0.07827616
-1406,37,Jetro_Willems,Newcastle United,2,4.3,0.0,0.015846252
-1407,37,Rolando_Aarons,Newcastle United,3,4.8,0.0,-0.007870197
-1408,37,Allan_Saint-Maximin,Newcastle United,3,5.4,1.0,2.304787
-1409,37,Emil_Krafth,Newcastle United,2,4.3,1.0,2.6760237
-1410,37,Andy_Carroll,Newcastle United,4,5.4,0.75,1.1376276
-1411,37,Matthew_Longstaff,Newcastle United,3,4.5,1.0,0.9696332
-1412,37,Dwight_Gayle,Newcastle United,4,5.0,1.0,2.5205488
-1413,37,Robert_Elliot,Newcastle United,1,4.0,0.0,0.016178608
-1414,37,Thomas_Allan,Newcastle United,3,4.5,1.0,0.1286645
-1415,37,Kelland_Watts,Newcastle United,2,3.9,0.0,0.02879119
-1416,37,Liam_Gibson,Newcastle United,2,4.0,0.0,0.05533099
-1417,37,Nabil_Bentaleb,Newcastle United,3,4.7,1.0,1.9487219
-1418,37,Valentino_Lazaro,Newcastle United,3,5.3,1.0,1.5630763
-1419,37,Jack_Young,Newcastle United,3,4.5,1.0,0.117121816
-1420,37,Marcos_Alonso,Chelsea,2,6.1,1.0,1.1545095
-1421,37,Antonio_Rüdiger,Chelsea,2,5.9,1.0,1.0006478
-1422,37,César_Azpilicueta,Chelsea,2,6.1,1.0,2.1725287
-1423,37,Emerson_Palmieri dos Santos,Chelsea,2,5.4,1.0,0.16020739
-1424,37,Andreas_Christensen,Chelsea,2,4.8,1.0,0.99710023
-1425,37,Davide_Zappacosta,Chelsea,2,4.2,0.0,0.06702781
-1426,37,Olivier_Giroud,Chelsea,4,6.7,1.0,2.0337489
-1427,37,Kepa_Arrizabalaga,Chelsea,1,5.4,1.0,2.1548076
-1428,37,Willy_Caballero,Chelsea,1,4.8,1.0,0.09610844
-1429,37,Willian_Borges Da Silva,Chelsea,3,7.4,1.0,3.3922944
-1430,37,Pedro_Rodríguez Ledesma,Chelsea,3,6.8,1.0,0.1887244
-1431,37,Ruben_Loftus-Cheek,Chelsea,3,5.9,1.0,0.9562119
-1432,37,Callum_Hudson-Odoi,Chelsea,3,5.1,1.0,0.6896876
-1433,37,Ross_Barkley,Chelsea,3,5.6,1.0,2.7816577
-1434,37,Jorge Luiz_Frello Filho,Chelsea,3,4.9,1.0,1.088593
-1435,37,N'Golo_Kanté,Chelsea,3,5.0,0.0,0.043504238
-1436,37,Ethan_Ampadu,Chelsea,3,4.3,0.0,0.031238556
-1437,37,Christian_Pulisic,Chelsea,3,7.3,1.0,3.3298182
-1438,37,Mateo_Kovacic,Chelsea,3,5.3,1.0,1.4735951
-1439,37,Kurt_Zouma,Chelsea,2,4.7,1.0,1.0441372
-1440,37,Tammy_Abraham,Chelsea,4,7.4,1.0,1.9790936
-1441,37,Michy_Batshuayi,Chelsea,4,6.6,1.0,0.17243922
-1442,37,Robert Kenedy_Nunes do Nascimento,Chelsea,3,5.2,0.0,0.10269916
-1443,37,Mason_Mount,Chelsea,3,6.1,1.0,2.0464895
-1444,37,Reece_James,Chelsea,2,4.9,1.0,0.90912914
-1445,37,Fikayo_Tomori,Chelsea,2,4.2,0.0,-0.0050745606
-1446,37,Billy_Gilmour,Chelsea,3,4.2,0.0,0.066280365
-1447,37,Addji Keaninkin Marc-Israel_Guehi,Chelsea,2,3.9,0.0,0.0375638
-1448,37,Faustino_Anjorin,Chelsea,3,4.5,1.0,0.07048452
-1449,37,Armando_Broja,Chelsea,4,4.5,1.0,0.06307781
-1450,37,Lewis_Bate,Chelsea,3,4.5,1.0,0.10768676
-1451,37,Aaron_Cresswell,West Ham United,2,4.5,1.0,1.7256217
-1452,37,Angelo_Ogbonna,West Ham United,2,4.5,1.0,1.6706772
-1453,37,Arthur_Masuaku,West Ham United,2,4.1,1.0,0.4305377
-1454,37,Pablo_Zabaleta,West Ham United,2,4.1,0.0,0.21055174
-1455,37,Ryan_Fredericks,West Ham United,2,4.4,1.0,2.3200607
-1456,37,Issa_Diop,West Ham United,2,4.3,1.0,2.1273415
-1457,37,Fabián_Balbuena,West Ham United,2,4.3,1.0,0.8628528
-1458,37,Winston_Reid,West Ham United,2,3.9,0.0,0.12237489
-1459,37,Ben_Johnson,West Ham United,2,4.0,1.0,0.14587915
-1460,37,Marko_Arnautovic,West Ham United,4,7.0,0.0,-0.010447025
-1461,37,Javier_Hernández Balcázar,West Ham United,4,6.0,0.0,0.0938673
-1462,37,Alexandre Nascimento_Costa Silva,West Ham United,4,4.3,1.0,0.009244561
-1463,37,Lukasz_Fabianski,West Ham United,1,4.9,1.0,2.9196153
-1464,37,Michail_Antonio,West Ham United,3,7.0,1.0,3.8894944
-1465,37,Felipe Anderson_Pereira Gomes,West Ham United,3,6.6,0.5,0.5373875
-1466,37,Manuel_Lanzini,West Ham United,3,6.1,1.0,1.3960993
-1467,37,Andriy_Yarmolenko,West Ham United,3,5.2,1.0,1.1298318
-1468,37,Robert_Snodgrass,West Ham United,3,5.0,0.5,0.0057114363
-1469,37,Jack_Wilshere,West Ham United,3,4.6,1.0,0.675465
-1470,37,Declan_Rice,West Ham United,3,4.7,1.0,2.4260335
-1471,37,Mark_Noble,West Ham United,3,4.9,1.0,1.4552531
-1472,37,Carlos_Sánchez,West Ham United,3,4.3,0.0,0.082059264
-1473,37,Grady_Diangana,West Ham United,3,4.3,0.0,0.0864197
-1474,37,Pablo_Fornals,West Ham United,3,6.0,1.0,2.765133
-1475,37,Pedro_Obiang,West Ham United,3,4.5,0.0,0.14677525
-1476,37,Roberto_Jimenez Gago,West Ham United,1,4.4,0.0,0.09957039
-1477,37,Sébastien_Haller,West Ham United,4,6.8,1.0,1.1400557
-1478,37,Albian_Ajeti,West Ham United,4,5.6,1.0,0.15997148
-1479,37,David_Martin,West Ham United,1,3.9,1.0,0.07643223
-1480,37,Nathan_Holland,West Ham United,3,4.4,1.0,0.08330524
-1481,37,Joseph_Anang,West Ham United,1,4.0,1.0,0.11953521
-1482,37,Jeremy_Ngakia,West Ham United,2,4.0,0.0,0.12783241
-1483,37,Gonçalo Bento_Soares Cardoso,West Ham United,2,4.0,1.0,0.042766333
-1484,37,Bernardo_Costa Da Rosa,West Ham United,3,4.5,1.0,0.12077105
-1485,37,Darren_Randolph,West Ham United,1,4.0,1.0,0.13298762
-1486,37,Tomas_Soucek,West Ham United,3,4.8,1.0,3.0114584
-1487,37,Jarrod_Bowen,West Ham United,3,6.4,1.0,2.783948
-1488,37,Alfie_Lewis,West Ham United,3,4.5,1.0,0.028418303
-1489,37,Ben_Mee,Burnley,2,5.0,0.0,0.03616929
-1490,37,James_Tarkowski,Burnley,2,5.3,1.0,4.729412
-1491,37,Matthew_Lowton,Burnley,2,4.2,0.0,0.08278048
-1492,37,Phil_Bardsley,Burnley,2,4.3,1.0,2.950518
-1493,37,Charlie_Taylor,Burnley,2,4.4,1.0,3.7455235
-1494,37,Kevin_Long,Burnley,2,4.3,1.0,2.678631
-1495,37,Ben_Gibson,Burnley,2,3.9,0.0,0.09253788
-1496,37,Ashley_Barnes,Burnley,4,6.1,0.0,0.1723907
-1497,37,Chris_Wood,Burnley,4,6.1,1.0,2.9910712
-1498,37,Matej_Vydra,Burnley,4,5.1,1.0,3.2601056
-1499,37,Nick_Pope,Burnley,1,5.0,1.0,5.4563713
-1500,37,Joe_Hart,Burnley,1,4.2,0.0,0.061174393
-1501,37,Johann Berg_Gudmundsson,Burnley,3,5.9,1.0,1.2310848
-1502,37,Dwight_McNeil,Burnley,3,6.0,1.0,4.3143563
-1503,37,Robbie_Brady,Burnley,3,5.5,1.0,0.11435473
-1504,37,Steven_Defour,Burnley,3,5.5,0.0,0.018237114
-1505,37,Jeff_Hendrick,Burnley,3,5.4,0.0,0.13257658
-1506,37,Ashley_Westwood,Burnley,3,5.5,1.0,3.5365033
-1507,37,Jack_Cork,Burnley,3,4.9,0.0,0.117061615
-1508,37,Aaron_Lennon,Burnley,3,4.6,0.0,0.0916121
-1509,37,Erik_Pieters,Burnley,2,4.2,1.0,2.725628
-1510,37,Jay_Rodriguez,Burnley,4,5.7,1.0,4.9056234
-1511,37,Bailey_Peacock-Farrell,Burnley,1,4.3,1.0,0.05119717
-1512,37,Mace_Goodridge,Burnley,3,4.5,1.0,0.15471768
-1513,37,Anthony_Driscoll-Glennon,Burnley,2,3.9,0.0,0.080262184
-1514,37,Abd-Al-Ali Morakinyo Olaposi_Koiki,Burnley,2,4.0,0.0,0.08753908
-1515,37,Josh_Brownhill,Burnley,3,4.8,1.0,3.6312327
-1516,37,Jimmy_Dunne,Burnley,2,4.0,1.0,0.07275581
-1517,37,Bobby_Thomas,Burnley,2,4.0,1.0,0.0769043
-1518,37,Max_Thompson,Burnley,4,4.5,1.0,0.2059809
-1519,37,Lukas_Jensen,Burnley,1,4.0,1.0,0.048330903
-1520,37,Josh_Benson,Burnley,3,4.5,1.0,0.03953743
-1521,37,Alex_Iwobi,Everton,3,5.6,1.0,2.2494013
-1522,37,Lucas_Digne,Everton,2,5.8,1.0,3.2486815
-1523,37,Yerry_Mina,Everton,2,5.3,0.75,1.3291388
-1524,37,Michael_Keane,Everton,2,5.2,1.0,2.8756897
-1525,37,Seamus_Coleman,Everton,2,5.3,1.0,2.9912353
-1526,37,Leighton_Baines,Everton,2,4.9,1.0,0.69809675
-1527,37,Cenk_Tosun,Everton,4,5.7,0.0,0.10674524
-1528,37,Dominic_Calvert-Lewin,Everton,4,6.2,1.0,3.7017894
-1529,37,Jordan_Pickford,Everton,1,5.2,1.0,3.4952545
-1530,37,Maarten_Stekelenburg,Everton,1,3.9,1.0,0.09588313
-1531,37,Richarlison_de Andrade,Everton,3,8.2,1.0,3.6255817
-1532,37,Gylfi_Sigurdsson,Everton,3,7.3,1.0,3.099575
-1533,37,Bernard_Anício Caldeira Duarte,Everton,3,6.4,1.0,1.4190998
-1534,37,Theo_Walcott,Everton,3,6.2,1.0,2.3442159
-1535,37,Tom_Davies,Everton,3,5.3,1.0,1.898916
-1536,37,Ademola_Lookman,Everton,3,5.0,0.0,0.11567569
-1537,37,Idrissa_Gueye,Everton,3,5.0,0.0,0.13143885
-1538,37,Morgan_Schneiderlin,Everton,3,4.4,0.0,0.060653806
-1539,37,Fabian_Delph,Everton,2,5.3,0.0,0.15953338
-1540,37,André Filipe_Tavares Gomes,Everton,3,5.2,0.75,1.6970029
-1541,37,Lewis_Gibson,Everton,2,4.2,0.0,0.022815466
-1542,37,Mason_Holgate,Everton,2,4.3,0.75,1.6424518
-1543,37,Jonas_Lössl,Everton,1,4.2,0.0,0.076922774
-1544,37,Moise_Kean,Everton,4,6.3,1.0,1.2644231
-1545,37,Jean-Philippe_Gbamin,Everton,3,4.8,0.0,0.054800272
-1546,37,Djibril_Sidibé,Everton,2,5.0,1.0,0.92865086
-1547,37,Beni_Baningime,Everton,3,4.4,1.0,0.086153865
-1548,37,Anthony_Gordon,Everton,4,4.5,1.0,2.2599223
-1549,37,Oumar_Niasse,Everton,4,4.5,0.0,0.09049821
-1550,37,Rhu-endly_Martina,Everton,2,4.0,0.0,0.07783902
-1551,37,João Manuel_Neves Virgínia,Everton,1,4.0,1.0,0.024110794
-1552,37,Jarrad_Branthwaite,Everton,2,4.0,1.0,0.6861719
-1553,37,Ricardo Domingos_Barbosa Pereira,Leicester City,2,6.2,0.0,0.061756253
-1554,37,Benjamin_Chilwell,Leicester City,2,5.5,0.5,1.083051
-1555,37,Jonny_Evans,Leicester City,2,5.3,1.0,2.0184202
-1556,37,Christian_Fuchs,Leicester City,2,4.2,1.0,0.71729934
-1557,37,Çaglar_Söyüncü,Leicester City,2,5.0,0.0,0.055312157
-1558,37,Wes_Morgan,Leicester City,2,4.1,1.0,0.10212803
-1559,37,Jamie_Vardy,Leicester City,4,9.8,1.0,4.0249157
-1560,37,Kelechi_Iheanacho,Leicester City,4,5.7,1.0,2.3817778
-1561,37,Kasper_Schmeichel,Leicester City,1,5.5,1.0,2.8737826
-1562,37,Eldin_Jakupovic,Leicester City,1,4.2,1.0,0.08670092
-1563,37,Danny_Ward,Leicester City,1,4.2,1.0,0.028425336
-1564,37,James_Maddison,Leicester City,3,7.3,0.5,1.6106257
-1565,37,Harvey_Barnes,Leicester City,3,5.9,1.0,1.3622942
-1566,37,Rachid_Ghezzal,Leicester City,3,5.1,0.0,0.064151525
-1567,37,Marc_Albrighton,Leicester City,3,5.1,0.75,1.3417101
-1568,37,Demarai_Gray,Leicester City,3,5.0,1.0,1.2872214
-1569,37,Wilfred_Ndidi,Leicester City,3,5.0,1.0,2.3329074
-1570,37,Matty_James,Leicester City,3,4.3,1.0,0.07871091
-1571,37,Daniel_Amartey,Leicester City,3,4.2,0.0,0.06072569
-1572,37,Nampalys_Mendy,Leicester City,3,4.3,1.0,0.8797902
-1573,37,Hamza_Choudhury,Leicester City,3,4.3,1.0,0.1339376
-1574,37,Ayoze_Pérez,Leicester City,3,6.0,1.0,1.7767754
-1575,37,Ryan_Bennett,Leicester City,2,4.8,1.0,0.8713547
-1576,37,James_Justin,Leicester City,2,4.7,1.0,1.8566122
-1577,37,Youri_Tielemans,Leicester City,3,6.1,1.0,2.5023792
-1578,37,Andy_King,Leicester City,3,4.2,0.0,0.18009293
-1579,37,Dennis_Praet,Leicester City,3,5.2,1.0,1.3103409
-1580,37,Filip_Benkovic,Leicester City,2,3.9,0.0,0.0523659
-1581,37,Aymeric_Laporte,Manchester City,2,6.3,1.0,3.7681031
-1582,37,Kyle_Walker,Manchester City,2,5.6,1.0,2.9894354
-1583,37,Benjamin_Mendy,Manchester City,2,5.5,1.0,2.228773
-1584,37,Oleksandr_Zinchenko,Manchester City,2,5.2,1.0,1.7689047
-1585,37,John_Stones,Manchester City,2,5.3,1.0,1.5554702
-1586,37,Nicolás_Otamendi,Manchester City,2,4.8,1.0,1.3704407
-1587,37,Danilo Luiz_da Silva,Manchester City,2,5.0,0.0,0.23548877
-1588,37,Sergio_Agüero,Manchester City,4,11.7,0.0,0.19050801
-1589,37,Gabriel Fernando_de Jesus,Manchester City,4,9.8,1.0,3.9576187
-1590,37,Ederson_Santana de Moraes,Manchester City,1,6.0,1.0,4.147734
-1591,37,Claudio_Bravo,Manchester City,1,4.7,1.0,0.074658155
-1592,37,Raheem_Sterling,Manchester City,3,11.8,1.0,6.2522483
-1593,37,Kevin_De Bruyne,Manchester City,3,10.8,1.0,5.9697447
-1594,37,Leroy_Sané,Manchester City,3,9.1,0.0,0.071669936
-1595,37,Riyad_Mahrez,Manchester City,3,8.6,1.0,5.5469112
-1596,37,Bernardo Mota_Veiga de Carvalho e Silva,Manchester City,3,7.6,1.0,3.0019479
-1597,37,David_Silva,Manchester City,3,7.3,1.0,3.108127
-1598,37,Phil_Foden,Manchester City,3,5.5,1.0,2.249109
-1599,37,Fernando_Luiz Rosa,Manchester City,3,5.1,1.0,1.5866513
-1600,37,Ilkay_Gündogan,Manchester City,3,5.1,1.0,2.0879004
-1601,37,José Ángel_Esmorís Tasende,Manchester City,2,4.6,0.0,0.10525274
-1602,37,Rodrigo_Hernandez,Manchester City,3,5.3,1.0,2.063777
-1603,37,João Pedro Cavaco_Cancelo,Manchester City,2,5.1,1.0,1.3242488
-1604,37,Eric_Garcia,Manchester City,2,4.5,1.0,3.253078
-1605,37,Scott_Carson,Manchester City,1,4.0,1.0,0.11420071
-1606,37,Taylor_Harwood-Bellis,Manchester City,2,4.0,1.0,0.18987548
-1607,37,Cole_Palmer,Manchester City,3,4.5,1.0,0.19435823
-1608,37,Tommy_Doyle,Manchester City,3,4.5,1.0,0.49526465
-1609,37,Patrick_van Aanholt,Crystal Palace,2,5.6,1.0,2.4855688
-1610,37,James_Tomkins,Crystal Palace,2,5.0,0.0,0.08428109
-1611,37,Mamadou_Sakho,Crystal Palace,2,5.0,1.0,1.6260118
-1612,37,Joel_Ward,Crystal Palace,2,4.3,1.0,1.8156986
-1613,37,Scott_Dann,Crystal Palace,2,4.3,1.0,1.3687782
-1614,37,Martin_Kelly,Crystal Palace,2,4.1,1.0,0.13696396
-1615,37,Christian_Benteke,Crystal Palace,4,5.7,0.0,0.14149308
-1616,37,Connor_Wickham,Crystal Palace,4,4.3,0.0,0.12092471
-1617,37,Vicente_Guaita,Crystal Palace,1,4.9,1.0,2.1224418
-1618,37,Wayne_Hennessey,Crystal Palace,1,4.2,1.0,0.8272921
-1619,37,Wilfried_Zaha,Crystal Palace,3,6.6,1.0,2.8787715
-1620,37,Luka_Milivojevic,Crystal Palace,3,6.7,1.0,2.8100452
-1621,37,Andros_Townsend,Crystal Palace,3,5.6,1.0,1.6083963
-1622,37,Max_Meyer,Crystal Palace,3,5.2,1.0,1.1866989
-1623,37,Jeffrey_Schlupp,Crystal Palace,3,5.4,0.0,0.055311084
-1624,37,James_McArthur,Crystal Palace,3,5.2,1.0,2.3829958
-1625,37,Cheikhou_Kouyaté,Crystal Palace,3,4.9,1.0,1.7290359
-1626,37,Luke_Dreher,Crystal Palace,3,4.3,1.0,0.06895816
-1627,37,James_McCarthy,Crystal Palace,3,4.2,1.0,1.3496346
-1628,37,Jordan_Ayew,Crystal Palace,4,5.1,1.0,3.037241
-1629,37,Gary_Cahill,Crystal Palace,2,4.4,0.0,0.13310564
-1630,37,Víctor_Camarasa,Crystal Palace,3,4.5,0.0,0.06332457
-1631,37,Jairo_Riedewald,Crystal Palace,3,4.5,1.0,1.0840824
-1632,37,Stephen_Henderson,Crystal Palace,1,4.0,1.0,0.094689846
-1633,37,Sam_Woods,Crystal Palace,2,3.9,0.0,0.10235512
-1634,37,Tyrick_Mitchell,Crystal Palace,2,4.0,1.0,0.20530796
-1635,37,Brandon_Pierrick,Crystal Palace,3,4.5,1.0,0.23540998
-1636,37,James_Daly,Crystal Palace,4,4.5,0.0,0.047849298
-1637,37,Nya_Kirby,Crystal Palace,3,4.5,1.0,0.11690056
-1638,37,Giovanni_McGregor,Crystal Palace,3,4.5,0.0,0.0056684017
-1639,37,Nikola_Tavares,Crystal Palace,2,4.0,0.0,0.11249614
-1640,38,José_Holebas,Watford,2,4.6,1.0,0.2591282
-1641,38,Christian_Kabasele,Watford,2,4.3,1.0,1.1730123
-1642,38,Adam_Masina,Watford,2,4.3,1.0,1.1959531
-1643,38,Adrian_Mariappa,Watford,2,4.2,1.0,0.73248196
-1644,38,Francisco_Femenía Far,Watford,2,4.2,1.0,1.6968777
-1645,38,Craig_Cathcart,Watford,2,4.2,1.0,0.62851965
-1646,38,Daryl_Janmaat,Watford,2,4.0,0.0,0.12707949
-1647,38,Marc_Navarro,Watford,2,3.9,0.0,0.08321452
-1648,38,Sebastian_Prödl,Watford,2,3.9,0.0,0.08033407
-1649,38,Troy_Deeney,Watford,4,6.2,1.0,3.440703
-1650,38,Gerard_Deulofeu,Watford,4,6.1,0.0,0.0048508644
-1651,38,Andre_Gray,Watford,4,5.5,1.0,0.25990772
-1652,38,Isaac_Success Ajayi,Watford,4,4.7,0.0,0.1096226
-1653,38,Ben_Foster,Watford,1,4.9,1.0,2.7009761
-1654,38,Pontus_Dahlberg,Watford,1,4.2,0.0,0.048933387
-1655,38,Abdoulaye_Doucouré,Watford,3,5.5,1.0,2.623002
-1656,38,Roberto_Pereyra,Watford,3,5.6,1.0,0.9969232
-1657,38,Will_Hughes,Watford,3,5.3,1.0,2.1951983
-1658,38,Tom_Cleverley,Watford,3,4.8,1.0,1.0705886
-1659,38,Ken_Sema,Watford,3,4.7,0.0,0.10443461
-1660,38,Etienne_Capoue,Watford,3,4.8,1.0,2.4526525
-1661,38,Nathaniel_Chalobah,Watford,3,4.4,1.0,1.0903306
-1662,38,Domingos_Quina,Watford,3,4.3,1.0,0.045170426
-1663,38,Craig_Dawson,Watford,2,4.8,1.0,1.6252282
-1664,38,Danny_Welbeck,Watford,4,5.8,1.0,2.235627
-1665,38,Heurelho da Silva_Gomes,Watford,1,4.3,1.0,0.078544855
-1666,38,Ismaïla_Sarr,Watford,3,6.0,1.0,3.524125
-1667,38,Dimitri_Foulquier,Watford,2,3.9,0.0,0.030130148
-1668,38,Ayotomiwa_Dele-Bashiru,Watford,3,4.5,1.0,0.07478893
-1669,38,João Pedro_Junqueira de Jesus,Watford,4,4.9,1.0,0.3473773
-1670,38,Ignacio_Pussetto,Watford,3,4.6,1.0,0.32240224
-1671,38,Adalberto_Peñaranda,Watford,4,4.5,1.0,0.03390944
-1672,38,Shane_Duffy,Brighton and Hove Albion,2,4.8,1.0,1.2380102
-1673,38,Martín_Montoya,Brighton and Hove Albion,2,4.3,1.0,0.97470975
-1674,38,Bernardo_Fernandes da Silva Junior,Brighton and Hove Albion,2,4.3,1.0,0.8910279
-1675,38,Leon_Balogun,Brighton and Hove Albion,2,4.3,0.0,0.06792915
-1676,38,Gaëtan_Bong,Brighton and Hove Albion,2,4.2,0.0,0.037145495
-1677,38,Lewis_Dunk,Brighton and Hove Albion,2,4.8,1.0,2.9467516
-1678,38,Matthew_Clarke,Brighton and Hove Albion,2,4.3,0.0,0.020087004
-1679,38,Glenn_Murray,Brighton and Hove Albion,4,5.4,1.0,0.24560082
-1680,38,Jürgen_Locadia,Brighton and Hove Albion,4,5.2,0.0,0.024818301
-1681,38,Florin_Andone,Brighton and Hove Albion,4,4.7,0.0,-0.009046257
-1682,38,Mathew_Ryan,Brighton and Hove Albion,1,4.7,1.0,3.724032
-1683,38,David_Button,Brighton and Hove Albion,1,3.9,1.0,-0.054046214
-1684,38,Pascal_Groß,Brighton and Hove Albion,3,6.2,1.0,1.7426629
-1685,38,Alireza_Jahanbakhsh,Brighton and Hove Albion,3,5.8,1.0,0.44353008
-1686,38,José Heriberto_Izquierdo Mena,Brighton and Hove Albion,3,5.4,0.0,0.009550095
-1687,38,Anthony_Knockaert,Brighton and Hove Albion,3,5.3,0.0,0.04972577
-1688,38,Yves_Bissouma,Brighton and Hove Albion,3,5.0,1.0,1.6447048
-1689,38,Davy_Pröpper,Brighton and Hove Albion,3,4.8,1.0,1.6416934
-1690,38,Solomon_March,Brighton and Hove Albion,3,4.6,1.0,0.8090333
-1691,38,Beram_Kayal,Brighton and Hove Albion,3,4.3,1.0,0.06550169
-1692,38,Dale_Stephens,Brighton and Hove Albion,3,4.4,1.0,1.8526409
-1693,38,Leandro_Trossard,Brighton and Hove Albion,3,5.8,1.0,2.989726
-1694,38,Dan_Burn,Brighton and Hove Albion,2,4.5,1.0,2.0890481
-1695,38,Adam_Webster,Brighton and Hove Albion,2,4.4,1.0,2.2903287
-1696,38,Neal_Maupay,Brighton and Hove Albion,4,5.7,1.0,3.1047006
-1697,38,Aaron_Mooy,Brighton and Hove Albion,3,4.7,1.0,2.1141167
-1698,38,Aaron_Connolly,Brighton and Hove Albion,4,4.2,1.0,2.3670108
-1699,38,Tudor_Baluta,Brighton and Hove Albion,2,4.0,0.0,0.061772704
-1700,38,Steven_Alzate,Brighton and Hove Albion,3,4.4,1.0,0.15020394
-1701,38,Ezequiel_Schelotto,Brighton and Hove Albion,2,4.0,1.0,0.14876676
-1702,38,Tariq_Lamptey,Brighton and Hove Albion,2,4.0,1.0,2.8199327
-1703,38,Alexis_Mac Allister,Brighton and Hove Albion,3,5.5,1.0,2.1332772
-1704,38,Matt_Doherty,Wolverhampton Wanderers,2,6.5,1.0,3.0080767
-1705,38,Jonathan_Castro Otto,Wolverhampton Wanderers,2,5.5,1.0,2.4856539
-1706,38,Conor_Coady,Wolverhampton Wanderers,2,5.1,1.0,1.9721782
-1707,38,Willy_Boly,Wolverhampton Wanderers,2,4.8,1.0,2.5703228
-1708,38,Rúben Gonçalo_Silva Nascimento Vinagre,Wolverhampton Wanderers,2,4.1,1.0,0.06245792
-1709,38,Romain_Saïss,Wolverhampton Wanderers,2,4.7,1.0,2.185875
-1710,38,Max_Kilman,Wolverhampton Wanderers,2,3.9,1.0,0.080142975
-1711,38,Raúl_Jiménez,Wolverhampton Wanderers,4,8.1,1.0,4.253416
-1712,38,Diogo_Jota,Wolverhampton Wanderers,4,6.0,1.0,2.6452117
-1713,38,Rui Pedro_dos Santos Patrício,Wolverhampton Wanderers,1,5.3,1.0,2.6598072
-1714,38,John_Ruddy,Wolverhampton Wanderers,1,4.2,1.0,0.10431945
-1715,38,Will_Norris,Wolverhampton Wanderers,1,3.9,0.0,0.112577915
-1716,38,Rúben Diogo_da Silva Neves,Wolverhampton Wanderers,3,5.2,1.0,2.498842
-1717,38,João Filipe Iria_Santos Moutinho,Wolverhampton Wanderers,3,5.4,1.0,2.5513642
-1718,38,Morgan_Gibbs-White,Wolverhampton Wanderers,3,4.7,1.0,0.1999178
-1719,38,Adama_Traoré,Wolverhampton Wanderers,3,5.6,1.0,2.1956835
-1720,38,Hélder_Costa,Wolverhampton Wanderers,3,4.8,0.0,0.1363908
-1721,38,Ivan_Cavaleiro,Wolverhampton Wanderers,3,4.9,0.0,0.11974728
-1722,38,Leander_Dendoncker,Wolverhampton Wanderers,3,4.4,1.0,1.7060966
-1723,38,Jesús_Vallejo Lázaro,Wolverhampton Wanderers,2,4.6,0.0,0.09715736
-1724,38,Patrick_Cutrone,Wolverhampton Wanderers,4,5.4,0.0,0.108044505
-1725,38,Pedro_Lomba Neto,Wolverhampton Wanderers,3,5.0,0.75,0.9217534
-1726,38,Bernard_Ashley-Seal,Wolverhampton Wanderers,4,4.5,0.0,0.028747797
-1727,38,Taylor_Perry,Wolverhampton Wanderers,3,4.5,1.0,0.09911895
-1728,38,Owen_Otasowie,Wolverhampton Wanderers,3,4.5,1.0,0.08092737
-1729,38,Luke_Cundle,Wolverhampton Wanderers,3,4.5,1.0,0.03509462
-1730,38,Oskar_Buur,Wolverhampton Wanderers,2,4.0,1.0,0.056429148
-1731,38,Ryan_Giles,Wolverhampton Wanderers,2,3.9,0.0,0.114328146
-1732,38,Bruno André_Cavaco Jordao,Wolverhampton Wanderers,3,4.5,1.0,0.05051899
-1733,38,Daniel_Castelo Podence,Wolverhampton Wanderers,3,4.9,1.0,1.0990913
-1734,38,Leonardo_Campana,Wolverhampton Wanderers,4,4.5,1.0,0.034672976
-1735,38,Ben_Davies,Tottenham Hotspur,2,5.3,1.0,4.367101
-1736,38,Jan_Vertonghen,Tottenham Hotspur,2,5.2,1.0,1.1958106
-1737,38,Toby_Alderweireld,Tottenham Hotspur,2,5.3,1.0,2.149424
-1738,38,Davinson_Sánchez,Tottenham Hotspur,2,5.3,1.0,2.078469
-1739,38,Kieran_Trippier,Tottenham Hotspur,2,5.5,0.0,0.22058225
-1740,38,Juan_Foyth,Tottenham Hotspur,2,4.8,0.0,0.10020268
-1741,38,Serge_Aurier,Tottenham Hotspur,2,5.1,1.0,4.3758616
-1742,38,Harry_Kane,Tottenham Hotspur,4,10.9,1.0,5.6083636
-1743,38,Vincent_Janssen,Tottenham Hotspur,4,4.5,0.0,0.16386354
-1744,38,Hugo_Lloris,Tottenham Hotspur,1,5.3,1.0,4.2074814
-1745,38,Paulo_Gazzaniga,Tottenham Hotspur,1,4.1,1.0,-0.002150774
-1746,38,Heung-Min_Son,Tottenham Hotspur,3,9.6,1.0,5.9433537
-1747,38,Christian_Eriksen,Tottenham Hotspur,3,8.6,0.0,0.21649647
-1748,38,Bamidele_Alli,Tottenham Hotspur,3,8.3,0.0,0.1364479
-1749,38,Lucas_Rodrigues Moura da Silva,Tottenham Hotspur,3,7.0,1.0,3.1382394
-1750,38,Erik_Lamela,Tottenham Hotspur,3,5.7,1.0,1.8903701
-1751,38,Harry_Winks,Tottenham Hotspur,3,5.2,1.0,1.7145638
-1752,38,Victor_Wanyama,Tottenham Hotspur,3,4.7,0.0,0.124729395
-1753,38,Moussa_Sissoko,Tottenham Hotspur,3,4.8,1.0,2.4873478
-1754,38,Eric_Dier,Tottenham Hotspur,3,4.8,0.0,0.15510273
-1755,38,Luke_Amos,Tottenham Hotspur,3,4.4,0.0,0.04696536
-1756,38,Oliver_Skipp,Tottenham Hotspur,3,4.3,1.0,0.26441443
-1757,38,Tanguy_Ndombele,Tottenham Hotspur,3,5.8,1.0,1.1811907
-1758,38,Troy_Parrott,Tottenham Hotspur,4,4.3,0.25,0.09185827
-1759,38,Giovani_Lo Celso,Tottenham Hotspur,3,7.3,1.0,2.4490037
-1760,38,Ryan_Sessegnon,Tottenham Hotspur,3,5.4,1.0,0.13078594
-1761,38,Georges-Kévin_Nkoudou,Tottenham Hotspur,3,5.0,0.0,0.13978553
-1762,38,Alfie_Whiteman,Tottenham Hotspur,1,4.0,1.0,0.073699474
-1763,38,Michel_Vorm,Tottenham Hotspur,1,4.2,1.0,0.04110408
-1764,38,Brandon_Austin,Tottenham Hotspur,1,4.0,1.0,0.08782053
-1765,38,Japhet_Tanganga,Tottenham Hotspur,2,3.9,1.0,0.07324886
-1766,38,Gedson_Carvalho Fernandes,Tottenham Hotspur,3,4.6,1.0,0.19419193
-1767,38,Steven_Bergwijn,Tottenham Hotspur,3,7.0,1.0,1.6548057
-1768,38,Harvey_White,Tottenham Hotspur,3,4.5,1.0,0.079974174
-1769,38,Dennis_Cirkin,Tottenham Hotspur,2,4.0,1.0,0.10865247
-1770,38,Steve_Cook,Bournemouth,2,5.0,1.0,1.4224713
-1771,38,Nathan_Aké,Bournemouth,2,4.8,0.25,0.74580264
-1772,38,Charlie_Daniels,Bournemouth,2,4.2,0.0,0.108419895
-1773,38,Chris_Mepham,Bournemouth,2,4.3,0.75,0.35640657
-1774,38,Simon_Francis,Bournemouth,2,4.3,0.25,0.1682018
-1775,38,Adam_Smith,Bournemouth,2,4.3,0.0,0.04812658
-1776,38,Lloyd_Kelly,Bournemouth,2,4.4,1.0,2.1927032
-1777,38,Diego_Rico,Bournemouth,2,4.2,1.0,1.5039225
-1778,38,Jack_Simpson,Bournemouth,2,3.9,1.0,0.11108315
-1779,38,Callum_Wilson,Bournemouth,4,7.4,1.0,4.276932
-1780,38,Joshua_King,Bournemouth,4,6.1,0.75,2.4111028
-1781,38,Dominic_Solanke,Bournemouth,4,5.1,1.0,2.2229693
-1782,38,Sam_Surridge,Bournemouth,4,4.3,1.0,0.063887596
-1783,38,Asmir_Begovic,Bournemouth,1,4.2,0.0,0.06772256
-1784,38,Artur_Boruc,Bournemouth,1,4.2,1.0,-0.028027594
-1785,38,Mark_Travers,Bournemouth,1,4.2,1.0,0.0009166002
-1786,38,Ryan_Fraser,Bournemouth,3,6.8,0.0,0.18272567
-1787,38,David_Brooks,Bournemouth,3,6.1,1.0,2.503052
-1788,38,Junior_Stanislas,Bournemouth,3,5.8,1.0,3.1880689
-1789,38,Jordon_Ibe,Bournemouth,3,4.6,0.0,0.07492244
-1790,38,Lewis_Cook,Bournemouth,3,5.0,1.0,1.4363794
-1791,38,Andrew_Surman,Bournemouth,3,4.7,1.0,0.102809906
-1792,38,Dan_Gosling,Bournemouth,3,4.8,1.0,1.478616
-1793,38,Jefferson_Lerma,Bournemouth,3,4.8,1.0,2.0535283
-1794,38,Jack_Stacey,Bournemouth,2,4.3,1.0,1.039866
-1795,38,Philip_Billing,Bournemouth,3,4.9,1.0,1.1439872
-1796,38,Arnaut_Danjuma Groeneveld,Bournemouth,3,5.8,1.0,1.5112431
-1797,38,Aaron_Ramsdale,Bournemouth,1,4.5,1.0,3.141233
-1798,38,Harry_Wilson,Bournemouth,3,5.7,1.0,1.3165369
-1799,38,Christian_Saydee,Bournemouth,3,4.5,1.0,0.08504403
-1800,38,Gavin_Kilkenny,Bournemouth,3,4.5,1.0,0.021099925
-1801,38,Mihai-Alexandru_Dobre,Bournemouth,3,4.4,0.0,0.0027811527
-1802,38,Aaron_Wan-Bissaka,Manchester United,2,5.5,1.0,2.790082
-1803,38,Harry_Maguire,Manchester United,2,5.3,1.0,2.9903371
-1804,38,Chris_Smalling,Manchester United,2,5.2,0.0,0.080430984
-1805,38,Ashley_Young,Manchester United,2,5.4,0.0,0.10937333
-1806,38,Victor_Lindelöf,Manchester United,2,5.3,1.0,2.1579864
-1807,38,Luke_Shaw,Manchester United,2,5.4,0.75,2.0850654
-1808,38,Marcos_Rojo,Manchester United,2,4.8,0.0,-0.020272076
-1809,38,Eric_Bailly,Manchester United,2,4.8,1.0,0.5930146
-1810,38,José Diogo_Dalot Teixeira,Manchester United,2,4.9,1.0,0.096841335
-1811,38,Matteo_Darmian,Manchester United,2,4.9,0.0,0.07382679
-1812,38,Phil_Jones,Manchester United,2,4.7,0.0,0.08721185
-1813,38,Romelu_Lukaku,Manchester United,4,8.5,0.0,0.059012294
-1814,38,Marcus_Rashford,Manchester United,4,9.0,1.0,4.1148257
-1815,38,Mason_Greenwood,Manchester United,4,4.9,1.0,4.8888793
-1816,38,David_de Gea,Manchester United,1,5.3,1.0,3.1849627
-1817,38,Sergio_Romero,Manchester United,1,4.6,1.0,0.06798363
-1818,38,Lee_Grant,Manchester United,1,4.7,1.0,-0.0028043985
-1819,38,Paul_Pogba,Manchester United,3,8.3,1.0,3.4666467
-1820,38,Anthony_Martial,Manchester United,3,8.4,1.0,4.8812256
-1821,38,Alexis_Sánchez,Manchester United,3,6.8,0.0,0.14867961
-1822,38,Jesse_Lingard,Manchester United,3,6.3,1.0,0.04468012
-1823,38,Juan_Mata,Manchester United,3,6.1,1.0,0.5339557
-1824,38,Daniel_James,Manchester United,3,5.7,1.0,1.0307541
-1825,38,Frederico_Rodrigues de Paula Santos,Manchester United,3,5.1,1.0,0.84429455
-1826,38,Angel_Gomes,Manchester United,3,4.7,0.0,0.042397738
-1827,38,Andreas_Pereira,Manchester United,3,4.8,1.0,0.77401924
-1828,38,Nemanja_Matic,Manchester United,3,4.8,1.0,2.4682302
-1829,38,Scott_McTominay,Manchester United,3,4.8,1.0,0.9916209
-1830,38,Tahith_Chong,Manchester United,3,4.2,1.0,0.029571533
-1831,38,James_Garner,Manchester United,3,4.3,1.0,0.0482229
-1832,38,Axel_Tuanzebe,Manchester United,2,4.4,0.0,0.10799253
-1833,38,Brandon_Williams,Manchester United,2,3.9,0.75,0.77052355
-1834,38,Bruno Miguel_Borges Fernandes,Manchester United,3,9.0,1.0,4.8787804
-1835,38,Odion_Ighalo,Manchester United,4,6.0,1.0,0.9176525
-1836,38,Timm_Klose,Norwich,2,4.3,1.0,0.51571155
-1837,38,Ben_Godfrey,Norwich,2,4.4,1.0,0.884261
-1838,38,Maximillian_Aarons,Norwich,2,4.3,1.0,0.75313926
-1839,38,Christoph_Zimmermann,Norwich,2,4.4,0.0,0.027911544
-1840,38,Jamal_Lewis,Norwich,2,4.4,1.0,0.8338853
-1841,38,Grant_Hanley,Norwich,2,4.0,0.0,0.059482098
-1842,38,Teemu_Pukki,Norwich,4,6.4,1.0,1.3684349
-1843,38,Dennis_Srbeny,Norwich,4,5.2,0.0,0.07830596
-1844,38,Tim_Krul,Norwich,1,4.6,1.0,1.2386055
-1845,38,Michael_McGovern,Norwich,1,4.1,1.0,0.067112565
-1846,38,Mario_Vrancic,Norwich,3,6.2,1.0,1.1017959
-1847,38,Emiliano_Buendía,Norwich,3,6.0,1.0,1.2493072
-1848,38,Onel_Hernández,Norwich,3,5.3,1.0,1.5366662
-1849,38,Marco_Stiepermann,Norwich,3,5.0,1.0,0.90363526
-1850,38,Kenny_McLean,Norwich,3,4.8,1.0,1.3369453
-1851,38,Todd_Cantwell,Norwich,3,4.5,1.0,0.8055049
-1852,38,Moritz_Leitner,Norwich,3,4.3,0.0,0.1410991
-1853,38,Alexander_Tettey,Norwich,3,4.4,1.0,1.6412334
-1854,38,Tom_Trybull,Norwich,3,4.3,1.0,0.6898478
-1855,38,Josip_Drmic,Norwich,4,5.3,1.0,1.0366902
-1856,38,Patrick_Roberts,Norwich,3,5.0,0.0,0.08848655
-1857,38,Ralf_Fahrmann,Norwich,1,4.4,0.0,0.08693409
-1858,38,Sam_Byram,Norwich,2,4.3,0.0,0.06866491
-1859,38,Philip_Heise,Norwich,2,3.9,0.0,0.09691501
-1860,38,Ibrahim_Amadou,Norwich,3,4.5,0.0,0.22606266
-1861,38,Adam_Idah,Norwich,4,4.4,1.0,0.8308089
-1862,38,Archie_Mair,Norwich,1,4.0,1.0,0.06326437
-1863,38,Akin_Famewo,Norwich,2,3.9,0.0,0.028840423
-1864,38,Ondrej_Duda,Norwich,3,4.4,0.0,0.14455557
-1865,38,Lukas_Rupp,Norwich,3,4.4,1.0,0.7975639
-1866,38,Josh_Martin,Norwich,3,4.5,1.0,0.459244
-1867,38,Jordan_Thomas,Norwich,2,4.0,1.0,0.050392985
-1868,38,Andrew_Robertson,Liverpool,2,7.0,1.0,4.845568
-1869,38,Trent_Alexander-Arnold,Liverpool,2,7.8,1.0,5.2853403
-1870,38,Virgil_van Dijk,Liverpool,2,6.5,1.0,5.230408
-1871,38,Joseph_Gomez,Liverpool,2,5.3,1.0,4.3335147
-1872,38,Joel_Matip,Liverpool,2,5.2,0.0,0.18888617
-1873,38,Dejan_Lovren,Liverpool,2,5.3,1.0,0.11946511
-1874,38,Roberto_Firmino,Liverpool,4,9.3,1.0,3.6428018
-1875,38,Divock_Origi,Liverpool,4,5.1,1.0,1.696073
-1876,38,Alisson_Ramses Becker,Liverpool,1,6.2,1.0,4.886086
-1877,38,Simon_Mignolet,Liverpool,1,4.5,0.0,0.08411908
-1878,38,Mohamed_Salah,Liverpool,3,12.6,1.0,8.683545
-1879,38,Sadio_Mané,Liverpool,3,12.2,1.0,5.986104
-1880,38,Alex_Oxlade-Chamberlain,Liverpool,3,6.1,1.0,2.0852354
-1881,38,Xherdan_Shaqiri,Liverpool,3,6.3,1.0,0.12940574
-1882,38,Adam_Lallana,Liverpool,3,5.7,1.0,0.18353736
-1883,38,Naby_Keita,Liverpool,3,5.8,1.0,2.1191878
-1884,38,Fabio Henrique_Tavares,Liverpool,3,5.4,1.0,2.3217463
-1885,38,Jordan_Henderson,Liverpool,3,5.2,0.0,0.13293386
-1886,38,Georginio_Wijnaldum,Liverpool,3,5.4,1.0,2.6094441
-1887,38,James_Milner,Liverpool,3,5.3,0.75,0.18760061
-1888,38,Rafael_Camacho,Liverpool,3,4.5,0.0,0.032120585
-1889,38,Rhian_Brewster,Liverpool,4,4.2,0.0,0.17638886
-1890,38,Adrián_San Miguel del Castillo,Liverpool,1,4.0,1.0,0.09466636
-1891,38,Andy_Lonergan,Liverpool,1,4.2,1.0,-0.02759564
-1892,38,Caoimhin_Kelleher,Liverpool,1,4.4,1.0,0.13541114
-1893,38,Harvey_Elliott,Liverpool,3,4.5,1.0,0.27822828
-1894,38,Curtis_Jones,Liverpool,3,4.5,1.0,1.2289648
-1895,38,Neco_Williams,Liverpool,2,4.0,1.0,1.7446809
-1896,38,Nathaniel_Phillips,Liverpool,2,3.9,0.0,0.19809544
-1897,38,Takumi_Minamino,Liverpool,3,5.9,1.0,0.74231803
-1898,38,Ki-Jana_Hoever,Liverpool,2,4.0,1.0,0.05132103
-1899,38,Lys_Mousset,Sheffield United,4,4.4,1.0,1.991468
-1900,38,Enda_Stevens,Sheffield United,2,5.1,1.0,4.2014723
-1901,38,Kieron_Freeman,Sheffield United,2,4.2,1.0,0.1264714
-1902,38,Jack_O'Connell,Sheffield United,2,4.5,1.0,3.8409438
-1903,38,George_Baldock,Sheffield United,2,5.0,1.0,3.9606972
-1904,38,John_Egan,Sheffield United,2,4.6,1.0,4.2352304
-1905,38,Richard_Stearman,Sheffield United,2,3.9,0.0,0.07404244
-1906,38,John_Lundstram,Sheffield United,2,4.6,1.0,1.8336582
-1907,38,Billy_Sharp,Sheffield United,4,5.3,1.0,1.4666698
-1908,38,Jake_Eastwood,Sheffield United,1,4.3,1.0,0.083004
-1909,38,Mark_Duffy,Sheffield United,3,5.2,0.0,0.16183531
-1910,38,John_Fleck,Sheffield United,3,4.7,0.75,1.4701884
-1911,38,Oliver_Norwood,Sheffield United,3,4.7,1.0,2.1943092
-1912,38,David_McGoldrick,Sheffield United,4,5.4,1.0,1.9726944
-1913,38,Chris_Basham,Sheffield United,2,4.6,0.75,2.7123008
-1914,38,Simon_Moore,Sheffield United,1,4.3,1.0,1.1496909
-1915,38,Luke_Freeman,Sheffield United,3,5.0,0.0,0.11993003
-1916,38,Phil_Jagielka,Sheffield United,2,4.1,1.0,1.2714484
-1917,38,Callum_Robinson,Sheffield United,3,4.9,0.0,0.18762946
-1918,38,Ravel_Morrison,Sheffield United,3,4.5,0.0,0.09476638
-1919,38,Dean_Henderson,Sheffield United,1,5.2,1.0,4.3704157
-1920,38,Ben_Osborn,Sheffield United,3,4.7,1.0,2.9920573
-1921,38,Oliver_McBurnie,Sheffield United,4,5.5,1.0,2.5266738
-1922,38,Michael_Verrips,Sheffield United,1,4.4,1.0,0.06569779
-1923,38,Muhamed_Bešić,Sheffield United,3,4.3,0.0,0.09978008
-1924,38,Leon_Clarke,Sheffield United,4,4.4,0.0,0.12196779
-1925,38,Jack_Rodwell,Sheffield United,3,4.5,1.0,0.4030739
-1926,38,Jack_Robinson,Sheffield United,2,4.0,1.0,1.6065958
-1927,38,Sander_Berge,Sheffield United,3,4.7,1.0,3.0996137
-1928,38,Richairo_Zivkovic,Sheffield United,4,4.7,1.0,1.0487278
-1929,38,Panagiotis_Retsos,Sheffield United,2,4.5,0.0,0.12769246
-1930,38,Ahmed_El Mohamady,Aston Villa,2,4.1,1.0,0.97838926
-1931,38,James_Chester,Aston Villa,2,4.2,0.0,0.006958008
-1932,38,Neil_Taylor,Aston Villa,2,4.2,0.75,1.0007999
-1933,38,Kortney_Hause,Aston Villa,2,4.4,0.75,0.92091715
-1934,38,Jonathan_Kodjia,Aston Villa,4,5.4,0.0,0.07528281
-1935,38,Ørjan_Nyland,Aston Villa,1,4.3,1.0,1.2262187
-1936,38,Conor_Hourihane,Aston Villa,3,5.7,1.0,1.9746497
-1937,38,Jack_Grealish,Aston Villa,3,5.9,1.0,3.656859
-1938,38,Anwar_El Ghazi,Aston Villa,3,5.3,1.0,1.5929992
-1939,38,John_McGinn,Aston Villa,3,5.3,1.0,2.3863847
-1940,38,Andre_Green,Aston Villa,3,4.8,0.0,-0.00162673
-1941,38,Birkir_Bjarnason,Aston Villa,3,4.5,0.0,0.04804349
-1942,38,Keinan_Davis,Aston Villa,3,4.3,1.0,1.9509659
-1943,38,Henri_Lansbury,Aston Villa,3,4.4,1.0,0.038658738
-1944,38,José Ignacio_Peleteiro Romallo,Aston Villa,3,5.7,1.0,0.3422805
-1945,38,Tom_Heaton,Aston Villa,1,4.3,0.0,0.04851389
-1946,38,Daniel_Drinkwater,Aston Villa,3,4.4,1.0,0.08522344
-1947,38,Matt_Targett,Aston Villa,2,4.3,1.0,1.4256179
-1948,38,Wesley_Moraes,Aston Villa,4,5.4,0.0,0.118597746
-1949,38,Jed_Steer,Aston Villa,1,4.3,1.0,0.016216636
-1950,38,Tyrone_Mings,Aston Villa,2,4.4,1.0,2.3522255
-1951,38,Ezri_Konsa Ngoyo,Aston Villa,2,4.3,1.0,2.0026097
-1952,38,Bjorn_Engels,Aston Villa,2,4.3,0.25,0.060485244
-1953,38,Frédéric_Guilbert,Aston Villa,2,4.3,1.0,0.051894426
-1954,38,Mahmoud Ahmed_Ibrahim Hassan,Aston Villa,3,5.2,1.0,2.6476793
-1955,38,Douglas Luiz_Soares de Paulo,Aston Villa,3,4.3,1.0,2.874966
-1956,38,Lovre_Kalinic,Aston Villa,1,4.2,0.0,0.08190906
-1957,38,Marvelous_Nakamba,Aston Villa,3,4.4,1.0,1.1495984
-1958,38,Indiana_Vassilev,Aston Villa,3,4.5,1.0,0.33277082
-1959,38,José_Reina,Aston Villa,1,4.2,1.0,1.6373346
-1960,38,Mbwana_Samatta,Aston Villa,4,5.2,1.0,2.754314
-1961,38,Borja_González Tomás,Aston Villa,4,5.3,0.0,0.04520285
+0,37,Ahmed_El Mohamady,Aston Villa,2,4.1,1.0,1.0973091
+1,37,James_Chester,Aston Villa,2,4.2,0.0,0.00906229
+2,37,Neil_Taylor,Aston Villa,2,4.2,0.75,1.3706317
+3,37,Kortney_Hause,Aston Villa,2,4.4,0.75,1.1324863
+4,37,Jonathan_Kodjia,Aston Villa,4,5.4,0.0,0.021871805
+5,37,Ørjan_Nyland,Aston Villa,1,4.3,1.0,1.180294
+6,37,Conor_Hourihane,Aston Villa,3,5.7,1.0,2.2265747
+7,37,Jack_Grealish,Aston Villa,3,5.9,1.0,4.132894
+8,37,Anwar_El Ghazi,Aston Villa,3,5.2,1.0,1.6530356
+9,37,John_McGinn,Aston Villa,3,5.2,1.0,2.7270813
+10,37,Andre_Green,Aston Villa,3,4.8,0.0,-0.00094878674
+11,37,Birkir_Bjarnason,Aston Villa,3,4.5,0.0,0.0084728
+12,37,Keinan_Davis,Aston Villa,3,4.3,1.0,1.9876411
+13,37,Henri_Lansbury,Aston Villa,3,4.4,1.0,0.05400157
+14,37,José Ignacio_Peleteiro Romallo,Aston Villa,3,5.7,1.0,0.41449833
+15,37,Tom_Heaton,Aston Villa,1,4.3,0.0,-0.02451086
+16,37,Daniel_Drinkwater,Aston Villa,3,4.4,0.75,0.1320641
+17,37,Matt_Targett,Aston Villa,2,4.3,1.0,1.3503056
+18,37,Wesley_Moraes,Aston Villa,4,5.4,0.0,0.11001134
+19,37,Jed_Steer,Aston Villa,1,4.3,1.0,0.011656523
+20,37,Tyrone_Mings,Aston Villa,2,4.4,1.0,2.4780905
+21,37,Ezri_Konsa Ngoyo,Aston Villa,2,4.3,1.0,2.4853287
+22,37,Bjorn_Engels,Aston Villa,2,4.3,0.25,0.025570393
+23,37,Frédéric_Guilbert,Aston Villa,2,4.3,1.0,-0.03833431
+24,37,Mahmoud Ahmed_Ibrahim Hassan,Aston Villa,3,5.2,1.0,3.1862288
+25,37,Douglas Luiz_Soares de Paulo,Aston Villa,3,4.3,1.0,3.073389
+26,37,Lovre_Kalinic,Aston Villa,1,4.2,0.0,-0.027359128
+27,37,Marvelous_Nakamba,Aston Villa,3,4.4,1.0,0.97665596
+28,37,Indiana_Vassilev,Aston Villa,3,4.5,1.0,0.2678126
+29,37,José_Reina,Aston Villa,1,4.2,1.0,2.5868864
+30,37,Mbwana_Samatta,Aston Villa,4,5.1,1.0,2.3914618
+31,37,Borja_González Tomás,Aston Villa,4,5.3,0.0,0.08107805
+32,37,Kaine_Hayden,Aston Villa,3,4.5,1.0,0.0639559
+33,37,Steve_Cook,Bournemouth,2,5.0,1.0,2.1473725
+34,37,Nathan_Aké,Bournemouth,2,4.8,0.25,1.2571449
+35,37,Charlie_Daniels,Bournemouth,2,4.2,0.0,-0.0099131465
+36,37,Chris_Mepham,Bournemouth,2,4.3,0.25,0.20895982
+37,37,Simon_Francis,Bournemouth,2,4.3,0.25,-0.038406968
+38,37,Adam_Smith,Bournemouth,2,4.3,0.75,2.110314
+39,37,Lloyd_Kelly,Bournemouth,2,4.4,1.0,3.9896674
+40,37,Diego_Rico,Bournemouth,2,4.2,1.0,3.0737019
+41,37,Jack_Simpson,Bournemouth,2,3.9,1.0,0.031365275
+42,37,Callum_Wilson,Bournemouth,4,7.4,1.0,3.2448816
+43,37,Joshua_King,Bournemouth,4,6.1,1.0,3.400836
+44,37,Dominic_Solanke,Bournemouth,4,5.1,1.0,2.4654336
+45,37,Sam_Surridge,Bournemouth,4,4.3,1.0,0.19036722
+46,37,Asmir_Begovic,Bournemouth,1,4.2,0.0,0.047531128
+47,37,Artur_Boruc,Bournemouth,1,4.2,1.0,0.11040449
+48,37,Mark_Travers,Bournemouth,1,4.2,1.0,0.058978558
+49,37,Ryan_Fraser,Bournemouth,3,6.8,0.0,0.11547673
+50,37,David_Brooks,Bournemouth,3,6.1,1.0,2.5537155
+51,37,Junior_Stanislas,Bournemouth,3,5.8,1.0,3.2400517
+52,37,Jordon_Ibe,Bournemouth,3,4.6,0.0,0.03804028
+53,37,Lewis_Cook,Bournemouth,3,5.0,1.0,1.1615243
+54,37,Andrew_Surman,Bournemouth,3,4.7,1.0,0.006141901
+55,37,Dan_Gosling,Bournemouth,3,4.8,1.0,1.8975003
+56,37,Jefferson_Lerma,Bournemouth,3,4.8,1.0,2.4340134
+57,37,Jack_Stacey,Bournemouth,2,4.3,1.0,1.6270792
+58,37,Philip_Billing,Bournemouth,3,4.9,1.0,1.569176
+59,37,Arnaut_Danjuma Groeneveld,Bournemouth,3,5.8,1.0,1.6643782
+60,37,Aaron_Ramsdale,Bournemouth,1,4.4,1.0,3.494585
+61,37,Harry_Wilson,Bournemouth,3,5.7,1.0,1.2912364
+62,37,Christian_Saydee,Bournemouth,3,4.5,1.0,0.0508492
+63,37,Gavin_Kilkenny,Bournemouth,3,4.5,1.0,-0.033586264
+64,37,Mihai-Alexandru_Dobre,Bournemouth,3,4.4,0.0,0.02652967
+65,37,Shane_Duffy,Brighton and Hove Albion,2,4.8,1.0,1.1756852
+66,37,Martín_Montoya,Brighton and Hove Albion,2,4.3,1.0,1.3910229
+67,37,Bernardo_Fernandes da Silva Junior,Brighton and Hove Albion,2,4.3,1.0,1.1928203
+68,37,Leon_Balogun,Brighton and Hove Albion,2,4.3,0.0,-0.06607866
+69,37,Gaëtan_Bong,Brighton and Hove Albion,2,4.2,0.0,0.051392674
+70,37,Lewis_Dunk,Brighton and Hove Albion,2,4.8,1.0,3.4533148
+71,37,Matthew_Clarke,Brighton and Hove Albion,2,4.3,0.0,0.04187715
+72,37,Glenn_Murray,Brighton and Hove Albion,4,5.4,1.0,0.88515687
+73,37,Jürgen_Locadia,Brighton and Hove Albion,4,5.2,0.0,0.029212117
+74,37,Florin_Andone,Brighton and Hove Albion,4,4.7,0.0,-0.021027327
+75,37,Mathew_Ryan,Brighton and Hove Albion,1,4.7,1.0,3.996306
+76,37,David_Button,Brighton and Hove Albion,1,3.9,1.0,0.023565888
+77,37,Pascal_Groß,Brighton and Hove Albion,3,6.2,1.0,1.9183443
+78,37,Alireza_Jahanbakhsh,Brighton and Hove Albion,3,5.8,1.0,0.45390904
+79,37,José Heriberto_Izquierdo Mena,Brighton and Hove Albion,3,5.4,0.0,0.021453738
+80,37,Anthony_Knockaert,Brighton and Hove Albion,3,5.3,0.0,-0.019267142
+81,37,Yves_Bissouma,Brighton and Hove Albion,3,5.0,1.0,1.7269347
+82,37,Davy_Pröpper,Brighton and Hove Albion,3,4.8,1.0,1.8351738
+83,37,Solomon_March,Brighton and Hove Albion,3,4.6,1.0,1.1936023
+84,37,Beram_Kayal,Brighton and Hove Albion,3,4.2,1.0,0.090142965
+85,37,Dale_Stephens,Brighton and Hove Albion,3,4.4,1.0,1.911994
+86,37,Leandro_Trossard,Brighton and Hove Albion,3,5.8,1.0,3.0660563
+87,37,Dan_Burn,Brighton and Hove Albion,2,4.5,1.0,2.606215
+88,37,Adam_Webster,Brighton and Hove Albion,2,4.4,1.0,3.466969
+89,37,Neal_Maupay,Brighton and Hove Albion,4,5.7,1.0,3.424467
+90,37,Aaron_Mooy,Brighton and Hove Albion,3,4.7,1.0,1.8182757
+91,37,Aaron_Connolly,Brighton and Hove Albion,4,4.2,1.0,1.9763718
+92,37,Tudor_Baluta,Brighton and Hove Albion,2,4.0,0.0,-0.013890207
+93,37,Steven_Alzate,Brighton and Hove Albion,3,4.4,0.0,0.13628864
+94,37,Ezequiel_Schelotto,Brighton and Hove Albion,2,4.0,1.0,-0.017359972
+95,37,Tariq_Lamptey,Brighton and Hove Albion,2,4.1,1.0,2.9146218
+96,37,Alexis_Mac Allister,Brighton and Hove Albion,3,5.4,1.0,1.6238453
+97,37,Andrew_Robertson,Liverpool,2,7.0,1.0,4.8939047
+98,37,Trent_Alexander-Arnold,Liverpool,2,7.7,1.0,4.3809996
+99,37,Virgil_van Dijk,Liverpool,2,6.5,1.0,4.356399
+100,37,Joseph_Gomez,Liverpool,2,5.3,1.0,3.934186
+101,37,Joel_Matip,Liverpool,2,5.2,0.0,0.0971843
+102,37,Dejan_Lovren,Liverpool,2,5.3,1.0,0.04873061
+103,37,Roberto_Firmino,Liverpool,4,9.3,1.0,3.6011047
+104,37,Divock_Origi,Liverpool,4,5.1,1.0,1.9137759
+105,37,Alisson_Ramses Becker,Liverpool,1,6.2,1.0,4.216635
+106,37,Simon_Mignolet,Liverpool,1,4.5,0.0,0.07152438
+107,37,Mohamed_Salah,Liverpool,3,12.5,1.0,7.573682
+108,37,Sadio_Mané,Liverpool,3,12.2,1.0,5.9809923
+109,37,Alex_Oxlade-Chamberlain,Liverpool,3,6.1,1.0,2.4261143
+110,37,Xherdan_Shaqiri,Liverpool,3,6.3,1.0,0.4391892
+111,37,Adam_Lallana,Liverpool,3,5.7,1.0,0.1250019
+112,37,Naby_Keita,Liverpool,3,5.8,1.0,2.2966795
+113,37,Fabio Henrique_Tavares,Liverpool,3,5.4,1.0,2.5751626
+114,37,Jordan_Henderson,Liverpool,3,5.2,0.0,0.11350775
+115,37,Georginio_Wijnaldum,Liverpool,3,5.4,1.0,2.6342387
+116,37,James_Milner,Liverpool,3,5.3,0.75,0.1573565
+117,37,Rafael_Camacho,Liverpool,3,4.5,0.0,0.02787435
+118,37,Rhian_Brewster,Liverpool,4,4.2,0.0,0.13717282
+119,37,Adrián_San Miguel del Castillo,Liverpool,1,4.0,1.0,0.14825225
+120,37,Andy_Lonergan,Liverpool,1,4.2,1.0,0.0791558
+121,37,Caoimhin_Kelleher,Liverpool,1,4.4,1.0,0.14650047
+122,37,Harvey_Elliott,Liverpool,3,4.5,1.0,0.09642482
+123,37,Curtis_Jones,Liverpool,3,4.5,1.0,1.4200683
+124,37,Neco_Williams,Liverpool,2,4.0,1.0,1.3693068
+125,37,Nathaniel_Phillips,Liverpool,2,3.9,0.0,0.0035438538
+126,37,Takumi_Minamino,Liverpool,3,5.8,1.0,0.86207736
+127,37,Ki-Jana_Hoever,Liverpool,2,4.0,1.0,0.022914767
+128,37,Aaron_Wan-Bissaka,Manchester United,2,5.5,1.0,4.333505
+129,37,Harry_Maguire,Manchester United,2,5.3,1.0,3.9054346
+130,37,Chris_Smalling,Manchester United,2,5.2,0.0,0.048555613
+131,37,Ashley_Young,Manchester United,2,5.4,0.0,0.041119218
+132,37,Victor_Lindelöf,Manchester United,2,5.3,1.0,3.1835785
+133,37,Luke_Shaw,Manchester United,2,5.4,0.75,2.6256409
+134,37,Marcos_Rojo,Manchester United,2,4.8,0.0,0.067105174
+135,37,Eric_Bailly,Manchester United,2,4.8,1.0,0.867362
+136,37,José Diogo_Dalot Teixeira,Manchester United,2,4.9,1.0,0.055448413
+137,37,Matteo_Darmian,Manchester United,2,4.9,0.0,0.10028231
+138,37,Phil_Jones,Manchester United,2,4.7,0.0,0.06107819
+139,37,Romelu_Lukaku,Manchester United,4,8.5,0.0,0.08270824
+140,37,Marcus_Rashford,Manchester United,4,8.9,1.0,4.7438197
+141,37,Mason_Greenwood,Manchester United,4,4.9,1.0,4.7664037
+142,37,David_de Gea,Manchester United,1,5.3,1.0,3.7427368
+143,37,Sergio_Romero,Manchester United,1,4.6,1.0,0.10042536
+144,37,Lee_Grant,Manchester United,1,4.7,1.0,0.04955995
+145,37,Paul_Pogba,Manchester United,3,8.3,1.0,4.4778786
+146,37,Anthony_Martial,Manchester United,3,8.5,1.0,5.76088
+147,37,Alexis_Sánchez,Manchester United,3,6.8,0.0,0.12014949
+148,37,Jesse_Lingard,Manchester United,3,6.3,1.0,0.7445531
+149,37,Juan_Mata,Manchester United,3,6.1,1.0,0.32960057
+150,37,Daniel_James,Manchester United,3,5.7,1.0,1.0699899
+151,37,Frederico_Rodrigues de Paula Santos,Manchester United,3,5.1,1.0,0.90079546
+152,37,Angel_Gomes,Manchester United,3,4.7,0.0,0.112214565
+153,37,Andreas_Pereira,Manchester United,3,4.8,1.0,0.6280477
+154,37,Nemanja_Matic,Manchester United,3,4.8,1.0,2.22864
+155,37,Scott_McTominay,Manchester United,3,4.8,1.0,1.2951334
+156,37,Tahith_Chong,Manchester United,3,4.2,1.0,0.14314795
+157,37,James_Garner,Manchester United,3,4.3,1.0,0.0600729
+158,37,Axel_Tuanzebe,Manchester United,2,4.4,0.0,0.032469034
+159,37,Brandon_Williams,Manchester United,2,3.9,0.75,1.1614416
+160,37,Bruno Miguel_Borges Fernandes,Manchester United,3,9.1,1.0,6.5933785
+161,37,Odion_Ighalo,Manchester United,4,5.9,1.0,0.5847281
+162,37,Timothy_Fosu-Mensah,Manchester United,2,4.5,1.0,0.02216804
+163,37,Timm_Klose,Norwich,2,4.3,1.0,2.1341677
+164,37,Ben_Godfrey,Norwich,2,4.4,1.0,2.1909676
+165,37,Maximillian_Aarons,Norwich,2,4.3,1.0,2.9445577
+166,37,Christoph_Zimmermann,Norwich,2,4.4,0.75,0.012888789
+167,37,Jamal_Lewis,Norwich,2,4.4,1.0,2.9087663
+168,37,Grant_Hanley,Norwich,2,4.0,0.0,-0.021672845
+169,37,Teemu_Pukki,Norwich,4,6.4,1.0,2.0821269
+170,37,Dennis_Srbeny,Norwich,4,5.2,0.0,0.13785803
+171,37,Tim_Krul,Norwich,1,4.6,1.0,3.441029
+172,37,Michael_McGovern,Norwich,1,4.1,1.0,0.049319386
+173,37,Mario_Vrancic,Norwich,3,6.2,1.0,1.7350149
+174,37,Emiliano_Buendía,Norwich,3,6.0,1.0,2.239365
+175,37,Onel_Hernández,Norwich,3,5.3,1.0,2.7062197
+176,37,Marco_Stiepermann,Norwich,3,5.0,1.0,1.508039
+177,37,Kenny_McLean,Norwich,3,4.8,1.0,2.1961799
+178,37,Todd_Cantwell,Norwich,3,4.5,1.0,2.4477668
+179,37,Moritz_Leitner,Norwich,3,4.3,0.0,0.05354917
+180,37,Alexander_Tettey,Norwich,3,4.4,1.0,2.8048825
+181,37,Tom_Trybull,Norwich,3,4.3,1.0,0.77855897
+182,37,Josip_Drmic,Norwich,4,5.3,1.0,1.635767
+183,37,Patrick_Roberts,Norwich,3,5.0,0.0,0.073810816
+184,37,Ralf_Fahrmann,Norwich,1,4.4,0.0,0.04052043
+185,37,Sam_Byram,Norwich,2,4.3,0.0,0.06283069
+186,37,Philip_Heise,Norwich,2,3.9,0.0,0.024269938
+187,37,Ibrahim_Amadou,Norwich,3,4.5,0.0,0.024445415
+188,37,Adam_Idah,Norwich,4,4.4,1.0,1.380352
+189,37,Archie_Mair,Norwich,1,4.0,1.0,0.0075331926
+190,37,Akin_Famewo,Norwich,2,3.9,0.0,0.033128977
+191,37,Ondrej_Duda,Norwich,3,4.4,0.0,0.063072205
+192,37,Lukas_Rupp,Norwich,3,4.4,1.0,1.6582222
+193,37,Josh_Martin,Norwich,3,4.5,1.0,0.7940054
+194,37,Jordan_Thomas,Norwich,2,4.0,1.0,0.052914858
+195,37,Lys_Mousset,Sheffield United,4,4.3,1.0,2.0281608
+196,37,Enda_Stevens,Sheffield United,2,5.2,1.0,4.097245
+197,37,Kieron_Freeman,Sheffield United,2,4.2,1.0,0.04623878
+198,37,Jack_O'Connell,Sheffield United,2,4.5,1.0,3.6556587
+199,37,George_Baldock,Sheffield United,2,5.0,1.0,4.173775
+200,37,John_Egan,Sheffield United,2,4.7,1.0,4.4989605
+201,37,Richard_Stearman,Sheffield United,2,3.9,0.0,0.059615135
+202,37,John_Lundstram,Sheffield United,2,4.6,1.0,1.1678472
+203,37,Billy_Sharp,Sheffield United,4,5.3,1.0,1.5674717
+204,37,Jake_Eastwood,Sheffield United,1,4.3,1.0,0.06407058
+205,37,Mark_Duffy,Sheffield United,3,5.2,0.0,0.07311845
+206,37,John_Fleck,Sheffield United,3,4.7,1.0,0.17657518
+207,37,Oliver_Norwood,Sheffield United,3,4.7,1.0,2.8480642
+208,37,David_McGoldrick,Sheffield United,4,5.4,1.0,1.9788704
+209,37,Chris_Basham,Sheffield United,2,4.6,1.0,3.745223
+210,37,Simon_Moore,Sheffield United,1,4.3,1.0,0.04095602
+211,37,Luke_Freeman,Sheffield United,3,5.0,0.25,0.09672928
+212,37,Phil_Jagielka,Sheffield United,2,4.1,1.0,0.4938984
+213,37,Callum_Robinson,Sheffield United,3,4.9,0.0,0.10764277
+214,37,Ravel_Morrison,Sheffield United,3,4.5,0.0,0.0815928
+215,37,Dean_Henderson,Sheffield United,1,5.2,1.0,4.440852
+216,37,Ben_Osborn,Sheffield United,3,4.7,1.0,3.1541028
+217,37,Oliver_McBurnie,Sheffield United,4,5.5,1.0,3.0793037
+218,37,Michael_Verrips,Sheffield United,1,4.4,1.0,0.04078889
+219,37,Muhamed_Bešić,Sheffield United,3,4.3,0.0,0.12820947
+220,37,Leon_Clarke,Sheffield United,4,4.4,0.25,0.11964464
+221,37,Jack_Rodwell,Sheffield United,3,4.5,1.0,0.3134681
+222,37,Jack_Robinson,Sheffield United,2,4.0,1.0,1.3379986
+223,37,Sander_Berge,Sheffield United,3,4.7,1.0,3.523799
+224,37,Richairo_Zivkovic,Sheffield United,4,4.7,1.0,0.5804968
+225,37,Panagiotis_Retsos,Sheffield United,2,4.5,0.0,0.012568951
+226,37,Ben_Davies,Tottenham Hotspur,2,5.3,1.0,3.7659297
+227,37,Jan_Vertonghen,Tottenham Hotspur,2,5.2,1.0,1.0699861
+228,37,Toby_Alderweireld,Tottenham Hotspur,2,5.3,1.0,2.6450698
+229,37,Davinson_Sánchez,Tottenham Hotspur,2,5.3,1.0,1.8413332
+230,37,Kieran_Trippier,Tottenham Hotspur,2,5.5,0.0,0.045930147
+231,37,Juan_Foyth,Tottenham Hotspur,2,4.8,0.0,-0.022570193
+232,37,Serge_Aurier,Tottenham Hotspur,2,5.1,0.75,2.8201478
+233,37,Harry_Kane,Tottenham Hotspur,4,10.9,1.0,6.341002
+234,37,Vincent_Janssen,Tottenham Hotspur,4,4.5,0.0,0.1444012
+235,37,Hugo_Lloris,Tottenham Hotspur,1,5.3,1.0,4.1776395
+236,37,Paulo_Gazzaniga,Tottenham Hotspur,1,4.1,1.0,0.098968625
+237,37,Heung-Min_Son,Tottenham Hotspur,3,9.6,1.0,5.4808884
+238,37,Christian_Eriksen,Tottenham Hotspur,3,8.6,0.0,0.17482638
+239,37,Bamidele_Alli,Tottenham Hotspur,3,8.3,0.0,0.15929985
+240,37,Lucas_Rodrigues Moura da Silva,Tottenham Hotspur,3,7.0,1.0,2.9420722
+241,37,Erik_Lamela,Tottenham Hotspur,3,5.7,1.0,1.7607672
+242,37,Harry_Winks,Tottenham Hotspur,3,5.2,1.0,2.2740655
+243,37,Victor_Wanyama,Tottenham Hotspur,3,4.7,0.0,0.045236826
+244,37,Moussa_Sissoko,Tottenham Hotspur,3,4.8,1.0,2.722628
+245,37,Eric_Dier,Tottenham Hotspur,3,4.8,0.0,0.096876144
+246,37,Luke_Amos,Tottenham Hotspur,3,4.4,0.0,0.10622907
+247,37,Oliver_Skipp,Tottenham Hotspur,3,4.3,1.0,0.26551008
+248,37,Tanguy_Ndombele,Tottenham Hotspur,3,5.8,0.0,0.08543825
+249,37,Troy_Parrott,Tottenham Hotspur,4,4.3,0.25,0.1315912
+250,37,Giovani_Lo Celso,Tottenham Hotspur,3,7.3,1.0,2.6688888
+251,37,Ryan_Sessegnon,Tottenham Hotspur,3,5.4,1.0,0.17304647
+252,37,Georges-Kévin_Nkoudou,Tottenham Hotspur,3,5.0,0.0,0.10196555
+253,37,Alfie_Whiteman,Tottenham Hotspur,1,4.0,1.0,0.03534341
+254,37,Michel_Vorm,Tottenham Hotspur,1,4.2,1.0,0.023002744
+255,37,Brandon_Austin,Tottenham Hotspur,1,4.0,1.0,0.052886724
+256,37,Japhet_Tanganga,Tottenham Hotspur,2,3.9,1.0,0.033582687
+257,37,Gedson_Carvalho Fernandes,Tottenham Hotspur,3,4.6,1.0,0.21208632
+258,37,Steven_Bergwijn,Tottenham Hotspur,3,7.0,1.0,1.9064379
+259,37,Harvey_White,Tottenham Hotspur,3,4.5,1.0,0.14654231
+260,37,Dennis_Cirkin,Tottenham Hotspur,2,4.0,1.0,0.01596129
+261,37,José_Holebas,Watford,2,4.6,1.0,0.31960618
+262,37,Christian_Kabasele,Watford,2,4.3,1.0,1.4241059
+263,37,Adam_Masina,Watford,2,4.3,1.0,1.3610828
+264,37,Adrian_Mariappa,Watford,2,4.1,1.0,0.7875078
+265,37,Francisco_Femenía Far,Watford,2,4.2,1.0,1.5365331
+266,37,Craig_Cathcart,Watford,2,4.2,1.0,0.67646766
+267,37,Daryl_Janmaat,Watford,2,4.0,0.0,0.0448761
+268,37,Marc_Navarro,Watford,2,3.9,0.0,0.020710826
+269,37,Sebastian_Prödl,Watford,2,3.9,0.0,-0.034691393
+270,37,Troy_Deeney,Watford,4,6.2,1.0,3.050105
+271,37,Gerard_Deulofeu,Watford,4,6.1,0.0,0.027455091
+272,37,Andre_Gray,Watford,4,5.5,1.0,0.534454
+273,37,Isaac_Success Ajayi,Watford,4,4.7,0.0,0.13147473
+274,37,Ben_Foster,Watford,1,4.9,1.0,2.6520255
+275,37,Pontus_Dahlberg,Watford,1,4.2,0.0,-0.011525512
+276,37,Abdoulaye_Doucouré,Watford,3,5.4,1.0,2.7448277
+277,37,Roberto_Pereyra,Watford,3,5.6,1.0,1.1350834
+278,37,Will_Hughes,Watford,3,5.3,1.0,2.4528856
+279,37,Tom_Cleverley,Watford,3,4.8,1.0,1.3976583
+280,37,Ken_Sema,Watford,3,4.7,0.0,0.035065055
+281,37,Etienne_Capoue,Watford,3,4.8,0.75,1.6487033
+282,37,Nathaniel_Chalobah,Watford,3,4.4,1.0,0.95194983
+283,37,Domingos_Quina,Watford,3,4.3,1.0,-0.03302914
+284,37,Craig_Dawson,Watford,2,4.8,1.0,1.8270845
+285,37,Danny_Welbeck,Watford,4,5.8,1.0,2.0802784
+286,37,Heurelho da Silva_Gomes,Watford,1,4.3,1.0,-0.015576661
+287,37,Ismaïla_Sarr,Watford,3,6.0,1.0,3.0914931
+288,37,Dimitri_Foulquier,Watford,2,3.9,0.0,0.05668068
+289,37,Ayotomiwa_Dele-Bashiru,Watford,3,4.5,1.0,0.006581068
+290,37,João Pedro_Junqueira de Jesus,Watford,4,4.9,1.0,0.46047986
+291,37,Ignacio_Pussetto,Watford,3,4.6,1.0,0.3130101
+292,37,Adalberto_Peñaranda,Watford,4,4.5,1.0,-0.028425872
+293,37,Matt_Doherty,Wolverhampton Wanderers,2,6.5,1.0,4.3179183
+294,37,Jonathan_Castro Otto,Wolverhampton Wanderers,2,5.5,1.0,3.3785949
+295,37,Conor_Coady,Wolverhampton Wanderers,2,5.1,1.0,3.724203
+296,37,Willy_Boly,Wolverhampton Wanderers,2,4.9,1.0,5.2515187
+297,37,Rúben Gonçalo_Silva Nascimento Vinagre,Wolverhampton Wanderers,2,4.1,1.0,1.2928565
+298,37,Romain_Saïss,Wolverhampton Wanderers,2,4.7,1.0,4.8575315
+299,37,Max_Kilman,Wolverhampton Wanderers,2,3.9,1.0,0.031991363
+300,37,Raúl_Jiménez,Wolverhampton Wanderers,4,8.1,1.0,5.3031545
+301,37,Diogo_Jota,Wolverhampton Wanderers,4,6.0,1.0,2.941672
+302,37,Rui Pedro_dos Santos Patrício,Wolverhampton Wanderers,1,5.3,1.0,3.8123527
+303,37,John_Ruddy,Wolverhampton Wanderers,1,4.2,1.0,0.037870884
+304,37,Will_Norris,Wolverhampton Wanderers,1,3.9,0.0,0.025313616
+305,37,Rúben Diogo_da Silva Neves,Wolverhampton Wanderers,3,5.2,1.0,2.9034102
+306,37,João Filipe Iria_Santos Moutinho,Wolverhampton Wanderers,3,5.3,1.0,2.5679824
+307,37,Morgan_Gibbs-White,Wolverhampton Wanderers,3,4.7,1.0,0.061601996
+308,37,Adama_Traoré,Wolverhampton Wanderers,3,5.6,1.0,2.3590362
+309,37,Hélder_Costa,Wolverhampton Wanderers,3,4.8,0.0,-0.09029412
+310,37,Ivan_Cavaleiro,Wolverhampton Wanderers,3,4.9,0.0,-0.04629284
+311,37,Leander_Dendoncker,Wolverhampton Wanderers,3,4.4,1.0,1.817781
+312,37,Jesús_Vallejo Lázaro,Wolverhampton Wanderers,2,4.6,0.0,-0.0010538101
+313,37,Patrick_Cutrone,Wolverhampton Wanderers,4,5.4,0.0,0.028239965
+314,37,Pedro_Lomba Neto,Wolverhampton Wanderers,3,4.9,1.0,0.9115648
+315,37,Bernard_Ashley-Seal,Wolverhampton Wanderers,4,4.5,0.0,0.005112767
+316,37,Taylor_Perry,Wolverhampton Wanderers,3,4.5,1.0,-0.15389913
+317,37,Owen_Otasowie,Wolverhampton Wanderers,3,4.5,1.0,-0.09405607
+318,37,Luke_Cundle,Wolverhampton Wanderers,3,4.5,1.0,-0.20554549
+319,37,Oskar_Buur,Wolverhampton Wanderers,2,4.0,1.0,0.06265497
+320,37,Ryan_Giles,Wolverhampton Wanderers,2,3.9,0.0,0.046518326
+321,37,Bruno André_Cavaco Jordao,Wolverhampton Wanderers,3,4.5,1.0,-0.003503561
+322,37,Daniel_Castelo Podence,Wolverhampton Wanderers,3,4.9,1.0,1.5904021
+323,37,Leonardo_Campana,Wolverhampton Wanderers,4,4.5,1.0,-0.023829818
+324,38,Shkodran_Mustafi,Arsenal,2,5.1,1.0,2.9243083
+325,38,Héctor_Bellerín,Arsenal,2,5.2,1.0,2.7295735
+326,38,Sead_Kolasinac,Arsenal,2,5.2,1.0,3.6660595
+327,38,Ainsley_Maitland-Niles,Arsenal,2,4.5,1.0,0.6582619
+328,38,Sokratis_Papastathopoulos,Arsenal,2,4.8,1.0,0.024420857
+329,38,Nacho_Monreal,Arsenal,2,5.0,0.0,0.056423783
+330,38,Laurent_Koscielny,Arsenal,2,5.0,0.0,-0.035719693
+331,38,Konstantinos_Mavropanos,Arsenal,2,4.3,0.0,0.009548187
+332,38,Carl_Jenkinson,Arsenal,2,4.5,0.0,0.0071462393
+333,38,Rob_Holding,Arsenal,2,4.4,1.0,1.3110416
+334,38,Pierre-Emerick_Aubameyang,Arsenal,4,10.9,1.0,6.3926764
+335,38,Alexandre_Lacazette,Arsenal,4,9.2,1.0,4.407106
+336,38,Edward_Nketiah,Arsenal,4,4.3,1.0,2.5188074
+337,38,Bernd_Leno,Arsenal,1,4.8,0.0,-0.002942443
+338,38,Mesut_Özil,Arsenal,3,6.9,1.0,0.10973394
+339,38,Henrikh_Mkhitaryan,Arsenal,3,6.7,0.0,0.12057459
+340,38,Granit_Xhaka,Arsenal,3,5.1,1.0,3.1698341
+341,38,Lucas_Torreira,Arsenal,3,4.7,1.0,1.0549014
+342,38,Mohamed_Elneny,Arsenal,3,4.2,0.0,0.108392835
+343,38,Matteo_Guendouzi,Arsenal,3,4.1,1.0,-0.0028457642
+344,38,David_Luiz Moreira Marinho,Arsenal,2,5.7,1.0,4.1266427
+345,38,Emiliano_Martínez,Arsenal,1,4.3,1.0,4.2832184
+346,38,Calum_Chambers,Arsenal,2,4.3,0.0,0.026971698
+347,38,Daniel_Ceballos Fernández,Arsenal,3,5.2,1.0,2.8662853
+348,38,Cédric_Soares,Arsenal,2,4.8,1.0,1.8681781
+349,38,Nicolas_Pépé,Arsenal,3,8.9,1.0,2.0389311
+350,38,Reiss_Nelson,Arsenal,3,5.3,1.0,1.3919818
+351,38,Joseph_Willock,Arsenal,3,4.7,1.0,1.3851924
+352,38,Gabriel Teodoro_Martinelli Silva,Arsenal,4,4.3,0.0,0.16335881
+353,38,Kieran_Tierney,Arsenal,2,5.3,1.0,3.4486065
+354,38,Bukayo_Saka,Arsenal,3,4.7,1.0,2.646388
+355,38,Emile_Smith Rowe,Arsenal,3,4.3,0.0,0.09825492
+356,38,Tyreece_John-Jules,Arsenal,4,4.4,0.0,0.11872554
+357,38,Pablo_Marí,Arsenal,2,4.4,0.0,-0.0063809156
+358,38,Zech_Medley,Arsenal,2,4.0,1.0,-0.0014452934
+359,38,Matt_Macey,Arsenal,1,4.0,1.0,0.009412408
+360,38,Matthew_Smith,Arsenal,2,4.0,1.0,0.037689924
+361,38,Ben_Mee,Burnley,2,4.9,0.0,0.017753601
+362,38,James_Tarkowski,Burnley,2,5.4,1.0,4.516431
+363,38,Matthew_Lowton,Burnley,2,4.2,0.0,-0.014828563
+364,38,Phil_Bardsley,Burnley,2,4.3,1.0,3.9028177
+365,38,Charlie_Taylor,Burnley,2,4.4,0.0,-0.05386913
+366,38,Kevin_Long,Burnley,2,4.3,1.0,3.4005756
+367,38,Ben_Gibson,Burnley,2,3.9,0.0,0.032881975
+368,38,Ashley_Barnes,Burnley,4,6.1,0.0,0.08198154
+369,38,Chris_Wood,Burnley,4,6.1,1.0,3.6347346
+370,38,Matej_Vydra,Burnley,4,5.1,1.0,2.880146
+371,38,Nick_Pope,Burnley,1,5.1,1.0,5.1998067
+372,38,Joe_Hart,Burnley,1,4.2,0.0,0.035924792
+373,38,Johann Berg_Gudmundsson,Burnley,3,5.9,1.0,1.6246207
+374,38,Dwight_McNeil,Burnley,3,6.0,1.0,4.4928136
+375,38,Robbie_Brady,Burnley,3,5.5,1.0,0.30147338
+376,38,Steven_Defour,Burnley,3,5.5,0.0,0.078445554
+377,38,Jeff_Hendrick,Burnley,3,5.4,0.0,0.11487615
+378,38,Ashley_Westwood,Burnley,3,5.5,1.0,3.60399
+379,38,Jack_Cork,Burnley,3,4.9,0.0,0.007582307
+380,38,Aaron_Lennon,Burnley,3,4.6,0.0,0.13556373
+381,38,Erik_Pieters,Burnley,2,4.2,1.0,3.5487952
+382,38,Jay_Rodriguez,Burnley,4,5.7,1.0,4.086434
+383,38,Bailey_Peacock-Farrell,Burnley,1,4.3,1.0,-0.013401508
+384,38,Mace_Goodridge,Burnley,3,4.5,1.0,0.06082356
+385,38,Anthony_Driscoll-Glennon,Burnley,2,3.9,1.0,-0.023881555
+386,38,Abd-Al-Ali Morakinyo Olaposi_Koiki,Burnley,2,4.0,0.0,-0.010399222
+387,38,Josh_Brownhill,Burnley,3,4.8,1.0,3.5282745
+388,38,Jimmy_Dunne,Burnley,2,4.0,1.0,-0.040692627
+389,38,Bobby_Thomas,Burnley,2,4.0,1.0,-0.013872027
+390,38,Max_Thompson,Burnley,4,4.5,1.0,0.08344984
+391,38,Lukas_Jensen,Burnley,1,4.0,1.0,0.0026575327
+392,38,Josh_Benson,Burnley,3,4.5,1.0,0.05215597
+393,38,Marcos_Alonso,Chelsea,2,6.1,1.0,2.5261958
+394,38,Antonio_Rüdiger,Chelsea,2,5.9,1.0,1.8940458
+395,38,César_Azpilicueta,Chelsea,2,6.1,1.0,4.0974226
+396,38,Emerson_Palmieri dos Santos,Chelsea,2,5.4,1.0,0.059098005
+397,38,Andreas_Christensen,Chelsea,2,4.8,1.0,2.0530224
+398,38,Davide_Zappacosta,Chelsea,2,4.2,0.0,-0.02008915
+399,38,Olivier_Giroud,Chelsea,4,6.7,1.0,3.3877792
+400,38,Kepa_Arrizabalaga,Chelsea,1,5.4,1.0,3.3126535
+401,38,Willy_Caballero,Chelsea,1,4.8,1.0,0.08703649
+402,38,Willian_Borges Da Silva,Chelsea,3,7.4,1.0,4.463241
+403,38,Pedro_Rodríguez Ledesma,Chelsea,3,6.8,1.0,0.051635027
+404,38,Ruben_Loftus-Cheek,Chelsea,3,5.9,1.0,1.5947001
+405,38,Callum_Hudson-Odoi,Chelsea,3,5.1,1.0,1.0703022
+406,38,Ross_Barkley,Chelsea,3,5.6,1.0,2.9265094
+407,38,Jorge Luiz_Frello Filho,Chelsea,3,4.9,1.0,1.4213157
+408,38,N'Golo_Kanté,Chelsea,3,5.0,0.5,1.5151789
+409,38,Ethan_Ampadu,Chelsea,3,4.3,0.0,0.036971927
+410,38,Christian_Pulisic,Chelsea,3,7.4,1.0,4.9350166
+411,38,Mateo_Kovacic,Chelsea,3,5.3,1.0,2.3940337
+412,38,Kurt_Zouma,Chelsea,2,4.7,1.0,2.82194
+413,38,Tammy_Abraham,Chelsea,4,7.4,1.0,2.3099062
+414,38,Michy_Batshuayi,Chelsea,4,6.6,1.0,0.29007196
+415,38,Robert Kenedy_Nunes do Nascimento,Chelsea,3,5.2,0.0,0.08751452
+416,38,Mason_Mount,Chelsea,3,6.0,1.0,2.166236
+417,38,Reece_James,Chelsea,2,4.9,1.0,2.0735369
+418,38,Fikayo_Tomori,Chelsea,2,4.2,1.0,-0.029095769
+419,38,Billy_Gilmour,Chelsea,3,4.1,0.0,0.11982
+420,38,Addji Keaninkin Marc-Israel_Guehi,Chelsea,2,3.9,0.0,0.01453948
+421,38,Faustino_Anjorin,Chelsea,3,4.5,1.0,0.08468652
+422,38,Armando_Broja,Chelsea,4,4.5,1.0,0.17831433
+423,38,Lewis_Bate,Chelsea,3,4.5,1.0,0.09217465
+424,38,Patrick_van Aanholt,Crystal Palace,2,5.6,0.0,-0.0034427643
+425,38,James_Tomkins,Crystal Palace,2,5.0,0.0,0.027775526
+426,38,Mamadou_Sakho,Crystal Palace,2,5.0,1.0,1.6663702
+427,38,Joel_Ward,Crystal Palace,2,4.3,1.0,2.02523
+428,38,Scott_Dann,Crystal Palace,2,4.3,1.0,1.9464693
+429,38,Martin_Kelly,Crystal Palace,2,4.1,1.0,0.055522323
+430,38,Christian_Benteke,Crystal Palace,4,5.7,0.0,0.122712255
+431,38,Connor_Wickham,Crystal Palace,4,4.3,0.0,0.06629491
+432,38,Vicente_Guaita,Crystal Palace,1,4.9,1.0,3.090127
+433,38,Wayne_Hennessey,Crystal Palace,1,4.2,1.0,-0.03684163
+434,38,Wilfried_Zaha,Crystal Palace,3,6.6,1.0,3.4524236
+435,38,Luka_Milivojevic,Crystal Palace,3,6.7,1.0,3.3122163
+436,38,Andros_Townsend,Crystal Palace,3,5.6,1.0,1.7665
+437,38,Max_Meyer,Crystal Palace,3,5.2,1.0,0.78432167
+438,38,Jeffrey_Schlupp,Crystal Palace,3,5.4,1.0,0.08532548
+439,38,James_McArthur,Crystal Palace,3,5.2,1.0,2.395539
+440,38,Cheikhou_Kouyaté,Crystal Palace,3,4.9,1.0,1.5819113
+441,38,Luke_Dreher,Crystal Palace,3,4.3,1.0,0.036863565
+442,38,James_McCarthy,Crystal Palace,3,4.2,1.0,1.420604
+443,38,Jordan_Ayew,Crystal Palace,4,5.1,1.0,3.0272818
+444,38,Gary_Cahill,Crystal Palace,2,4.4,0.0,-0.005967498
+445,38,Víctor_Camarasa,Crystal Palace,3,4.5,0.0,0.07619691
+446,38,Jairo_Riedewald,Crystal Palace,3,4.5,1.0,1.3015563
+447,38,Stephen_Henderson,Crystal Palace,1,4.0,1.0,-0.049521923
+448,38,Sam_Woods,Crystal Palace,2,3.9,0.0,-0.042148948
+449,38,Tyrick_Mitchell,Crystal Palace,2,4.0,1.0,0.33761227
+450,38,Brandon_Pierrick,Crystal Palace,3,4.5,1.0,-0.027704835
+451,38,James_Daly,Crystal Palace,4,4.5,0.0,0.025509834
+452,38,Nya_Kirby,Crystal Palace,3,4.5,1.0,-0.055929124
+453,38,Giovanni_McGregor,Crystal Palace,3,4.5,0.0,-0.026932657
+454,38,Nikola_Tavares,Crystal Palace,2,4.0,0.0,-0.015525103
+455,38,Alex_Iwobi,Everton,3,5.6,1.0,2.5834367
+456,38,Lucas_Digne,Everton,2,5.9,1.0,4.5975895
+457,38,Yerry_Mina,Everton,2,5.3,0.75,1.8834555
+458,38,Michael_Keane,Everton,2,5.2,1.0,3.6934848
+459,38,Seamus_Coleman,Everton,2,5.3,1.0,3.9126816
+460,38,Leighton_Baines,Everton,2,4.9,1.0,0.5059303
+461,38,Cenk_Tosun,Everton,4,5.7,0.0,0.15745807
+462,38,Dominic_Calvert-Lewin,Everton,4,6.2,1.0,4.214677
+463,38,Jordan_Pickford,Everton,1,5.2,1.0,3.9459949
+464,38,Maarten_Stekelenburg,Everton,1,3.9,1.0,0.080767155
+465,38,Richarlison_de Andrade,Everton,3,8.2,1.0,4.5989165
+466,38,Gylfi_Sigurdsson,Everton,3,7.3,1.0,3.0448256
+467,38,Bernard_Anício Caldeira Duarte,Everton,3,6.4,1.0,1.5602503
+468,38,Theo_Walcott,Everton,3,6.2,1.0,2.3482702
+469,38,Tom_Davies,Everton,3,5.3,1.0,2.4341483
+470,38,Ademola_Lookman,Everton,3,5.0,0.0,0.1190089
+471,38,Idrissa_Gueye,Everton,3,5.0,0.0,0.07212162
+472,38,Morgan_Schneiderlin,Everton,3,4.4,0.0,0.12906921
+473,38,Fabian_Delph,Everton,2,5.3,0.0,0.07363188
+474,38,André Filipe_Tavares Gomes,Everton,3,5.2,1.0,2.4063718
+475,38,Lewis_Gibson,Everton,2,4.2,0.0,-0.0061614513
+476,38,Mason_Holgate,Everton,2,4.3,0.75,1.6666932
+477,38,Jonas_Lössl,Everton,1,4.2,0.0,0.021466494
+478,38,Moise_Kean,Everton,4,6.3,1.0,1.3398943
+479,38,Jean-Philippe_Gbamin,Everton,3,4.8,0.0,0.021447778
+480,38,Djibril_Sidibé,Everton,2,5.0,1.0,0.7828591
+481,38,Beni_Baningime,Everton,3,4.4,1.0,0.064495444
+482,38,Anthony_Gordon,Everton,4,4.5,1.0,2.7589357
+483,38,Oumar_Niasse,Everton,4,4.5,0.0,0.14433408
+484,38,Rhu-endly_Martina,Everton,2,4.0,0.0,-0.03056866
+485,38,João Manuel_Neves Virgínia,Everton,1,4.0,1.0,0.032598257
+486,38,Jarrad_Branthwaite,Everton,2,4.0,1.0,1.0378852
+487,38,Ricardo Domingos_Barbosa Pereira,Leicester City,2,6.2,0.0,-0.0055047274
+488,38,Benjamin_Chilwell,Leicester City,2,5.5,0.0,0.09509778
+489,38,Jonny_Evans,Leicester City,2,5.3,1.0,3.2147822
+490,38,Christian_Fuchs,Leicester City,2,4.2,0.0,0.020929933
+491,38,Çaglar_Söyüncü,Leicester City,2,4.9,0.0,0.014908552
+492,38,Wes_Morgan,Leicester City,2,4.1,1.0,0.9512874
+493,38,Jamie_Vardy,Leicester City,4,9.8,1.0,5.10184
+494,38,Kelechi_Iheanacho,Leicester City,4,5.7,1.0,2.5397973
+495,38,Kasper_Schmeichel,Leicester City,1,5.5,1.0,3.7342439
+496,38,Eldin_Jakupovic,Leicester City,1,4.2,1.0,0.003555894
+497,38,Danny_Ward,Leicester City,1,4.2,1.0,0.010091305
+498,38,James_Maddison,Leicester City,3,7.3,0.0,0.06831062
+499,38,Harvey_Barnes,Leicester City,3,5.9,1.0,2.0101771
+500,38,Rachid_Ghezzal,Leicester City,3,5.1,0.0,0.03259611
+501,38,Marc_Albrighton,Leicester City,3,5.1,0.0,0.09005761
+502,38,Demarai_Gray,Leicester City,3,5.0,1.0,0.9515209
+503,38,Wilfred_Ndidi,Leicester City,3,5.0,1.0,2.7611427
+504,38,Matty_James,Leicester City,3,4.3,1.0,0.03746009
+505,38,Daniel_Amartey,Leicester City,3,4.2,0.0,0.039750457
+506,38,Nampalys_Mendy,Leicester City,3,4.3,1.0,0.057222605
+507,38,Hamza_Choudhury,Leicester City,3,4.2,1.0,0.5084957
+508,38,Ayoze_Pérez,Leicester City,3,6.0,1.0,2.9349263
+509,38,Ryan_Bennett,Leicester City,2,4.8,1.0,1.8555045
+510,38,James_Justin,Leicester City,2,4.7,1.0,3.5958762
+511,38,Youri_Tielemans,Leicester City,3,6.1,1.0,4.059504
+512,38,Andy_King,Leicester City,3,4.2,0.0,0.03989899
+513,38,Dennis_Praet,Leicester City,3,5.2,1.0,1.5012491
+514,38,Filip_Benkovic,Leicester City,2,3.9,0.0,-0.22324073
+515,38,Luke_Thomas,Leicester City,2,4.0,1.0,-0.020304263
+516,38,George_Hirst,Leicester City,4,4.5,1.0,0.084641576
+517,38,Darnell_Johnson,Leicester City,2,4.0,1.0,-0.00798893
+518,38,Aymeric_Laporte,Manchester City,2,6.3,1.0,3.8907137
+519,38,Kyle_Walker,Manchester City,2,5.6,1.0,3.8633814
+520,38,Benjamin_Mendy,Manchester City,2,5.5,1.0,4.5228753
+521,38,Oleksandr_Zinchenko,Manchester City,2,5.2,1.0,1.9740276
+522,38,John_Stones,Manchester City,2,5.3,1.0,2.3561397
+523,38,Nicolás_Otamendi,Manchester City,2,4.8,1.0,2.930879
+524,38,Danilo Luiz_da Silva,Manchester City,2,5.0,0.0,0.09878731
+525,38,Sergio_Agüero,Manchester City,4,11.7,0.0,0.3496511
+526,38,Gabriel Fernando_de Jesus,Manchester City,4,9.8,1.0,6.4375143
+527,38,Ederson_Santana de Moraes,Manchester City,1,6.0,1.0,4.9326806
+528,38,Claudio_Bravo,Manchester City,1,4.7,0.5,0.124150395
+529,38,Raheem_Sterling,Manchester City,3,11.9,1.0,6.586587
+530,38,Kevin_De Bruyne,Manchester City,3,10.7,1.0,5.57142
+531,38,Leroy_Sané,Manchester City,3,9.1,0.0,0.052992344
+532,38,Riyad_Mahrez,Manchester City,3,8.6,1.0,5.478263
+533,38,Bernardo Mota_Veiga de Carvalho e Silva,Manchester City,3,7.6,1.0,3.3035402
+534,38,David_Silva,Manchester City,3,7.4,1.0,4.7633667
+535,38,Phil_Foden,Manchester City,3,5.5,1.0,4.027516
+536,38,Fernando_Luiz Rosa,Manchester City,3,5.1,1.0,1.9471114
+537,38,Ilkay_Gündogan,Manchester City,3,5.1,1.0,2.544152
+538,38,José Ángel_Esmorís Tasende,Manchester City,2,4.6,0.0,0.18833554
+539,38,Rodrigo_Hernandez,Manchester City,3,5.3,1.0,2.2505703
+540,38,João Pedro Cavaco_Cancelo,Manchester City,2,5.1,1.0,2.0389051
+541,38,Eric_Garcia,Manchester City,2,4.5,1.0,3.763339
+542,38,Scott_Carson,Manchester City,1,4.0,1.0,0.13840723
+543,38,Taylor_Harwood-Bellis,Manchester City,2,4.0,1.0,0.19218922
+544,38,Cole_Palmer,Manchester City,3,4.5,1.0,0.23389387
+545,38,Tommy_Doyle,Manchester City,3,4.5,1.0,0.3978505
+546,38,Matt_Ritchie,Newcastle United,2,5.3,1.0,1.4324849
+547,38,Fabian_Schär,Newcastle United,2,5.0,0.25,0.6162548
+548,38,DeAndre_Yedlin,Newcastle United,2,4.4,1.0,0.86329484
+549,38,Federico_Fernández,Newcastle United,2,4.6,1.0,1.687597
+550,38,Paul_Dummett,Newcastle United,2,4.3,0.0,-0.039040625
+551,38,Javier_Manquillo,Newcastle United,2,4.3,1.0,0.9892739
+552,38,Florian_Lejeune,Newcastle United,2,4.3,0.0,0.025006771
+553,38,Jamaal_Lascelles,Newcastle United,2,4.2,0.0,-0.011360228
+554,38,Ciaran_Clark,Newcastle United,2,4.3,0.0,0.020845175
+555,38,Yoshinori_Muto,Newcastle United,4,5.1,1.0,0.10742712
+556,38,Jose Luis_Mato Sanmartín,Newcastle United,4,5.0,0.0,0.02833438
+557,38,Martin_Dubravka,Newcastle United,1,5.1,1.0,2.3167517
+558,38,Karl_Darlow,Newcastle United,1,4.3,1.0,-0.008689284
+559,38,Frederick_Woodman,Newcastle United,1,3.9,0.0,-0.03246975
+560,38,Miguel_Almirón,Newcastle United,3,5.8,1.0,2.2305903
+561,38,Christian_Atsu,Newcastle United,3,5.3,1.0,0.2537843
+562,38,Sung-yueng_Ki,Newcastle United,3,4.7,0.0,0.054296613
+563,38,Jonjo_Shelvey,Newcastle United,3,4.9,1.0,2.6474166
+564,38,Sean_Longstaff,Newcastle United,3,5.0,0.25,0.037760615
+565,38,Isaac_Hayden,Newcastle United,3,4.4,0.25,0.86724305
+566,38,Danny_Rose,Newcastle United,2,5.3,1.0,0.8463805
+567,38,Joelinton Cássio_Apolinário de Lira,Newcastle United,4,5.5,1.0,1.5811024
+568,38,Jack_Colback,Newcastle United,3,4.3,0.0,0.008872032
+569,38,Jacob_Murphy,Newcastle United,3,4.7,0.0,0.0038354397
+570,38,Jetro_Willems,Newcastle United,2,4.3,0.0,0.048116803
+571,38,Rolando_Aarons,Newcastle United,3,4.8,0.0,-0.020793557
+572,38,Allan_Saint-Maximin,Newcastle United,3,5.3,0.75,1.7598922
+573,38,Emil_Krafth,Newcastle United,2,4.3,1.0,1.7875226
+574,38,Andy_Carroll,Newcastle United,4,5.4,0.25,0.3852725
+575,38,Matthew_Longstaff,Newcastle United,3,4.5,1.0,0.82642305
+576,38,Dwight_Gayle,Newcastle United,4,5.0,1.0,2.2547112
+577,38,Robert_Elliot,Newcastle United,1,4.0,0.0,0.020656586
+578,38,Thomas_Allan,Newcastle United,3,4.5,1.0,-0.00885725
+579,38,Kelland_Watts,Newcastle United,2,3.9,0.0,0.03770113
+580,38,Liam_Gibson,Newcastle United,2,4.0,0.0,0.1211673
+581,38,Nabil_Bentaleb,Newcastle United,3,4.7,1.0,1.9945621
+582,38,Valentino_Lazaro,Newcastle United,3,5.3,1.0,1.4190574
+583,38,Jack_Young,Newcastle United,3,4.5,1.0,0.029804707
+584,38,Jannik_Vestergaard,Southampton,2,4.5,1.0,2.4914584
+585,38,Ryan_Bertrand,Southampton,2,4.8,1.0,2.4272072
+586,38,Yan_Valery,Southampton,2,4.6,0.0,-0.022650778
+587,38,Jan_Bednarek,Southampton,2,4.4,1.0,2.6582248
+588,38,Jack_Stephens,Southampton,2,4.4,1.0,2.1276546
+589,38,Maya_Yoshida,Southampton,2,4.1,0.0,0.016119123
+590,38,Kayne_Ramsay,Southampton,2,3.9,0.0,-0.022561014
+591,38,Charlie_Austin,Southampton,4,6.0,0.0,0.08500385
+592,38,Danny_Ings,Southampton,4,7.6,1.0,4.7235436
+593,38,Michael_Obafemi,Southampton,4,4.9,1.0,1.134496
+594,38,Shane_Long,Southampton,4,4.6,1.0,1.4646358
+595,38,Sam_Gallagher,Southampton,4,4.5,0.0,0.061814785
+596,38,Fraser_Forster,Southampton,1,4.2,0.0,0.02974999
+597,38,Alex_McCarthy,Southampton,1,4.5,1.0,2.8849483
+598,38,Angus_Gunn,Southampton,1,4.2,1.0,0.03400576
+599,38,Nathan_Redmond,Southampton,3,6.2,1.0,3.6816492
+600,38,James_Ward-Prowse,Southampton,3,5.7,1.0,3.5239935
+601,38,Mohamed_Elyounoussi,Southampton,3,5.2,0.0,0.08582413
+602,38,Stuart_Armstrong,Southampton,3,5.2,1.0,2.6738713
+603,38,Mario_Lemina,Southampton,3,4.6,0.0,0.020052552
+604,38,Pierre-Emile_Højbjerg,Southampton,3,4.8,1.0,1.5350919
+605,38,Tyreke_Johnson,Southampton,3,4.4,0.0,0.013507843
+606,38,Callum_Slattery,Southampton,3,4.4,0.0,0.031992793
+607,38,Oriol_Romeu Vidal,Southampton,3,4.3,1.0,1.9121013
+608,38,Kyle_Walker-Peters,Southampton,2,4.4,1.0,2.6992261
+609,38,Che_Adams,Southampton,4,5.3,1.0,2.5173662
+610,38,Moussa_Djenepo,Southampton,3,5.2,0.0,0.1088326
+611,38,Wesley_Hoedt,Southampton,2,4.2,0.0,0.025607824
+612,38,Sofiane_Boufal,Southampton,3,5.5,0.0,0.13412654
+613,38,Kevin_Danso,Southampton,2,4.2,1.0,-0.017803013
+614,38,Daniel_N'Lundulu,Southampton,4,4.4,1.0,0.016883373
+615,38,Harry_Lewis,Southampton,1,4.0,1.0,0.040418983
+616,38,William_Smallbone,Southampton,3,4.5,1.0,1.4917839
+617,38,Nathan_Tella,Southampton,3,4.5,0.0,0.050884485
+618,38,Jake_Vokins,Southampton,2,4.0,1.0,0.9404949
+619,38,Alexandre_Jankewitz,Southampton,3,4.5,1.0,0.055256486
+620,38,Will_Ferry,Southampton,3,4.5,1.0,0.008386254
+621,38,Jacob_Maddox,Southampton,3,4.5,1.0,0.03822291
+622,38,Aaron_Cresswell,West Ham United,2,4.5,1.0,3.2008252
+623,38,Angelo_Ogbonna,West Ham United,2,4.5,1.0,2.9105055
+624,38,Arthur_Masuaku,West Ham United,2,4.1,1.0,0.3061123
+625,38,Pablo_Zabaleta,West Ham United,2,4.1,0.0,0.12385571
+626,38,Ryan_Fredericks,West Ham United,2,4.4,0.75,1.6375904
+627,38,Issa_Diop,West Ham United,2,4.3,1.0,2.512567
+628,38,Fabián_Balbuena,West Ham United,2,4.3,1.0,0.14484227
+629,38,Winston_Reid,West Ham United,2,3.9,0.0,0.016162157
+630,38,Ben_Johnson,West Ham United,2,4.0,1.0,0.96088743
+631,38,Marko_Arnautovic,West Ham United,4,7.0,0.0,0.105548024
+632,38,Javier_Hernández Balcázar,West Ham United,4,6.0,0.0,0.10170269
+633,38,Alexandre Nascimento_Costa Silva,West Ham United,4,4.3,1.0,0.09728551
+634,38,Lukasz_Fabianski,West Ham United,1,4.9,1.0,3.7289667
+635,38,Michail_Antonio,West Ham United,3,7.0,1.0,5.1300755
+636,38,Felipe Anderson_Pereira Gomes,West Ham United,3,6.6,1.0,0.113119006
+637,38,Manuel_Lanzini,West Ham United,3,6.1,1.0,1.5083034
+638,38,Andriy_Yarmolenko,West Ham United,3,5.2,1.0,1.5760496
+639,38,Robert_Snodgrass,West Ham United,3,5.0,0.25,0.056854725
+640,38,Jack_Wilshere,West Ham United,3,4.6,1.0,0.86408913
+641,38,Declan_Rice,West Ham United,3,4.7,1.0,3.0377874
+642,38,Mark_Noble,West Ham United,3,4.9,1.0,1.7089744
+643,38,Carlos_Sánchez,West Ham United,3,4.3,0.0,0.023365974
+644,38,Grady_Diangana,West Ham United,3,4.3,0.0,-0.012414455
+645,38,Pablo_Fornals,West Ham United,3,6.0,1.0,3.7810373
+646,38,Pedro_Obiang,West Ham United,3,4.5,0.0,0.08333731
+647,38,Roberto_Jimenez Gago,West Ham United,1,4.4,0.0,0.063636184
+648,38,Sébastien_Haller,West Ham United,4,6.8,1.0,1.2729197
+649,38,Albian_Ajeti,West Ham United,4,5.6,1.0,0.1944176
+650,38,David_Martin,West Ham United,1,3.9,1.0,0.011553764
+651,38,Nathan_Holland,West Ham United,3,4.4,1.0,0.028297186
+652,38,Joseph_Anang,West Ham United,1,4.0,1.0,0.008252978
+653,38,Jeremy_Ngakia,West Ham United,2,4.0,0.0,-0.00034093857
+654,38,Gonçalo Bento_Soares Cardoso,West Ham United,2,4.0,1.0,0.022357702
+655,38,Bernardo_Costa Da Rosa,West Ham United,3,4.5,1.0,0.07344949
+656,38,Darren_Randolph,West Ham United,1,4.0,1.0,-0.0017760396
+657,38,Tomas_Soucek,West Ham United,3,4.8,1.0,4.5097246
+658,38,Jarrod_Bowen,West Ham United,3,6.4,1.0,3.9787188
+659,38,Alfie_Lewis,West Ham United,3,4.5,1.0,0.03214991
+660,38,Conor_Coventry,West Ham United,3,4.5,1.0,0.06438947
+661,37,Shkodran_Mustafi,Arsenal,2,5.1,1.0,2.223693
+662,37,Héctor_Bellerín,Arsenal,2,5.2,1.0,1.9126177
+663,37,Sead_Kolasinac,Arsenal,2,5.2,1.0,2.5698082
+664,37,Ainsley_Maitland-Niles,Arsenal,2,4.5,1.0,0.59861374
+665,37,Sokratis_Papastathopoulos,Arsenal,2,4.8,1.0,0.06716633
+666,37,Nacho_Monreal,Arsenal,2,5.0,0.0,0.06370413
+667,37,Laurent_Koscielny,Arsenal,2,5.0,0.0,0.07610273
+668,37,Konstantinos_Mavropanos,Arsenal,2,4.3,0.0,0.07483077
+669,37,Carl_Jenkinson,Arsenal,2,4.5,0.0,0.032397628
+670,37,Rob_Holding,Arsenal,2,4.4,1.0,0.9532695
+671,37,Pierre-Emerick_Aubameyang,Arsenal,4,10.9,1.0,5.078953
+672,37,Alexandre_Lacazette,Arsenal,4,9.2,1.0,3.4846234
+673,37,Edward_Nketiah,Arsenal,4,4.3,1.0,2.0101504
+674,37,Bernd_Leno,Arsenal,1,4.8,0.0,0.031419635
+675,37,Mesut_Özil,Arsenal,3,6.9,1.0,0.092725515
+676,37,Henrikh_Mkhitaryan,Arsenal,3,6.7,0.0,0.11613417
+677,37,Granit_Xhaka,Arsenal,3,5.1,1.0,2.8746426
+678,37,Lucas_Torreira,Arsenal,3,4.7,1.0,0.9798455
+679,37,Mohamed_Elneny,Arsenal,3,4.2,0.0,0.12321472
+680,37,Matteo_Guendouzi,Arsenal,3,4.1,1.0,0.09866738
+681,37,David_Luiz Moreira Marinho,Arsenal,2,5.7,1.0,3.3294353
+682,37,Emiliano_Martínez,Arsenal,1,4.3,1.0,3.6378784
+683,37,Calum_Chambers,Arsenal,2,4.3,0.0,0.0927937
+684,37,Daniel_Ceballos Fernández,Arsenal,3,5.2,1.0,2.6194997
+685,37,Cédric_Soares,Arsenal,2,4.8,1.0,1.3812485
+686,37,Nicolas_Pépé,Arsenal,3,8.9,1.0,1.6901579
+687,37,Reiss_Nelson,Arsenal,3,5.3,1.0,1.3186405
+688,37,Joseph_Willock,Arsenal,3,4.7,1.0,1.311966
+689,37,Gabriel Teodoro_Martinelli Silva,Arsenal,4,4.3,0.0,0.14057815
+690,37,Kieran_Tierney,Arsenal,2,5.3,1.0,2.724163
+691,37,Bukayo_Saka,Arsenal,3,4.7,1.0,2.2289646
+692,37,Emile_Smith Rowe,Arsenal,3,4.3,0.0,0.099858165
+693,37,Tyreece_John-Jules,Arsenal,4,4.4,0.0,0.12884533
+694,37,Pablo_Marí,Arsenal,2,4.4,0.0,0.043704033
+695,37,Zech_Medley,Arsenal,2,4.0,1.0,0.112981796
+696,37,Matt_Macey,Arsenal,1,4.0,1.0,0.019944906
+697,37,Matthew_Smith,Arsenal,2,4.0,1.0,0.06251347
+698,37,Jannik_Vestergaard,Southampton,2,4.5,1.0,2.3305078
+699,37,Ryan_Bertrand,Southampton,2,4.8,1.0,2.1693149
+700,37,Yan_Valery,Southampton,2,4.6,0.0,0.0036816597
+701,37,Jan_Bednarek,Southampton,2,4.4,1.0,2.5534744
+702,37,Jack_Stephens,Southampton,2,4.4,1.0,1.8665049
+703,37,Maya_Yoshida,Southampton,2,4.1,0.0,0.03131008
+704,37,Kayne_Ramsay,Southampton,2,3.9,0.0,0.015118718
+705,37,Charlie_Austin,Southampton,4,6.0,0.0,0.104016066
+706,37,Danny_Ings,Southampton,4,7.6,1.0,4.602917
+707,37,Michael_Obafemi,Southampton,4,4.9,1.0,1.1304064
+708,37,Shane_Long,Southampton,4,4.6,1.0,1.4586663
+709,37,Sam_Gallagher,Southampton,4,4.5,0.0,0.07041216
+710,37,Fraser_Forster,Southampton,1,4.2,0.0,0.024526596
+711,37,Alex_McCarthy,Southampton,1,4.5,1.0,2.8323371
+712,37,Angus_Gunn,Southampton,1,4.2,1.0,0.045890927
+713,37,Nathan_Redmond,Southampton,3,6.2,1.0,3.5745015
+714,37,James_Ward-Prowse,Southampton,3,5.7,1.0,3.5698566
+715,37,Mohamed_Elyounoussi,Southampton,3,5.2,0.0,0.11093724
+716,37,Stuart_Armstrong,Southampton,3,5.2,1.0,2.6370077
+717,37,Mario_Lemina,Southampton,3,4.6,0.0,0.02105236
+718,37,Pierre-Emile_Højbjerg,Southampton,3,4.8,1.0,1.5097301
+719,37,Tyreke_Johnson,Southampton,3,4.4,0.0,0.0380857
+720,37,Callum_Slattery,Southampton,3,4.4,0.0,0.04483223
+721,37,Oriol_Romeu Vidal,Southampton,3,4.3,1.0,1.8657165
+722,37,Kyle_Walker-Peters,Southampton,2,4.4,1.0,2.511318
+723,37,Che_Adams,Southampton,4,5.3,1.0,2.4673536
+724,37,Moussa_Djenepo,Southampton,3,5.2,0.0,0.11450744
+725,37,Wesley_Hoedt,Southampton,2,4.2,0.0,0.031799197
+726,37,Sofiane_Boufal,Southampton,3,5.5,0.0,0.14190567
+727,37,Kevin_Danso,Southampton,2,4.2,1.0,0.009577513
+728,37,Daniel_N'Lundulu,Southampton,4,4.4,1.0,0.05859697
+729,37,Harry_Lewis,Southampton,1,4.0,1.0,0.04061687
+730,37,William_Smallbone,Southampton,3,4.5,1.0,1.4892802
+731,37,Nathan_Tella,Southampton,3,4.5,0.0,0.07218504
+732,37,Jake_Vokins,Southampton,2,4.0,1.0,0.81848407
+733,37,Alexandre_Jankewitz,Southampton,3,4.5,1.0,0.12072921
+734,37,Will_Ferry,Southampton,3,4.5,1.0,0.020490766
+735,37,Jacob_Maddox,Southampton,3,4.5,1.0,0.06912625
+736,37,Matt_Ritchie,Newcastle United,2,5.3,1.0,2.544284
+737,37,Fabian_Schär,Newcastle United,2,5.0,0.25,0.84615993
+738,37,DeAndre_Yedlin,Newcastle United,2,4.4,1.0,1.2340403
+739,37,Federico_Fernández,Newcastle United,2,4.6,1.0,3.5036216
+740,37,Paul_Dummett,Newcastle United,2,4.3,0.0,0.02829194
+741,37,Javier_Manquillo,Newcastle United,2,4.3,1.0,1.6613483
+742,37,Florian_Lejeune,Newcastle United,2,4.3,0.0,0.05282545
+743,37,Jamaal_Lascelles,Newcastle United,2,4.2,0.0,0.018860698
+744,37,Ciaran_Clark,Newcastle United,2,4.3,0.0,-0.0056728125
+745,37,Yoshinori_Muto,Newcastle United,4,5.1,1.0,0.18300271
+746,37,Jose Luis_Mato Sanmartín,Newcastle United,4,5.0,0.0,0.08678007
+747,37,Martin_Dubravka,Newcastle United,1,5.1,1.0,3.816835
+748,37,Karl_Darlow,Newcastle United,1,4.3,1.0,0.015235901
+749,37,Frederick_Woodman,Newcastle United,1,3.9,0.0,0.020858884
+750,37,Miguel_Almirón,Newcastle United,3,5.8,1.0,2.3839438
+751,37,Christian_Atsu,Newcastle United,3,5.3,1.0,0.2745726
+752,37,Sung-yueng_Ki,Newcastle United,3,4.7,0.0,0.054056287
+753,37,Jonjo_Shelvey,Newcastle United,3,4.9,1.0,3.0949068
+754,37,Sean_Longstaff,Newcastle United,3,5.0,0.25,0.049342394
+755,37,Isaac_Hayden,Newcastle United,3,4.4,0.25,1.027605
+756,37,Danny_Rose,Newcastle United,2,5.3,1.0,1.3599164
+757,37,Joelinton Cássio_Apolinário de Lira,Newcastle United,4,5.5,1.0,1.7073112
+758,37,Jack_Colback,Newcastle United,3,4.3,0.0,-0.0010415316
+759,37,Jacob_Murphy,Newcastle United,3,4.7,0.0,0.079389095
+760,37,Jetro_Willems,Newcastle United,2,4.3,0.0,0.04175341
+761,37,Rolando_Aarons,Newcastle United,3,4.8,0.0,0.056423783
+762,37,Allan_Saint-Maximin,Newcastle United,3,5.3,0.75,1.8795938
+763,37,Emil_Krafth,Newcastle United,2,4.3,1.0,2.971715
+764,37,Andy_Carroll,Newcastle United,4,5.4,0.25,0.41533828
+765,37,Matthew_Longstaff,Newcastle United,3,4.5,1.0,0.8971313
+766,37,Dwight_Gayle,Newcastle United,4,5.0,1.0,2.4146945
+767,37,Robert_Elliot,Newcastle United,1,4.0,0.0,0.056153893
+768,37,Thomas_Allan,Newcastle United,3,4.5,1.0,0.06679773
+769,37,Kelland_Watts,Newcastle United,2,3.9,0.0,0.034546733
+770,37,Liam_Gibson,Newcastle United,2,4.0,0.0,0.08897662
+771,37,Nabil_Bentaleb,Newcastle United,3,4.7,1.0,2.274319
+772,37,Valentino_Lazaro,Newcastle United,3,5.3,1.0,1.5904243
+773,37,Jack_Young,Newcastle United,3,4.5,1.0,0.12755406
+774,37,Marcos_Alonso,Chelsea,2,6.1,1.0,1.2043254
+775,37,Antonio_Rüdiger,Chelsea,2,5.9,1.0,1.0450463
+776,37,César_Azpilicueta,Chelsea,2,6.1,1.0,2.043843
+777,37,Emerson_Palmieri dos Santos,Chelsea,2,5.4,1.0,-0.0069648623
+778,37,Andreas_Christensen,Chelsea,2,4.8,1.0,1.2279489
+779,37,Davide_Zappacosta,Chelsea,2,4.2,0.0,0.05333221
+780,37,Olivier_Giroud,Chelsea,4,6.7,1.0,2.5822747
+781,37,Kepa_Arrizabalaga,Chelsea,1,5.4,1.0,2.5643818
+782,37,Willy_Caballero,Chelsea,1,4.8,1.0,0.07400179
+783,37,Willian_Borges Da Silva,Chelsea,3,7.4,1.0,3.3597183
+784,37,Pedro_Rodríguez Ledesma,Chelsea,3,6.8,1.0,0.021036386
+785,37,Ruben_Loftus-Cheek,Chelsea,3,5.9,1.0,1.2856808
+786,37,Callum_Hudson-Odoi,Chelsea,3,5.1,1.0,0.84523726
+787,37,Ross_Barkley,Chelsea,3,5.6,1.0,2.4840727
+788,37,Jorge Luiz_Frello Filho,Chelsea,3,4.9,1.0,1.2441373
+789,37,N'Golo_Kanté,Chelsea,3,5.0,0.5,1.2485392
+790,37,Ethan_Ampadu,Chelsea,3,4.3,0.0,0.0099720955
+791,37,Christian_Pulisic,Chelsea,3,7.4,1.0,3.3811784
+792,37,Mateo_Kovacic,Chelsea,3,5.3,1.0,2.0006065
+793,37,Kurt_Zouma,Chelsea,2,4.7,1.0,1.5865555
+794,37,Tammy_Abraham,Chelsea,4,7.4,1.0,1.7419882
+795,37,Michy_Batshuayi,Chelsea,4,6.6,1.0,0.17184818
+796,37,Robert Kenedy_Nunes do Nascimento,Chelsea,3,5.2,0.0,0.055060625
+797,37,Mason_Mount,Chelsea,3,6.0,1.0,1.7300539
+798,37,Reece_James,Chelsea,2,4.9,1.0,1.1044514
+799,37,Fikayo_Tomori,Chelsea,2,4.2,1.0,0.029327273
+800,37,Billy_Gilmour,Chelsea,3,4.1,0.0,0.05189264
+801,37,Addji Keaninkin Marc-Israel_Guehi,Chelsea,2,3.9,0.0,0.028597236
+802,37,Faustino_Anjorin,Chelsea,3,4.5,1.0,0.020043254
+803,37,Armando_Broja,Chelsea,4,4.5,1.0,0.16150784
+804,37,Lewis_Bate,Chelsea,3,4.5,1.0,0.05057144
+805,37,Aaron_Cresswell,West Ham United,2,4.5,1.0,2.3509786
+806,37,Angelo_Ogbonna,West Ham United,2,4.5,1.0,2.2648718
+807,37,Arthur_Masuaku,West Ham United,2,4.1,1.0,0.3125378
+808,37,Pablo_Zabaleta,West Ham United,2,4.1,0.0,0.13634348
+809,37,Ryan_Fredericks,West Ham United,2,4.4,0.75,1.2409661
+810,37,Issa_Diop,West Ham United,2,4.3,1.0,1.9686439
+811,37,Fabián_Balbuena,West Ham United,2,4.3,1.0,0.19430149
+812,37,Winston_Reid,West Ham United,2,3.9,0.0,0.039306402
+813,37,Ben_Johnson,West Ham United,2,4.0,1.0,0.752035
+814,37,Marko_Arnautovic,West Ham United,4,7.0,0.0,0.03483641
+815,37,Javier_Hernández Balcázar,West Ham United,4,6.0,0.0,-0.015812695
+816,37,Alexandre Nascimento_Costa Silva,West Ham United,4,4.3,1.0,0.0025644302
+817,37,Lukasz_Fabianski,West Ham United,1,4.9,1.0,3.088163
+818,37,Michail_Antonio,West Ham United,3,7.0,1.0,3.6796436
+819,37,Felipe Anderson_Pereira Gomes,West Ham United,3,6.6,1.0,0.048530936
+820,37,Manuel_Lanzini,West Ham United,3,6.1,1.0,1.3220699
+821,37,Andriy_Yarmolenko,West Ham United,3,5.2,1.0,1.2978804
+822,37,Robert_Snodgrass,West Ham United,3,5.0,0.25,0.02571237
+823,37,Jack_Wilshere,West Ham United,3,4.6,1.0,0.8011687
+824,37,Declan_Rice,West Ham United,3,4.7,1.0,2.6975465
+825,37,Mark_Noble,West Ham United,3,4.9,1.0,1.5206904
+826,37,Carlos_Sánchez,West Ham United,3,4.3,0.0,0.011145711
+827,37,Grady_Diangana,West Ham United,3,4.3,0.0,0.010921001
+828,37,Pablo_Fornals,West Ham United,3,6.0,1.0,3.0338664
+829,37,Pedro_Obiang,West Ham United,3,4.5,0.0,0.09863055
+830,37,Roberto_Jimenez Gago,West Ham United,1,4.4,0.0,0.058353186
+831,37,Sébastien_Haller,West Ham United,4,6.8,1.0,1.118993
+832,37,Albian_Ajeti,West Ham United,4,5.6,1.0,0.11797476
+833,37,David_Martin,West Ham United,1,3.9,1.0,0.054079056
+834,37,Nathan_Holland,West Ham United,3,4.4,1.0,-0.008742809
+835,37,Joseph_Anang,West Ham United,1,4.0,1.0,0.022464275
+836,37,Jeremy_Ngakia,West Ham United,2,4.0,0.0,0.06028664
+837,37,Gonçalo Bento_Soares Cardoso,West Ham United,2,4.0,1.0,0.078185916
+838,37,Bernardo_Costa Da Rosa,West Ham United,3,4.5,1.0,0.038592815
+839,37,Darren_Randolph,West Ham United,1,4.0,1.0,0.045978308
+840,37,Tomas_Soucek,West Ham United,3,4.8,1.0,3.3569536
+841,37,Jarrod_Bowen,West Ham United,3,6.4,1.0,3.0963087
+842,37,Alfie_Lewis,West Ham United,3,4.5,1.0,0.0065847635
+843,37,Conor_Coventry,West Ham United,3,4.5,1.0,0.054348588
+844,37,Ben_Mee,Burnley,2,4.9,0.0,0.0547719
+845,37,James_Tarkowski,Burnley,2,5.4,1.0,4.49583
+846,37,Matthew_Lowton,Burnley,2,4.2,0.0,0.013542414
+847,37,Phil_Bardsley,Burnley,2,4.3,1.0,3.9660664
+848,37,Charlie_Taylor,Burnley,2,4.4,0.0,-0.06611514
+849,37,Kevin_Long,Burnley,2,4.3,1.0,3.476038
+850,37,Ben_Gibson,Burnley,2,3.9,0.0,0.079506874
+851,37,Ashley_Barnes,Burnley,4,6.1,0.0,0.07198465
+852,37,Chris_Wood,Burnley,4,6.1,1.0,3.6837473
+853,37,Matej_Vydra,Burnley,4,5.1,1.0,2.8862834
+854,37,Nick_Pope,Burnley,1,5.1,1.0,5.198148
+855,37,Joe_Hart,Burnley,1,4.2,0.0,0.037740827
+856,37,Johann Berg_Gudmundsson,Burnley,3,5.9,1.0,1.6110027
+857,37,Dwight_McNeil,Burnley,3,6.0,1.0,4.3542027
+858,37,Robbie_Brady,Burnley,3,5.5,1.0,0.2729919
+859,37,Steven_Defour,Burnley,3,5.5,0.0,0.0361197
+860,37,Jeff_Hendrick,Burnley,3,5.4,0.0,0.1276977
+861,37,Ashley_Westwood,Burnley,3,5.5,1.0,3.611238
+862,37,Jack_Cork,Burnley,3,4.9,0.0,0.011303782
+863,37,Aaron_Lennon,Burnley,3,4.6,0.0,0.110761404
+864,37,Erik_Pieters,Burnley,2,4.2,1.0,3.6458902
+865,37,Jay_Rodriguez,Burnley,4,5.7,1.0,4.0253396
+866,37,Bailey_Peacock-Farrell,Burnley,1,4.3,1.0,0.0031353235
+867,37,Mace_Goodridge,Burnley,3,4.5,1.0,0.05905938
+868,37,Anthony_Driscoll-Glennon,Burnley,2,3.9,1.0,0.04710865
+869,37,Abd-Al-Ali Morakinyo Olaposi_Koiki,Burnley,2,4.0,0.0,0.021256804
+870,37,Josh_Brownhill,Burnley,3,4.8,1.0,3.5910182
+871,37,Jimmy_Dunne,Burnley,2,4.0,1.0,-0.053376377
+872,37,Bobby_Thomas,Burnley,2,4.0,1.0,0.010674834
+873,37,Max_Thompson,Burnley,4,4.5,1.0,0.06696427
+874,37,Lukas_Jensen,Burnley,1,4.0,1.0,0.007995844
+875,37,Josh_Benson,Burnley,3,4.5,1.0,0.07434535
+876,37,Alex_Iwobi,Everton,3,5.6,1.0,2.0620139
+877,37,Lucas_Digne,Everton,2,5.9,1.0,3.478951
+878,37,Yerry_Mina,Everton,2,5.3,0.75,1.412291
+879,37,Michael_Keane,Everton,2,5.2,1.0,2.8766003
+880,37,Seamus_Coleman,Everton,2,5.3,1.0,2.8274171
+881,37,Leighton_Baines,Everton,2,4.9,1.0,0.6371677
+882,37,Cenk_Tosun,Everton,4,5.7,0.0,0.12619615
+883,37,Dominic_Calvert-Lewin,Everton,4,6.2,1.0,3.5940208
+884,37,Jordan_Pickford,Everton,1,5.2,1.0,3.3007026
+885,37,Maarten_Stekelenburg,Everton,1,3.9,1.0,0.12531018
+886,37,Richarlison_de Andrade,Everton,3,8.2,1.0,3.1608176
+887,37,Gylfi_Sigurdsson,Everton,3,7.3,1.0,2.5505335
+888,37,Bernard_Anício Caldeira Duarte,Everton,3,6.4,1.0,1.4455247
+889,37,Theo_Walcott,Everton,3,6.2,1.0,1.8350573
+890,37,Tom_Davies,Everton,3,5.3,1.0,2.219445
+891,37,Ademola_Lookman,Everton,3,5.0,0.0,0.11649215
+892,37,Idrissa_Gueye,Everton,3,5.0,0.0,0.045114756
+893,37,Morgan_Schneiderlin,Everton,3,4.4,0.0,0.19657576
+894,37,Fabian_Delph,Everton,2,5.3,0.0,0.102487564
+895,37,André Filipe_Tavares Gomes,Everton,3,5.2,1.0,2.1884537
+896,37,Lewis_Gibson,Everton,2,4.2,0.0,0.057172418
+897,37,Mason_Holgate,Everton,2,4.3,0.75,1.4053059
+898,37,Jonas_Lössl,Everton,1,4.2,0.0,0.031885862
+899,37,Moise_Kean,Everton,4,6.3,1.0,1.2699854
+900,37,Jean-Philippe_Gbamin,Everton,3,4.8,0.0,-0.018693805
+901,37,Djibril_Sidibé,Everton,2,5.0,1.0,0.7566043
+902,37,Beni_Baningime,Everton,3,4.4,1.0,0.011512041
+903,37,Anthony_Gordon,Everton,4,4.5,1.0,2.2710903
+904,37,Oumar_Niasse,Everton,4,4.5,0.0,0.13151026
+905,37,Rhu-endly_Martina,Everton,2,4.0,0.0,0.010804534
+906,37,João Manuel_Neves Virgínia,Everton,1,4.0,1.0,0.018149495
+907,37,Jarrad_Branthwaite,Everton,2,4.0,1.0,1.0029302
+908,37,Ricardo Domingos_Barbosa Pereira,Leicester City,2,6.2,0.0,0.049938083
+909,37,Benjamin_Chilwell,Leicester City,2,5.5,0.0,0.15346456
+910,37,Jonny_Evans,Leicester City,2,5.3,1.0,2.1906264
+911,37,Christian_Fuchs,Leicester City,2,4.2,0.0,0.059744
+912,37,Çaglar_Söyüncü,Leicester City,2,4.9,0.0,0.073234916
+913,37,Wes_Morgan,Leicester City,2,4.1,1.0,0.7719631
+914,37,Jamie_Vardy,Leicester City,4,9.8,1.0,4.014259
+915,37,Kelechi_Iheanacho,Leicester City,4,5.7,1.0,1.9666252
+916,37,Kasper_Schmeichel,Leicester City,1,5.5,1.0,2.859947
+917,37,Eldin_Jakupovic,Leicester City,1,4.2,1.0,0.047496915
+918,37,Danny_Ward,Leicester City,1,4.2,1.0,0.044558764
+919,37,James_Maddison,Leicester City,3,7.3,0.0,0.04892397
+920,37,Harvey_Barnes,Leicester City,3,5.9,1.0,1.5921385
+921,37,Rachid_Ghezzal,Leicester City,3,5.1,0.0,0.010634303
+922,37,Marc_Albrighton,Leicester City,3,5.1,0.0,0.079701185
+923,37,Demarai_Gray,Leicester City,3,5.0,1.0,0.9453403
+924,37,Wilfred_Ndidi,Leicester City,3,5.0,1.0,2.5368378
+925,37,Matty_James,Leicester City,3,4.3,1.0,0.066260815
+926,37,Daniel_Amartey,Leicester City,3,4.2,0.0,0.04213667
+927,37,Nampalys_Mendy,Leicester City,3,4.3,1.0,0.06715727
+928,37,Hamza_Choudhury,Leicester City,3,4.2,1.0,0.43775034
+929,37,Ayoze_Pérez,Leicester City,3,6.0,1.0,2.3105152
+930,37,Ryan_Bennett,Leicester City,2,4.8,1.0,1.3590512
+931,37,James_Justin,Leicester City,2,4.7,1.0,2.236753
+932,37,Youri_Tielemans,Leicester City,3,6.1,1.0,3.243576
+933,37,Andy_King,Leicester City,3,4.2,0.0,0.027748823
+934,37,Dennis_Praet,Leicester City,3,5.2,1.0,1.3410375
+935,37,Filip_Benkovic,Leicester City,2,3.9,0.0,-0.21006829
+936,37,Luke_Thomas,Leicester City,2,4.0,1.0,0.036488414
+937,37,George_Hirst,Leicester City,4,4.5,1.0,0.07573104
+938,37,Darnell_Johnson,Leicester City,2,4.0,1.0,0.072690845
+939,37,Aymeric_Laporte,Manchester City,2,6.3,1.0,2.8558135
+940,37,Kyle_Walker,Manchester City,2,5.6,1.0,2.8051283
+941,37,Benjamin_Mendy,Manchester City,2,5.5,1.0,3.1748037
+942,37,Oleksandr_Zinchenko,Manchester City,2,5.2,1.0,1.5987895
+943,37,John_Stones,Manchester City,2,5.3,1.0,1.8675573
+944,37,Nicolás_Otamendi,Manchester City,2,4.8,1.0,1.9569793
+945,37,Danilo Luiz_da Silva,Manchester City,2,5.0,0.0,0.079404
+946,37,Sergio_Agüero,Manchester City,4,11.7,0.0,0.25091922
+947,37,Gabriel Fernando_de Jesus,Manchester City,4,9.8,1.0,5.274953
+948,37,Ederson_Santana de Moraes,Manchester City,1,6.0,1.0,4.0461483
+949,37,Claudio_Bravo,Manchester City,1,4.7,0.5,0.121863484
+950,37,Raheem_Sterling,Manchester City,3,11.9,1.0,5.1474304
+951,37,Kevin_De Bruyne,Manchester City,3,10.7,1.0,4.314941
+952,37,Leroy_Sané,Manchester City,3,9.1,0.0,0.11291695
+953,37,Riyad_Mahrez,Manchester City,3,8.6,1.0,4.1816354
+954,37,Bernardo Mota_Veiga de Carvalho e Silva,Manchester City,3,7.6,1.0,2.6018963
+955,37,David_Silva,Manchester City,3,7.4,1.0,3.7383747
+956,37,Phil_Foden,Manchester City,3,5.5,1.0,3.1260023
+957,37,Fernando_Luiz Rosa,Manchester City,3,5.1,1.0,1.7202516
+958,37,Ilkay_Gündogan,Manchester City,3,5.1,1.0,2.0756137
+959,37,José Ángel_Esmorís Tasende,Manchester City,2,4.6,0.0,0.037243366
+960,37,Rodrigo_Hernandez,Manchester City,3,5.3,1.0,1.9038415
+961,37,João Pedro Cavaco_Cancelo,Manchester City,2,5.1,1.0,1.4869783
+962,37,Eric_Garcia,Manchester City,2,4.5,1.0,2.6896124
+963,37,Scott_Carson,Manchester City,1,4.0,1.0,0.101709366
+964,37,Taylor_Harwood-Bellis,Manchester City,2,4.0,1.0,0.072155595
+965,37,Cole_Palmer,Manchester City,3,4.5,1.0,0.24165201
+966,37,Tommy_Doyle,Manchester City,3,4.5,1.0,0.4529251
+967,37,Patrick_van Aanholt,Crystal Palace,2,5.6,0.0,0.03469062
+968,37,James_Tomkins,Crystal Palace,2,5.0,0.0,0.0744046
+969,37,Mamadou_Sakho,Crystal Palace,2,5.0,1.0,1.8100724
+970,37,Joel_Ward,Crystal Palace,2,4.3,1.0,2.225208
+971,37,Scott_Dann,Crystal Palace,2,4.3,1.0,2.0287728
+972,37,Martin_Kelly,Crystal Palace,2,4.1,1.0,0.07672548
+973,37,Christian_Benteke,Crystal Palace,4,5.7,0.0,0.10813832
+974,37,Connor_Wickham,Crystal Palace,4,4.3,0.0,0.048304915
+975,37,Vicente_Guaita,Crystal Palace,1,4.9,1.0,3.038403
+976,37,Wayne_Hennessey,Crystal Palace,1,4.2,1.0,0.03538966
+977,37,Wilfried_Zaha,Crystal Palace,3,6.6,1.0,3.2778797
+978,37,Luka_Milivojevic,Crystal Palace,3,6.7,1.0,3.115839
+979,37,Andros_Townsend,Crystal Palace,3,5.6,1.0,1.6923156
+980,37,Max_Meyer,Crystal Palace,3,5.2,1.0,0.6816977
+981,37,Jeffrey_Schlupp,Crystal Palace,3,5.4,1.0,0.12373114
+982,37,James_McArthur,Crystal Palace,3,5.2,1.0,2.234025
+983,37,Cheikhou_Kouyaté,Crystal Palace,3,4.9,1.0,1.5800514
+984,37,Luke_Dreher,Crystal Palace,3,4.3,1.0,0.061160564
+985,37,James_McCarthy,Crystal Palace,3,4.2,1.0,1.4621706
+986,37,Jordan_Ayew,Crystal Palace,4,5.1,1.0,2.7910647
+987,37,Gary_Cahill,Crystal Palace,2,4.4,0.0,0.056239247
+988,37,Víctor_Camarasa,Crystal Palace,3,4.5,0.0,0.0982151
+989,37,Jairo_Riedewald,Crystal Palace,3,4.5,1.0,1.2343473
+990,37,Stephen_Henderson,Crystal Palace,1,4.0,1.0,0.030595541
+991,37,Sam_Woods,Crystal Palace,2,3.9,0.0,-0.018436909
+992,37,Tyrick_Mitchell,Crystal Palace,2,4.0,1.0,0.3766508
+993,37,Brandon_Pierrick,Crystal Palace,3,4.5,1.0,-0.00084352493
+994,37,James_Daly,Crystal Palace,4,4.5,0.0,0.0011259317
+995,37,Nya_Kirby,Crystal Palace,3,4.5,1.0,0.013667226
+996,37,Giovanni_McGregor,Crystal Palace,3,4.5,0.0,0.04417157
+997,37,Nikola_Tavares,Crystal Palace,2,4.0,0.0,0.04572034
+998,38,José_Holebas,Watford,2,4.6,1.0,0.20013905
+999,38,Christian_Kabasele,Watford,2,4.3,1.0,1.1131704
+1000,38,Adam_Masina,Watford,2,4.3,1.0,1.0357165
+1001,38,Adrian_Mariappa,Watford,2,4.1,1.0,0.664485
+1002,38,Francisco_Femenía Far,Watford,2,4.2,1.0,1.2405934
+1003,38,Craig_Cathcart,Watford,2,4.2,1.0,0.57005835
+1004,38,Daryl_Janmaat,Watford,2,4.0,0.0,-0.032844722
+1005,38,Marc_Navarro,Watford,2,3.9,0.0,-0.057047486
+1006,38,Sebastian_Prödl,Watford,2,3.9,0.0,-0.15907031
+1007,38,Troy_Deeney,Watford,4,6.2,1.0,2.9265988
+1008,38,Gerard_Deulofeu,Watford,4,6.1,0.0,0.014387846
+1009,38,Andre_Gray,Watford,4,5.5,1.0,0.48511922
+1010,38,Isaac_Success Ajayi,Watford,4,4.7,0.0,0.07076061
+1011,38,Ben_Foster,Watford,1,4.9,1.0,2.263309
+1012,38,Pontus_Dahlberg,Watford,1,4.2,0.0,-0.07431555
+1013,38,Abdoulaye_Doucouré,Watford,3,5.4,1.0,2.61195
+1014,38,Roberto_Pereyra,Watford,3,5.6,1.0,0.9118737
+1015,38,Will_Hughes,Watford,3,5.3,1.0,2.1569536
+1016,38,Tom_Cleverley,Watford,3,4.8,1.0,1.2193413
+1017,38,Ken_Sema,Watford,3,4.7,0.0,0.0014491081
+1018,38,Etienne_Capoue,Watford,3,4.8,0.75,1.4352372
+1019,38,Nathaniel_Chalobah,Watford,3,4.4,1.0,0.8426229
+1020,38,Domingos_Quina,Watford,3,4.3,1.0,-0.05921048
+1021,38,Craig_Dawson,Watford,2,4.8,1.0,1.4547732
+1022,38,Danny_Welbeck,Watford,4,5.8,1.0,1.9802959
+1023,38,Heurelho da Silva_Gomes,Watford,1,4.3,1.0,-0.06487465
+1024,38,Ismaïla_Sarr,Watford,3,6.0,1.0,3.0462217
+1025,38,Dimitri_Foulquier,Watford,2,3.9,0.0,-0.045118272
+1026,38,Ayotomiwa_Dele-Bashiru,Watford,3,4.5,1.0,-0.03587842
+1027,38,João Pedro_Junqueira de Jesus,Watford,4,4.9,1.0,0.38085878
+1028,38,Ignacio_Pussetto,Watford,3,4.6,1.0,0.2356602
+1029,38,Adalberto_Peñaranda,Watford,4,4.5,1.0,-0.08831465
+1030,38,Shane_Duffy,Brighton and Hove Albion,2,4.8,1.0,0.8717419
+1031,38,Martín_Montoya,Brighton and Hove Albion,2,4.3,1.0,0.96369195
+1032,38,Bernardo_Fernandes da Silva Junior,Brighton and Hove Albion,2,4.3,1.0,0.8688973
+1033,38,Leon_Balogun,Brighton and Hove Albion,2,4.3,0.0,-0.04952973
+1034,38,Gaëtan_Bong,Brighton and Hove Albion,2,4.2,0.0,0.039058924
+1035,38,Lewis_Dunk,Brighton and Hove Albion,2,4.8,1.0,2.7911594
+1036,38,Matthew_Clarke,Brighton and Hove Albion,2,4.3,0.0,-0.0081551075
+1037,38,Glenn_Murray,Brighton and Hove Albion,4,5.4,1.0,1.1113031
+1038,38,Jürgen_Locadia,Brighton and Hove Albion,4,5.2,0.0,0.042699337
+1039,38,Florin_Andone,Brighton and Hove Albion,4,4.7,0.0,-0.017558217
+1040,38,Mathew_Ryan,Brighton and Hove Albion,1,4.7,1.0,3.7253923
+1041,38,David_Button,Brighton and Hove Albion,1,3.9,1.0,-0.02025485
+1042,38,Pascal_Groß,Brighton and Hove Albion,3,6.2,1.0,1.7144766
+1043,38,Alireza_Jahanbakhsh,Brighton and Hove Albion,3,5.8,1.0,0.50367594
+1044,38,José Heriberto_Izquierdo Mena,Brighton and Hove Albion,3,5.4,0.0,0.03834796
+1045,38,Anthony_Knockaert,Brighton and Hove Albion,3,5.3,0.0,-0.019722342
+1046,38,Yves_Bissouma,Brighton and Hove Albion,3,5.0,1.0,1.5309076
+1047,38,Davy_Pröpper,Brighton and Hove Albion,3,4.8,1.0,1.7537916
+1048,38,Solomon_March,Brighton and Hove Albion,3,4.6,1.0,1.2011201
+1049,38,Beram_Kayal,Brighton and Hove Albion,3,4.2,1.0,0.09842694
+1050,38,Dale_Stephens,Brighton and Hove Albion,3,4.4,1.0,1.7429476
+1051,38,Leandro_Trossard,Brighton and Hove Albion,3,5.8,1.0,2.8586311
+1052,38,Dan_Burn,Brighton and Hove Albion,2,4.5,1.0,1.9641874
+1053,38,Adam_Webster,Brighton and Hove Albion,2,4.4,1.0,2.8803554
+1054,38,Neal_Maupay,Brighton and Hove Albion,4,5.7,1.0,3.2055144
+1055,38,Aaron_Mooy,Brighton and Hove Albion,3,4.7,1.0,1.69642
+1056,38,Aaron_Connolly,Brighton and Hove Albion,4,4.2,1.0,1.9255376
+1057,38,Tudor_Baluta,Brighton and Hove Albion,2,4.0,0.0,-0.021421075
+1058,38,Steven_Alzate,Brighton and Hove Albion,3,4.4,0.0,0.14805126
+1059,38,Ezequiel_Schelotto,Brighton and Hove Albion,2,4.0,1.0,-0.00369215
+1060,38,Tariq_Lamptey,Brighton and Hove Albion,2,4.1,1.0,2.0926523
+1061,38,Alexis_Mac Allister,Brighton and Hove Albion,3,5.4,1.0,1.5506735
+1062,38,Matt_Doherty,Wolverhampton Wanderers,2,6.5,1.0,1.9853978
+1063,38,Jonathan_Castro Otto,Wolverhampton Wanderers,2,5.5,1.0,1.4892795
+1064,38,Conor_Coady,Wolverhampton Wanderers,2,5.1,1.0,1.773649
+1065,38,Willy_Boly,Wolverhampton Wanderers,2,4.9,1.0,2.2832406
+1066,38,Rúben Gonçalo_Silva Nascimento Vinagre,Wolverhampton Wanderers,2,4.1,1.0,0.7071209
+1067,38,Romain_Saïss,Wolverhampton Wanderers,2,4.7,1.0,2.1481433
+1068,38,Max_Kilman,Wolverhampton Wanderers,2,3.9,1.0,0.005071759
+1069,38,Raúl_Jiménez,Wolverhampton Wanderers,4,8.1,1.0,4.4536715
+1070,38,Diogo_Jota,Wolverhampton Wanderers,4,6.0,1.0,2.560399
+1071,38,Rui Pedro_dos Santos Patrício,Wolverhampton Wanderers,1,5.3,1.0,2.8153796
+1072,38,John_Ruddy,Wolverhampton Wanderers,1,4.2,1.0,-0.019701779
+1073,38,Will_Norris,Wolverhampton Wanderers,1,3.9,0.0,-0.02226597
+1074,38,Rúben Diogo_da Silva Neves,Wolverhampton Wanderers,3,5.2,1.0,2.509603
+1075,38,João Filipe Iria_Santos Moutinho,Wolverhampton Wanderers,3,5.3,1.0,2.2781942
+1076,38,Morgan_Gibbs-White,Wolverhampton Wanderers,3,4.7,1.0,0.124761105
+1077,38,Adama_Traoré,Wolverhampton Wanderers,3,5.6,1.0,2.2904677
+1078,38,Hélder_Costa,Wolverhampton Wanderers,3,4.8,0.0,0.058590174
+1079,38,Ivan_Cavaleiro,Wolverhampton Wanderers,3,4.9,0.0,0.07236397
+1080,38,Leander_Dendoncker,Wolverhampton Wanderers,3,4.4,1.0,1.6005359
+1081,38,Jesús_Vallejo Lázaro,Wolverhampton Wanderers,2,4.6,0.0,-0.03894162
+1082,38,Patrick_Cutrone,Wolverhampton Wanderers,4,5.4,0.0,0.06941199
+1083,38,Pedro_Lomba Neto,Wolverhampton Wanderers,3,4.9,1.0,0.87097454
+1084,38,Bernard_Ashley-Seal,Wolverhampton Wanderers,4,4.5,0.0,0.018018246
+1085,38,Taylor_Perry,Wolverhampton Wanderers,3,4.5,1.0,-0.050729156
+1086,38,Owen_Otasowie,Wolverhampton Wanderers,3,4.5,1.0,-0.041311324
+1087,38,Luke_Cundle,Wolverhampton Wanderers,3,4.5,1.0,-0.09440267
+1088,38,Oskar_Buur,Wolverhampton Wanderers,2,4.0,1.0,0.0300802
+1089,38,Ryan_Giles,Wolverhampton Wanderers,2,3.9,0.0,-0.010821223
+1090,38,Bruno André_Cavaco Jordao,Wolverhampton Wanderers,3,4.5,1.0,-0.034422994
+1091,38,Daniel_Castelo Podence,Wolverhampton Wanderers,3,4.9,1.0,1.4431403
+1092,38,Leonardo_Campana,Wolverhampton Wanderers,4,4.5,1.0,-0.014244139
+1093,38,Ben_Davies,Tottenham Hotspur,2,5.3,1.0,3.7722006
+1094,38,Jan_Vertonghen,Tottenham Hotspur,2,5.2,1.0,1.0439973
+1095,38,Toby_Alderweireld,Tottenham Hotspur,2,5.3,1.0,2.7243826
+1096,38,Davinson_Sánchez,Tottenham Hotspur,2,5.3,1.0,1.8003681
+1097,38,Kieran_Trippier,Tottenham Hotspur,2,5.5,0.0,0.055431724
+1098,38,Juan_Foyth,Tottenham Hotspur,2,4.8,0.0,-0.01309675
+1099,38,Serge_Aurier,Tottenham Hotspur,2,5.1,0.75,2.7135112
+1100,38,Harry_Kane,Tottenham Hotspur,4,10.9,1.0,6.5342374
+1101,38,Vincent_Janssen,Tottenham Hotspur,4,4.5,0.0,0.099033356
+1102,38,Hugo_Lloris,Tottenham Hotspur,1,5.3,1.0,4.1008215
+1103,38,Paulo_Gazzaniga,Tottenham Hotspur,1,4.1,1.0,0.03619194
+1104,38,Heung-Min_Son,Tottenham Hotspur,3,9.6,1.0,5.6245213
+1105,38,Christian_Eriksen,Tottenham Hotspur,3,8.6,0.0,0.15824091
+1106,38,Bamidele_Alli,Tottenham Hotspur,3,8.3,0.0,0.15264499
+1107,38,Lucas_Rodrigues Moura da Silva,Tottenham Hotspur,3,7.0,1.0,2.9397001
+1108,38,Erik_Lamela,Tottenham Hotspur,3,5.7,1.0,1.7022598
+1109,38,Harry_Winks,Tottenham Hotspur,3,5.2,1.0,2.1951976
+1110,38,Victor_Wanyama,Tottenham Hotspur,3,4.7,0.0,0.057152987
+1111,38,Moussa_Sissoko,Tottenham Hotspur,3,4.8,1.0,2.6529233
+1112,38,Eric_Dier,Tottenham Hotspur,3,4.8,0.0,0.111674786
+1113,38,Luke_Amos,Tottenham Hotspur,3,4.4,0.0,0.06419766
+1114,38,Oliver_Skipp,Tottenham Hotspur,3,4.3,1.0,0.24081111
+1115,38,Tanguy_Ndombele,Tottenham Hotspur,3,5.8,0.0,0.032951713
+1116,38,Troy_Parrott,Tottenham Hotspur,4,4.3,0.25,0.109781265
+1117,38,Giovani_Lo Celso,Tottenham Hotspur,3,7.3,1.0,2.6017318
+1118,38,Ryan_Sessegnon,Tottenham Hotspur,3,5.4,1.0,0.19114268
+1119,38,Georges-Kévin_Nkoudou,Tottenham Hotspur,3,5.0,0.0,0.06366491
+1120,38,Alfie_Whiteman,Tottenham Hotspur,1,4.0,1.0,-0.00788486
+1121,38,Michel_Vorm,Tottenham Hotspur,1,4.2,1.0,-0.038991094
+1122,38,Brandon_Austin,Tottenham Hotspur,1,4.0,1.0,-0.012190938
+1123,38,Japhet_Tanganga,Tottenham Hotspur,2,3.9,1.0,-0.009287119
+1124,38,Gedson_Carvalho Fernandes,Tottenham Hotspur,3,4.6,1.0,0.20049512
+1125,38,Steven_Bergwijn,Tottenham Hotspur,3,7.0,1.0,1.8673253
+1126,38,Harvey_White,Tottenham Hotspur,3,4.5,1.0,0.1257875
+1127,38,Dennis_Cirkin,Tottenham Hotspur,2,4.0,1.0,-0.0048391223
+1128,38,Steve_Cook,Bournemouth,2,5.0,1.0,1.2092769
+1129,38,Nathan_Aké,Bournemouth,2,4.8,0.25,0.7659395
+1130,38,Charlie_Daniels,Bournemouth,2,4.2,0.0,0.0030386448
+1131,38,Chris_Mepham,Bournemouth,2,4.3,0.25,0.20061707
+1132,38,Simon_Francis,Bournemouth,2,4.3,0.25,-0.08619416
+1133,38,Adam_Smith,Bournemouth,2,4.3,0.75,1.0341558
+1134,38,Lloyd_Kelly,Bournemouth,2,4.4,1.0,1.9533885
+1135,38,Diego_Rico,Bournemouth,2,4.2,1.0,1.4233756
+1136,38,Jack_Simpson,Bournemouth,2,3.9,1.0,0.016590238
+1137,38,Callum_Wilson,Bournemouth,4,7.4,1.0,3.0391536
+1138,38,Joshua_King,Bournemouth,4,6.1,1.0,3.057444
+1139,38,Dominic_Solanke,Bournemouth,4,5.1,1.0,2.2559164
+1140,38,Sam_Surridge,Bournemouth,4,4.3,1.0,0.123142004
+1141,38,Asmir_Begovic,Bournemouth,1,4.2,0.0,0.007935882
+1142,38,Artur_Boruc,Bournemouth,1,4.2,1.0,0.033568382
+1143,38,Mark_Travers,Bournemouth,1,4.2,1.0,0.016109109
+1144,38,Ryan_Fraser,Bournemouth,3,6.8,0.0,0.1105901
+1145,38,David_Brooks,Bournemouth,3,6.1,1.0,2.0760086
+1146,38,Junior_Stanislas,Bournemouth,3,5.8,1.0,2.731504
+1147,38,Jordon_Ibe,Bournemouth,3,4.6,0.0,0.0608207
+1148,38,Lewis_Cook,Bournemouth,3,5.0,1.0,0.9899584
+1149,38,Andrew_Surman,Bournemouth,3,4.7,1.0,0.002853036
+1150,38,Dan_Gosling,Bournemouth,3,4.8,1.0,1.6763384
+1151,38,Jefferson_Lerma,Bournemouth,3,4.8,1.0,1.9864902
+1152,38,Jack_Stacey,Bournemouth,2,4.3,1.0,0.9060857
+1153,38,Philip_Billing,Bournemouth,3,4.9,1.0,1.3142059
+1154,38,Arnaut_Danjuma Groeneveld,Bournemouth,3,5.8,1.0,1.4244967
+1155,38,Aaron_Ramsdale,Bournemouth,1,4.4,1.0,2.705497
+1156,38,Harry_Wilson,Bournemouth,3,5.7,1.0,1.1841288
+1157,38,Christian_Saydee,Bournemouth,3,4.5,1.0,0.0013691187
+1158,38,Gavin_Kilkenny,Bournemouth,3,4.5,1.0,-0.0056040883
+1159,38,Mihai-Alexandru_Dobre,Bournemouth,3,4.4,0.0,-0.008979559
+1160,38,Aaron_Wan-Bissaka,Manchester United,2,5.5,1.0,2.31033
+1161,38,Harry_Maguire,Manchester United,2,5.3,1.0,2.600895
+1162,38,Chris_Smalling,Manchester United,2,5.2,0.0,0.04932356
+1163,38,Ashley_Young,Manchester United,2,5.4,0.0,0.017706513
+1164,38,Victor_Lindelöf,Manchester United,2,5.3,1.0,2.066675
+1165,38,Luke_Shaw,Manchester United,2,5.4,0.75,1.564424
+1166,38,Marcos_Rojo,Manchester United,2,4.8,0.0,-0.013024986
+1167,38,Eric_Bailly,Manchester United,2,4.8,1.0,0.64764893
+1168,38,José Diogo_Dalot Teixeira,Manchester United,2,4.9,1.0,0.016453862
+1169,38,Matteo_Darmian,Manchester United,2,4.9,0.0,0.052888155
+1170,38,Phil_Jones,Manchester United,2,4.7,0.0,0.010797024
+1171,38,Romelu_Lukaku,Manchester United,4,8.5,0.0,0.008092284
+1172,38,Marcus_Rashford,Manchester United,4,8.9,1.0,4.0245485
+1173,38,Mason_Greenwood,Manchester United,4,4.9,1.0,3.9341807
+1174,38,David_de Gea,Manchester United,1,5.3,1.0,3.0857873
+1175,38,Sergio_Romero,Manchester United,1,4.6,1.0,-0.0145459175
+1176,38,Lee_Grant,Manchester United,1,4.7,1.0,-0.03050971
+1177,38,Paul_Pogba,Manchester United,3,8.3,1.0,3.4466443
+1178,38,Anthony_Martial,Manchester United,3,8.5,1.0,4.424514
+1179,38,Alexis_Sánchez,Manchester United,3,6.8,0.0,0.04508722
+1180,38,Jesse_Lingard,Manchester United,3,6.3,1.0,0.73893297
+1181,38,Juan_Mata,Manchester United,3,6.1,1.0,0.2578286
+1182,38,Daniel_James,Manchester United,3,5.7,1.0,0.8225584
+1183,38,Frederico_Rodrigues de Paula Santos,Manchester United,3,5.1,1.0,0.8242998
+1184,38,Angel_Gomes,Manchester United,3,4.7,0.0,0.07476354
+1185,38,Andreas_Pereira,Manchester United,3,4.8,1.0,0.531898
+1186,38,Nemanja_Matic,Manchester United,3,4.8,1.0,1.9542117
+1187,38,Scott_McTominay,Manchester United,3,4.8,1.0,1.167299
+1188,38,Tahith_Chong,Manchester United,3,4.2,1.0,0.0099852085
+1189,38,James_Garner,Manchester United,3,4.3,1.0,-0.04889965
+1190,38,Axel_Tuanzebe,Manchester United,2,4.4,0.0,0.003001213
+1191,38,Brandon_Williams,Manchester United,2,3.9,0.75,0.7606971
+1192,38,Bruno Miguel_Borges Fernandes,Manchester United,3,9.1,1.0,4.8067627
+1193,38,Odion_Ighalo,Manchester United,4,5.9,1.0,0.59655976
+1194,38,Timothy_Fosu-Mensah,Manchester United,2,4.5,1.0,0.049690366
+1195,38,Timm_Klose,Norwich,2,4.3,1.0,0.821807
+1196,38,Ben_Godfrey,Norwich,2,4.4,1.0,0.7112489
+1197,38,Maximillian_Aarons,Norwich,2,4.3,1.0,0.8537084
+1198,38,Christoph_Zimmermann,Norwich,2,4.4,0.75,-0.21540648
+1199,38,Jamal_Lewis,Norwich,2,4.4,1.0,0.82787406
+1200,38,Grant_Hanley,Norwich,2,4.0,0.0,-0.19210547
+1201,38,Teemu_Pukki,Norwich,4,6.4,1.0,1.4005826
+1202,38,Dennis_Srbeny,Norwich,4,5.2,0.0,-0.0665077
+1203,38,Tim_Krul,Norwich,1,4.6,1.0,1.3714762
+1204,38,Michael_McGovern,Norwich,1,4.1,1.0,-0.2031511
+1205,38,Mario_Vrancic,Norwich,3,6.2,1.0,1.05866
+1206,38,Emiliano_Buendía,Norwich,3,6.0,1.0,1.2015297
+1207,38,Onel_Hernández,Norwich,3,5.3,1.0,1.427789
+1208,38,Marco_Stiepermann,Norwich,3,5.0,1.0,0.9211478
+1209,38,Kenny_McLean,Norwich,3,4.8,1.0,1.4193659
+1210,38,Todd_Cantwell,Norwich,3,4.5,1.0,1.2045977
+1211,38,Moritz_Leitner,Norwich,3,4.3,0.0,-0.14131111
+1212,38,Alexander_Tettey,Norwich,3,4.4,1.0,1.4925134
+1213,38,Tom_Trybull,Norwich,3,4.3,1.0,0.4123596
+1214,38,Josip_Drmic,Norwich,4,5.3,1.0,1.1117816
+1215,38,Patrick_Roberts,Norwich,3,5.0,0.0,-0.1334812
+1216,38,Ralf_Fahrmann,Norwich,1,4.4,0.0,-0.17100382
+1217,38,Sam_Byram,Norwich,2,4.3,0.0,-0.12951046
+1218,38,Philip_Heise,Norwich,2,3.9,0.0,-0.3132264
+1219,38,Ibrahim_Amadou,Norwich,3,4.5,0.0,-0.07867712
+1220,38,Adam_Idah,Norwich,4,4.4,1.0,0.8612031
+1221,38,Archie_Mair,Norwich,1,4.0,1.0,-0.19633609
+1222,38,Akin_Famewo,Norwich,2,3.9,0.0,-0.123374164
+1223,38,Ondrej_Duda,Norwich,3,4.4,0.0,-0.10751641
+1224,38,Lukas_Rupp,Norwich,3,4.4,1.0,0.8692342
+1225,38,Josh_Martin,Norwich,3,4.5,1.0,0.44935322
+1226,38,Jordan_Thomas,Norwich,2,4.0,1.0,-0.086968005
+1227,38,Andrew_Robertson,Liverpool,2,7.0,1.0,5.2026896
+1228,38,Trent_Alexander-Arnold,Liverpool,2,7.7,1.0,4.6194673
+1229,38,Virgil_van Dijk,Liverpool,2,6.5,1.0,4.712788
+1230,38,Joseph_Gomez,Liverpool,2,5.3,1.0,4.0840225
+1231,38,Joel_Matip,Liverpool,2,5.2,0.0,0.05853021
+1232,38,Dejan_Lovren,Liverpool,2,5.3,1.0,0.06744933
+1233,38,Roberto_Firmino,Liverpool,4,9.3,1.0,3.8380542
+1234,38,Divock_Origi,Liverpool,4,5.1,1.0,2.0159273
+1235,38,Alisson_Ramses Becker,Liverpool,1,6.2,1.0,4.394663
+1236,38,Simon_Mignolet,Liverpool,1,4.5,0.0,0.08638024
+1237,38,Mohamed_Salah,Liverpool,3,12.5,1.0,7.9380283
+1238,38,Sadio_Mané,Liverpool,3,12.2,1.0,6.400301
+1239,38,Alex_Oxlade-Chamberlain,Liverpool,3,6.1,1.0,2.4335105
+1240,38,Xherdan_Shaqiri,Liverpool,3,6.3,1.0,0.418499
+1241,38,Adam_Lallana,Liverpool,3,5.7,1.0,0.13557053
+1242,38,Naby_Keita,Liverpool,3,5.8,1.0,2.346166
+1243,38,Fabio Henrique_Tavares,Liverpool,3,5.4,1.0,2.5364234
+1244,38,Jordan_Henderson,Liverpool,3,5.2,0.0,0.13930595
+1245,38,Georginio_Wijnaldum,Liverpool,3,5.4,1.0,2.6395826
+1246,38,James_Milner,Liverpool,3,5.3,0.75,0.15727174
+1247,38,Rafael_Camacho,Liverpool,3,4.5,0.0,0.0065460205
+1248,38,Rhian_Brewster,Liverpool,4,4.2,0.0,0.075511456
+1249,38,Adrián_San Miguel del Castillo,Liverpool,1,4.0,1.0,0.05607903
+1250,38,Andy_Lonergan,Liverpool,1,4.2,1.0,0.023159862
+1251,38,Caoimhin_Kelleher,Liverpool,1,4.4,1.0,0.11435127
+1252,38,Harvey_Elliott,Liverpool,3,4.5,1.0,0.06561422
+1253,38,Curtis_Jones,Liverpool,3,4.5,1.0,1.4700174
+1254,38,Neco_Williams,Liverpool,2,4.0,1.0,1.4683945
+1255,38,Nathaniel_Phillips,Liverpool,2,3.9,0.0,0.040314198
+1256,38,Takumi_Minamino,Liverpool,3,5.8,1.0,0.9717393
+1257,38,Ki-Jana_Hoever,Liverpool,2,4.0,1.0,0.011642933
+1258,38,Lys_Mousset,Sheffield United,4,4.3,1.0,1.9283323
+1259,38,Enda_Stevens,Sheffield United,2,5.2,1.0,3.5551467
+1260,38,Kieron_Freeman,Sheffield United,2,4.2,1.0,0.021302104
+1261,38,Jack_O'Connell,Sheffield United,2,4.5,1.0,3.2131195
+1262,38,George_Baldock,Sheffield United,2,5.0,1.0,3.679029
+1263,38,John_Egan,Sheffield United,2,4.7,1.0,3.9887772
+1264,38,Richard_Stearman,Sheffield United,2,3.9,0.0,0.025995255
+1265,38,John_Lundstram,Sheffield United,2,4.6,1.0,0.98199284
+1266,38,Billy_Sharp,Sheffield United,4,5.3,1.0,1.5187972
+1267,38,Jake_Eastwood,Sheffield United,1,4.3,1.0,-0.03360492
+1268,38,Mark_Duffy,Sheffield United,3,5.2,0.0,0.0024471283
+1269,38,John_Fleck,Sheffield United,3,4.7,1.0,0.088183045
+1270,38,Oliver_Norwood,Sheffield United,3,4.7,1.0,2.8104775
+1271,38,David_McGoldrick,Sheffield United,4,5.4,1.0,1.9705377
+1272,38,Chris_Basham,Sheffield United,2,4.6,1.0,3.2236023
+1273,38,Simon_Moore,Sheffield United,1,4.3,1.0,-0.021335483
+1274,38,Luke_Freeman,Sheffield United,3,5.0,0.25,0.042724013
+1275,38,Phil_Jagielka,Sheffield United,2,4.1,1.0,0.44383264
+1276,38,Callum_Robinson,Sheffield United,3,4.9,0.0,0.04022491
+1277,38,Ravel_Morrison,Sheffield United,3,4.5,0.0,-0.0057319403
+1278,38,Dean_Henderson,Sheffield United,1,5.2,1.0,4.2182236
+1279,38,Ben_Osborn,Sheffield United,3,4.7,1.0,3.0775876
+1280,38,Oliver_McBurnie,Sheffield United,4,5.5,1.0,2.9752314
+1281,38,Michael_Verrips,Sheffield United,1,4.4,1.0,-0.01084882
+1282,38,Muhamed_Bešić,Sheffield United,3,4.3,0.0,0.04030752
+1283,38,Leon_Clarke,Sheffield United,4,4.4,0.25,0.008647442
+1284,38,Jack_Rodwell,Sheffield United,3,4.5,1.0,0.27401423
+1285,38,Jack_Robinson,Sheffield United,2,4.0,1.0,1.0824101
+1286,38,Sander_Berge,Sheffield United,3,4.7,1.0,3.3250885
+1287,38,Richairo_Zivkovic,Sheffield United,4,4.7,1.0,0.46881115
+1288,38,Panagiotis_Retsos,Sheffield United,2,4.5,0.0,-0.023288548
+1289,38,Ahmed_El Mohamady,Aston Villa,2,4.1,1.0,0.9713038
+1290,38,James_Chester,Aston Villa,2,4.2,0.0,-0.0070905685
+1291,38,Neil_Taylor,Aston Villa,2,4.2,0.75,1.1815803
+1292,38,Kortney_Hause,Aston Villa,2,4.4,0.75,1.0016329
+1293,38,Jonathan_Kodjia,Aston Villa,4,5.4,0.0,-0.013997972
+1294,38,Ørjan_Nyland,Aston Villa,1,4.3,1.0,1.0357251
+1295,38,Conor_Hourihane,Aston Villa,3,5.7,1.0,2.19233
+1296,38,Jack_Grealish,Aston Villa,3,5.9,1.0,4.2131095
+1297,38,Anwar_El Ghazi,Aston Villa,3,5.2,1.0,1.5769758
+1298,38,John_McGinn,Aston Villa,3,5.2,1.0,2.6546257
+1299,38,Andre_Green,Aston Villa,3,4.8,0.0,-0.03732735
+1300,38,Birkir_Bjarnason,Aston Villa,3,4.5,0.0,-0.042595565
+1301,38,Keinan_Davis,Aston Villa,3,4.3,1.0,1.9582229
+1302,38,Henri_Lansbury,Aston Villa,3,4.4,1.0,0.038189888
+1303,38,José Ignacio_Peleteiro Romallo,Aston Villa,3,5.7,1.0,0.36985683
+1304,38,Tom_Heaton,Aston Villa,1,4.3,0.0,-0.03139317
+1305,38,Daniel_Drinkwater,Aston Villa,3,4.4,0.75,0.075722575
+1306,38,Matt_Targett,Aston Villa,2,4.3,1.0,1.2198849
+1307,38,Wesley_Moraes,Aston Villa,4,5.4,0.0,0.06436348
+1308,38,Jed_Steer,Aston Villa,1,4.3,1.0,-0.0028464198
+1309,38,Tyrone_Mings,Aston Villa,2,4.4,1.0,2.2507794
+1310,38,Ezri_Konsa Ngoyo,Aston Villa,2,4.3,1.0,2.2913494
+1311,38,Bjorn_Engels,Aston Villa,2,4.3,0.25,0.0046397448
+1312,38,Frédéric_Guilbert,Aston Villa,2,4.3,1.0,-0.063666105
+1313,38,Mahmoud Ahmed_Ibrahim Hassan,Aston Villa,3,5.2,1.0,3.1400824
+1314,38,Douglas Luiz_Soares de Paulo,Aston Villa,3,4.3,1.0,2.9565423
+1315,38,Lovre_Kalinic,Aston Villa,1,4.2,0.0,-0.057383895
+1316,38,Marvelous_Nakamba,Aston Villa,3,4.4,1.0,0.93334234
+1317,38,Indiana_Vassilev,Aston Villa,3,4.5,1.0,0.20514917
+1318,38,José_Reina,Aston Villa,1,4.2,1.0,2.363144
+1319,38,Mbwana_Samatta,Aston Villa,4,5.1,1.0,2.3477008
+1320,38,Borja_González Tomás,Aston Villa,4,5.3,0.0,0.051602244
+1321,38,Kaine_Hayden,Aston Villa,3,4.5,1.0,0.008784413

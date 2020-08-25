@@ -13076,12 +13076,13 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 </pre></div>
 
     </div>
@@ -13091,7 +13092,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to project directory</span>
@@ -13105,11 +13106,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;data/train_v3.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;data/train_v4.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
 </pre></div>
 
     </div>
@@ -13120,17 +13121,18 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These are the features we get each week direct from fpl and transfermarkt</p>
+<p>These are the fields in the base dataset, all from fpl and transfermarkt</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summary of fields</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13149,46 +13151,48 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 90437 entries, 0 to 90436
-Data columns (total 35 columns):
- #   Column                               Non-Null Count  Dtype  
----  ------                               --------------  -----  
- 0   player                               90437 non-null  object 
- 1   gw                                   90437 non-null  int64  
- 2   position                             90437 non-null  int64  
- 3   minutes                              90437 non-null  int64  
- 4   team                                 90437 non-null  object 
- 5   opponent_team                        90437 non-null  object 
- 6   relative_market_value_team           90437 non-null  float64
- 7   relative_market_value_opponent_team  90437 non-null  float64
- 8   was_home                             90437 non-null  bool   
- 9   total_points                         90437 non-null  int64  
- 10  assists                              90437 non-null  int64  
- 11  bonus                                90437 non-null  int64  
- 12  bps                                  90437 non-null  int64  
- 13  clean_sheets                         90437 non-null  int64  
- 14  creativity                           90437 non-null  float64
- 15  goals_conceded                       90437 non-null  int64  
- 16  goals_scored                         90437 non-null  int64  
- 17  ict_index                            90437 non-null  float64
- 18  influence                            90437 non-null  float64
- 19  own_goals                            90437 non-null  int64  
- 20  penalties_missed                     90437 non-null  int64  
- 21  penalties_saved                      90437 non-null  int64  
- 22  red_cards                            90437 non-null  int64  
- 23  saves                                90437 non-null  int64  
- 24  selected                             90437 non-null  int64  
- 25  team_a_score                         90437 non-null  int64  
- 26  team_h_score                         90437 non-null  int64  
- 27  threat                               90437 non-null  float64
- 28  transfers_balance                    90437 non-null  int64  
- 29  transfers_in                         90437 non-null  int64  
- 30  transfers_out                        90437 non-null  int64  
- 31  yellow_cards                         90437 non-null  int64  
- 32  kickoff_time                         90437 non-null  object 
- 33  season                               90437 non-null  object 
- 34  play_proba                           22357 non-null  float64
-dtypes: bool(1), float64(7), int64(22), object(5)
-memory usage: 24.2+ MB
+Data columns (total 37 columns):
+ #   Column                                      Non-Null Count  Dtype  
+---  ------                                      --------------  -----  
+ 0   player                                      90437 non-null  object 
+ 1   gw                                          90437 non-null  int64  
+ 2   position                                    90437 non-null  int64  
+ 3   minutes                                     90437 non-null  int64  
+ 4   team                                        90437 non-null  object 
+ 5   opponent_team                               90437 non-null  object 
+ 6   relative_market_value_team                  22501 non-null  float64
+ 7   relative_market_value_opponent_team         22501 non-null  float64
+ 8   was_home                                    90437 non-null  bool   
+ 9   total_points                                90437 non-null  int64  
+ 10  assists                                     90437 non-null  int64  
+ 11  bonus                                       90437 non-null  int64  
+ 12  bps                                         90437 non-null  int64  
+ 13  clean_sheets                                90437 non-null  int64  
+ 14  creativity                                  90437 non-null  float64
+ 15  goals_conceded                              90437 non-null  int64  
+ 16  goals_scored                                90437 non-null  int64  
+ 17  ict_index                                   90437 non-null  float64
+ 18  influence                                   90437 non-null  float64
+ 19  own_goals                                   90437 non-null  int64  
+ 20  penalties_missed                            90437 non-null  int64  
+ 21  penalties_saved                             90437 non-null  int64  
+ 22  red_cards                                   90437 non-null  int64  
+ 23  saves                                       90437 non-null  int64  
+ 24  selected                                    90437 non-null  int64  
+ 25  team_a_score                                90437 non-null  int64  
+ 26  team_h_score                                90437 non-null  int64  
+ 27  threat                                      90437 non-null  float64
+ 28  transfers_balance                           90437 non-null  int64  
+ 29  transfers_in                                90437 non-null  int64  
+ 30  transfers_out                               90437 non-null  int64  
+ 31  yellow_cards                                90437 non-null  int64  
+ 32  kickoff_time                                90437 non-null  object 
+ 33  season                                      90437 non-null  object 
+ 34  play_proba                                  22357 non-null  float64
+ 35  relative_market_value_team_season           90437 non-null  float64
+ 36  relative_market_value_opponent_team_season  90437 non-null  float64
+dtypes: bool(1), float64(9), int64(22), object(5)
+memory usage: 25.6+ MB
 </pre>
 </div>
 </div>
@@ -13197,178 +13201,53 @@ memory usage: 24.2+ MB
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_market_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;1920&#39;</span><span class="p">][[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_team&#39;</span><span class="p">]]</span>
- <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_team&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_market_values</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[106]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>season</th>
-      <th>team</th>
-      <th>relative_market_value_team</th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1617</td>
-      <td>Arsenal</td>
-      <td>0.384921</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1617</td>
-      <td>Arsenal</td>
-      <td>0.452793</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1617</td>
-      <td>Arsenal</td>
-      <td>1.944129</td>
-      <td>1217</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1617</td>
-      <td>Bournemouth</td>
-      <td>0.384921</td>
-      <td>1067</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1617</td>
-      <td>Bournemouth</td>
-      <td>0.428062</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>1819</td>
-      <td>Southampton</td>
-      <td>0.654624</td>
-      <td>1171</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>1819</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.983109</td>
-      <td>1088</td>
-    </tr>
-    <tr>
-      <th>118</th>
-      <td>1819</td>
-      <td>Watford</td>
-      <td>0.412301</td>
-      <td>1157</td>
-    </tr>
-    <tr>
-      <th>119</th>
-      <td>1819</td>
-      <td>West Ham United</td>
-      <td>0.749352</td>
-      <td>1210</td>
-    </tr>
-    <tr>
-      <th>120</th>
-      <td>1819</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>0.388177</td>
-      <td>1047</td>
-    </tr>
-  </tbody>
-</table>
-<p>121 rows × 4 columns</p>
-</div>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each row represents one player's performance in a single fixture, and will be unique across the player name and kickoff time fields:</p>
+<ul>
+<li>player (player name)</li>
+<li>kickoff_time (kickoff time for the fixture)</li>
+</ul>
+<p>The fixtures are futher defined with the following fields:</p>
+<ul>
+<li>team (the player's team)</li>
+<li>opponent_team (the opposition team)</li>
+<li>was_home (was it a home game for the player)</li>
+<li>season (e.g. '1920' for the 2019/20 season)</li>
+<li>gw (the FPL gameweek in which the fixture occured)</li>
+</ul>
+<p>Note that there can be multiple fixtures (i.e. rows for a given player) in a single gameweek.</p>
+<p>The position that a player plays is also given, this will be consistent for each player within seasons, but may change between seasons:</p>
+<ul>
+<li>position (1 - goalkeeper, 2 - defender, 3 - midfielder, 4 - forward)</li>
+</ul>
+<p>Most of the other fields describe the player (or team's) performance in the fixture e.g. the number of munites played, points scored, assists, goals, goals conceded while on the field, etc.</p>
+<p>All the above should be 100% complete for all rows.</p>
+<p>Incomplete fields for FPL data are:</p>
+<ul>
+<li>transfer and selected values (transfers_in, transfers_out, transfers_balance, selected) - these were only collected from the start of the 2019/20 season, and require further investigation as to what they actually represent (in other words, treat with caution when modelling); values prior to the 2019/20 are set to 0</li>
+<li>play_proba - again only collected from the start of the 2019/20 season, this is the probability that the the player would actually be available for the fixture according to the FPL website (note that the time that this is captured each week  varies); values prior to the 2019/20 are null, and they are also null for any new players in a given gameweek (i.e. players that FPL has added to the game during that gameweek)</li>
+</ul>
+<p>Finally, team transfer market value is taken from transfermarkt each week (for the 2019/20) season or a single value has been taken for the whole season:</p>
+<ul>
+<li>relative_market_value_team - the market value for the team scraped during that gameweek (non null from start of 2019/20 season)</li>
+<li>relative_market_value_opponent_team - the market value for the opposition team scraped during that gameweek (non null from start of 2019/20 season)</li>
+<li>relative_market_value_team_season - a single value for the team's value from the the start of each season </li>
+<li>relative_market_value_team_season - a single value for the opposition team's value from the the start of each season </li>
+</ul>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual_market_values</span> <span class="o">=</span> <span class="n">unique_market_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">unique_market_values</span><span class="o">.</span>
-                                                <span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-                                                <span class="o">.</span><span class="n">idxmax</span><span class="p">()][[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_team&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actual_market_values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># take a look at some data</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13381,425 +13260,7 @@ memory usage: 24.2+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[119]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>season</th>
-      <th>team</th>
-      <th>relative_market_value_team</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>1617</td>
-      <td>Arsenal</td>
-      <td>1.944129</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1617</td>
-      <td>Bournemouth</td>
-      <td>0.384921</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>1617</td>
-      <td>Burnley</td>
-      <td>0.304218</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1617</td>
-      <td>Chelsea</td>
-      <td>2.243698</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1617</td>
-      <td>Crystal Palace</td>
-      <td>0.802197</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>1617</td>
-      <td>Everton</td>
-      <td>1.057509</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>1617</td>
-      <td>Hull City</td>
-      <td>0.494447</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>1617</td>
-      <td>Leicester City</td>
-      <td>0.650832</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>1617</td>
-      <td>Liverpool</td>
-      <td>1.465860</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>1617</td>
-      <td>Manchester City</td>
-      <td>2.311012</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>1617</td>
-      <td>Manchester United</td>
-      <td>1.983179</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>1617</td>
-      <td>Middlesbrough</td>
-      <td>0.452793</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>1617</td>
-      <td>Southampton</td>
-      <td>0.796805</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>1617</td>
-      <td>Stoke City</td>
-      <td>0.718705</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>1617</td>
-      <td>Sunderland</td>
-      <td>0.418392</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>1617</td>
-      <td>Swansea City</td>
-      <td>0.509881</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>1617</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.433690</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>1617</td>
-      <td>Watford</td>
-      <td>0.704200</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>1617</td>
-      <td>West Bromwich Albion</td>
-      <td>0.428062</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>1617</td>
-      <td>West Ham United</td>
-      <td>0.895471</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>1718</td>
-      <td>Arsenal</td>
-      <td>2.073500</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>1718</td>
-      <td>Bournemouth</td>
-      <td>0.379765</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>1718</td>
-      <td>Brighton and Hove Albion</td>
-      <td>0.349181</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>1718</td>
-      <td>Burnley</td>
-      <td>0.316798</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>1718</td>
-      <td>Chelsea</td>
-      <td>2.125018</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>1718</td>
-      <td>Crystal Palace</td>
-      <td>0.635984</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>1718</td>
-      <td>Everton</td>
-      <td>1.134226</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>1718</td>
-      <td>Huddersfield Town</td>
-      <td>0.210654</td>
-    </tr>
-    <tr>
-      <th>74</th>
-      <td>1718</td>
-      <td>Leicester City</td>
-      <td>0.824624</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>1718</td>
-      <td>Liverpool</td>
-      <td>1.619155</td>
-    </tr>
-    <tr>
-      <th>80</th>
-      <td>1718</td>
-      <td>Manchester City</td>
-      <td>2.016093</td>
-    </tr>
-    <tr>
-      <th>82</th>
-      <td>1718</td>
-      <td>Manchester United</td>
-      <td>2.110135</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>1718</td>
-      <td>Newcastle United</td>
-      <td>0.547176</td>
-    </tr>
-    <tr>
-      <th>84</th>
-      <td>1718</td>
-      <td>Southampton</td>
-      <td>0.809578</td>
-    </tr>
-    <tr>
-      <th>87</th>
-      <td>1718</td>
-      <td>Stoke City</td>
-      <td>0.581587</td>
-    </tr>
-    <tr>
-      <th>88</th>
-      <td>1718</td>
-      <td>Swansea City</td>
-      <td>0.560457</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>1718</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.751141</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>1718</td>
-      <td>Watford</td>
-      <td>0.547242</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>1718</td>
-      <td>West Bromwich Albion</td>
-      <td>0.541354</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>1718</td>
-      <td>West Ham United</td>
-      <td>0.866330</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>1819</td>
-      <td>Arsenal</td>
-      <td>1.435552</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>1819</td>
-      <td>Bournemouth</td>
-      <td>0.418108</td>
-    </tr>
-    <tr>
-      <th>100</th>
-      <td>1819</td>
-      <td>Brighton and Hove Albion</td>
-      <td>0.417745</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>1819</td>
-      <td>Burnley</td>
-      <td>0.449442</td>
-    </tr>
-    <tr>
-      <th>102</th>
-      <td>1819</td>
-      <td>Cardiff City</td>
-      <td>0.183890</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>1819</td>
-      <td>Chelsea</td>
-      <td>2.540586</td>
-    </tr>
-    <tr>
-      <th>105</th>
-      <td>1819</td>
-      <td>Crystal Palace</td>
-      <td>0.634856</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>1819</td>
-      <td>Everton</td>
-      <td>1.039221</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>1819</td>
-      <td>Fulham</td>
-      <td>0.405284</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>1819</td>
-      <td>Huddersfield Town</td>
-      <td>0.273778</td>
-    </tr>
-    <tr>
-      <th>110</th>
-      <td>1819</td>
-      <td>Leicester City</td>
-      <td>0.796050</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>1819</td>
-      <td>Liverpool</td>
-      <td>2.177887</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>1819</td>
-      <td>Manchester City</td>
-      <td>2.540586</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>1819</td>
-      <td>Manchester United</td>
-      <td>2.015531</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>1819</td>
-      <td>Newcastle United</td>
-      <td>0.483921</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>1819</td>
-      <td>Southampton</td>
-      <td>0.654624</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>1819</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.983109</td>
-    </tr>
-    <tr>
-      <th>118</th>
-      <td>1819</td>
-      <td>Watford</td>
-      <td>0.412301</td>
-    </tr>
-    <tr>
-      <th>119</th>
-      <td>1819</td>
-      <td>West Ham United</td>
-      <td>0.749352</td>
-    </tr>
-    <tr>
-      <th>120</th>
-      <td>1819</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>0.388177</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">actual_market_values</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;_season&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[129]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13832,7 +13293,22 @@ memory usage: 24.2+ MB
       <th>relative_market_value_opponent_team</th>
       <th>was_home</th>
       <th>total_points</th>
-      <th>...</th>
+      <th>assists</th>
+      <th>bonus</th>
+      <th>bps</th>
+      <th>clean_sheets</th>
+      <th>creativity</th>
+      <th>goals_conceded</th>
+      <th>goals_scored</th>
+      <th>ict_index</th>
+      <th>influence</th>
+      <th>own_goals</th>
+      <th>penalties_missed</th>
+      <th>penalties_saved</th>
+      <th>red_cards</th>
+      <th>saves</th>
+      <th>selected</th>
+      <th>team_a_score</th>
       <th>team_h_score</th>
       <th>threat</th>
       <th>transfers_balance</th>
@@ -13843,6 +13319,7 @@ memory usage: 24.2+ MB
       <th>season</th>
       <th>play_proba</th>
       <th>relative_market_value_team_season</th>
+      <th>relative_market_value_opponent_team_season</th>
     </tr>
   </thead>
   <tbody>
@@ -13854,11 +13331,26 @@ memory usage: 24.2+ MB
       <td>0</td>
       <td>West Ham United</td>
       <td>Chelsea</td>
-      <td>0.895471</td>
-      <td>2.243698</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>False</td>
       <td>0</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>14023</td>
+      <td>1</td>
       <td>2</td>
       <td>0.0</td>
       <td>0</td>
@@ -13869,6 +13361,7 @@ memory usage: 24.2+ MB
       <td>1617</td>
       <td>NaN</td>
       <td>0.895471</td>
+      <td>2.243698</td>
     </tr>
     <tr>
       <th>1</th>
@@ -13878,11 +13371,26 @@ memory usage: 24.2+ MB
       <td>15</td>
       <td>Everton</td>
       <td>Tottenham Hotspur</td>
-      <td>1.057509</td>
-      <td>1.433690</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>True</td>
       <td>1</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.9</td>
+      <td>8.2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13918</td>
+      <td>1</td>
       <td>1</td>
       <td>0.0</td>
       <td>0</td>
@@ -13893,6 +13401,7 @@ memory usage: 24.2+ MB
       <td>1617</td>
       <td>NaN</td>
       <td>1.057509</td>
+      <td>1.433690</td>
     </tr>
     <tr>
       <th>2</th>
@@ -13902,11 +13411,26 @@ memory usage: 24.2+ MB
       <td>60</td>
       <td>Arsenal</td>
       <td>Liverpool</td>
-      <td>1.944129</td>
-      <td>1.465860</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>True</td>
       <td>2</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>4.9</td>
+      <td>3</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>2.2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>163170</td>
+      <td>4</td>
       <td>3</td>
       <td>23.0</td>
       <td>0</td>
@@ -13917,6 +13441,7 @@ memory usage: 24.2+ MB
       <td>1617</td>
       <td>NaN</td>
       <td>1.944129</td>
+      <td>1.465860</td>
     </tr>
     <tr>
       <th>3</th>
@@ -13926,11 +13451,26 @@ memory usage: 24.2+ MB
       <td>0</td>
       <td>Watford</td>
       <td>Southampton</td>
-      <td>0.704200</td>
-      <td>0.796805</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>False</td>
       <td>0</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1051</td>
+      <td>1</td>
       <td>1</td>
       <td>0.0</td>
       <td>0</td>
@@ -13941,6 +13481,7 @@ memory usage: 24.2+ MB
       <td>1617</td>
       <td>NaN</td>
       <td>0.704200</td>
+      <td>0.796805</td>
     </tr>
     <tr>
       <th>4</th>
@@ -13950,11 +13491,26 @@ memory usage: 24.2+ MB
       <td>0</td>
       <td>Chelsea</td>
       <td>West Ham United</td>
-      <td>2.243698</td>
-      <td>0.895471</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>True</td>
       <td>0</td>
-      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1243</td>
+      <td>1</td>
       <td>2</td>
       <td>0.0</td>
       <td>0</td>
@@ -13965,170 +13521,358 @@ memory usage: 24.2+ MB
       <td>1617</td>
       <td>NaN</td>
       <td>2.243698</td>
+      <td>0.895471</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>90432</th>
-      <td>Tommy_Doyle</td>
-      <td>38</td>
-      <td>3</td>
-      <td>0</td>
-      <td>Manchester City</td>
-      <td>Norwich</td>
-      <td>2.430397</td>
-      <td>0.327574</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>5</td>
-      <td>0.0</td>
-      <td>-2</td>
-      <td>22</td>
-      <td>24</td>
-      <td>0</td>
-      <td>2020-07-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>90433</th>
-      <td>Joseph_Anang</td>
-      <td>38</td>
+      <th>5</th>
+      <td>Abel_Hernández</td>
       <td>1</td>
-      <td>0</td>
-      <td>West Ham United</td>
-      <td>Aston Villa</td>
-      <td>0.709989</td>
-      <td>0.553818</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>70</td>
-      <td>270</td>
-      <td>200</td>
-      <td>0</td>
-      <td>2020-07-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>90434</th>
-      <td>Erik_Pieters</td>
-      <td>38</td>
-      <td>2</td>
+      <td>4</td>
       <td>90</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>0.370648</td>
-      <td>0.541184</td>
-      <td>True</td>
-      <td>3</td>
-      <td>...</td>
-      <td>1</td>
-      <td>2.0</td>
-      <td>139816</td>
-      <td>144388</td>
-      <td>4572</td>
-      <td>1</td>
-      <td>2020-07-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
+      <td>Hull City</td>
+      <td>Leicester City</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>12.2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>5.7</td>
+      <td>14.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>26039</td>
+      <td>1</td>
+      <td>2</td>
+      <td>30.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-13T11:30:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.494447</td>
+      <td>0.650832</td>
     </tr>
     <tr>
-      <th>90435</th>
-      <td>Japhet_Tanganga</td>
-      <td>38</td>
+      <th>6</th>
+      <td>Adama_Diomande</td>
+      <td>1</td>
+      <td>4</td>
+      <td>90</td>
+      <td>Hull City</td>
+      <td>Leicester City</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>8</td>
+      <td>0</td>
+      <td>2</td>
+      <td>29</td>
+      <td>0</td>
+      <td>16.8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>10.7</td>
+      <td>45.2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>38151</td>
+      <td>1</td>
+      <td>2</td>
+      <td>45.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-13T11:30:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.494447</td>
+      <td>0.650832</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Adam_Clayton</td>
+      <td>1</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Middlesbrough</td>
+      <td>Stoke City</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
       <td>2</td>
       <td>0</td>
-      <td>Tottenham Hotspur</td>
-      <td>Crystal Palace</td>
-      <td>1.604904</td>
-      <td>0.430493</td>
-      <td>False</td>
       <td>0</td>
-      <td>...</td>
+      <td>6</td>
+      <td>0</td>
+      <td>2.2</td>
       <td>1</td>
-      <td>0.0</td>
-      <td>7999</td>
-      <td>14840</td>
-      <td>6841</td>
       <td>0</td>
-      <td>2020-07-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
+      <td>1.4</td>
+      <td>3.2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17663</td>
+      <td>1</td>
+      <td>1</td>
+      <td>9.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-13T14:00:00Z</td>
+      <td>1617</td>
       <td>NaN</td>
+      <td>0.452793</td>
+      <td>0.718705</td>
     </tr>
     <tr>
-      <th>90436</th>
-      <td>Ravel_Morrison</td>
-      <td>38</td>
-      <td>3</td>
+      <th>8</th>
+      <td>Adam_Federici</td>
+      <td>1</td>
+      <td>1</td>
       <td>0</td>
-      <td>Sheffield United</td>
-      <td>Southampton</td>
-      <td>0.348678</td>
-      <td>0.526987</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>3</td>
-      <td>0.0</td>
-      <td>-23</td>
-      <td>7</td>
-      <td>30</td>
-      <td>0</td>
-      <td>2020-07-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>0.0</td>
+      <td>Bournemouth</td>
+      <td>Manchester United</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4315</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-14T12:30:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.384921</td>
+      <td>1.983179</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Adam_Forshaw</td>
+      <td>1</td>
+      <td>3</td>
+      <td>69</td>
+      <td>Middlesbrough</td>
+      <td>Stoke City</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1.3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.3</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2723</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2016-08-13T14:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.452793</td>
+      <td>0.718705</td>
     </tr>
   </tbody>
 </table>
-<p>90437 rows × 36 columns</p>
 </div>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since this is a time series problem we have some functions that create various rolling totals and averages for players and teams</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player level lag features</span>
+<span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
+    <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># need minutes for per game stats, add to front of list</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">)</span>
+
+    <span class="c1"># calculate totals for each lag period</span>
+    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                                                                                            <span class="n">window</span><span class="o">=</span><span class="n">lag</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">feature</span> <span class="o">!=</span> <span class="s1">&#39;minutes&#39;</span><span class="p">:</span>
+                <span class="n">minute_name</span> <span class="o">=</span> <span class="s1">&#39;minutes_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+                <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+                
+                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
+<span class="c1">#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)</span>
+                
+    <span class="k">return</span> <span class="n">df_new</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_opponent_team&#39;</span><span class="p">]]</span>
- <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_opponent_team&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># team level lag features</span>
+<span class="k">def</span> <span class="nf">team_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+        <span class="n">feature_team_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team&#39;</span>
+        <span class="n">feature_team</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span>
+                                   <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">])</span>
+                        <span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">feature_team_name</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+                
+        <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+            <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+                <span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
+                                              <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
+                
+                <span class="n">feature_team</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span>
+                                                 <span class="o">/</span> <span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cumcount</span><span class="p">())</span>
+                
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
+                                              <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                                                                         <span class="n">window</span><span class="o">=</span><span class="n">lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
+                
+                <span class="n">feature_team</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> 
+                                                 <span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
+                                                 <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                                                                            <span class="n">window</span><span class="o">=</span><span class="n">lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        
+        <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">feature_team</span><span class="p">,</span> 
+                          <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">],</span> 
+                          <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+        
+        <span class="n">df_new</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">feature_team</span><span class="p">,</span>
+                 <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">],</span>
+                 <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">],</span>
+                 <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                 <span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;_opponent&#39;</span><span class="p">))</span>
+        
+        <span class="n">df_new</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;team_opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team_opponent&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">df_new</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, the following creates totals and per game (per 90 mins) averages for points going back 1, 2, 3, 4, 5, 10, 20 and all previous weeks. This is done at both player and team level.</p>
+<p>This has been checked for points totals, but should also work for any other stat such as player/team goals scored, assists, player goals conceded. However, it will not currently work for team level stats such as team goals conceded where adding up the goals conceded across all the team players would be incorrect.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create some lag features</span>
+<span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can see below that the player's (Salah) historic point totals and per game totals are given, as well as the totals for his team (Liverpool) and whichever team he is playing in that gameweek (e.g. his debut was versus Watord on the 12th August 2017, so Watford's running point totals and per game totals are also given).</p>
+<p>Note that if it is the first game since the start of the 2016/17 season for the team or opposition, then the point totals for previous games will be 0 and the per game totals will be null. If the player has not had any minutes in the previous number of games being calculated, then the point totals will also be 0, and per game totals null.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at resulting dataset for a player</span>
+<span class="n">lag_train_df</span><span class="p">[</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14141,52 +13885,7 @@ memory usage: 24.2+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>season  opponent_team            relative_market_value_opponent_team
-1617    Arsenal                  1.944129                               1183
-        Bournemouth              0.384921                               1185
-        Burnley                  0.304218                               1192
-        Chelsea                  2.243698                               1182
-        Crystal Palace           0.802197                               1178
-                                                                        ... 
-1920    Wolverhampton Wanderers  0.746215                                143
-                                 0.748281                                 32
-                                 0.750614                                 32
-                                 0.750647                                 37
-                                 0.811175                                 31
-Length: 560, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Manchester City&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">28</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[107]:</div>
 
 
 
@@ -14219,7 +13918,21 @@ Length: 560, dtype: int64</pre>
       <th>relative_market_value_opponent_team</th>
       <th>was_home</th>
       <th>total_points</th>
-      <th>...</th>
+      <th>assists</th>
+      <th>bonus</th>
+      <th>bps</th>
+      <th>clean_sheets</th>
+      <th>creativity</th>
+      <th>goals_conceded</th>
+      <th>goals_scored</th>
+      <th>ict_index</th>
+      <th>influence</th>
+      <th>own_goals</th>
+      <th>penalties_missed</th>
+      <th>penalties_saved</th>
+      <th>red_cards</th>
+      <th>saves</th>
+      <th>selected</th>
       <th>team_a_score</th>
       <th>team_h_score</th>
       <th>threat</th>
@@ -14230,12 +13943,1174 @@ Length: 560, dtype: int64</pre>
       <th>kickoff_time</th>
       <th>season</th>
       <th>play_proba</th>
+      <th>relative_market_value_team_season</th>
+      <th>relative_market_value_opponent_team_season</th>
+      <th>total_points_team</th>
+      <th>total_points_team_last_all</th>
+      <th>total_points_team_pg_last_all</th>
+      <th>total_points_team_last_1</th>
+      <th>total_points_team_pg_last_1</th>
+      <th>total_points_team_last_2</th>
+      <th>total_points_team_pg_last_2</th>
+      <th>total_points_team_last_3</th>
+      <th>total_points_team_pg_last_3</th>
+      <th>total_points_team_last_4</th>
+      <th>total_points_team_pg_last_4</th>
+      <th>total_points_team_last_5</th>
+      <th>total_points_team_pg_last_5</th>
+      <th>total_points_team_last_10</th>
+      <th>total_points_team_pg_last_10</th>
+      <th>total_points_team_last_20</th>
+      <th>total_points_team_pg_last_20</th>
+      <th>team_opponent</th>
+      <th>opponent_team_opponent</th>
+      <th>total_points_team_opponent</th>
+      <th>total_points_team_last_all_opponent</th>
+      <th>total_points_team_pg_last_all_opponent</th>
+      <th>total_points_team_last_1_opponent</th>
+      <th>total_points_team_pg_last_1_opponent</th>
+      <th>total_points_team_last_2_opponent</th>
+      <th>total_points_team_pg_last_2_opponent</th>
+      <th>total_points_team_last_3_opponent</th>
+      <th>total_points_team_pg_last_3_opponent</th>
+      <th>total_points_team_last_4_opponent</th>
+      <th>total_points_team_pg_last_4_opponent</th>
+      <th>total_points_team_last_5_opponent</th>
+      <th>total_points_team_pg_last_5_opponent</th>
+      <th>total_points_team_last_10_opponent</th>
+      <th>total_points_team_pg_last_10_opponent</th>
+      <th>total_points_team_last_20_opponent</th>
+      <th>total_points_team_pg_last_20_opponent</th>
+      <th>minutes_last_all</th>
+      <th>minutes_last_1</th>
+      <th>minutes_last_2</th>
+      <th>minutes_last_3</th>
+      <th>minutes_last_4</th>
+      <th>minutes_last_5</th>
+      <th>minutes_last_10</th>
+      <th>minutes_last_20</th>
+      <th>total_points_last_all</th>
+      <th>total_points_pg_last_all</th>
+      <th>total_points_last_1</th>
+      <th>total_points_pg_last_1</th>
+      <th>total_points_last_2</th>
+      <th>total_points_pg_last_2</th>
+      <th>total_points_last_3</th>
+      <th>total_points_pg_last_3</th>
+      <th>total_points_last_4</th>
+      <th>total_points_pg_last_4</th>
+      <th>total_points_last_5</th>
+      <th>total_points_pg_last_5</th>
+      <th>total_points_last_10</th>
+      <th>total_points_pg_last_10</th>
+      <th>total_points_last_20</th>
+      <th>total_points_pg_last_20</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <th>24036</th>
+      <td>Mohamed_Salah</td>
+      <td>1</td>
+      <td>3</td>
+      <td>85</td>
+      <td>Liverpool</td>
+      <td>Watford</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>11</td>
+      <td>1</td>
+      <td>1</td>
+      <td>26</td>
+      <td>0</td>
+      <td>2.8</td>
+      <td>2</td>
+      <td>1</td>
+      <td>8.2</td>
+      <td>24.6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>874608</td>
+      <td>3</td>
+      <td>3</td>
+      <td>55.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-08-12T11:30:00Z</td>
+      <td>1718</td>
+      <td>NaN</td>
+      <td>1.619155</td>
+      <td>0.547242</td>
+      <td>44</td>
+      <td>1863</td>
+      <td>49.026316</td>
+      <td>78.0</td>
+      <td>78.0</td>
+      <td>159.0</td>
+      <td>79.5</td>
+      <td>206.0</td>
+      <td>68.666667</td>
+      <td>266.0</td>
+      <td>66.50</td>
+      <td>292.0</td>
+      <td>58.4</td>
+      <td>510.0</td>
+      <td>51.0</td>
+      <td>916.0</td>
+      <td>45.80</td>
+      <td>Watford</td>
+      <td>Liverpool</td>
+      <td>43</td>
+      <td>1264</td>
+      <td>33.263158</td>
+      <td>15.0</td>
+      <td>15.0</td>
+      <td>41.0</td>
+      <td>20.5</td>
+      <td>63.0</td>
+      <td>21.000000</td>
+      <td>84.0</td>
+      <td>21.00</td>
+      <td>108.0</td>
+      <td>21.6</td>
+      <td>319.0</td>
+      <td>31.9</td>
+      <td>633.0</td>
+      <td>31.65</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24551</th>
+      <td>Mohamed_Salah</td>
+      <td>2</td>
+      <td>3</td>
+      <td>29</td>
+      <td>Liverpool</td>
+      <td>Crystal Palace</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5.1</td>
+      <td>10.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1293309</td>
+      <td>0</td>
+      <td>1</td>
+      <td>28.0</td>
+      <td>175914</td>
+      <td>193660</td>
+      <td>17746</td>
+      <td>0</td>
+      <td>2017-08-19T14:00:00Z</td>
+      <td>1718</td>
+      <td>NaN</td>
+      <td>1.619155</td>
+      <td>0.635984</td>
+      <td>60</td>
+      <td>1907</td>
+      <td>48.897436</td>
+      <td>44.0</td>
+      <td>44.0</td>
+      <td>122.0</td>
+      <td>61.0</td>
+      <td>203.0</td>
+      <td>67.666667</td>
+      <td>250.0</td>
+      <td>62.50</td>
+      <td>310.0</td>
+      <td>62.0</td>
+      <td>522.0</td>
+      <td>52.2</td>
+      <td>901.0</td>
+      <td>45.05</td>
+      <td>Crystal Palace</td>
+      <td>Liverpool</td>
+      <td>29</td>
+      <td>1427</td>
+      <td>36.589744</td>
+      <td>15.0</td>
+      <td>15.0</td>
+      <td>34.0</td>
+      <td>17.0</td>
+      <td>116.0</td>
+      <td>38.666667</td>
+      <td>129.0</td>
+      <td>32.25</td>
+      <td>146.0</td>
+      <td>29.2</td>
+      <td>356.0</td>
+      <td>35.6</td>
+      <td>769.0</td>
+      <td>38.45</td>
+      <td>85</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>85.0</td>
+      <td>11</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+      <td>11.0</td>
+      <td>11.647059</td>
+    </tr>
+    <tr>
+      <th>25076</th>
+      <td>Mohamed_Salah</td>
+      <td>3</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Liverpool</td>
+      <td>Arsenal</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>11</td>
+      <td>1</td>
+      <td>0</td>
+      <td>39</td>
+      <td>1</td>
+      <td>25.3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>19.9</td>
+      <td>70.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1158692</td>
+      <td>0</td>
+      <td>4</td>
+      <td>103.0</td>
+      <td>-184736</td>
+      <td>27792</td>
+      <td>212528</td>
+      <td>0</td>
+      <td>2017-08-27T15:00:00Z</td>
+      <td>1718</td>
+      <td>NaN</td>
+      <td>1.619155</td>
+      <td>2.073500</td>
+      <td>81</td>
+      <td>1967</td>
+      <td>49.175000</td>
+      <td>60.0</td>
+      <td>60.0</td>
+      <td>104.0</td>
+      <td>52.0</td>
+      <td>182.0</td>
+      <td>60.666667</td>
+      <td>263.0</td>
+      <td>65.75</td>
+      <td>310.0</td>
+      <td>62.0</td>
+      <td>530.0</td>
+      <td>53.0</td>
+      <td>931.0</td>
+      <td>46.55</td>
+      <td>Arsenal</td>
+      <td>Liverpool</td>
+      <td>12</td>
+      <td>1956</td>
+      <td>48.900000</td>
+      <td>26.0</td>
+      <td>26.0</td>
+      <td>78.0</td>
+      <td>39.0</td>
+      <td>128.0</td>
+      <td>42.666667</td>
+      <td>198.0</td>
+      <td>49.50</td>
+      <td>258.0</td>
+      <td>51.6</td>
+      <td>526.0</td>
+      <td>52.6</td>
+      <td>958.0</td>
+      <td>47.90</td>
+      <td>114</td>
+      <td>29.0</td>
+      <td>114.0</td>
+      <td>114.0</td>
+      <td>114.0</td>
+      <td>114.0</td>
+      <td>114.0</td>
+      <td>114.0</td>
+      <td>12</td>
+      <td>9.473684</td>
+      <td>1.0</td>
+      <td>3.103448</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+      <td>12.0</td>
+      <td>9.473684</td>
+    </tr>
+    <tr>
+      <th>25614</th>
+      <td>Mohamed_Salah</td>
+      <td>4</td>
+      <td>3</td>
+      <td>45</td>
+      <td>Liverpool</td>
+      <td>Manchester City</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>13.8</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4.7</td>
+      <td>7.8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1422941</td>
+      <td>0</td>
+      <td>5</td>
+      <td>25.0</td>
+      <td>177596</td>
+      <td>238283</td>
+      <td>60687</td>
+      <td>0</td>
+      <td>2017-09-09T11:30:00Z</td>
+      <td>1718</td>
+      <td>NaN</td>
+      <td>1.619155</td>
+      <td>2.016093</td>
+      <td>8</td>
+      <td>2048</td>
+      <td>49.951220</td>
+      <td>81.0</td>
+      <td>81.0</td>
+      <td>141.0</td>
+      <td>70.5</td>
+      <td>185.0</td>
+      <td>61.666667</td>
+      <td>263.0</td>
+      <td>65.75</td>
+      <td>344.0</td>
+      <td>68.8</td>
+      <td>577.0</td>
+      <td>57.7</td>
+      <td>982.0</td>
+      <td>49.10</td>
+      <td>Manchester City</td>
+      <td>Liverpool</td>
+      <td>88</td>
+      <td>1985</td>
+      <td>48.414634</td>
+      <td>39.0</td>
+      <td>39.0</td>
+      <td>63.0</td>
+      <td>31.5</td>
+      <td>130.0</td>
+      <td>43.333333</td>
+      <td>220.0</td>
+      <td>55.00</td>
+      <td>279.0</td>
+      <td>55.8</td>
+      <td>578.0</td>
+      <td>57.8</td>
+      <td>1080.0</td>
+      <td>54.00</td>
+      <td>204</td>
+      <td>90.0</td>
+      <td>119.0</td>
+      <td>204.0</td>
+      <td>204.0</td>
+      <td>204.0</td>
+      <td>204.0</td>
+      <td>204.0</td>
+      <td>23</td>
+      <td>10.147059</td>
+      <td>11.0</td>
+      <td>11.000000</td>
+      <td>12.0</td>
+      <td>9.075630</td>
+      <td>23.0</td>
+      <td>10.147059</td>
+      <td>23.0</td>
+      <td>10.147059</td>
+      <td>23.0</td>
+      <td>10.147059</td>
+      <td>23.0</td>
+      <td>10.147059</td>
+      <td>23.0</td>
+      <td>10.147059</td>
+    </tr>
+    <tr>
+      <th>26160</th>
+      <td>Mohamed_Salah</td>
+      <td>5</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Liverpool</td>
+      <td>Burnley</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0</td>
+      <td>3</td>
+      <td>27</td>
+      <td>0</td>
+      <td>35.8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>17.4</td>
+      <td>51.2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1571656</td>
+      <td>1</td>
+      <td>1</td>
+      <td>87.0</td>
+      <td>122769</td>
+      <td>224328</td>
+      <td>101559</td>
+      <td>0</td>
+      <td>2017-09-16T14:00:00Z</td>
+      <td>1718</td>
+      <td>NaN</td>
+      <td>1.619155</td>
+      <td>0.316798</td>
+      <td>34</td>
+      <td>2056</td>
+      <td>48.952381</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>89.0</td>
+      <td>44.5</td>
+      <td>149.0</td>
+      <td>49.666667</td>
+      <td>193.0</td>
+      <td>48.25</td>
+      <td>271.0</td>
+      <td>54.2</td>
+      <td>545.0</td>
+      <td>54.5</td>
+      <td>952.0</td>
+      <td>47.60</td>
+      <td>Burnley</td>
+      <td>Liverpool</td>
+      <td>37</td>
+      <td>1540</td>
+      <td>36.666667</td>
+      <td>53.0</td>
+      <td>53.0</td>
+      <td>88.0</td>
+      <td>44.0</td>
+      <td>111.0</td>
+      <td>37.000000</td>
+      <td>154.0</td>
+      <td>38.50</td>
+      <td>181.0</td>
+      <td>36.2</td>
+      <td>347.0</td>
+      <td>34.7</td>
+      <td>736.0</td>
+      <td>36.80</td>
+      <td>249</td>
+      <td>45.0</td>
+      <td>135.0</td>
+      <td>164.0</td>
+      <td>249.0</td>
+      <td>249.0</td>
+      <td>249.0</td>
+      <td>249.0</td>
+      <td>24</td>
+      <td>8.674699</td>
+      <td>1.0</td>
+      <td>2.000000</td>
+      <td>12.0</td>
+      <td>8.000000</td>
+      <td>13.0</td>
+      <td>7.134146</td>
+      <td>24.0</td>
+      <td>8.674699</td>
+      <td>24.0</td>
+      <td>8.674699</td>
+      <td>24.0</td>
+      <td>8.674699</td>
+      <td>24.0</td>
+      <td>8.674699</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>87220</th>
+      <td>Mohamed_Salah</td>
+      <td>34</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Liverpool</td>
+      <td>Brighton and Hove Albion</td>
+      <td>2.432402</td>
+      <td>0.478857</td>
+      <td>False</td>
+      <td>18</td>
+      <td>1</td>
+      <td>3</td>
+      <td>47</td>
+      <td>0</td>
+      <td>24.6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>24.9</td>
+      <td>91.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2658414</td>
+      <td>3</td>
+      <td>1</td>
+      <td>133.0</td>
+      <td>-78275</td>
+      <td>15923</td>
+      <td>94198</td>
+      <td>0</td>
+      <td>2020-07-08T19:15:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.297572</td>
+      <td>0.476156</td>
+      <td>52</td>
+      <td>8025</td>
+      <td>54.591837</td>
+      <td>74.0</td>
+      <td>74.0</td>
+      <td>87.0</td>
+      <td>43.5</td>
+      <td>178.0</td>
+      <td>59.333333</td>
+      <td>226.0</td>
+      <td>56.50</td>
+      <td>272.0</td>
+      <td>54.4</td>
+      <td>560.0</td>
+      <td>56.0</td>
+      <td>1206.0</td>
+      <td>60.30</td>
+      <td>Brighton and Hove Albion</td>
+      <td>Liverpool</td>
+      <td>28</td>
+      <td>3877</td>
+      <td>35.568807</td>
+      <td>63.0</td>
+      <td>63.0</td>
+      <td>83.0</td>
+      <td>41.5</td>
+      <td>125.0</td>
+      <td>41.666667</td>
+      <td>168.0</td>
+      <td>42.00</td>
+      <td>216.0</td>
+      <td>43.2</td>
+      <td>359.0</td>
+      <td>35.9</td>
+      <td>726.0</td>
+      <td>36.30</td>
+      <td>8672</td>
+      <td>90.0</td>
+      <td>180.0</td>
+      <td>270.0</td>
+      <td>270.0</td>
+      <td>360.0</td>
+      <td>810.0</td>
+      <td>1571.0</td>
+      <td>767</td>
+      <td>7.960101</td>
+      <td>6.0</td>
+      <td>6.000000</td>
+      <td>8.0</td>
+      <td>4.000000</td>
+      <td>19.0</td>
+      <td>6.333333</td>
+      <td>19.0</td>
+      <td>6.333333</td>
+      <td>28.0</td>
+      <td>7.000000</td>
+      <td>70.0</td>
+      <td>7.777778</td>
+      <td>133.0</td>
+      <td>7.619351</td>
+    </tr>
+    <tr>
+      <th>87873</th>
+      <td>Mohamed_Salah</td>
+      <td>35</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Liverpool</td>
+      <td>Burnley</td>
+      <td>2.434670</td>
+      <td>0.358132</td>
+      <td>True</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>37.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>12.6</td>
+      <td>16.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2758220</td>
+      <td>1</td>
+      <td>1</td>
+      <td>73.0</td>
+      <td>81427</td>
+      <td>110472</td>
+      <td>29045</td>
+      <td>0</td>
+      <td>2020-07-11T14:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.297572</td>
+      <td>0.441799</td>
+      <td>43</td>
+      <td>8077</td>
+      <td>54.574324</td>
+      <td>52.0</td>
+      <td>52.0</td>
+      <td>126.0</td>
+      <td>63.0</td>
+      <td>139.0</td>
+      <td>46.333333</td>
+      <td>230.0</td>
+      <td>57.50</td>
+      <td>278.0</td>
+      <td>55.6</td>
+      <td>540.0</td>
+      <td>54.0</td>
+      <td>1211.0</td>
+      <td>60.55</td>
+      <td>Burnley</td>
+      <td>Liverpool</td>
+      <td>35</td>
+      <td>5576</td>
+      <td>37.675676</td>
+      <td>62.0</td>
+      <td>62.0</td>
+      <td>99.0</td>
+      <td>49.5</td>
+      <td>165.0</td>
+      <td>55.000000</td>
+      <td>225.0</td>
+      <td>56.25</td>
+      <td>237.0</td>
+      <td>47.4</td>
+      <td>472.0</td>
+      <td>47.2</td>
+      <td>821.0</td>
+      <td>41.05</td>
+      <td>8762</td>
+      <td>90.0</td>
+      <td>180.0</td>
+      <td>270.0</td>
+      <td>360.0</td>
+      <td>360.0</td>
+      <td>810.0</td>
+      <td>1593.0</td>
+      <td>785</td>
+      <td>8.063228</td>
+      <td>18.0</td>
+      <td>18.000000</td>
+      <td>24.0</td>
+      <td>12.000000</td>
+      <td>26.0</td>
+      <td>8.666667</td>
+      <td>37.0</td>
+      <td>9.250000</td>
+      <td>37.0</td>
+      <td>9.250000</td>
+      <td>74.0</td>
+      <td>8.222222</td>
+      <td>148.0</td>
+      <td>8.361582</td>
+    </tr>
+    <tr>
+      <th>88528</th>
+      <td>Mohamed_Salah</td>
+      <td>36</td>
+      <td>3</td>
+      <td>82</td>
+      <td>Liverpool</td>
+      <td>Arsenal</td>
+      <td>2.458682</td>
+      <td>1.500845</td>
+      <td>False</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-3</td>
+      <td>0</td>
+      <td>3.3</td>
+      <td>2</td>
+      <td>0</td>
+      <td>9.1</td>
+      <td>7.4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2609146</td>
+      <td>1</td>
+      <td>2</td>
+      <td>80.0</td>
+      <td>-111419</td>
+      <td>24828</td>
+      <td>136247</td>
+      <td>0</td>
+      <td>2020-07-15T19:15:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.297572</td>
+      <td>1.448866</td>
+      <td>31</td>
+      <td>8120</td>
+      <td>54.496644</td>
+      <td>43.0</td>
+      <td>43.0</td>
+      <td>95.0</td>
+      <td>47.5</td>
+      <td>169.0</td>
+      <td>56.333333</td>
+      <td>182.0</td>
+      <td>45.50</td>
+      <td>273.0</td>
+      <td>54.6</td>
+      <td>494.0</td>
+      <td>49.4</td>
+      <td>1191.0</td>
+      <td>59.55</td>
+      <td>Arsenal</td>
+      <td>Liverpool</td>
+      <td>38</td>
+      <td>6792</td>
+      <td>45.583893</td>
+      <td>27.0</td>
+      <td>27.0</td>
+      <td>61.0</td>
+      <td>30.5</td>
+      <td>127.0</td>
+      <td>42.333333</td>
+      <td>201.0</td>
+      <td>50.25</td>
+      <td>268.0</td>
+      <td>53.6</td>
+      <td>508.0</td>
+      <td>50.8</td>
+      <td>891.0</td>
+      <td>44.55</td>
+      <td>8852</td>
+      <td>90.0</td>
+      <td>180.0</td>
+      <td>270.0</td>
+      <td>360.0</td>
+      <td>450.0</td>
+      <td>810.0</td>
+      <td>1683.0</td>
+      <td>787</td>
+      <td>8.001582</td>
+      <td>2.0</td>
+      <td>2.000000</td>
+      <td>20.0</td>
+      <td>10.000000</td>
+      <td>26.0</td>
+      <td>8.666667</td>
+      <td>28.0</td>
+      <td>7.000000</td>
+      <td>39.0</td>
+      <td>7.800000</td>
+      <td>60.0</td>
+      <td>6.666667</td>
+      <td>150.0</td>
+      <td>8.021390</td>
+    </tr>
+    <tr>
+      <th>89191</th>
+      <td>Mohamed_Salah</td>
+      <td>37</td>
+      <td>3</td>
+      <td>78</td>
+      <td>Liverpool</td>
+      <td>Chelsea</td>
+      <td>2.451453</td>
+      <td>2.064820</td>
+      <td>True</td>
+      <td>5</td>
+      <td>1</td>
+      <td>0</td>
+      <td>15</td>
+      <td>0</td>
+      <td>16.8</td>
+      <td>3</td>
+      <td>0</td>
+      <td>9.5</td>
+      <td>25.6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2559844</td>
+      <td>3</td>
+      <td>5</td>
+      <td>53.0</td>
+      <td>-69649</td>
+      <td>24957</td>
+      <td>94606</td>
+      <td>0</td>
+      <td>2020-07-22T19:15:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.297572</td>
+      <td>1.798870</td>
+      <td>64</td>
+      <td>8151</td>
+      <td>54.340000</td>
+      <td>31.0</td>
+      <td>31.0</td>
+      <td>74.0</td>
+      <td>37.0</td>
+      <td>126.0</td>
+      <td>42.000000</td>
+      <td>200.0</td>
+      <td>50.00</td>
+      <td>213.0</td>
+      <td>42.6</td>
+      <td>466.0</td>
+      <td>46.6</td>
+      <td>1148.0</td>
+      <td>57.40</td>
+      <td>Chelsea</td>
+      <td>Liverpool</td>
+      <td>33</td>
+      <td>7388</td>
+      <td>49.253333</td>
+      <td>62.0</td>
+      <td>62.0</td>
+      <td>82.0</td>
+      <td>41.0</td>
+      <td>129.0</td>
+      <td>43.000000</td>
+      <td>210.0</td>
+      <td>52.50</td>
+      <td>247.0</td>
+      <td>49.4</td>
+      <td>500.0</td>
+      <td>50.0</td>
+      <td>890.0</td>
+      <td>44.50</td>
+      <td>8934</td>
+      <td>82.0</td>
+      <td>172.0</td>
+      <td>262.0</td>
+      <td>352.0</td>
+      <td>442.0</td>
+      <td>802.0</td>
+      <td>1675.0</td>
+      <td>789</td>
+      <td>7.948287</td>
+      <td>2.0</td>
+      <td>2.195122</td>
+      <td>4.0</td>
+      <td>2.093023</td>
+      <td>22.0</td>
+      <td>7.557252</td>
+      <td>28.0</td>
+      <td>7.159091</td>
+      <td>30.0</td>
+      <td>6.108597</td>
+      <td>59.0</td>
+      <td>6.620948</td>
+      <td>139.0</td>
+      <td>7.468657</td>
+    </tr>
+    <tr>
+      <th>89856</th>
+      <td>Mohamed_Salah</td>
+      <td>38</td>
+      <td>3</td>
+      <td>26</td>
+      <td>Liverpool</td>
+      <td>Newcastle United</td>
+      <td>2.406333</td>
+      <td>0.611449</td>
+      <td>False</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>1.6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2457006</td>
+      <td>3</td>
+      <td>1</td>
+      <td>34.0</td>
+      <td>-102494</td>
+      <td>31724</td>
+      <td>134218</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.297572</td>
+      <td>0.542356</td>
+      <td>54</td>
+      <td>8215</td>
+      <td>54.403974</td>
+      <td>64.0</td>
+      <td>64.0</td>
+      <td>95.0</td>
+      <td>47.5</td>
+      <td>138.0</td>
+      <td>46.000000</td>
+      <td>190.0</td>
+      <td>47.50</td>
+      <td>264.0</td>
+      <td>52.8</td>
+      <td>482.0</td>
+      <td>48.2</td>
+      <td>1147.0</td>
+      <td>57.35</td>
+      <td>Newcastle United</td>
+      <td>Liverpool</td>
+      <td>30</td>
+      <td>4373</td>
+      <td>38.699115</td>
+      <td>52.0</td>
+      <td>52.0</td>
+      <td>77.0</td>
+      <td>38.5</td>
+      <td>104.0</td>
+      <td>34.666667</td>
+      <td>116.0</td>
+      <td>29.00</td>
+      <td>157.0</td>
+      <td>31.4</td>
+      <td>456.0</td>
+      <td>45.6</td>
+      <td>802.0</td>
+      <td>40.10</td>
+      <td>9012</td>
+      <td>78.0</td>
+      <td>160.0</td>
+      <td>250.0</td>
+      <td>340.0</td>
+      <td>430.0</td>
+      <td>790.0</td>
+      <td>1663.0</td>
+      <td>794</td>
+      <td>7.929427</td>
+      <td>5.0</td>
+      <td>5.769231</td>
+      <td>7.0</td>
+      <td>3.937500</td>
+      <td>9.0</td>
+      <td>3.240000</td>
+      <td>27.0</td>
+      <td>7.147059</td>
+      <td>33.0</td>
+      <td>6.906977</td>
+      <td>57.0</td>
+      <td>6.493671</td>
+      <td>128.0</td>
+      <td>6.927240</td>
+    </tr>
   </tbody>
 </table>
-<p>0 rows × 35 columns</p>
+<p>114 rows × 97 columns</p>
 </div>
 </div>
 
@@ -14247,10 +15122,341 @@ Length: 560, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summary with lag features added</span>
+<span class="n">lag_train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 90437 entries, 0 to 90436
+Data columns (total 97 columns):
+ #   Column                                      Non-Null Count  Dtype  
+---  ------                                      --------------  -----  
+ 0   player                                      90437 non-null  object 
+ 1   gw                                          90437 non-null  int64  
+ 2   position                                    90437 non-null  int64  
+ 3   minutes                                     90437 non-null  int64  
+ 4   team                                        90437 non-null  object 
+ 5   opponent_team                               90437 non-null  object 
+ 6   relative_market_value_team                  22501 non-null  float64
+ 7   relative_market_value_opponent_team         22501 non-null  float64
+ 8   was_home                                    90437 non-null  bool   
+ 9   total_points                                90437 non-null  int64  
+ 10  assists                                     90437 non-null  int64  
+ 11  bonus                                       90437 non-null  int64  
+ 12  bps                                         90437 non-null  int64  
+ 13  clean_sheets                                90437 non-null  int64  
+ 14  creativity                                  90437 non-null  float64
+ 15  goals_conceded                              90437 non-null  int64  
+ 16  goals_scored                                90437 non-null  int64  
+ 17  ict_index                                   90437 non-null  float64
+ 18  influence                                   90437 non-null  float64
+ 19  own_goals                                   90437 non-null  int64  
+ 20  penalties_missed                            90437 non-null  int64  
+ 21  penalties_saved                             90437 non-null  int64  
+ 22  red_cards                                   90437 non-null  int64  
+ 23  saves                                       90437 non-null  int64  
+ 24  selected                                    90437 non-null  int64  
+ 25  team_a_score                                90437 non-null  int64  
+ 26  team_h_score                                90437 non-null  int64  
+ 27  threat                                      90437 non-null  float64
+ 28  transfers_balance                           90437 non-null  int64  
+ 29  transfers_in                                90437 non-null  int64  
+ 30  transfers_out                               90437 non-null  int64  
+ 31  yellow_cards                                90437 non-null  int64  
+ 32  kickoff_time                                90437 non-null  object 
+ 33  season                                      90437 non-null  object 
+ 34  play_proba                                  22357 non-null  float64
+ 35  relative_market_value_team_season           90437 non-null  float64
+ 36  relative_market_value_opponent_team_season  90437 non-null  float64
+ 37  total_points_team                           90437 non-null  int64  
+ 38  total_points_team_last_all                  90437 non-null  int64  
+ 39  total_points_team_pg_last_all               89680 non-null  float64
+ 40  total_points_team_last_1                    90437 non-null  float64
+ 41  total_points_team_pg_last_1                 89680 non-null  float64
+ 42  total_points_team_last_2                    90437 non-null  float64
+ 43  total_points_team_pg_last_2                 89680 non-null  float64
+ 44  total_points_team_last_3                    90437 non-null  float64
+ 45  total_points_team_pg_last_3                 89680 non-null  float64
+ 46  total_points_team_last_4                    90437 non-null  float64
+ 47  total_points_team_pg_last_4                 89680 non-null  float64
+ 48  total_points_team_last_5                    90437 non-null  float64
+ 49  total_points_team_pg_last_5                 89680 non-null  float64
+ 50  total_points_team_last_10                   90437 non-null  float64
+ 51  total_points_team_pg_last_10                89680 non-null  float64
+ 52  total_points_team_last_20                   90437 non-null  float64
+ 53  total_points_team_pg_last_20                89680 non-null  float64
+ 54  team_opponent                               90437 non-null  object 
+ 55  opponent_team_opponent                      90437 non-null  object 
+ 56  total_points_team_opponent                  90437 non-null  int64  
+ 57  total_points_team_last_all_opponent         90437 non-null  int64  
+ 58  total_points_team_pg_last_all_opponent      89678 non-null  float64
+ 59  total_points_team_last_1_opponent           90437 non-null  float64
+ 60  total_points_team_pg_last_1_opponent        89678 non-null  float64
+ 61  total_points_team_last_2_opponent           90437 non-null  float64
+ 62  total_points_team_pg_last_2_opponent        89678 non-null  float64
+ 63  total_points_team_last_3_opponent           90437 non-null  float64
+ 64  total_points_team_pg_last_3_opponent        89678 non-null  float64
+ 65  total_points_team_last_4_opponent           90437 non-null  float64
+ 66  total_points_team_pg_last_4_opponent        89678 non-null  float64
+ 67  total_points_team_last_5_opponent           90437 non-null  float64
+ 68  total_points_team_pg_last_5_opponent        89678 non-null  float64
+ 69  total_points_team_last_10_opponent          90437 non-null  float64
+ 70  total_points_team_pg_last_10_opponent       89678 non-null  float64
+ 71  total_points_team_last_20_opponent          90437 non-null  float64
+ 72  total_points_team_pg_last_20_opponent       89678 non-null  float64
+ 73  minutes_last_all                            90437 non-null  int64  
+ 74  minutes_last_1                              90437 non-null  float64
+ 75  minutes_last_2                              90437 non-null  float64
+ 76  minutes_last_3                              90437 non-null  float64
+ 77  minutes_last_4                              90437 non-null  float64
+ 78  minutes_last_5                              90437 non-null  float64
+ 79  minutes_last_10                             90437 non-null  float64
+ 80  minutes_last_20                             90437 non-null  float64
+ 81  total_points_last_all                       90437 non-null  int64  
+ 82  total_points_pg_last_all                    76046 non-null  float64
+ 83  total_points_last_1                         90437 non-null  float64
+ 84  total_points_pg_last_1                      41583 non-null  float64
+ 85  total_points_last_2                         90437 non-null  float64
+ 86  total_points_pg_last_2                      48615 non-null  float64
+ 87  total_points_last_3                         90437 non-null  float64
+ 88  total_points_pg_last_3                      52476 non-null  float64
+ 89  total_points_last_4                         90437 non-null  float64
+ 90  total_points_pg_last_4                      55148 non-null  float64
+ 91  total_points_last_5                         90437 non-null  float64
+ 92  total_points_pg_last_5                      57171 non-null  float64
+ 93  total_points_last_10                        90437 non-null  float64
+ 94  total_points_pg_last_10                     63363 non-null  float64
+ 95  total_points_last_20                        90437 non-null  float64
+ 96  total_points_pg_last_20                     69348 non-null  float64
+dtypes: bool(1), float64(61), int64(28), object(7)
+memory usage: 67.0+ MB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can look at the points per game total for any player at any point in time. Here is Salah.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
+             <span class="p">(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">38</span><span class="p">)</span> <span class="o">&amp;</span> 
+             <span class="p">(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">)][</span><span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[109]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7.9294274300932095</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a check that summing up and dividing all points and minutes to that point in time gives the same answer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">][</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> 
+ <span class="o">/</span> <span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">][</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[110]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7.9294274300932095</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And we can use the same approach to see the average points per game (per 90 minutes) across all players. We'll use this in the simple baseline model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># points per minute across all players and minutes</span>
+<span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> <span class="o">/</span> <span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[112]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3.7388996509104</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But need to be somewhat aware that players with appearances with predominantly low number of minutes may have artificially high point per minute values due to the fact that they will get at least 1 point over 1-10 minutes of time</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extreme example of points per minute for all appearances under 10 minutes</span>
+<span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">][</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> <span class="o">/</span> <span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">][</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[117]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>22.189395937747296</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Any model is likely to perform worse at the start of the season due to new players / teams, and big changes within existing teams. It is also potentially better for games closer to the final game included in training.</p>
+<p>We therefore need a sensisble way to combine these different situations into our validation of models. I decided to validate by looking at four points during the season (i.e. training the model four times, each up to one of these points), and assessing the RMSE for three different sets of predictions.</p>
+<p>Validation points:</p>
+<ul>
+<li>Start of season</li>
+<li>25% through season (gw 10)</li>
+<li>50% through season (gw 20)</li>
+<li>75% through season (gw 30)</li>
+</ul>
+<p>Predictions used for RMSE</p>
+<ul>
+<li>gameweek following the last gameweek in training</li>
+<li>2nd and 3rd gameweek</li>
+<li>4th, 5th, 6th gameweek</li>
+</ul>
+<p>The idea is that, when the model is trained each gameweek, we care most about the next few fixtures, and in particularly the next fixture.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># training and validation sets</span>
+<span class="k">def</span> <span class="nf">train_valid_masks</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">):</span>
+    
+
+<span class="k">return</span> <span class="n">train_mask</span><span class="p">,</span> <span class="n">valid_mask</span>
 </pre></div>
 
     </div>

@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import requests
 import lxml.html as lh
+import math
 
 
 
@@ -185,3 +186,99 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
     df_season['position'] = df_season['position'].astype(int)
     
     return df_season
+
+# function to generate player lag features
+# player level lag features
+def player_lag_features(df, features, lags):    
+    df_new = df.copy()
+    
+    # need minutes for per game stats, add to front of list
+    features.insert(0, 'minutes')
+
+    # calculate totals for each lag period
+    for feature in features:
+        for lag in lags:
+            feature_name = feature + '_last_' + str(lag)
+            
+            if lag == 'all':
+                df_new[feature_name] = df_new.groupby(['player'])[feature].apply(lambda x: x.cumsum() - x)
+            else: 
+                df_new[feature_name] = df_new.groupby(['player'])[feature].apply(lambda x: x.rolling(min_periods=1, 
+                                                                                            window=lag+1).sum() - x)
+            if feature != 'minutes':
+                minute_name = 'minutes_last_' + str(lag)
+                pg_feature_name = feature + '_pg_last_' + str(lag)
+                
+                df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name] 
+#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)
+                
+    return df_new
+
+# function to generate team lag features
+# team level lag features
+def team_lag_features(df, features, lags):
+    for feature in features:
+        feature_team_name = feature + '_team'
+        feature_team = (df.groupby(['team', 'season', 'gw',
+                                   'kickoff_time', 'opponent_team'])
+                        [feature].sum().rename(feature_team_name).reset_index())
+                
+        for lag in lags:
+            feature_name = feature + '_team_last_' + str(lag)
+            pg_feature_name = feature + '_team_pg_last_' + str(lag)
+            
+            if lag == 'all':
+                feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
+                                              .apply(lambda x: x.cumsum() - x))
+                
+                feature_team[pg_feature_name] = (feature_team[feature_name]
+                                                 / feature_team.groupby('team').cumcount())
+                
+            else:
+                feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
+                                              .apply(lambda x: x.rolling(min_periods=1, 
+                                                                         window=lag + 1).sum() - x))
+                
+                feature_team[pg_feature_name] = (feature_team[feature_name] / 
+                                                 feature_team.groupby('team')[feature_team_name]
+                                                 .apply(lambda x: x.rolling(min_periods=1, 
+                                                                            window=lag + 1).count() - 1))
+        
+        df_new = df.merge(feature_team, 
+                          on=['team', 'season', 'gw', 'kickoff_time', 'opponent_team'], 
+                          how='left')
+        
+        df_new = df_new.merge(feature_team,
+                 left_on=['team', 'season', 'gw', 'kickoff_time', 'opponent_team'],
+                 right_on=['opponent_team', 'season', 'gw', 'kickoff_time', 'team'],
+                 how='left',
+                 suffixes = ('', '_opponent'))
+        
+        df_new.drop(['team_opponent', 'opponent_team_opponent'], axis=1)
+        
+        return df_new
+    
+# functions to get validation set indexes
+# training will always be from start of data up to valid-start
+# first function to get the validation set points for a given season and gameweek
+def validation_gw_idx(df, season, gw):
+    
+    valid_start = df[(df['gw'] == gw) & (df['season'] == season)].index.min()
+    valid_end_gw1 = df[(df['gw'] == gw) & (df['season'] == season)].index.max()
+    valid_end_gw3 = df[(df['gw'] == min(gw+2, 38)) & (df['season'] == season)].index.max()
+    valid_end_gw6 = df[(df['gw'] == min(gw+5, 38)) & (df['season'] == season)].index.max()
+    
+    return (valid_start, valid_end_gw1, valid_end_gw3, valid_end_gw6)
+
+# second function to get the validation points for multiple gameweeks in a season 
+def validation_season_idx(df, season, gws):
+    
+    valid_idx_tups = []
+    
+    for gw in gws:
+        valid_idx_tups.append(validation_gw_idx(df, season, gw))
+    
+    return valid_idx_tups
+
+# function to calculate root mean squared error for preds and targs
+def r_mse(pred,y): return round(math.sqrt(((pred-y)**2).mean()), 6)

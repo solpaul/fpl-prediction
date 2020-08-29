@@ -13089,7 +13089,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
@@ -13102,6 +13102,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">DictVectorizer</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 
     </div>
@@ -13111,7 +13112,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to project directory</span>
@@ -13125,12 +13126,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
 <span class="c1"># created using fpl_data_clean notebook</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;data/train_v3.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;data/train_v4.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
 </pre></div>
 
     </div>
@@ -13140,7 +13141,21 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train_df = team_lag_features(train_df, [&#39;total_points&#39;], [&#39;all&#39;, 1, 2, 3, 4, 5, 10, 20])</span>
+<span class="c1"># train_df = player_lag_features(train_df, [&#39;total_points&#39;], [&#39;all&#39;, 1, 2, 3, 4, 5, 10, 20])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13162,46 +13177,48 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 90437 entries, 0 to 90436
-Data columns (total 35 columns):
- #   Column                               Non-Null Count  Dtype  
----  ------                               --------------  -----  
- 0   player                               90437 non-null  object 
- 1   gw                                   90437 non-null  int64  
- 2   position                             90437 non-null  int64  
- 3   minutes                              90437 non-null  int64  
- 4   team                                 90437 non-null  object 
- 5   opponent_team                        90437 non-null  object 
- 6   relative_market_value_team           90437 non-null  float64
- 7   relative_market_value_opponent_team  90437 non-null  float64
- 8   was_home                             90437 non-null  bool   
- 9   total_points                         90437 non-null  int64  
- 10  assists                              90437 non-null  int64  
- 11  bonus                                90437 non-null  int64  
- 12  bps                                  90437 non-null  int64  
- 13  clean_sheets                         90437 non-null  int64  
- 14  creativity                           90437 non-null  float64
- 15  goals_conceded                       90437 non-null  int64  
- 16  goals_scored                         90437 non-null  int64  
- 17  ict_index                            90437 non-null  float64
- 18  influence                            90437 non-null  float64
- 19  own_goals                            90437 non-null  int64  
- 20  penalties_missed                     90437 non-null  int64  
- 21  penalties_saved                      90437 non-null  int64  
- 22  red_cards                            90437 non-null  int64  
- 23  saves                                90437 non-null  int64  
- 24  selected                             90437 non-null  int64  
- 25  team_a_score                         90437 non-null  int64  
- 26  team_h_score                         90437 non-null  int64  
- 27  threat                               90437 non-null  float64
- 28  transfers_balance                    90437 non-null  int64  
- 29  transfers_in                         90437 non-null  int64  
- 30  transfers_out                        90437 non-null  int64  
- 31  yellow_cards                         90437 non-null  int64  
- 32  kickoff_time                         90437 non-null  object 
- 33  season                               90437 non-null  object 
- 34  play_proba                           22357 non-null  float64
-dtypes: bool(1), float64(7), int64(22), object(5)
-memory usage: 24.2+ MB
+Data columns (total 37 columns):
+ #   Column                                      Non-Null Count  Dtype  
+---  ------                                      --------------  -----  
+ 0   player                                      90437 non-null  object 
+ 1   gw                                          90437 non-null  int64  
+ 2   position                                    90437 non-null  int64  
+ 3   minutes                                     90437 non-null  int64  
+ 4   team                                        90437 non-null  object 
+ 5   opponent_team                               90437 non-null  object 
+ 6   relative_market_value_team                  22501 non-null  float64
+ 7   relative_market_value_opponent_team         22501 non-null  float64
+ 8   was_home                                    90437 non-null  bool   
+ 9   total_points                                90437 non-null  int64  
+ 10  assists                                     90437 non-null  int64  
+ 11  bonus                                       90437 non-null  int64  
+ 12  bps                                         90437 non-null  int64  
+ 13  clean_sheets                                90437 non-null  int64  
+ 14  creativity                                  90437 non-null  float64
+ 15  goals_conceded                              90437 non-null  int64  
+ 16  goals_scored                                90437 non-null  int64  
+ 17  ict_index                                   90437 non-null  float64
+ 18  influence                                   90437 non-null  float64
+ 19  own_goals                                   90437 non-null  int64  
+ 20  penalties_missed                            90437 non-null  int64  
+ 21  penalties_saved                             90437 non-null  int64  
+ 22  red_cards                                   90437 non-null  int64  
+ 23  saves                                       90437 non-null  int64  
+ 24  selected                                    90437 non-null  int64  
+ 25  team_a_score                                90437 non-null  int64  
+ 26  team_h_score                                90437 non-null  int64  
+ 27  threat                                      90437 non-null  float64
+ 28  transfers_balance                           90437 non-null  int64  
+ 29  transfers_in                                90437 non-null  int64  
+ 30  transfers_out                               90437 non-null  int64  
+ 31  yellow_cards                                90437 non-null  int64  
+ 32  kickoff_time                                90437 non-null  object 
+ 33  season                                      90437 non-null  object 
+ 34  play_proba                                  22357 non-null  float64
+ 35  relative_market_value_team_season           90437 non-null  float64
+ 36  relative_market_value_opponent_team_season  90437 non-null  float64
+dtypes: bool(1), float64(9), int64(22), object(5)
+memory usage: 25.6+ MB
 </pre>
 </div>
 </div>
@@ -13215,34 +13232,59 @@ memory usage: 24.2+ MB
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player level lag features</span>
-<span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
-    <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="c1"># need minutes for per game stats, add to front of list</span>
-    <span class="n">features</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_new</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-    <span class="c1"># calculate totals for each lag period</span>
-    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
-            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-            
-            <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
-                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> 
-                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                                                                            <span class="n">window</span><span class="o">=</span><span class="n">lag</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">feature</span> <span class="o">!=</span> <span class="s1">&#39;minutes&#39;</span><span class="p">:</span>
-                <span class="n">minute_name</span> <span class="o">=</span> <span class="s1">&#39;minutes_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-                <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-                
-                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
-                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-                
-    <span class="k">return</span> <span class="n">df_new</span>
+<span class="c1"># add lag vars</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">player_lags</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">)</span>
+
+<span class="n">lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># add lag var names</span>
+<span class="k">for</span> <span class="n">player_lag_var</span> <span class="ow">in</span> <span class="n">player_lag_vars</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">player_lag</span> <span class="ow">in</span> <span class="n">player_lags</span><span class="p">:</span>
+        <span class="n">feature_name</span> <span class="o">=</span> <span class="n">player_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player_lag</span><span class="p">)</span>
+        <span class="n">lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_name</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">team_lag_var</span> <span class="ow">in</span> <span class="n">team_lag_vars</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">team_lag</span> <span class="ow">in</span> <span class="n">team_lags</span><span class="p">:</span>
+        <span class="n">feature_name</span> <span class="o">=</span> <span class="n">team_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">team_lag</span><span class="p">)</span>
+        <span class="n">feature_name_opposition</span> <span class="o">=</span> <span class="n">feature_name</span> <span class="o">+</span> <span class="s1">&#39;_opponent&#39;</span>
+        <span class="n">lag_vars</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_name_opposition</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cont_vars</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lag_vars</span><span class="p">)</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_new</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># find validation cut point - index for 18-19 season second half (gw 19)</span>
+<span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="c1">#valid_end = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; (train_df[&#39;gw&#39;] == 1)].index.min()</span>
+<span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;gw&#39;, &#39;minutes&#39;, &#39;total_points_pg_last_all&#39;, &#39;total_points_pg_last_1&#39;, &#39;total_points_pg_last_2&#39;, &#39;total_points_pg_last_3&#39;, &#39;total_points_pg_last_5&#39;, &#39;total_points_pg_last_10&#39;, &#39;total_points_team_pg_last_all&#39;, &#39;total_points_team_pg_last_all_opponent&#39;, &#39;total_points_team_pg_last_1&#39;, &#39;total_points_team_pg_last_1_opponent&#39;, &#39;total_points_team_pg_last_2&#39;, &#39;total_points_team_pg_last_2_opponent&#39;, &#39;total_points_team_pg_last_3&#39;, &#39;total_points_team_pg_last_3_opponent&#39;, &#39;total_points_team_pg_last_5&#39;, &#39;total_points_team_pg_last_5_opponent&#39;, &#39;total_points_team_pg_last_10&#39;, &#39;total_points_team_pg_last_10_opponent&#39;]
+[&#39;season&#39;, &#39;position&#39;, &#39;team&#39;, &#39;opponent_team&#39;, &#39;was_home&#39;]
+[&#39;total_points_pg_last_all&#39;, &#39;total_points_pg_last_1&#39;, &#39;total_points_pg_last_2&#39;, &#39;total_points_pg_last_3&#39;, &#39;total_points_pg_last_5&#39;, &#39;total_points_pg_last_10&#39;, &#39;total_points_team_pg_last_all&#39;, &#39;total_points_team_pg_last_all_opponent&#39;, &#39;total_points_team_pg_last_1&#39;, &#39;total_points_team_pg_last_1_opponent&#39;, &#39;total_points_team_pg_last_2&#39;, &#39;total_points_team_pg_last_2_opponent&#39;, &#39;total_points_team_pg_last_3&#39;, &#39;total_points_team_pg_last_3_opponent&#39;, &#39;total_points_team_pg_last_5&#39;, &#39;total_points_team_pg_last_5_opponent&#39;, &#39;total_points_team_pg_last_10&#39;, &#39;total_points_team_pg_last_10_opponent&#39;]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13252,73 +13294,7 @@ memory usage: 24.2+ MB
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># team level lag features</span>
-<span class="k">def</span> <span class="nf">team_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
-        <span class="n">feature_team_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team&#39;</span>
-        <span class="n">feature_team</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span>
-                                   <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">])</span>
-                        <span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">feature_team_name</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
-                
-        <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
-            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-            <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-            
-            <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
-                <span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
-                                              <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
-                
-                <span class="n">feature_team</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span>
-                                                 <span class="o">/</span> <span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cumcount</span><span class="p">())</span>
-                
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
-                                              <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                                                         <span class="n">window</span><span class="o">=</span><span class="n">lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">))</span>
-                
-                <span class="n">feature_team</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> 
-                                                 <span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
-                                                 <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                                                            <span class="n">window</span><span class="o">=</span><span class="n">lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-        
-        <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">feature_team</span><span class="p">,</span> 
-                          <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">],</span> 
-                          <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-        
-        <span class="n">df_new</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">feature_team</span><span class="p">,</span>
-                 <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">],</span>
-                 <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;kickoff_time&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">],</span>
-                 <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
-                 <span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;_opponent&#39;</span><span class="p">))</span>
-        
-        <span class="k">return</span> <span class="n">df_new</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
-<span class="n">train_df</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="n">lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13337,104 +13313,47 @@ memory usage: 24.2+ MB
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 90437 entries, 0 to 90436
-Data columns (total 93 columns):
+Data columns (total 36 columns):
  #   Column                                  Non-Null Count  Dtype  
 ---  ------                                  --------------  -----  
- 0   player                                  90437 non-null  object 
- 1   gw                                      90437 non-null  int64  
- 2   position                                90437 non-null  int64  
- 3   minutes                                 90437 non-null  int64  
- 4   team                                    90437 non-null  object 
- 5   opponent_team                           90437 non-null  object 
- 6   relative_market_value_team              90437 non-null  float64
- 7   relative_market_value_opponent_team     90437 non-null  float64
- 8   was_home                                90437 non-null  bool   
- 9   total_points                            90437 non-null  int64  
- 10  assists                                 90437 non-null  int64  
- 11  bonus                                   90437 non-null  int64  
- 12  bps                                     90437 non-null  int64  
- 13  clean_sheets                            90437 non-null  int64  
- 14  creativity                              90437 non-null  float64
- 15  goals_conceded                          90437 non-null  int64  
- 16  goals_scored                            90437 non-null  int64  
- 17  ict_index                               90437 non-null  float64
- 18  influence                               90437 non-null  float64
- 19  own_goals                               90437 non-null  int64  
- 20  penalties_missed                        90437 non-null  int64  
- 21  penalties_saved                         90437 non-null  int64  
- 22  red_cards                               90437 non-null  int64  
- 23  saves                                   90437 non-null  int64  
- 24  selected                                90437 non-null  int64  
- 25  team_a_score                            90437 non-null  int64  
- 26  team_h_score                            90437 non-null  int64  
- 27  threat                                  90437 non-null  float64
- 28  transfers_balance                       90437 non-null  int64  
- 29  transfers_in                            90437 non-null  int64  
- 30  transfers_out                           90437 non-null  int64  
- 31  yellow_cards                            90437 non-null  int64  
- 32  kickoff_time                            90437 non-null  object 
- 33  season                                  90437 non-null  object 
- 34  play_proba                              22357 non-null  float64
- 35  total_points_team                       90437 non-null  int64  
- 36  total_points_team_last_all              90437 non-null  int64  
- 37  total_points_team_pg_last_all           89680 non-null  float64
- 38  total_points_team_last_1                90437 non-null  float64
- 39  total_points_team_pg_last_1             89680 non-null  float64
- 40  total_points_team_last_2                90437 non-null  float64
- 41  total_points_team_pg_last_2             89680 non-null  float64
- 42  total_points_team_last_3                90437 non-null  float64
- 43  total_points_team_pg_last_3             89680 non-null  float64
- 44  total_points_team_last_4                90437 non-null  float64
- 45  total_points_team_pg_last_4             89680 non-null  float64
- 46  total_points_team_last_5                90437 non-null  float64
- 47  total_points_team_pg_last_5             89680 non-null  float64
- 48  total_points_team_last_10               90437 non-null  float64
- 49  total_points_team_pg_last_10            89680 non-null  float64
- 50  total_points_team_last_20               90437 non-null  float64
- 51  total_points_team_pg_last_20            89680 non-null  float64
- 52  total_points_team_opponent              90437 non-null  int64  
- 53  total_points_team_last_all_opponent     90437 non-null  int64  
- 54  total_points_team_pg_last_all_opponent  89680 non-null  float64
- 55  total_points_team_last_1_opponent       90437 non-null  float64
- 56  total_points_team_pg_last_1_opponent    89680 non-null  float64
- 57  total_points_team_last_2_opponent       90437 non-null  float64
- 58  total_points_team_pg_last_2_opponent    89680 non-null  float64
- 59  total_points_team_last_3_opponent       90437 non-null  float64
- 60  total_points_team_pg_last_3_opponent    89680 non-null  float64
- 61  total_points_team_last_4_opponent       90437 non-null  float64
- 62  total_points_team_pg_last_4_opponent    89680 non-null  float64
- 63  total_points_team_last_5_opponent       90437 non-null  float64
- 64  total_points_team_pg_last_5_opponent    89680 non-null  float64
- 65  total_points_team_last_10_opponent      90437 non-null  float64
- 66  total_points_team_pg_last_10_opponent   89680 non-null  float64
- 67  total_points_team_last_20_opponent      90437 non-null  float64
- 68  total_points_team_pg_last_20_opponent   89680 non-null  float64
- 69  minutes_last_all                        90437 non-null  int64  
- 70  minutes_last_1                          90437 non-null  float64
- 71  minutes_last_2                          90437 non-null  float64
- 72  minutes_last_3                          90437 non-null  float64
- 73  minutes_last_4                          90437 non-null  float64
- 74  minutes_last_5                          90437 non-null  float64
- 75  minutes_last_10                         90437 non-null  float64
- 76  minutes_last_20                         90437 non-null  float64
- 77  total_points_last_all                   90437 non-null  int64  
- 78  total_points_pg_last_all                90437 non-null  float64
- 79  total_points_last_1                     90437 non-null  float64
- 80  total_points_pg_last_1                  90437 non-null  float64
- 81  total_points_last_2                     90437 non-null  float64
- 82  total_points_pg_last_2                  90437 non-null  float64
- 83  total_points_last_3                     90437 non-null  float64
- 84  total_points_pg_last_3                  90437 non-null  float64
- 85  total_points_last_4                     90437 non-null  float64
- 86  total_points_pg_last_4                  90437 non-null  float64
- 87  total_points_last_5                     90437 non-null  float64
- 88  total_points_pg_last_5                  90437 non-null  float64
- 89  total_points_last_10                    90437 non-null  float64
- 90  total_points_pg_last_10                 90437 non-null  float64
- 91  total_points_last_20                    90437 non-null  float64
- 92  total_points_pg_last_20                 90437 non-null  float64
-dtypes: bool(1), float64(59), int64(28), object(5)
-memory usage: 64.3+ MB
+ 0   total_points_pg_last_all                76046 non-null  float64
+ 1   total_points_pg_last_all                76046 non-null  float64
+ 2   total_points_pg_last_1                  41583 non-null  float64
+ 3   total_points_pg_last_1                  41583 non-null  float64
+ 4   total_points_pg_last_2                  48615 non-null  float64
+ 5   total_points_pg_last_2                  48615 non-null  float64
+ 6   total_points_pg_last_3                  52476 non-null  float64
+ 7   total_points_pg_last_3                  52476 non-null  float64
+ 8   total_points_pg_last_5                  57171 non-null  float64
+ 9   total_points_pg_last_5                  57171 non-null  float64
+ 10  total_points_pg_last_10                 63363 non-null  float64
+ 11  total_points_pg_last_10                 63363 non-null  float64
+ 12  total_points_team_pg_last_all           89680 non-null  float64
+ 13  total_points_team_pg_last_all           89680 non-null  float64
+ 14  total_points_team_pg_last_all_opponent  89678 non-null  float64
+ 15  total_points_team_pg_last_all_opponent  89678 non-null  float64
+ 16  total_points_team_pg_last_1             89680 non-null  float64
+ 17  total_points_team_pg_last_1             89680 non-null  float64
+ 18  total_points_team_pg_last_1_opponent    89678 non-null  float64
+ 19  total_points_team_pg_last_1_opponent    89678 non-null  float64
+ 20  total_points_team_pg_last_2             89680 non-null  float64
+ 21  total_points_team_pg_last_2             89680 non-null  float64
+ 22  total_points_team_pg_last_2_opponent    89678 non-null  float64
+ 23  total_points_team_pg_last_2_opponent    89678 non-null  float64
+ 24  total_points_team_pg_last_3             89680 non-null  float64
+ 25  total_points_team_pg_last_3             89680 non-null  float64
+ 26  total_points_team_pg_last_3_opponent    89678 non-null  float64
+ 27  total_points_team_pg_last_3_opponent    89678 non-null  float64
+ 28  total_points_team_pg_last_5             89680 non-null  float64
+ 29  total_points_team_pg_last_5             89680 non-null  float64
+ 30  total_points_team_pg_last_5_opponent    89678 non-null  float64
+ 31  total_points_team_pg_last_5_opponent    89678 non-null  float64
+ 32  total_points_team_pg_last_10            89680 non-null  float64
+ 33  total_points_team_pg_last_10            89680 non-null  float64
+ 34  total_points_team_pg_last_10_opponent   89678 non-null  float64
+ 35  total_points_team_pg_last_10_opponent   89678 non-null  float64
+dtypes: float64(36)
+memory usage: 25.5 MB
 </pre>
 </div>
 </div>
@@ -13445,10 +13364,10 @@ memory usage: 64.3+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[286]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;checks.csv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -13458,7 +13377,7 @@ memory usage: 64.3+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_xgb</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">dep_var</span><span class="p">,</span> <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> 
@@ -13470,26 +13389,32 @@ memory usage: 64.3+ MB
     <span class="n">df_new</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">player_lags</span><span class="p">)</span>
     <span class="n">df_new</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">)</span>
     
+    <span class="n">lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
+    
     <span class="c1"># add lag var names</span>
     <span class="k">for</span> <span class="n">player_lag_var</span> <span class="ow">in</span> <span class="n">player_lag_vars</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">player_lag</span> <span class="ow">in</span> <span class="n">player_lags</span><span class="p">:</span>
             <span class="n">feature_name</span> <span class="o">=</span> <span class="n">player_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player_lag</span><span class="p">)</span>
-            <span class="n">cont_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_name</span><span class="p">)</span>
+            <span class="n">lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_name</span><span class="p">)</span>
             
     <span class="k">for</span> <span class="n">team_lag_var</span> <span class="ow">in</span> <span class="n">team_lag_vars</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">team_lag</span> <span class="ow">in</span> <span class="n">team_lags</span><span class="p">:</span>
             <span class="n">feature_name</span> <span class="o">=</span> <span class="n">team_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">team_lag</span><span class="p">)</span>
             <span class="n">feature_name_opposition</span> <span class="o">=</span> <span class="n">feature_name</span> <span class="o">+</span> <span class="s1">&#39;_opponent&#39;</span>
-            <span class="n">cont_vars</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_name_opposition</span><span class="p">])</span>
+            <span class="n">lag_vars</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_name_opposition</span><span class="p">])</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="n">cont_vars</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lag_vars</span><span class="p">)</span>
     
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_new</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_new</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     
     <span class="c1"># find validation cut point - index for 18-19 season second half (gw 19)</span>
-    <span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">19</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
     <span class="c1">#valid_end = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; (train_df[&#39;gw&#39;] == 1)].index.min()</span>
-    <span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    
+    
     
     <span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
     <span class="n">enc</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
@@ -13550,7 +13475,7 @@ memory usage: 64.3+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation</span> <span class="o">=</span> <span class="s1">&#39;random&#39;</span>
@@ -13596,6 +13521,7 @@ memory usage: 64.3+ MB
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[&#39;gw&#39;, &#39;minutes&#39;, &#39;total_points_pg_last_all&#39;, &#39;total_points_pg_last_1&#39;, &#39;total_points_pg_last_2&#39;, &#39;total_points_pg_last_3&#39;, &#39;total_points_pg_last_5&#39;, &#39;total_points_pg_last_10&#39;, &#39;total_points_team_pg_last_all&#39;, &#39;total_points_team_pg_last_all_opponent&#39;, &#39;total_points_team_pg_last_1&#39;, &#39;total_points_team_pg_last_1_opponent&#39;, &#39;total_points_team_pg_last_2&#39;, &#39;total_points_team_pg_last_2_opponent&#39;, &#39;total_points_team_pg_last_3&#39;, &#39;total_points_team_pg_last_3_opponent&#39;, &#39;total_points_team_pg_last_5&#39;, &#39;total_points_team_pg_last_5_opponent&#39;, &#39;total_points_team_pg_last_10&#39;, &#39;total_points_team_pg_last_10_opponent&#39;]
+[&#39;season&#39;, &#39;position&#39;, &#39;team&#39;, &#39;opponent_team&#39;, &#39;was_home&#39;]
 Fitting 1 folds for each of 25 candidates, totalling 25 fits
 </pre>
 </div>
@@ -13608,19 +13534,6 @@ Fitting 1 folds for each of 25 candidates, totalling 25 fits
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
-[Parallel(n_jobs=1)]: Done  25 out of  25 | elapsed:  2.0min finished
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Best parameters found:  {&#39;gamma&#39;: 0.46376057001304627, &#39;learning_rate&#39;: 0.16135192463001993, &#39;max_depth&#39;: 5, &#39;n_estimators&#39;: 52, &#39;subsample&#39;: 0.9931768858514505}
-Lowest RMSE found:  1.791859333472982
 </pre>
 </div>
 </div>
@@ -14145,7 +14058,7 @@ Lowest RMSE found:  1.791859333472982
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -14166,81 +14079,49 @@ Lowest RMSE found:  1.791859333472982
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 78974 entries, 0 to 78973
-Data columns (total 71 columns):
-player                                 78974 non-null object
-gw                                     78974 non-null int64
-position                               78974 non-null int64
-minutes                                78974 non-null int64
-team                                   78974 non-null object
-opponent_team                          78974 non-null object
-relative_market_value_team             78974 non-null float64
-relative_market_value_opponent_team    78974 non-null float64
-was_home                               78974 non-null bool
-total_points                           78974 non-null int64
-assists                                78974 non-null int64
-bonus                                  78974 non-null int64
-bps                                    78974 non-null int64
-clean_sheets                           78974 non-null int64
-creativity                             78974 non-null float64
-goals_conceded                         78974 non-null int64
-goals_scored                           78974 non-null int64
-ict_index                              78974 non-null float64
-influence                              78974 non-null float64
-own_goals                              78974 non-null int64
-penalties_missed                       78974 non-null int64
-penalties_saved                        78974 non-null int64
-red_cards                              78974 non-null int64
-saves                                  78974 non-null int64
-selected                               78974 non-null int64
-team_a_score                           78974 non-null int64
-team_h_score                           78974 non-null int64
-threat                                 78974 non-null float64
-transfers_balance                      78974 non-null int64
-transfers_in                           78974 non-null int64
-transfers_out                          78974 non-null int64
-yellow_cards                           78974 non-null int64
-kickoff_time                           78974 non-null object
-season                                 78974 non-null object
-play_proba                             10965 non-null float64
-total_points_team_x                    78974 non-null int64
-ppg_all                                78217 non-null float64
-ppg_last_5                             78974 non-null float64
-total_points_team_y                    78974 non-null int64
-total_points_team_pg_all               78217 non-null float64
-total_points_team_pg_last_1            78974 non-null float64
-total_points_team_pg_last_2            78974 non-null float64
-total_points_team_pg_last_3            78974 non-null float64
-total_points_team_pg_last_4            78974 non-null float64
-total_points_team_pg_last_5            78974 non-null float64
-total_points_team_pg_last_10           78974 non-null float64
-total_points_team_pg_last_20           78974 non-null float64
-minutes_last_all                       78974 non-null int64
-minutes_last_1                         78974 non-null float64
-minutes_last_2                         78974 non-null float64
-minutes_last_3                         78974 non-null float64
-minutes_last_4                         78974 non-null float64
-minutes_last_5                         78974 non-null float64
-minutes_last_10                        78974 non-null float64
-minutes_last_20                        78974 non-null float64
-total_points_last_all                  78974 non-null int64
-total_points_pg_last_all               78974 non-null float64
-total_points_last_1                    78974 non-null float64
-total_points_pg_last_1                 78974 non-null float64
-total_points_last_2                    78974 non-null float64
-total_points_pg_last_2                 78974 non-null float64
-total_points_last_3                    78974 non-null float64
-total_points_pg_last_3                 78974 non-null float64
-total_points_last_4                    78974 non-null float64
-total_points_pg_last_4                 78974 non-null float64
-total_points_last_5                    78974 non-null float64
-total_points_pg_last_5                 78974 non-null float64
-total_points_last_10                   78974 non-null float64
-total_points_pg_last_10                78974 non-null float64
-total_points_last_20                   78974 non-null float64
-total_points_pg_last_20                78974 non-null float64
-dtypes: bool(1), float64(39), int64(26), object(5)
-memory usage: 42.9+ MB
+Int64Index: 90437 entries, 0 to 90436
+Data columns (total 37 columns):
+ #   Column                                      Non-Null Count  Dtype  
+---  ------                                      --------------  -----  
+ 0   player                                      90437 non-null  object 
+ 1   gw                                          90437 non-null  int64  
+ 2   position                                    90437 non-null  int64  
+ 3   minutes                                     90437 non-null  int64  
+ 4   team                                        90437 non-null  object 
+ 5   opponent_team                               90437 non-null  object 
+ 6   relative_market_value_team                  22501 non-null  float64
+ 7   relative_market_value_opponent_team         22501 non-null  float64
+ 8   was_home                                    90437 non-null  bool   
+ 9   total_points                                90437 non-null  int64  
+ 10  assists                                     90437 non-null  int64  
+ 11  bonus                                       90437 non-null  int64  
+ 12  bps                                         90437 non-null  int64  
+ 13  clean_sheets                                90437 non-null  int64  
+ 14  creativity                                  90437 non-null  float64
+ 15  goals_conceded                              90437 non-null  int64  
+ 16  goals_scored                                90437 non-null  int64  
+ 17  ict_index                                   90437 non-null  float64
+ 18  influence                                   90437 non-null  float64
+ 19  own_goals                                   90437 non-null  int64  
+ 20  penalties_missed                            90437 non-null  int64  
+ 21  penalties_saved                             90437 non-null  int64  
+ 22  red_cards                                   90437 non-null  int64  
+ 23  saves                                       90437 non-null  int64  
+ 24  selected                                    90437 non-null  int64  
+ 25  team_a_score                                90437 non-null  int64  
+ 26  team_h_score                                90437 non-null  int64  
+ 27  threat                                      90437 non-null  float64
+ 28  transfers_balance                           90437 non-null  int64  
+ 29  transfers_in                                90437 non-null  int64  
+ 30  transfers_out                               90437 non-null  int64  
+ 31  yellow_cards                                90437 non-null  int64  
+ 32  kickoff_time                                90437 non-null  object 
+ 33  season                                      90437 non-null  object 
+ 34  play_proba                                  22357 non-null  float64
+ 35  relative_market_value_team_season           90437 non-null  float64
+ 36  relative_market_value_opponent_team_season  90437 non-null  float64
+dtypes: bool(1), float64(9), int64(22), object(5)
+memory usage: 25.6+ MB
 </pre>
 </div>
 </div>

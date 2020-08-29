@@ -13076,13 +13076,13 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 
     </div>
@@ -13106,7 +13106,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
@@ -13120,7 +13120,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add all lag points scored to training set</span>
@@ -13134,10 +13134,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lets grab some indexes for a validation set starting at gw 20 in 2019/20 season</span>
+<span class="n">idxs</span> <span class="o">=</span> <span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">idxs</span>
 </pre></div>
 
     </div>
@@ -13150,13 +13152,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;1920&#39;</pre>
+<pre>(78390, 78973, 80156, 82053)</pre>
 </div>
 
 </div>
@@ -13167,369 +13169,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">78390</span><span class="p">,</span> <span class="mi">78973</span><span class="p">,</span> <span class="mi">80156</span><span class="p">,</span> <span class="mi">82053</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train_idx = </span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">))]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[53]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>player</th>
-      <th>gw</th>
-      <th>position</th>
-      <th>minutes</th>
-      <th>team</th>
-      <th>opponent_team</th>
-      <th>relative_market_value_team</th>
-      <th>relative_market_value_opponent_team</th>
-      <th>was_home</th>
-      <th>total_points</th>
-      <th>...</th>
-      <th>transfers_out</th>
-      <th>yellow_cards</th>
-      <th>kickoff_time</th>
-      <th>season</th>
-      <th>play_proba</th>
-      <th>relative_market_value_team_season</th>
-      <th>relative_market_value_opponent_team_season</th>
-      <th>minutes_last_all</th>
-      <th>total_points_last_all</th>
-      <th>total_points_pg_last_all</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Aaron_Cresswell</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>West Ham United</td>
-      <td>Chelsea</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016-08-15T19:00:00Z</td>
-      <td>1617</td>
-      <td>NaN</td>
-      <td>0.895471</td>
-      <td>2.243698</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Aaron_Lennon</td>
-      <td>1</td>
-      <td>3</td>
-      <td>15</td>
-      <td>Everton</td>
-      <td>Tottenham Hotspur</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016-08-13T14:00:00Z</td>
-      <td>1617</td>
-      <td>NaN</td>
-      <td>1.057509</td>
-      <td>1.433690</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Aaron_Ramsey</td>
-      <td>1</td>
-      <td>3</td>
-      <td>60</td>
-      <td>Arsenal</td>
-      <td>Liverpool</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>True</td>
-      <td>2</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016-08-14T15:00:00Z</td>
-      <td>1617</td>
-      <td>NaN</td>
-      <td>1.944129</td>
-      <td>1.465860</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Abdoulaye_Doucouré</td>
-      <td>1</td>
-      <td>3</td>
-      <td>0</td>
-      <td>Watford</td>
-      <td>Southampton</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016-08-13T14:00:00Z</td>
-      <td>1617</td>
-      <td>NaN</td>
-      <td>0.704200</td>
-      <td>0.796805</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Abdul Rahman_Baba</td>
-      <td>1</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Chelsea</td>
-      <td>West Ham United</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016-08-15T19:00:00Z</td>
-      <td>1617</td>
-      <td>NaN</td>
-      <td>2.243698</td>
-      <td>0.895471</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>78385</th>
-      <td>Grant_Hanley</td>
-      <td>19</td>
-      <td>2</td>
-      <td>90</td>
-      <td>Norwich</td>
-      <td>Aston Villa</td>
-      <td>0.295212</td>
-      <td>0.522434</td>
-      <td>False</td>
-      <td>2</td>
-      <td>...</td>
-      <td>2441</td>
-      <td>0</td>
-      <td>2019-12-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>0.198300</td>
-      <td>0.338194</td>
-      <td>360</td>
-      <td>1</td>
-      <td>0.250000</td>
-    </tr>
-    <tr>
-      <th>78386</th>
-      <td>Roberto_Pereyra</td>
-      <td>19</td>
-      <td>3</td>
-      <td>45</td>
-      <td>Watford</td>
-      <td>Sheffield United</td>
-      <td>0.433797</td>
-      <td>0.242030</td>
-      <td>False</td>
-      <td>1</td>
-      <td>...</td>
-      <td>592</td>
-      <td>0</td>
-      <td>2019-12-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>0.555819</td>
-      <td>0.150631</td>
-      <td>6289</td>
-      <td>272</td>
-      <td>3.892511</td>
-    </tr>
-    <tr>
-      <th>78387</th>
-      <td>Sead_Kolasinac</td>
-      <td>19</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Arsenal</td>
-      <td>Bournemouth</td>
-      <td>1.413491</td>
-      <td>0.713784</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2566</td>
-      <td>0</td>
-      <td>2019-12-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>0.0</td>
-      <td>1.448866</td>
-      <td>0.687124</td>
-      <td>4960</td>
-      <td>216</td>
-      <td>3.919355</td>
-    </tr>
-    <tr>
-      <th>78388</th>
-      <td>Stuart_Armstrong</td>
-      <td>19</td>
-      <td>3</td>
-      <td>85</td>
-      <td>Southampton</td>
-      <td>Chelsea</td>
-      <td>0.469252</td>
-      <td>1.757609</td>
-      <td>False</td>
-      <td>3</td>
-      <td>...</td>
-      <td>67</td>
-      <td>0</td>
-      <td>2019-12-26T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>0.624210</td>
-      <td>1.798870</td>
-      <td>1852</td>
-      <td>93</td>
-      <td>4.519438</td>
-    </tr>
-    <tr>
-      <th>78389</th>
-      <td>Rúben Diogo_da Silva Neves</td>
-      <td>19</td>
-      <td>3</td>
-      <td>90</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>Manchester City</td>
-      <td>0.746215</td>
-      <td>2.711234</td>
-      <td>True</td>
-      <td>5</td>
-      <td>...</td>
-      <td>10811</td>
-      <td>0</td>
-      <td>2019-12-27T19:45:00Z</td>
-      <td>1920</td>
-      <td>1.0</td>
-      <td>0.673382</td>
-      <td>2.727025</td>
-      <td>4415</td>
-      <td>151</td>
-      <td>3.078143</td>
-    </tr>
-  </tbody>
-</table>
-<p>78390 rows × 40 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simple_model</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-    <span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw1</span><span class="p">,</span> <span class="n">valid_end_gw3</span><span class="p">,</span> <span class="n">valid_end_gw6</span> <span class="o">=</span> <span class="n">idx</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simple_model</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">idxs</span><span class="p">):</span>
+    <span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw1</span><span class="p">,</span> <span class="n">valid_end_gw3</span><span class="p">,</span> <span class="n">valid_end_gw6</span> <span class="o">=</span> <span class="n">idxs</span>
     
     <span class="n">train_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">)</span>
-    <span class="n">valid_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw6</span><span class="p">)</span>    
+    <span class="n">valid_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw6</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>    
     
     <span class="n">train</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
     <span class="n">valid</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">valid_idx</span><span class="p">]</span>
@@ -13556,10 +13203,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span> <span class="o">=</span> <span class="n">simple_model</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span> <span class="o">=</span> <span class="n">simple_model</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">idxs</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13569,79 +13216,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get player total per game average at validation point</span>
-<span class="n">player_points_pg</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-                            <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valid_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> 
-                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">19</span><span class="p">)</span>
-                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_points_pg</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">90</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">],</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13654,7 +13232,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[100]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13671,10 +13249,35 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can calculate the same predictions directly using the season and gameweek</span>
+<span class="c1"># to check the above function </span>
+<span class="c1"># get player total per game average at validation point</span>
+<span class="n">player_points_pg</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
+                            <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]]</span>
+
+<span class="n">valid_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> 
+                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">19</span><span class="p">)</span>
+                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points&#39;</span><span class="p">]]</span>
+
+<span class="n">pred_df</span> <span class="o">=</span> <span class="n">valid_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_points_pg</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">90</span>
+<span class="n">pred_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">],</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13687,13 +13290,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[103]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1.904298</pre>
+<pre>1.904038</pre>
 </div>
 
 </div>
@@ -13704,47 +13307,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">r_mse</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">pred</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player level lag features</span>
-<span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
-    <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="c1"># need minutes for per game stats, add to front of list</span>
-    <span class="n">features</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">)</span>
-
-    <span class="c1"># calculate totals for each lag period</span>
-    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
-            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-            
-            <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
-                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span> 
-                <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                                                                                            <span class="n">window</span><span class="o">=</span><span class="n">lag</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">feature</span> <span class="o">!=</span> <span class="s1">&#39;minutes&#39;</span><span class="p">:</span>
-                <span class="n">minute_name</span> <span class="o">=</span> <span class="s1">&#39;minutes_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-                <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
-                
-                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
-<span class="c1">#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)</span>
-                
-    <span class="k">return</span> <span class="n">df_new</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>

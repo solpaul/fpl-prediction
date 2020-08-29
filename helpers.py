@@ -191,6 +191,7 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
 # player level lag features
 def player_lag_features(df, features, lags):    
     df_new = df.copy()
+    lag_vars = []
     
     # need minutes for per game stats, add to front of list
     features.insert(0, 'minutes')
@@ -206,13 +207,15 @@ def player_lag_features(df, features, lags):
                 df_new[feature_name] = df_new.groupby(['player'])[feature].apply(lambda x: x.rolling(min_periods=1, 
                                                                                             window=lag+1).sum() - x)
             if feature != 'minutes':
+
                 minute_name = 'minutes_last_' + str(lag)
                 pg_feature_name = feature + '_pg_last_' + str(lag)
+                lag_vars.append(pg_feature_name)
                 
                 df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name] 
 #                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)
                 
-    return df_new
+    return df_new, lag_vars
 
 # function to generate team lag features
 # team level lag features
@@ -261,22 +264,20 @@ def team_lag_features(df, features, lags):
 # functions to get validation set indexes
 # training will always be from start of data up to valid-start
 # first function to get the validation set points for a given season and gameweek
-def validation_gw_idx(df, season, gw):
+def validation_gw_idx(df, season, gw, length):
     
     valid_start = df[(df['gw'] == gw) & (df['season'] == season)].index.min()
-    valid_end_gw1 = df[(df['gw'] == gw) & (df['season'] == season)].index.max()
-    valid_end_gw3 = df[(df['gw'] == min(gw+2, 38)) & (df['season'] == season)].index.max()
-    valid_end_gw6 = df[(df['gw'] == min(gw+5, 38)) & (df['season'] == season)].index.max()
-    
-    return (valid_start, valid_end_gw1, valid_end_gw3, valid_end_gw6)
+    valid_end = df[(df['gw'] == min(gw+length-1, 38)) & (df['season'] == season)].index.max()
+
+    return (valid_start, valid_end)
 
 # second function to get the validation points for multiple gameweeks in a season 
-def validation_season_idx(df, season, gws):
+def validation_season_idx(df, season, gws, length):
     
     valid_idx_tups = []
     
     for gw in gws:
-        valid_idx_tups.append(validation_gw_idx(df, season, gw))
+        valid_idx_tups.append(validation_gw_idx(df, season, gw, length))
     
     return valid_idx_tups
 

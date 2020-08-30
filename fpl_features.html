@@ -13747,9 +13747,9 @@ memory usage: 25.6+ MB
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player level lag features</span>
-<span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
     <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="c1"># need minutes for per game stats, add to front of list</span>
     <span class="n">features</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">)</span>
@@ -13765,13 +13765,15 @@ memory usage: 25.6+ MB
                 <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
                                                                                             <span class="n">window</span><span class="o">=</span><span class="n">lag</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">feature</span> <span class="o">!=</span> <span class="s1">&#39;minutes&#39;</span><span class="p">:</span>
+
                 <span class="n">minute_name</span> <span class="o">=</span> <span class="s1">&#39;minutes_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
                 <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+                <span class="n">lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pg_feature_name</span><span class="p">)</span>
                 
                 <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
 <span class="c1">#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)</span>
                 
-    <span class="k">return</span> <span class="n">df_new</span>
+    <span class="k">return</span> <span class="n">df_new</span><span class="p">,</span> <span class="n">lag_vars</span>
 </pre></div>
 
     </div>
@@ -13844,12 +13846,12 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create some lag features</span>
 <span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
-<span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13868,7 +13870,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at resulting dataset for a player</span>
@@ -13885,7 +13887,7 @@ memory usage: 25.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -15122,7 +15124,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summary with lag features added</span>
@@ -15265,7 +15267,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
@@ -15283,7 +15285,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -15308,7 +15310,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">][</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> 
@@ -15325,7 +15327,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -15350,7 +15352,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># points per minute across all players and minutes</span>
@@ -15367,7 +15369,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -15392,7 +15394,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extreme example of points per minute for all appearances under 10 minutes</span>
@@ -15409,7 +15411,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -15449,26 +15451,24 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># validation set indexes</span>
 <span class="c1"># training will always be from start of data up to valid-start</span>
-<span class="k">def</span> <span class="nf">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
     
     <span class="n">valid_start</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-    <span class="n">valid_end_gw1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    <span class="n">valid_end_gw3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    <span class="n">valid_end_gw6</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw1</span><span class="p">,</span> <span class="n">valid_end_gw3</span><span class="p">,</span> <span class="n">valid_end_gw6</span><span class="p">)</span>
+    <span class="n">valid_end</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">validation_season_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gws</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">validation_season_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gws</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
     
     <span class="n">valid_idx_tups</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="k">for</span> <span class="n">gw</span> <span class="ow">in</span> <span class="n">gws</span><span class="p">:</span>
-        <span class="n">valid_idx_tups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">))</span>
+        <span class="n">valid_idx_tups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">valid_idx_tups</span>
 </pre></div>
@@ -15480,10 +15480,10 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15496,16 +15496,13 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(67936, 68461, 69519, 71131),
- (72784, 73339, 74455, 76144),
- (78390, 78973, 80156, 82053),
- (84433, 85193, 86485, 88444)]</pre>
+<pre>[(78390, 82053), (84433, 88444)]</pre>
 </div>
 
 </div>
@@ -15516,10 +15513,10 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15532,17 +15529,30 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(67936, 68461, 69519, 71131)</pre>
+<pre>(67936, 71131)</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

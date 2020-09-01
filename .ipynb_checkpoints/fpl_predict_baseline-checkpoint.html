@@ -13134,7 +13134,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lets grab some indexes for a validation set starting at gw 20 in 2019/20 season</span>
@@ -13150,7 +13150,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">simple_model</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">):</span>
@@ -13184,7 +13184,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span> <span class="o">=</span> <span class="n">simple_model</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">)</span>
@@ -13197,7 +13197,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">targs</span><span class="p">)</span>
@@ -13213,7 +13213,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13230,7 +13230,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can calculate the same predictions directly using the season and gameweek</span>
@@ -13255,7 +13255,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;pred&#39;</span><span class="p">],</span> <span class="n">pred_df</span><span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">])</span>
@@ -13271,7 +13271,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13288,365 +13288,47 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">valid_season</span><span class="p">)</span> <span class="o">&amp;</span> 
-         <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">valid_gw</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player_df = train_df[(train_df[&#39;season&#39;] == valid_season) &amp; </span>
+<span class="c1">#          (train_df[&#39;gw&#39;] &lt;= valid_gw)][[&#39;player&#39;, &#39;gw&#39;] + player_lag_vars]</span>
 
-<span class="n">player_vals</span> <span class="o">=</span> <span class="n">player_df</span><span class="p">[</span><span class="n">player_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;player&#39;</span><span class="p">)[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)]</span>
+<span class="c1"># player_vals = player_df[player_df[&#39;gw&#39;] == player_df.groupby(&#39;player&#39;)[&#39;gw&#39;].transform(&#39;max&#39;)]</span>
 
-<span class="n">player_vals</span>
+<span class="c1"># player_vals = player_vals.drop(&#39;gw&#39;, axis=1)</span>
+
+<span class="c1"># player_vals</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[47]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>player</th>
-      <th>gw</th>
-      <th>total_points_pg_last_all</th>
-      <th>total_points_pg_last_1</th>
-      <th>total_points_pg_last_2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>78390</th>
-      <td>Ederson_Santana de Moraes</td>
-      <td>20</td>
-      <td>4.237371</td>
-      <td>-24.545455</td>
-      <td>-0.891089</td>
-    </tr>
-    <tr>
-      <th>78391</th>
-      <td>Xherdan_Shaqiri</td>
-      <td>20</td>
-      <td>5.071273</td>
-      <td>NaN</td>
-      <td>3.913043</td>
-    </tr>
-    <tr>
-      <th>78392</th>
-      <td>Hugo_Lloris</td>
-      <td>20</td>
-      <td>4.194837</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>78393</th>
-      <td>Cenk_Tosun</td>
-      <td>20</td>
-      <td>4.779793</td>
-      <td>NaN</td>
-      <td>2.647059</td>
-    </tr>
-    <tr>
-      <th>78394</th>
-      <td>Callum_Robinson</td>
-      <td>20</td>
-      <td>4.687500</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>78969</th>
-      <td>Grant_Hanley</td>
-      <td>20</td>
-      <td>0.600000</td>
-      <td>2.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>78970</th>
-      <td>Roberto_Pereyra</td>
-      <td>20</td>
-      <td>3.879065</td>
-      <td>2.000000</td>
-      <td>3.103448</td>
-    </tr>
-    <tr>
-      <th>78971</th>
-      <td>Sead_Kolasinac</td>
-      <td>20</td>
-      <td>3.919355</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>78972</th>
-      <td>Stuart_Armstrong</td>
-      <td>20</td>
-      <td>4.460506</td>
-      <td>3.176471</td>
-      <td>2.812500</td>
-    </tr>
-    <tr>
-      <th>78973</th>
-      <td>Rúben Diogo_da Silva Neves</td>
-      <td>20</td>
-      <td>3.116537</td>
-      <td>5.000000</td>
-      <td>3.500000</td>
-    </tr>
-  </tbody>
-</table>
-<p>584 rows × 5 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">]</span>
-<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
-<span class="n">dep_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># cat_vars = [&#39;gw&#39;, &#39;season&#39;]</span>
+<span class="c1"># cont_vars = [&#39;minutes&#39;]</span>
+<span class="c1"># dep_var = [&#39;total_points&#39;]</span>
 
-<span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">=</span> <span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="p">[</span><span class="n">valid_gw</span><span class="p">],</span> <span class="n">valid_len</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># valid_start, valid_end = validation_season_idx(train_df, valid_season, [valid_gw], valid_len)[0]</span>
 
-<span class="n">train_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">)</span>
-<span class="n">valid_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>    
+<span class="c1"># train_idx = range(valid_start)</span>
+<span class="c1"># valid_idx = range(valid_start, valid_end + 1)    </span>
 
-<span class="n">train</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
-<span class="n">valid</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span><span class="o">+</span> <span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">valid_idx</span><span class="p">]</span>
+<span class="c1"># train = train_df[[&#39;player&#39;] + cat_vars + cont_vars + player_lag_vars + dep_var].iloc[train_idx]</span>
+<span class="c1"># valid = train_df[[&#39;player&#39;] + cat_vars + cont_vars + dep_var].iloc[valid_idx]</span>
 
-<span class="n">valid</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_vals</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="c1"># valid = valid.merge(player_vals, on=&#39;player&#39;, how=&#39;left&#39;)</span>
 
-<span class="c1">## NEXT: create the proper validation set with replaced values</span>
+<span class="c1"># ## NEXT: create the proper validation set with replaced values</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[58]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>player</th>
-      <th>gw_x</th>
-      <th>season</th>
-      <th>minutes</th>
-      <th>total_points</th>
-      <th>gw_y</th>
-      <th>total_points_pg_last_all</th>
-      <th>total_points_pg_last_1</th>
-      <th>total_points_pg_last_2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Ederson_Santana de Moraes</td>
-      <td>20</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>4.237371</td>
-      <td>-24.545455</td>
-      <td>-0.891089</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Xherdan_Shaqiri</td>
-      <td>20</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>5.071273</td>
-      <td>NaN</td>
-      <td>3.913043</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Hugo_Lloris</td>
-      <td>20</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>4.194837</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Cenk_Tosun</td>
-      <td>20</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>4.779793</td>
-      <td>NaN</td>
-      <td>2.647059</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Callum_Robinson</td>
-      <td>20</td>
-      <td>1920</td>
-      <td>58</td>
-      <td>1</td>
-      <td>20.0</td>
-      <td>4.687500</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>3659</th>
-      <td>Yoshinori_Muto</td>
-      <td>25</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>4.320000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3660</th>
-      <td>Youri_Tielemans</td>
-      <td>25</td>
-      <td>1920</td>
-      <td>79</td>
-      <td>9</td>
-      <td>20.0</td>
-      <td>4.447674</td>
-      <td>2.000000</td>
-      <td>2.168675</td>
-    </tr>
-    <tr>
-      <th>3661</th>
-      <td>Yves_Bissouma</td>
-      <td>25</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>2.302017</td>
-      <td>12.857143</td>
-      <td>2.195122</td>
-    </tr>
-    <tr>
-      <th>3662</th>
-      <td>Çaglar_Söyüncü</td>
-      <td>25</td>
-      <td>1920</td>
-      <td>90</td>
-      <td>1</td>
-      <td>20.0</td>
-      <td>3.546372</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>3663</th>
-      <td>Ørjan_Nyland</td>
-      <td>25</td>
-      <td>1920</td>
-      <td>0</td>
-      <td>0</td>
-      <td>20.0</td>
-      <td>2.195122</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-<p>3664 rows × 9 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13656,26 +13338,72 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lag_train_df = pd.concat([train, valid]).reset_index()</span>
+<span class="c1"># lag_train_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We can adapt this approach to also create validation sets with lag features</span>
 <span class="c1"># When making predictions for gw +2 and beyond we cannot use those weeks&#39;s lag features</span>
 <span class="c1"># This would be leakage if we did</span>
 <span class="c1"># Instead, each subsequent validation week should have the same lag values as the first</span>
-<span class="c1"># def create_lag_train(df, lag_vars, valid_gw, valid_len):</span>
+<span class="k">def</span> <span class="nf">create_lag_train</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> <span class="n">lag_vars</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">):</span>
+
+    <span class="c1"># get all the lag data for the current season up to the first validation gameweek</span>
+    <span class="n">player_lag_vals</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">valid_season</span><span class="p">)</span> <span class="o">&amp;</span> 
+                         <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">valid_gw</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span>
     
+    <span class="c1"># get the last avaialable lag data for each player</span>
+    <span class="c1"># for most it will be the first validation week</span>
+    <span class="c1"># but sometimes teams have blank gameweeks</span>
+    <span class="c1"># in these cases it will be the previous gameweek</span>
+    <span class="n">player_lag_vals</span> <span class="o">=</span> <span class="n">player_lag_vals</span><span class="p">[</span><span class="n">player_lag_vals</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_lag_vals</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;player&#39;</span><span class="p">)[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)]</span>
+    <span class="n">player_lag_vals</span> <span class="o">=</span> <span class="n">player_lag_vals</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># get the validation start and end indexes</span>
+    <span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">=</span> <span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="p">[</span><span class="n">valid_gw</span><span class="p">],</span> <span class="n">valid_len</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">train_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">)</span>
+    <span class="n">valid_idx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>    
+
+    <span class="c1"># split out train and validation sets</span>
+    <span class="c1"># do not include lag vars in validation set</span>
+    <span class="n">train</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span> <span class="o">+</span> <span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">]</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">valid_idx</span><span class="p">]</span>
+
+    <span class="c1"># add in lag vars</span>
+    <span class="c1"># will be the same for all validation gameweeks</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="n">valid</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">player_lag_vals</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
     
+    <span class="c1"># concatenate train and test again</span>
+    <span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">valid</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
+    <span class="k">return</span> <span class="n">lag_train_df</span>
+</pre></div>
 
-<span class="c1">#     return df, valid_idxs</span>
+    </div>
+</div>
+</div>
 
-<span class="n">player_points_pg</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-                            <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">]]</span>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">]</span>
+<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
+<span class="n">dep_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
 
-<span class="c1"># train_df[:idxs[0]]</span>
-<span class="n">valid_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">idxs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">][[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span>
-<span class="n">valid_df</span>
-
-<span class="c1"># player_lags = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; </span>
-<span class="c1">#                        (train_df[&#39;gw&#39;] == 20)][[&#39;player&#39;, &#39;total_points_pg_last_all&#39;]]</span>
+<span class="n">create_lag_train</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="p">,</span> <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13688,7 +13416,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13711,47 +13439,77 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>index</th>
       <th>player</th>
+      <th>gw</th>
+      <th>season</th>
+      <th>minutes</th>
       <th>total_points_pg_last_all</th>
       <th>total_points_pg_last_1</th>
       <th>total_points_pg_last_2</th>
+      <th>total_points</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>78390</th>
-      <td>Ederson_Santana de Moraes</td>
-      <td>4.237371</td>
-      <td>-24.545455</td>
-      <td>-0.891089</td>
+      <th>0</th>
+      <td>0</td>
+      <td>Aaron_Cresswell</td>
+      <td>1</td>
+      <td>1617</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>78391</th>
-      <td>Xherdan_Shaqiri</td>
-      <td>5.071273</td>
+      <th>1</th>
+      <td>1</td>
+      <td>Aaron_Lennon</td>
+      <td>1</td>
+      <td>1617</td>
+      <td>15</td>
       <td>NaN</td>
-      <td>3.913043</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>78392</th>
-      <td>Hugo_Lloris</td>
-      <td>4.194837</td>
+      <th>2</th>
+      <td>2</td>
+      <td>Aaron_Ramsey</td>
+      <td>1</td>
+      <td>1617</td>
+      <td>60</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>78393</th>
-      <td>Cenk_Tosun</td>
-      <td>4.779793</td>
+      <th>3</th>
+      <td>3</td>
+      <td>Abdoulaye_Doucouré</td>
+      <td>1</td>
+      <td>1617</td>
+      <td>0</td>
       <td>NaN</td>
-      <td>2.647059</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>78394</th>
-      <td>Callum_Robinson</td>
-      <td>4.687500</td>
+      <th>4</th>
+      <td>4</td>
+      <td>Abdul Rahman_Baba</td>
+      <td>1</td>
+      <td>1617</td>
+      <td>0</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>...</th>
@@ -13759,50 +13517,93 @@ div#notebook {
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>82049</th>
+      <td>3659</td>
       <td>Yoshinori_Muto</td>
-      <td>4.027972</td>
+      <td>25</td>
+      <td>1920</td>
+      <td>0</td>
+      <td>4.320000</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>82050</th>
+      <td>3660</td>
       <td>Youri_Tielemans</td>
-      <td>4.316109</td>
+      <td>25</td>
+      <td>1920</td>
+      <td>79</td>
+      <td>4.447674</td>
       <td>2.000000</td>
-      <td>2.547170</td>
+      <td>2.168675</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>82051</th>
+      <td>3661</td>
       <td>Yves_Bissouma</td>
-      <td>2.326870</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>25</td>
+      <td>1920</td>
+      <td>0</td>
+      <td>2.302017</td>
+      <td>12.857143</td>
+      <td>2.195122</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>82052</th>
+      <td>3662</td>
       <td>Çaglar_Söyüncü</td>
-      <td>3.465793</td>
-      <td>2.000000</td>
-      <td>1.500000</td>
+      <td>25</td>
+      <td>1920</td>
+      <td>90</td>
+      <td>3.546372</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>82053</th>
+      <td>3663</td>
       <td>Ørjan_Nyland</td>
-      <td>1.525424</td>
+      <td>25</td>
+      <td>1920</td>
+      <td>0</td>
+      <td>2.195122</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
-<p>3664 rows × 4 columns</p>
+<p>82054 rows × 9 columns</p>
 </div>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

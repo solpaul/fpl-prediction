@@ -283,3 +283,36 @@ def validation_season_idx(df, season, gws, length):
 
 # function to calculate root mean squared error for preds and targs
 def r_mse(pred,y): return round(math.sqrt(((pred-y)**2).mean()), 6)
+
+# function to correct lag variables after validation point in a dataset
+def create_lag_train(df, cat_vars, cont_vars, lag_vars, dep_var, valid_season, valid_gw, valid_len):
+
+    # get all the lag data for the current season up to the first validation gameweek
+    player_lag_vals = df[(df['season'] == valid_season) & 
+                         (df['gw'] <= valid_gw)][['player', 'gw'] + lag_vars]
+    
+    # get the last avaialable lag data for each player
+    # for most it will be the first validation week
+    # but sometimes teams have blank gameweeks
+    # in these cases it will be the previous gameweek
+    player_lag_vals = player_lag_vals[player_lag_vals['gw'] == player_lag_vals.groupby('player')['gw'].transform('max')]
+    player_lag_vals = player_lag_vals.drop('gw', axis=1)
+
+    # get the validation start and end indexes
+    valid_start, valid_end = validation_season_idx(df, valid_season, [valid_gw], valid_len)[0]
+    train_idx = range(valid_start)
+    valid_idx = range(valid_start, valid_end + 1)    
+
+    # split out train and validation sets
+    # do not include lag vars in validation set
+    train = df[['player'] + cat_vars + cont_vars + lag_vars + dep_var].iloc[train_idx]
+    valid = df[['player'] + cat_vars + cont_vars + dep_var].iloc[valid_idx]
+
+    # add in lag vars
+    # will be the same for all validation gameweeks
+    valid = valid.merge(player_lag_vals, on='player', how='left')
+    
+    # concatenate train and test again
+    lag_train_df = pd.concat([train, valid]).reset_index()
+
+    return lag_train_df, train_idx, valid_idx

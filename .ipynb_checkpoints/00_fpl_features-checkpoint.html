@@ -13121,7 +13121,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These are the fields in the base dataset, all from fpl and transfermarkt</p>
+<h2 id="The-FPL-dataset">The FPL dataset<a class="anchor-link" href="#The-FPL-dataset">&#182;</a></h2><p>These are the fields in the base dataset, all from fpl and transfermarkt, which are updated after the concolusion of every gameweek.</p>
 
 </div>
 </div>
@@ -13744,12 +13744,12 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># player level lag features</span>
-<span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
     <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="c1"># need minutes for per game stats, add to front of list</span>
     <span class="n">features</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">)</span>
@@ -13765,13 +13765,15 @@ memory usage: 25.6+ MB
                 <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;player&#39;</span><span class="p">])[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
                                                                                             <span class="n">window</span><span class="o">=</span><span class="n">lag</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">feature</span> <span class="o">!=</span> <span class="s1">&#39;minutes&#39;</span><span class="p">:</span>
+
                 <span class="n">minute_name</span> <span class="o">=</span> <span class="s1">&#39;minutes_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
                 <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+                <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pg_feature_name</span><span class="p">)</span>
                 
                 <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
 <span class="c1">#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)</span>
                 
-    <span class="k">return</span> <span class="n">df_new</span>
+    <span class="k">return</span> <span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span>
 </pre></div>
 
     </div>
@@ -13781,11 +13783,13 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># team level lag features</span>
 <span class="k">def</span> <span class="nf">team_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>
+    <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
+    
     <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
         <span class="n">feature_team_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team&#39;</span>
         <span class="n">feature_team</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;gw&#39;</span><span class="p">,</span>
@@ -13795,6 +13799,7 @@ memory usage: 25.6+ MB
         <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
             <span class="n">feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
             <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
+            <span class="n">team_lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pg_feature_name</span><span class="p">)</span>
             
             <span class="k">if</span> <span class="n">lag</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
                 <span class="n">feature_team</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_team</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;team&#39;</span><span class="p">)[</span><span class="n">feature_team_name</span><span class="p">]</span>
@@ -13823,9 +13828,11 @@ memory usage: 25.6+ MB
                  <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
                  <span class="n">suffixes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;_opponent&#39;</span><span class="p">))</span>
         
-        <span class="n">df_new</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;team_opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team_opponent&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="n">team_lag_vars</span> <span class="o">+</span> <span class="p">[</span><span class="n">team_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_opponent&#39;</span> <span class="k">for</span> <span class="n">team_lag_var</span> <span class="ow">in</span> <span class="n">team_lag_vars</span><span class="p">]</span>
         
-        <span class="k">return</span> <span class="n">df_new</span>
+        <span class="n">df_new</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;team_opponent&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team_opponent&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">df_new</span><span class="p">,</span> <span class="n">team_lag_vars</span>
 </pre></div>
 
     </div>
@@ -13844,12 +13851,12 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create some lag features</span>
-<span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
-<span class="n">lag_train_df</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13868,7 +13875,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at resulting dataset for a player</span>
@@ -13885,7 +13892,7 @@ memory usage: 25.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13962,8 +13969,6 @@ memory usage: 25.6+ MB
       <th>total_points_team_pg_last_10</th>
       <th>total_points_team_last_20</th>
       <th>total_points_team_pg_last_20</th>
-      <th>team_opponent</th>
-      <th>opponent_team_opponent</th>
       <th>total_points_team_opponent</th>
       <th>total_points_team_last_all_opponent</th>
       <th>total_points_team_pg_last_all_opponent</th>
@@ -14064,8 +14069,6 @@ memory usage: 25.6+ MB
       <td>51.0</td>
       <td>916.0</td>
       <td>45.80</td>
-      <td>Watford</td>
-      <td>Liverpool</td>
       <td>43</td>
       <td>1264</td>
       <td>33.263158</td>
@@ -14164,8 +14167,6 @@ memory usage: 25.6+ MB
       <td>52.2</td>
       <td>901.0</td>
       <td>45.05</td>
-      <td>Crystal Palace</td>
-      <td>Liverpool</td>
       <td>29</td>
       <td>1427</td>
       <td>36.589744</td>
@@ -14264,8 +14265,6 @@ memory usage: 25.6+ MB
       <td>53.0</td>
       <td>931.0</td>
       <td>46.55</td>
-      <td>Arsenal</td>
-      <td>Liverpool</td>
       <td>12</td>
       <td>1956</td>
       <td>48.900000</td>
@@ -14364,8 +14363,6 @@ memory usage: 25.6+ MB
       <td>57.7</td>
       <td>982.0</td>
       <td>49.10</td>
-      <td>Manchester City</td>
-      <td>Liverpool</td>
       <td>88</td>
       <td>1985</td>
       <td>48.414634</td>
@@ -14464,8 +14461,6 @@ memory usage: 25.6+ MB
       <td>54.5</td>
       <td>952.0</td>
       <td>47.60</td>
-      <td>Burnley</td>
-      <td>Liverpool</td>
       <td>37</td>
       <td>1540</td>
       <td>36.666667</td>
@@ -14510,8 +14505,6 @@ memory usage: 25.6+ MB
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -14664,8 +14657,6 @@ memory usage: 25.6+ MB
       <td>56.0</td>
       <td>1206.0</td>
       <td>60.30</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Liverpool</td>
       <td>28</td>
       <td>3877</td>
       <td>35.568807</td>
@@ -14764,8 +14755,6 @@ memory usage: 25.6+ MB
       <td>54.0</td>
       <td>1211.0</td>
       <td>60.55</td>
-      <td>Burnley</td>
-      <td>Liverpool</td>
       <td>35</td>
       <td>5576</td>
       <td>37.675676</td>
@@ -14864,8 +14853,6 @@ memory usage: 25.6+ MB
       <td>49.4</td>
       <td>1191.0</td>
       <td>59.55</td>
-      <td>Arsenal</td>
-      <td>Liverpool</td>
       <td>38</td>
       <td>6792</td>
       <td>45.583893</td>
@@ -14964,8 +14951,6 @@ memory usage: 25.6+ MB
       <td>46.6</td>
       <td>1148.0</td>
       <td>57.40</td>
-      <td>Chelsea</td>
-      <td>Liverpool</td>
       <td>33</td>
       <td>7388</td>
       <td>49.253333</td>
@@ -15064,8 +15049,6 @@ memory usage: 25.6+ MB
       <td>48.2</td>
       <td>1147.0</td>
       <td>57.35</td>
-      <td>Newcastle United</td>
-      <td>Liverpool</td>
       <td>30</td>
       <td>4373</td>
       <td>38.699115</td>
@@ -15110,7 +15093,7 @@ memory usage: 25.6+ MB
     </tr>
   </tbody>
 </table>
-<p>114 rows × 97 columns</p>
+<p>114 rows × 95 columns</p>
 </div>
 </div>
 
@@ -15122,7 +15105,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summary with lag features added</span>
@@ -15145,7 +15128,7 @@ memory usage: 25.6+ MB
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Int64Index: 90437 entries, 0 to 90436
-Data columns (total 97 columns):
+Data columns (total 95 columns):
  #   Column                                      Non-Null Count  Dtype  
 ---  ------                                      --------------  -----  
  0   player                                      90437 non-null  object 
@@ -15202,51 +15185,49 @@ Data columns (total 97 columns):
  51  total_points_team_pg_last_10                89680 non-null  float64
  52  total_points_team_last_20                   90437 non-null  float64
  53  total_points_team_pg_last_20                89680 non-null  float64
- 54  team_opponent                               90437 non-null  object 
- 55  opponent_team_opponent                      90437 non-null  object 
- 56  total_points_team_opponent                  90437 non-null  int64  
- 57  total_points_team_last_all_opponent         90437 non-null  int64  
- 58  total_points_team_pg_last_all_opponent      89678 non-null  float64
- 59  total_points_team_last_1_opponent           90437 non-null  float64
- 60  total_points_team_pg_last_1_opponent        89678 non-null  float64
- 61  total_points_team_last_2_opponent           90437 non-null  float64
- 62  total_points_team_pg_last_2_opponent        89678 non-null  float64
- 63  total_points_team_last_3_opponent           90437 non-null  float64
- 64  total_points_team_pg_last_3_opponent        89678 non-null  float64
- 65  total_points_team_last_4_opponent           90437 non-null  float64
- 66  total_points_team_pg_last_4_opponent        89678 non-null  float64
- 67  total_points_team_last_5_opponent           90437 non-null  float64
- 68  total_points_team_pg_last_5_opponent        89678 non-null  float64
- 69  total_points_team_last_10_opponent          90437 non-null  float64
- 70  total_points_team_pg_last_10_opponent       89678 non-null  float64
- 71  total_points_team_last_20_opponent          90437 non-null  float64
- 72  total_points_team_pg_last_20_opponent       89678 non-null  float64
- 73  minutes_last_all                            90437 non-null  int64  
- 74  minutes_last_1                              90437 non-null  float64
- 75  minutes_last_2                              90437 non-null  float64
- 76  minutes_last_3                              90437 non-null  float64
- 77  minutes_last_4                              90437 non-null  float64
- 78  minutes_last_5                              90437 non-null  float64
- 79  minutes_last_10                             90437 non-null  float64
- 80  minutes_last_20                             90437 non-null  float64
- 81  total_points_last_all                       90437 non-null  int64  
- 82  total_points_pg_last_all                    76046 non-null  float64
- 83  total_points_last_1                         90437 non-null  float64
- 84  total_points_pg_last_1                      41583 non-null  float64
- 85  total_points_last_2                         90437 non-null  float64
- 86  total_points_pg_last_2                      48615 non-null  float64
- 87  total_points_last_3                         90437 non-null  float64
- 88  total_points_pg_last_3                      52476 non-null  float64
- 89  total_points_last_4                         90437 non-null  float64
- 90  total_points_pg_last_4                      55148 non-null  float64
- 91  total_points_last_5                         90437 non-null  float64
- 92  total_points_pg_last_5                      57171 non-null  float64
- 93  total_points_last_10                        90437 non-null  float64
- 94  total_points_pg_last_10                     63363 non-null  float64
- 95  total_points_last_20                        90437 non-null  float64
- 96  total_points_pg_last_20                     69348 non-null  float64
-dtypes: bool(1), float64(61), int64(28), object(7)
-memory usage: 67.0+ MB
+ 54  total_points_team_opponent                  90437 non-null  int64  
+ 55  total_points_team_last_all_opponent         90437 non-null  int64  
+ 56  total_points_team_pg_last_all_opponent      89678 non-null  float64
+ 57  total_points_team_last_1_opponent           90437 non-null  float64
+ 58  total_points_team_pg_last_1_opponent        89678 non-null  float64
+ 59  total_points_team_last_2_opponent           90437 non-null  float64
+ 60  total_points_team_pg_last_2_opponent        89678 non-null  float64
+ 61  total_points_team_last_3_opponent           90437 non-null  float64
+ 62  total_points_team_pg_last_3_opponent        89678 non-null  float64
+ 63  total_points_team_last_4_opponent           90437 non-null  float64
+ 64  total_points_team_pg_last_4_opponent        89678 non-null  float64
+ 65  total_points_team_last_5_opponent           90437 non-null  float64
+ 66  total_points_team_pg_last_5_opponent        89678 non-null  float64
+ 67  total_points_team_last_10_opponent          90437 non-null  float64
+ 68  total_points_team_pg_last_10_opponent       89678 non-null  float64
+ 69  total_points_team_last_20_opponent          90437 non-null  float64
+ 70  total_points_team_pg_last_20_opponent       89678 non-null  float64
+ 71  minutes_last_all                            90437 non-null  int64  
+ 72  minutes_last_1                              90437 non-null  float64
+ 73  minutes_last_2                              90437 non-null  float64
+ 74  minutes_last_3                              90437 non-null  float64
+ 75  minutes_last_4                              90437 non-null  float64
+ 76  minutes_last_5                              90437 non-null  float64
+ 77  minutes_last_10                             90437 non-null  float64
+ 78  minutes_last_20                             90437 non-null  float64
+ 79  total_points_last_all                       90437 non-null  int64  
+ 80  total_points_pg_last_all                    76046 non-null  float64
+ 81  total_points_last_1                         90437 non-null  float64
+ 82  total_points_pg_last_1                      41583 non-null  float64
+ 83  total_points_last_2                         90437 non-null  float64
+ 84  total_points_pg_last_2                      48615 non-null  float64
+ 85  total_points_last_3                         90437 non-null  float64
+ 86  total_points_pg_last_3                      52476 non-null  float64
+ 87  total_points_last_4                         90437 non-null  float64
+ 88  total_points_pg_last_4                      55148 non-null  float64
+ 89  total_points_last_5                         90437 non-null  float64
+ 90  total_points_pg_last_5                      57171 non-null  float64
+ 91  total_points_last_10                        90437 non-null  float64
+ 92  total_points_pg_last_10                     63363 non-null  float64
+ 93  total_points_last_20                        90437 non-null  float64
+ 94  total_points_pg_last_20                     69348 non-null  float64
+dtypes: bool(1), float64(61), int64(28), object(5)
+memory usage: 65.6+ MB
 </pre>
 </div>
 </div>
@@ -15258,14 +15239,110 @@ memory usage: 67.0+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can look at the points per game total for any player at any point in time. Here is Salah.</p>
+<p>We also return a lists for the player lag and team lag variables which will help us when modelling. For now these only have the <i>per game</i> variables.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_lag_vars</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;total_points_pg_last_all&#39;,
+ &#39;total_points_pg_last_1&#39;,
+ &#39;total_points_pg_last_2&#39;,
+ &#39;total_points_pg_last_3&#39;,
+ &#39;total_points_pg_last_4&#39;,
+ &#39;total_points_pg_last_5&#39;,
+ &#39;total_points_pg_last_10&#39;,
+ &#39;total_points_pg_last_20&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">team_lag_vars</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;total_points_team_pg_last_all&#39;,
+ &#39;total_points_team_pg_last_1&#39;,
+ &#39;total_points_team_pg_last_2&#39;,
+ &#39;total_points_team_pg_last_3&#39;,
+ &#39;total_points_team_pg_last_4&#39;,
+ &#39;total_points_team_pg_last_5&#39;,
+ &#39;total_points_team_pg_last_10&#39;,
+ &#39;total_points_team_pg_last_20&#39;,
+ &#39;total_points_team_pg_last_all_opponent&#39;,
+ &#39;total_points_team_pg_last_1_opponent&#39;,
+ &#39;total_points_team_pg_last_2_opponent&#39;,
+ &#39;total_points_team_pg_last_3_opponent&#39;,
+ &#39;total_points_team_pg_last_4_opponent&#39;,
+ &#39;total_points_team_pg_last_5_opponent&#39;,
+ &#39;total_points_team_pg_last_10_opponent&#39;,
+ &#39;total_points_team_pg_last_20_opponent&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we have an easy way of getting the points per game total for any player at any point in time. Here is Salah at the last gameweek in the 2019/20 season.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
@@ -15283,7 +15360,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -15308,7 +15385,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">][</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> 
@@ -15325,7 +15402,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -15350,7 +15427,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># points per minute across all players and minutes</span>
@@ -15367,7 +15444,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -15392,7 +15469,7 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extreme example of points per minute for all appearances under 10 minutes</span>
@@ -15409,7 +15486,7 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -15428,7 +15505,7 @@ memory usage: 67.0+ MB
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Any model is likely to perform worse at the start of the season due to new players / teams, and big changes within existing teams. It is also potentially better for games closer to the final game included in training.</p>
-<p>We therefore need a sensisble way to combine these different situations into our validation of models. I decided to validate by looking at four points during the season (i.e. training the model four times, each up to one of these points), and assessing the RMSE for three different sets of predictions.</p>
+<p>We therefore need a sensible way to combine these different situations into our validation of models. I decided to validate by looking at four points during the season (i.e. training the model four times, each up to one of these points), and assessing the RMSE for three different sets of predictions.</p>
 <p>Validation points:</p>
 <ul>
 <li>Start of season</li>
@@ -15449,26 +15526,24 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># validation set indexes</span>
 <span class="c1"># training will always be from start of data up to valid-start</span>
-<span class="k">def</span> <span class="nf">validation_gw_idx</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
     
-    <span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-    <span class="n">valid_end_gw1</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    <span class="n">valid_end_gw3</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    <span class="n">valid_end_gw6</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end_gw1</span><span class="p">,</span> <span class="n">valid_end_gw3</span><span class="p">,</span> <span class="n">valid_end_gw6</span><span class="p">)</span>
+    <span class="n">valid_start</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">valid_end</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">gw</span><span class="o">+</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">38</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">validation_season_idx</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">gws</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">validation_season_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gws</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
     
     <span class="n">valid_idx_tups</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="k">for</span> <span class="n">gw</span> <span class="ow">in</span> <span class="n">gws</span><span class="p">:</span>
-        <span class="n">valid_idx_tups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">))</span>
+        <span class="n">valid_idx_tups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">season</span><span class="p">,</span> <span class="n">gw</span><span class="p">,</span> <span class="n">length</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">valid_idx_tups</span>
 </pre></div>
@@ -15480,10 +15555,10 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_season_idx</span><span class="p">(</span><span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15496,16 +15571,13 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(67936, 68461, 69519, 71131),
- (72784, 73339, 74455, 76144),
- (78390, 78973, 80156, 82053),
- (84433, 85193, 86485, 88444)]</pre>
+<pre>[(78390, 82053), (84433, 88444)]</pre>
 </div>
 
 </div>
@@ -15516,10 +15588,10 @@ memory usage: 67.0+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15532,17 +15604,30 @@ memory usage: 67.0+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(67936, 68461, 69519, 71131)</pre>
+<pre>(67936, 71131)</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

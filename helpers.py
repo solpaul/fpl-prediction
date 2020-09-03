@@ -191,7 +191,7 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
 # player level lag features
 def player_lag_features(df, features, lags):    
     df_new = df.copy()
-    lag_vars = []
+    player_lag_vars = []
     
     # need minutes for per game stats, add to front of list
     features.insert(0, 'minutes')
@@ -210,16 +210,18 @@ def player_lag_features(df, features, lags):
 
                 minute_name = 'minutes_last_' + str(lag)
                 pg_feature_name = feature + '_pg_last_' + str(lag)
-                lag_vars.append(pg_feature_name)
+                player_lag_vars.append(pg_feature_name)
                 
                 df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name] 
 #                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)
                 
-    return df_new, lag_vars
+    return df_new, player_lag_vars
 
 # function to generate team lag features
 # team level lag features
 def team_lag_features(df, features, lags):
+    team_lag_vars = []
+    
     for feature in features:
         feature_team_name = feature + '_team'
         feature_team = (df.groupby(['team', 'season', 'gw',
@@ -229,6 +231,7 @@ def team_lag_features(df, features, lags):
         for lag in lags:
             feature_name = feature + '_team_last_' + str(lag)
             pg_feature_name = feature + '_team_pg_last_' + str(lag)
+            team_lag_vars.append(pg_feature_name)
             
             if lag == 'all':
                 feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
@@ -257,9 +260,11 @@ def team_lag_features(df, features, lags):
                  how='left',
                  suffixes = ('', '_opponent'))
         
-        df_new.drop(['team_opponent', 'opponent_team_opponent'], axis=1)
+        team_lag_vars = team_lag_vars + [team_lag_var + '_opponent' for team_lag_var in team_lag_vars]
         
-        return df_new
+        df_new.drop(['team_opponent', 'opponent_team_opponent'], axis=1, inplace=True)
+        
+        return df_new, team_lag_vars
     
 # functions to get validation set indexes
 # training will always be from start of data up to valid-start
@@ -285,19 +290,39 @@ def validation_season_idx(df, season, gws, length):
 def r_mse(pred,y): return round(math.sqrt(((pred-y)**2).mean()), 6)
 
 # function to correct lag variables after validation point in a dataset
-def create_lag_train(df, cat_vars, cont_vars, lag_vars, dep_var, valid_season, valid_gw, valid_len):
+# We can adapt this approach to also create validation sets with lag features
+# When making predictions for gw +2 and beyond we cannot use those weeks's lag features
+# This would be leakage if we did
+# Instead, each subsequent validation week should have the same lag values as the first
+def create_lag_train(df, cat_vars, cont_vars, player_lag_vars, team_lag_vars, dep_var, valid_season, valid_gw, valid_len):
 
     # get all the lag data for the current season up to the first validation gameweek
     player_lag_vals = df[(df['season'] == valid_season) & 
-                         (df['gw'] <= valid_gw)][['player', 'gw'] + lag_vars]
+                         (df['gw'] <= valid_gw)][['player', 'kickoff_time'] + player_lag_vars]
     
-    # get the last avaialable lag data for each player
+    team_lag_vals = df[(df['season'] == valid_season) & 
+                       (df['gw'] <= valid_gw)][['team', 'kickoff_time'] + 
+                                               [x for x in team_lag_vars if "opponent" not in x]].drop_duplicates()
+                                               
+    opponent_team_lag_vals = df[(df['season'] == valid_season) & 
+                                (df['gw'] <= valid_gw)][['opponent_team', 'kickoff_time'] + 
+                                                        [x for x in team_lag_vars if "opponent" in x]].drop_duplicates()
+    
+    # get the last available lag data for each player
     # for most it will be the first validation week
     # but sometimes teams have blank gameweeks
     # in these cases it will be the previous gameweek
-    player_lag_vals = player_lag_vals[player_lag_vals['gw'] == player_lag_vals.groupby('player')['gw'].transform('max')]
-    player_lag_vals = player_lag_vals.drop('gw', axis=1)
-
+    player_lag_vals = player_lag_vals[player_lag_vals['kickoff_time'] == 
+                                      player_lag_vals.groupby('player')['kickoff_time'].transform('max')]
+    team_lag_vals = team_lag_vals[team_lag_vals['kickoff_time'] == 
+                                  team_lag_vals.groupby('team')['kickoff_time'].transform('max')]
+    opponent_team_lag_vals = opponent_team_lag_vals[opponent_team_lag_vals['kickoff_time'] == 
+                                                    opponent_team_lag_vals.groupby('opponent_team')['kickoff_time'].transform('max')]
+                                                                    
+    player_lag_vals = player_lag_vals.drop('kickoff_time', axis=1)
+    team_lag_vals = team_lag_vals.drop('kickoff_time', axis=1)
+    opponent_team_lag_vals = opponent_team_lag_vals.drop('kickoff_time', axis=1)
+    
     # get the validation start and end indexes
     valid_start, valid_end = validation_season_idx(df, valid_season, [valid_gw], valid_len)[0]
     train_idx = range(valid_start)
@@ -305,12 +330,18 @@ def create_lag_train(df, cat_vars, cont_vars, lag_vars, dep_var, valid_season, v
 
     # split out train and validation sets
     # do not include lag vars in validation set
-    train = df[['player'] + cat_vars + cont_vars + lag_vars + dep_var].iloc[train_idx]
-    valid = df[['player'] + cat_vars + cont_vars + dep_var].iloc[valid_idx]
+    cat_vars = list(set(['opponent_team', 'team', 'player'] + cat_vars))
+    
+    train = df[cat_vars + cont_vars + 
+               player_lag_vars + team_lag_vars + 
+               dep_var].iloc[train_idx]
+    valid = df[cat_vars + cont_vars + dep_var].iloc[valid_idx]
 
     # add in lag vars
     # will be the same for all validation gameweeks
     valid = valid.merge(player_lag_vals, on='player', how='left')
+    valid = valid.merge(team_lag_vals, on='team', how='left')
+    valid = valid.merge(opponent_team_lag_vals, on='opponent_team', how='left')
     
     # concatenate train and test again
     lag_train_df = pd.concat([train, valid]).reset_index()

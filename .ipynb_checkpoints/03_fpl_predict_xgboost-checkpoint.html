@@ -13076,20 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
@@ -13100,7 +13087,6 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">RandomizedSearchCV</span><span class="p">,</span> <span class="n">PredefinedSplit</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">DictVectorizer</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">randint</span>
 <span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -13112,7 +13098,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to project directory</span>
@@ -13126,7 +13112,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
@@ -13138,13 +13124,51 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="XGBoost-model">XGBoost model<a class="anchor-link" href="#XGBoost-model">&#182;</a></h2><p>XGboost is a ensemble tree-based predictive algorithm that performs well across a range of applications. Applying it to a time series problem, where metrics from recent time periods can be predicitve, requires us to add in window features (e.g. points scored last gameweek). These are created using the player_lag_features function from 00_fpl_features.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add a bunch of player lag features</span>
-<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have introduced a number of lag (window) features for each player's points per game, their team's points per game and the opposition team's points per game over the previous 1, 2, 3, 4, 5, 10 and all gameweeks.</p>
+<p>Next we can set the validation point and length as well as the categorical and continuous features we'll be using to predict the dependent variable, total points for each game. These are used in the create_lag_train function to get an our training set (including appropriate lag values in the validation set).</p>
+<p>The gameweeks and seasons are ordered, so we want to have them as ordered categories with the correct order (2016-17 is before 2017-18 etc.).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set validaton point/length and categorical/continuous variables</span>
+<span class="n">valid_season</span> <span class="o">=</span> <span class="s1">&#39;1920&#39;</span>
+<span class="n">valid_gw</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">valid_len</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;was_home&#39;</span><span class="p">]</span>
+<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
+<span class="n">dep_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13154,7 +13178,47 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we want to set gw and season as ordered categorical variables</span>
+<span class="c1"># need lists with ordered categories</span>
+<span class="n">ordered_gws</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">39</span><span class="p">))</span>
+<span class="n">ordered_seasons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1617&#39;</span><span class="p">,</span> <span class="s1">&#39;1718&#39;</span><span class="p">,</span> <span class="s1">&#39;1819&#39;</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">]</span>
+
+<span class="c1"># set as categories with correct order </span>
+<span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">(</span><span class="n">ordered_gws</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">(</span><span class="n">ordered_seasons</span><span class="p">,</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create dataset with adjusted post-validation lag numbers</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">valid_idx</span> <span class="o">=</span> <span class="n">create_lag_train</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> 
+                                                      <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> 
+                                                      <span class="n">player_lag_vars</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">dep_var</span><span class="p">,</span>
+                                                      <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># take a look at the dataframe</span>
@@ -13176,70 +13240,43 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 90437 entries, 0 to 90436
-Data columns (total 58 columns):
- #   Column                                      Non-Null Count  Dtype  
----  ------                                      --------------  -----  
- 0   player                                      90437 non-null  object 
- 1   gw                                          90437 non-null  int64  
- 2   position                                    90437 non-null  int64  
- 3   minutes                                     90437 non-null  int64  
- 4   team                                        90437 non-null  object 
- 5   opponent_team                               90437 non-null  object 
- 6   relative_market_value_team                  22501 non-null  float64
- 7   relative_market_value_opponent_team         22501 non-null  float64
- 8   was_home                                    90437 non-null  bool   
- 9   total_points                                90437 non-null  int64  
- 10  assists                                     90437 non-null  int64  
- 11  bonus                                       90437 non-null  int64  
- 12  bps                                         90437 non-null  int64  
- 13  clean_sheets                                90437 non-null  int64  
- 14  creativity                                  90437 non-null  float64
- 15  goals_conceded                              90437 non-null  int64  
- 16  goals_scored                                90437 non-null  int64  
- 17  ict_index                                   90437 non-null  float64
- 18  influence                                   90437 non-null  float64
- 19  own_goals                                   90437 non-null  int64  
- 20  penalties_missed                            90437 non-null  int64  
- 21  penalties_saved                             90437 non-null  int64  
- 22  red_cards                                   90437 non-null  int64  
- 23  saves                                       90437 non-null  int64  
- 24  selected                                    90437 non-null  int64  
- 25  team_a_score                                90437 non-null  int64  
- 26  team_h_score                                90437 non-null  int64  
- 27  threat                                      90437 non-null  float64
- 28  transfers_balance                           90437 non-null  int64  
- 29  transfers_in                                90437 non-null  int64  
- 30  transfers_out                               90437 non-null  int64  
- 31  yellow_cards                                90437 non-null  int64  
- 32  kickoff_time                                90437 non-null  object 
- 33  season                                      90437 non-null  object 
- 34  play_proba                                  22357 non-null  float64
- 35  relative_market_value_team_season           90437 non-null  float64
- 36  relative_market_value_opponent_team_season  90437 non-null  float64
- 37  minutes_last_all                            90437 non-null  int64  
- 38  minutes_last_1                              90437 non-null  float64
- 39  minutes_last_2                              90437 non-null  float64
- 40  minutes_last_3                              90437 non-null  float64
- 41  minutes_last_4                              90437 non-null  float64
- 42  minutes_last_5                              90437 non-null  float64
- 43  minutes_last_10                             90437 non-null  float64
- 44  total_points_last_all                       90437 non-null  int64  
- 45  total_points_pg_last_all                    76046 non-null  float64
- 46  total_points_last_1                         90437 non-null  float64
- 47  total_points_pg_last_1                      41583 non-null  float64
- 48  total_points_last_2                         90437 non-null  float64
- 49  total_points_pg_last_2                      48615 non-null  float64
- 50  total_points_last_3                         90437 non-null  float64
- 51  total_points_pg_last_3                      52476 non-null  float64
- 52  total_points_last_4                         90437 non-null  float64
- 53  total_points_pg_last_4                      55148 non-null  float64
- 54  total_points_last_5                         90437 non-null  float64
- 55  total_points_pg_last_5                      57171 non-null  float64
- 56  total_points_last_10                        90437 non-null  float64
- 57  total_points_pg_last_10                     63363 non-null  float64
-dtypes: bool(1), float64(28), int64(24), object(5)
-memory usage: 40.1+ MB
+RangeIndex: 82054 entries, 0 to 82053
+Data columns (total 31 columns):
+ #   Column                                  Non-Null Count  Dtype   
+---  ------                                  --------------  -----   
+ 0   index                                   82054 non-null  int64   
+ 1   player                                  82054 non-null  object  
+ 2   season                                  82054 non-null  category
+ 3   position                                82054 non-null  int64   
+ 4   team                                    82054 non-null  object  
+ 5   opponent_team                           82054 non-null  object  
+ 6   was_home                                82054 non-null  bool    
+ 7   gw                                      82054 non-null  category
+ 8   minutes                                 82054 non-null  int64   
+ 9   total_points_pg_last_all                68666 non-null  float64 
+ 10  total_points_pg_last_1                  37879 non-null  float64 
+ 11  total_points_pg_last_2                  44333 non-null  float64 
+ 12  total_points_pg_last_3                  47807 non-null  float64 
+ 13  total_points_pg_last_4                  50292 non-null  float64 
+ 14  total_points_pg_last_5                  52087 non-null  float64 
+ 15  total_points_pg_last_10                 57642 non-null  float64 
+ 16  total_points_team_pg_last_all           81196 non-null  float64 
+ 17  total_points_team_pg_last_1             81196 non-null  float64 
+ 18  total_points_team_pg_last_2             81196 non-null  float64 
+ 19  total_points_team_pg_last_3             81196 non-null  float64 
+ 20  total_points_team_pg_last_4             81196 non-null  float64 
+ 21  total_points_team_pg_last_5             81196 non-null  float64 
+ 22  total_points_team_pg_last_10            81196 non-null  float64 
+ 23  total_points_team_pg_last_all_opponent  81194 non-null  float64 
+ 24  total_points_team_pg_last_1_opponent    81194 non-null  float64 
+ 25  total_points_team_pg_last_2_opponent    81194 non-null  float64 
+ 26  total_points_team_pg_last_3_opponent    81194 non-null  float64 
+ 27  total_points_team_pg_last_4_opponent    81194 non-null  float64 
+ 28  total_points_team_pg_last_5_opponent    81194 non-null  float64 
+ 29  total_points_team_pg_last_10_opponent   81194 non-null  float64 
+ 30  total_points                            82054 non-null  int64   
+dtypes: bool(1), category(2), float64(21), int64(4), object(3)
+memory usage: 17.8+ MB
 </pre>
 </div>
 </div>
@@ -13248,321 +13285,21 @@ memory usage: 40.1+ MB
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set validaton point/length and categorical/continuous variables</span>
-<span class="n">valid_season</span> <span class="o">=</span> <span class="s1">&#39;1920&#39;</span>
-<span class="n">valid_gw</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">valid_len</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;was_home&#39;</span><span class="p">]</span>
-<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
-<span class="n">dep_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
-</pre></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now build the input (X) and dependent (y) variable datasets. This includes encoding the categorical features so that each level is represented in it's own column (e.g. postition_1, position_2, etc.).</p>
 
-    </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create dataset with adjusted post-validation lag numbers</span>
-<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">valid_idx</span> <span class="o">=</span> <span class="n">create_lag_train</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> 
-                                                      <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="p">,</span> <span class="n">dep_var</span><span class="p">,</span>
-                                                      <span class="n">valid_season</span><span class="p">,</span> <span class="n">valid_gw</span><span class="p">,</span> <span class="n">valid_len</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check features for a player</span>
-<span class="n">lag_train_df</span><span class="p">[</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[42]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>player</th>
-      <th>season</th>
-      <th>position</th>
-      <th>team</th>
-      <th>opponent_team</th>
-      <th>was_home</th>
-      <th>gw</th>
-      <th>minutes</th>
-      <th>total_points_pg_last_all</th>
-      <th>total_points_pg_last_1</th>
-      <th>total_points_pg_last_2</th>
-      <th>total_points_pg_last_3</th>
-      <th>total_points_pg_last_4</th>
-      <th>total_points_pg_last_5</th>
-      <th>total_points_pg_last_10</th>
-      <th>total_points</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>76699</th>
-      <td>76699</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Bournemouth</td>
-      <td>False</td>
-      <td>16</td>
-      <td>90</td>
-      <td>7.996931</td>
-      <td>NaN</td>
-      <td>3.970588</td>
-      <td>3.970588</td>
-      <td>6.428571</td>
-      <td>5.366972</td>
-      <td>4.720280</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th>77163</th>
-      <td>77163</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Watford</td>
-      <td>True</td>
-      <td>17</td>
-      <td>90</td>
-      <td>8.058961</td>
-      <td>13.000000</td>
-      <td>13.000000</td>
-      <td>9.113924</td>
-      <td>9.113924</td>
-      <td>8.852459</td>
-      <td>5.979021</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <th>78202</th>
-      <td>78202</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Leicester City</td>
-      <td>False</td>
-      <td>19</td>
-      <td>69</td>
-      <td>8.156212</td>
-      <td>16.000000</td>
-      <td>14.500000</td>
-      <td>14.500000</td>
-      <td>11.612903</td>
-      <td>11.612903</td>
-      <td>8.024476</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>78784</th>
-      <td>394</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>True</td>
-      <td>20</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>79369</th>
-      <td>979</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Sheffield United</td>
-      <td>True</td>
-      <td>21</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>79960</th>
-      <td>1570</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Tottenham Hotspur</td>
-      <td>False</td>
-      <td>22</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>80757</th>
-      <td>2367</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Manchester United</td>
-      <td>True</td>
-      <td>23</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>81236</th>
-      <td>2846</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>False</td>
-      <td>24</td>
-      <td>84</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>81237</th>
-      <td>2847</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>West Ham United</td>
-      <td>False</td>
-      <td>24</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>81870</th>
-      <td>3480</td>
-      <td>Mohamed_Salah</td>
-      <td>1920</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Southampton</td>
-      <td>True</td>
-      <td>25</td>
-      <td>90</td>
-      <td>8.116743</td>
-      <td>3.913043</td>
-      <td>10.754717</td>
-      <td>11.566265</td>
-      <td>11.566265</td>
-      <td>9.936909</td>
-      <td>8.493648</td>
-      <td>16</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split out dependent variable</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span> <span class="o">+</span> <span class="n">team_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13572,7 +13309,7 @@ memory usage: 40.1+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># since position is categorical, it should be a string</span>
@@ -13597,9 +13334,17 @@ memory usage: 40.1+ MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can see the resulting dataset with the categorical features split out into levels. This can now be used in the XGBoost API.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13621,7 +13366,7 @@ memory usage: 40.1+ MB
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 82054 entries, 0 to 82053
-Data columns (total 73 columns):
+Data columns (total 87 columns):
  #   Column                                  Non-Null Count  Dtype  
 ---  ------                                  --------------  -----  
  0   gw                                      82054 non-null  float64
@@ -13696,9 +13441,23 @@ Data columns (total 73 columns):
  69  total_points_pg_last_4                  50292 non-null  float64
  70  total_points_pg_last_5                  52087 non-null  float64
  71  total_points_pg_last_all                68666 non-null  float64
- 72  was_home                                82054 non-null  float64
-dtypes: float64(73)
-memory usage: 45.7 MB
+ 72  total_points_team_pg_last_1             81196 non-null  float64
+ 73  total_points_team_pg_last_10            81196 non-null  float64
+ 74  total_points_team_pg_last_10_opponent   81194 non-null  float64
+ 75  total_points_team_pg_last_1_opponent    81194 non-null  float64
+ 76  total_points_team_pg_last_2             81196 non-null  float64
+ 77  total_points_team_pg_last_2_opponent    81194 non-null  float64
+ 78  total_points_team_pg_last_3             81196 non-null  float64
+ 79  total_points_team_pg_last_3_opponent    81194 non-null  float64
+ 80  total_points_team_pg_last_4             81196 non-null  float64
+ 81  total_points_team_pg_last_4_opponent    81194 non-null  float64
+ 82  total_points_team_pg_last_5             81196 non-null  float64
+ 83  total_points_team_pg_last_5_opponent    81194 non-null  float64
+ 84  total_points_team_pg_last_all           81196 non-null  float64
+ 85  total_points_team_pg_last_all_opponent  81194 non-null  float64
+ 86  was_home                                82054 non-null  float64
+dtypes: float64(87)
+memory usage: 54.5 MB
 </pre>
 </div>
 </div>
@@ -13709,10 +13468,10 @@ memory usage: 45.7 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="n">player_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="n">player_lag_vars</span> <span class="o">+</span> <span class="n">team_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13731,18 +13490,32 @@ memory usage: 45.7 MB
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 82054 entries, 0 to 82053
-Data columns (total 7 columns):
- #   Column                    Non-Null Count  Dtype  
----  ------                    --------------  -----  
- 0   total_points_pg_last_all  68666 non-null  float64
- 1   total_points_pg_last_1    37879 non-null  float64
- 2   total_points_pg_last_2    44333 non-null  float64
- 3   total_points_pg_last_3    47807 non-null  float64
- 4   total_points_pg_last_4    50292 non-null  float64
- 5   total_points_pg_last_5    52087 non-null  float64
- 6   total_points_pg_last_10   57642 non-null  float64
-dtypes: float64(7)
-memory usage: 4.4 MB
+Data columns (total 21 columns):
+ #   Column                                  Non-Null Count  Dtype  
+---  ------                                  --------------  -----  
+ 0   total_points_pg_last_all                68666 non-null  float64
+ 1   total_points_pg_last_1                  37879 non-null  float64
+ 2   total_points_pg_last_2                  44333 non-null  float64
+ 3   total_points_pg_last_3                  47807 non-null  float64
+ 4   total_points_pg_last_4                  50292 non-null  float64
+ 5   total_points_pg_last_5                  52087 non-null  float64
+ 6   total_points_pg_last_10                 57642 non-null  float64
+ 7   total_points_team_pg_last_all           81196 non-null  float64
+ 8   total_points_team_pg_last_1             81196 non-null  float64
+ 9   total_points_team_pg_last_2             81196 non-null  float64
+ 10  total_points_team_pg_last_3             81196 non-null  float64
+ 11  total_points_team_pg_last_4             81196 non-null  float64
+ 12  total_points_team_pg_last_5             81196 non-null  float64
+ 13  total_points_team_pg_last_10            81196 non-null  float64
+ 14  total_points_team_pg_last_all_opponent  81194 non-null  float64
+ 15  total_points_team_pg_last_1_opponent    81194 non-null  float64
+ 16  total_points_team_pg_last_2_opponent    81194 non-null  float64
+ 17  total_points_team_pg_last_3_opponent    81194 non-null  float64
+ 18  total_points_team_pg_last_4_opponent    81194 non-null  float64
+ 19  total_points_team_pg_last_5_opponent    81194 non-null  float64
+ 20  total_points_team_pg_last_10_opponent   81194 non-null  float64
+dtypes: float64(21)
+memory usage: 13.1 MB
 </pre>
 </div>
 </div>
@@ -13751,9 +13524,17 @@ memory usage: 4.4 MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can start by instatiating an XGBRegressor (since the dependent variable is continuous) and do a single train with arbitrary parameters. We split out the validation set and use it after training to create predictions and calculate the RMSE versus actuals.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split out training and validation sets</span>
@@ -13770,7 +13551,7 @@ memory usage: 4.4 MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instatiate and train XGB Regressor</span>
@@ -13796,7 +13577,7 @@ memory usage: 4.4 MB
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>RMSE: 1.791749
+<pre>RMSE: 1.813698
 </pre>
 </div>
 </div>
@@ -13805,41 +13586,89 @@ memory usage: 4.4 MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a clear improvement on the baseline approach, but perhaps it can be improved by doing a parameter search.</p>
+<p>To do this we will first define the grid of parameters to be searched.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_new</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># parameter search space</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="c1">#&quot;colsample_bytree&quot;: uniform(0.7, 0.3),</span>
+          <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+          <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="c1"># default 0.1 </span>
+          <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="c1"># default 3</span>
+          <span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="c1"># default 100</span>
+          <span class="s2">&quot;subsample&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)}</span>
+</pre></div>
 
-<span class="c1"># add lag vars</span>
-<span class="n">df_new</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">player_lags</span><span class="p">)</span>
-<span class="n">df_new</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">)</span>
+    </div>
+</div>
+</div>
 
-<span class="n">lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this case we will pass both train and validation parts of the dataset, along with a series telling the XGBRegressor object which rows to use for training, and which for validation.</p>
 
-<span class="c1"># add lag var names</span>
-<span class="k">for</span> <span class="n">player_lag_var</span> <span class="ow">in</span> <span class="n">player_lag_vars</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">player_lag</span> <span class="ow">in</span> <span class="n">player_lags</span><span class="p">:</span>
-        <span class="n">feature_name</span> <span class="o">=</span> <span class="n">player_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player_lag</span><span class="p">)</span>
-        <span class="n">lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_name</span><span class="p">)</span>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_df</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">test_fold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">valid_idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">valid_idx</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">valid_idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PredefinedSplit</span><span class="p">(</span><span class="n">test_fold</span><span class="p">)</span>
+</pre></div>
 
-<span class="k">for</span> <span class="n">team_lag_var</span> <span class="ow">in</span> <span class="n">team_lag_vars</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">team_lag</span> <span class="ow">in</span> <span class="n">team_lags</span><span class="p">:</span>
-        <span class="n">feature_name</span> <span class="o">=</span> <span class="n">team_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">team_lag</span><span class="p">)</span>
-        <span class="n">feature_name_opposition</span> <span class="o">=</span> <span class="n">feature_name</span> <span class="o">+</span> <span class="s1">&#39;_opponent&#39;</span>
-        <span class="n">lag_vars</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_name_opposition</span><span class="p">])</span>
+    </div>
+</div>
+</div>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">cont_vars</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lag_vars</span><span class="p">)</span>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can then again instatiate the XGBRegressor object, but this time pass it to a randomised search validation object, along with the parameter grid, validation splits, and number of iterations we want to run.</p>
+<p>We then fit this to the training data - 25 random parameter selections will be made and the best parameters for the validation set can be found (may take a few minutes to run).</p>
 
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_new</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Instantiate the regressor: gbm</span>
+<span class="n">gbm</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s2">&quot;reg:squarederror&quot;</span><span class="p">)</span>
 
-<span class="c1"># find validation cut point - index for 18-19 season second half (gw 19)</span>
-<span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="c1">#valid_end = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; (train_df[&#39;gw&#39;] == 1)].index.min()</span>
-<span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1"># Perform random search: grid_mse</span>
+<span class="n">randomized_mse</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">gbm</span><span class="p">,</span> 
+                            <span class="n">param_distributions</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> 
+                            <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> 
+                            <span class="n">n_iter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> 
+                            <span class="n">cv</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> 
+                            <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Fit randomized_mse to the data</span>
+<span class="n">randomized_mse</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Print the best parameters and lowest RMSE</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters found: &quot;</span><span class="p">,</span> <span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lowest RMSE found: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)))</span>
 </pre></div>
 
     </div>
@@ -13855,129 +13684,54 @@ memory usage: 4.4 MB
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-13-fe978db7ab18&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-fg"># add lag vars</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>df_new <span class="ansi-blue-fg">=</span> player_lag_features<span class="ansi-blue-fg">(</span>df_new<span class="ansi-blue-fg">,</span> player_lag_vars<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> player_lags<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> df_new <span class="ansi-blue-fg">=</span> team_lag_features<span class="ansi-blue-fg">(</span>df_new<span class="ansi-blue-fg">,</span> team_lag_vars<span class="ansi-blue-fg">,</span> team_lags<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-
-<span class="ansi-red-fg">NameError</span>: name &#39;player_lags&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Fitting 1 folds for each of 25 candidates, totalling 25 fits
+</pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done  25 out of  25 | elapsed: 11.1min finished
+</pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best parameters found:  {&#39;gamma&#39;: 0.3114951839224726, &#39;learning_rate&#39;: 0.08785682593678641, &#39;max_depth&#39;: 3, &#39;n_estimators&#39;: 155, &#39;subsample&#39;: 0.7096071355946573}
+Lowest RMSE found:  1.8134271148438066
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A slight improvement on the above.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_xgb</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">dep_var</span><span class="p">,</span> <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> 
-               <span class="n">player_lag_vars</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">player_lags</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">):</span>
-    
-    <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="c1"># add lag vars</span>
-    <span class="n">df_new</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">player_lags</span><span class="p">)</span>
-    <span class="n">df_new</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">)</span>
-    
-    <span class="n">lag_vars</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="c1"># add lag var names</span>
-    <span class="k">for</span> <span class="n">player_lag_var</span> <span class="ow">in</span> <span class="n">player_lag_vars</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">player_lag</span> <span class="ow">in</span> <span class="n">player_lags</span><span class="p">:</span>
-            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">player_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player_lag</span><span class="p">)</span>
-            <span class="n">lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_name</span><span class="p">)</span>
-            
-    <span class="k">for</span> <span class="n">team_lag_var</span> <span class="ow">in</span> <span class="n">team_lag_vars</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">team_lag</span> <span class="ow">in</span> <span class="n">team_lags</span><span class="p">:</span>
-            <span class="n">feature_name</span> <span class="o">=</span> <span class="n">team_lag_var</span> <span class="o">+</span> <span class="s1">&#39;_team_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">team_lag</span><span class="p">)</span>
-            <span class="n">feature_name_opposition</span> <span class="o">=</span> <span class="n">feature_name</span> <span class="o">+</span> <span class="s1">&#39;_opponent&#39;</span>
-            <span class="n">lag_vars</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">feature_name</span><span class="p">,</span> <span class="n">feature_name_opposition</span><span class="p">])</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="n">cont_vars</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cat_vars</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">lag_vars</span><span class="p">)</span>
-    
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span> <span class="o">+</span> <span class="n">lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">df_new</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="c1"># find validation cut point - index for 18-19 season second half (gw 19)</span>
-    <span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-    <span class="c1">#valid_end = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; (train_df[&#39;gw&#39;] == 1)].index.min()</span>
-    <span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    
-    
-    
-    <span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-    <span class="n">enc</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-    <span class="n">X</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">])</span>
-    <span class="n">X_dict</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Create the DictVectorizer object: dv</span>
-    <span class="n">dv</span> <span class="o">=</span> <span class="n">DictVectorizer</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-
-    <span class="c1"># Apply dv on df: df_encoded</span>
-    <span class="n">X_encoded</span> <span class="o">=</span> <span class="n">dv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_dict</span><span class="p">)</span>
-    
-    <span class="n">X_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_encoded</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">dv</span><span class="o">.</span><span class="n">feature_names_</span><span class="p">)</span>
-    
-    <span class="c1"># training and validation sets</span>
-    <span class="k">if</span> <span class="n">validation</span> <span class="o">==</span> <span class="s1">&#39;no-search&#39;</span><span class="p">:</span>
-        <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[:</span><span class="n">valid_start</span><span class="p">]</span>
-        <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="n">valid_start</span><span class="p">]</span>
-        <span class="n">X_test</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[</span><span class="n">valid_start</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-        <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">valid_start</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-        
-        <span class="n">xg_reg</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.047479</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0828905304021426</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">subsample</span><span class="o">=</span><span class="mf">0.6862963240045978</span><span class="p">)</span>
-        
-        <span class="n">xg_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-        <span class="n">preds</span> <span class="o">=</span> <span class="n">xg_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rmse</span><span class="p">))</span>
-    
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-        <span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-        <span class="n">test_fold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">-</span> <span class="n">valid_start</span><span class="p">])</span>
-        <span class="n">ps</span> <span class="o">=</span> <span class="n">PredefinedSplit</span><span class="p">(</span><span class="n">test_fold</span><span class="p">)</span>
-        
-        <span class="c1"># Instantiate the regressor: gbm</span>
-        <span class="n">gbm</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s2">&quot;reg:squarederror&quot;</span><span class="p">)</span>
-        
-        <span class="c1"># Perform random search: grid_mse</span>
-        <span class="n">randomized_mse</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">gbm</span><span class="p">,</span> 
-                                    <span class="n">param_distributions</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> 
-                                    <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> 
-                                    <span class="n">n_iter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> 
-                                    <span class="n">cv</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> 
-                                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        
-        <span class="c1"># Fit randomized_mse to the data</span>
-        <span class="n">randomized_mse</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-        
-        <span class="c1"># Print the best parameters and lowest RMSE</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters found: &quot;</span><span class="p">,</span> <span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lowest RMSE found: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)))</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -14003,32 +13757,7 @@ memory usage: 4.4 MB
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation</span> <span class="o">=</span> <span class="s1">&#39;random&#39;</span>
-
-<span class="c1"># params = {&quot;gamma&quot;: 0.05, </span>
-<span class="c1">#         &quot;learning_rate&quot;: 0.1, </span>
-<span class="c1">#         &quot;max_depth&quot;: 5,</span>
-<span class="c1">#         &quot;n_estimators&quot;: 100, </span>
-<span class="c1">#         &quot;subsample&quot;:0.7}</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="c1">#&quot;colsample_bytree&quot;: uniform(0.7, 0.3),</span>
-          <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-          <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="c1"># default 0.1 </span>
-          <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="c1"># default 3</span>
-          <span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="c1"># default 100</span>
-          <span class="s2">&quot;subsample&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)}</span>
-
-<span class="n">dep_var</span> <span class="o">=</span> <span class="s1">&#39;total_points&#39;</span>
-<span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;was_home&#39;</span><span class="p">]</span>
-<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
-<span class="c1">#, &#39;relative_market_value_team&#39;, &#39;relative_market_value_opponent_team&#39;]</span>
-<span class="n">player_lag_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
-<span class="n">team_lag_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
-<span class="n">player_lags</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="n">team_lags</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="n">create_xgb</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">dep_var</span><span class="p">,</span> <span class="n">cat_vars</span><span class="p">,</span> <span class="n">cont_vars</span><span class="p">,</span> 
-               <span class="n">player_lag_vars</span><span class="p">,</span> <span class="n">team_lag_vars</span><span class="p">,</span> <span class="n">player_lags</span><span class="p">,</span> <span class="n">team_lags</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -14041,238 +13770,7 @@ memory usage: 4.4 MB
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="p">[</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Harry_Kane&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set categorical, continuous variables</span>
-<span class="c1"># and dependent variable</span>
-<span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;was_home&#39;</span><span class="p">]</span>
-<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_team&#39;</span><span class="p">,</span> 
-             <span class="s1">&#39;relative_market_value_opponent_team&#39;</span><span class="p">,</span> 
-<span class="c1">#              &#39;minutes_last_all&#39;, </span>
-<span class="c1">#              &#39;minutes_last_1&#39;, </span>
-<span class="c1">#              &#39;minutes_last_2&#39;,</span>
-<span class="c1">#              &#39;minutes_last_3&#39;,</span>
-<span class="c1">#              &#39;minutes_last_4&#39;,</span>
-<span class="c1">#              &#39;minutes_last_5&#39;,</span>
-<span class="c1">#              &#39;minutes_last_10&#39;,</span>
-<span class="c1">#              &#39;minutes_last_20&#39;,</span>
-<span class="c1">#              &#39;total_points_last_all&#39;,</span>
-<span class="c1">#              &#39;total_points_last_1&#39;,</span>
-<span class="c1">#              &#39;total_points_last_2&#39;,</span>
-<span class="c1">#              &#39;total_points_last_3&#39;,</span>
-<span class="c1">#              &#39;total_points_last_4&#39;,</span>
-<span class="c1">#              &#39;total_points_last_5&#39;,</span>
-<span class="c1">#              &#39;total_points_last_10&#39;,</span>
-<span class="c1">#              &#39;total_points_last_20&#39;,</span>
-             <span class="s1">&#39;total_points_pg_last_all&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_2&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_3&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_5&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_pg_last_10&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_all&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_1&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_2&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_3&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_4&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_5&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_10&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;total_points_team_pg_last_20&#39;</span><span class="p">]</span>
-<span class="n">dep_var</span> <span class="o">=</span> <span class="s1">&#39;total_points&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="n">cont_vars</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">train_df</span><span class="p">[</span><span class="n">dep_var</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># find validation cut point - index for 18-19 season second half (gw 19)</span>
-<span class="n">valid_start</span> <span class="o">=</span> <span class="n">train_df</span><span class="p">[(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1819&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">19</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="c1"># valid_end = train_df[(train_df[&#39;season&#39;] == &#39;1920&#39;) &amp; (train_df[&#39;gw&#39;] == 1)].index.min()</span>
-<span class="n">valid_end</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#X[&#39;season&#39;] = X[&#39;season&#39;].replace({&#39;1617&#39;:1, &#39;1718&#39;:2, &#39;1819&#39;:3, &#39;1920&#39;:4})</span>
-<span class="n">enc</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">X</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_dict</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)</span>
-
-<span class="c1"># Create the DictVectorizer object: dv</span>
-<span class="n">dv</span> <span class="o">=</span> <span class="n">DictVectorizer</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-
-<span class="c1"># Apply dv on df: df_encoded</span>
-<span class="n">X_encoded</span> <span class="o">=</span> <span class="n">dv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_dict</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_encoded</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">dv</span><span class="o">.</span><span class="n">feature_names_</span><span class="p">)</span>
-<span class="n">X_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_fold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="n">valid_start</span><span class="p">,</span> <span class="n">valid_end</span> <span class="o">-</span> <span class="n">valid_start</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">test_fold</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">PredefinedSplit</span><span class="p">(</span><span class="n">test_fold</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -14292,207 +13790,6 @@ memory usage: 4.4 MB
     <span class="c1">#&#39;colsample_bytree&#39;: [0.1, 0.5, 0.8, 1],</span>
     <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]</span>
 <span class="p">}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="c1">#&quot;colsample_bytree&quot;: uniform(0.7, 0.3),</span>
-          <span class="s2">&quot;gamma&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-          <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="c1"># default 0.1 </span>
-          <span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="c1"># default 3</span>
-          <span class="s2">&quot;n_estimators&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="c1"># default 100</span>
-          <span class="s2">&quot;subsample&quot;</span><span class="p">:</span> <span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)}</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Instantiate the regressor: gbm</span>
-<span class="n">gbm</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s2">&quot;reg:squarederror&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform random search: grid_mse</span>
-<span class="n">randomized_mse</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">gbm</span><span class="p">,</span> 
-                                    <span class="n">param_distributions</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> 
-                                    <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">,</span> 
-                                    <span class="n">n_iter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> 
-                                    <span class="n">cv</span><span class="o">=</span><span class="n">ps</span><span class="p">,</span> 
-                                    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xgb</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fit randomized_mse to the data</span>
-<span class="n">randomized_mse</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print the best parameters and lowest RMSE</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best parameters found: &quot;</span><span class="p">,</span> <span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lowest RMSE found: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">randomized_mse</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># training and validation sets</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[:</span><span class="n">valid_start</span><span class="p">]</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="n">valid_start</span><span class="p">]</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_df</span><span class="p">[</span><span class="n">valid_start</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">valid_start</span><span class="p">:</span><span class="n">valid_end</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#xg_reg = xgb.XGBRegressor(n_estimators=75, max_depth=5, learning_rate=0.1)</span>
-
-<span class="n">xg_reg</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBRegressor</span><span class="p">(</span><span class="n">gamma</span><span class="o">=</span><span class="mf">0.047479</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0828905304021426</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">subsample</span><span class="o">=</span><span class="mf">0.6862963240045978</span><span class="p">)</span>
-
-<span class="n">xg_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="n">preds</span> <span class="o">=</span> <span class="n">xg_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RMSE: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rmse</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#plt.style.use(&#39;ggplot&#39;)</span>
-<span class="n">xgb</span><span class="o">.</span><span class="n">plot_importance</span><span class="p">(</span><span class="n">xg_reg</span><span class="p">,</span> <span class="n">max_num_features</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(),</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">results</span><span class="p">[</span><span class="s1">&#39;preds&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">preds</span>
-<span class="n">results</span>
 </pre></div>
 
     </div>

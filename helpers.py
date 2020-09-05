@@ -213,7 +213,10 @@ def player_lag_features(df, features, lags):
                 player_lag_vars.append(pg_feature_name)
                 
                 df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name] 
-#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)
+
+                # some cases of -1 points and 0 minutes cause -inf values
+                # change these to NaN
+                df_new[pg_feature_name] = df_new[pg_feature_name].replace([np.inf, -np.inf], np.nan)
                 
     return df_new, player_lag_vars
 

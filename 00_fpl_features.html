@@ -13744,7 +13744,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">player_lag_features</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">lags</span><span class="p">):</span>    
@@ -13770,8 +13770,11 @@ memory usage: 25.6+ MB
                 <span class="n">pg_feature_name</span> <span class="o">=</span> <span class="n">feature</span> <span class="o">+</span> <span class="s1">&#39;_pg_last_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lag</span><span class="p">)</span>
                 <span class="n">player_lag_vars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pg_feature_name</span><span class="p">)</span>
                 
-                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span> 
-<span class="c1">#                 df_new[pg_feature_name] = df_new[pg_feature_name].fillna(0)</span>
+                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*</span> <span class="n">df_new</span><span class="p">[</span><span class="n">feature_name</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_new</span><span class="p">[</span><span class="n">minute_name</span><span class="p">]</span>
+                
+                <span class="c1"># some cases of -1 points and 0 minutes cause -inf values</span>
+                <span class="c1"># change these to NaN</span>
+                <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_new</span><span class="p">[</span><span class="n">pg_feature_name</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
                 
     <span class="k">return</span> <span class="n">df_new</span><span class="p">,</span> <span class="n">player_lag_vars</span>
 </pre></div>
@@ -13783,7 +13786,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># team level lag features</span>
@@ -13851,7 +13854,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create some lag features</span>
@@ -13875,7 +13878,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at resulting dataset for a player</span>
@@ -13892,7 +13895,7 @@ memory usage: 25.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -15105,7 +15108,7 @@ memory usage: 25.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># summary with lag features added</span>
@@ -15213,15 +15216,15 @@ Data columns (total 95 columns):
  79  total_points_last_all                       90437 non-null  int64  
  80  total_points_pg_last_all                    76046 non-null  float64
  81  total_points_last_1                         90437 non-null  float64
- 82  total_points_pg_last_1                      41583 non-null  float64
+ 82  total_points_pg_last_1                      41580 non-null  float64
  83  total_points_last_2                         90437 non-null  float64
- 84  total_points_pg_last_2                      48615 non-null  float64
+ 84  total_points_pg_last_2                      48612 non-null  float64
  85  total_points_last_3                         90437 non-null  float64
- 86  total_points_pg_last_3                      52476 non-null  float64
+ 86  total_points_pg_last_3                      52475 non-null  float64
  87  total_points_last_4                         90437 non-null  float64
- 88  total_points_pg_last_4                      55148 non-null  float64
+ 88  total_points_pg_last_4                      55147 non-null  float64
  89  total_points_last_5                         90437 non-null  float64
- 90  total_points_pg_last_5                      57171 non-null  float64
+ 90  total_points_pg_last_5                      57170 non-null  float64
  91  total_points_last_10                        90437 non-null  float64
  92  total_points_pg_last_10                     63363 non-null  float64
  93  total_points_last_20                        90437 non-null  float64
@@ -15246,7 +15249,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">player_lag_vars</span>
@@ -15262,7 +15265,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -15286,7 +15289,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">team_lag_vars</span>
@@ -15302,7 +15305,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -15342,7 +15345,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
@@ -15360,7 +15363,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -15385,7 +15388,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="n">train_df</span><span class="p">[:</span><span class="mi">89771</span><span class="p">][</span><span class="s1">&#39;player&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Mohamed_Salah&#39;</span><span class="p">][</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">90</span> 
@@ -15402,7 +15405,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -15427,7 +15430,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># points per minute across all players and minutes</span>
@@ -15444,7 +15447,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -15469,7 +15472,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extreme example of points per minute for all appearances under 10 minutes</span>
@@ -15486,7 +15489,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -15526,7 +15529,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># validation set indexes</span>
@@ -15555,7 +15558,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_season_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span><span class="mi">6</span><span class="p">)</span>
@@ -15571,7 +15574,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -15588,7 +15591,7 @@ memory usage: 65.6+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">validation_gw_idx</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -15604,7 +15607,7 @@ memory usage: 65.6+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 

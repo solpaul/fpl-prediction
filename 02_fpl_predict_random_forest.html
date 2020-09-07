@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13096,7 +13096,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to project directory</span>
@@ -13110,7 +13110,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
@@ -13124,12 +13124,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add a bunch of player lag features</span>
-<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="c1"># 2, 3, 4, 5, 10])</span>
-<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="c1">#, 2, 3, 4, 5, 10])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">team_lag_vars</span> <span class="o">=</span> <span class="n">team_lag_features</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">lag_train_df</span><span class="p">,</span> <span class="n">player_lag_vars</span> <span class="o">=</span> <span class="n">player_lag_features</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13139,7 +13139,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">imp</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
@@ -13165,10 +13165,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -13178,7 +13178,348 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lag_train_df</span><span class="p">[</span><span class="s1">&#39;total_points_pg_last_1&#39;</span><span class="p">])]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>gw</th>
+      <th>position</th>
+      <th>minutes</th>
+      <th>team</th>
+      <th>opponent_team</th>
+      <th>relative_market_value_team</th>
+      <th>relative_market_value_opponent_team</th>
+      <th>was_home</th>
+      <th>total_points</th>
+      <th>...</th>
+      <th>total_points_last_2</th>
+      <th>total_points_pg_last_2</th>
+      <th>total_points_last_3</th>
+      <th>total_points_pg_last_3</th>
+      <th>total_points_last_4</th>
+      <th>total_points_pg_last_4</th>
+      <th>total_points_last_5</th>
+      <th>total_points_pg_last_5</th>
+      <th>total_points_last_10</th>
+      <th>total_points_pg_last_10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aaron_Cresswell</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>West Ham United</td>
+      <td>Chelsea</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aaron_Lennon</td>
+      <td>1</td>
+      <td>3</td>
+      <td>15</td>
+      <td>Everton</td>
+      <td>Tottenham Hotspur</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aaron_Ramsey</td>
+      <td>1</td>
+      <td>3</td>
+      <td>60</td>
+      <td>Arsenal</td>
+      <td>Liverpool</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abdoulaye_Doucouré</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Watford</td>
+      <td>Southampton</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abdul Rahman_Baba</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Chelsea</td>
+      <td>West Ham United</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>90431</th>
+      <td>Heurelho da Silva_Gomes</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Watford</td>
+      <td>Arsenal</td>
+      <td>0.472917</td>
+      <td>1.452343</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>90432</th>
+      <td>Tommy_Doyle</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>6.0</td>
+      <td>1.0</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>90433</th>
+      <td>Joseph_Anang</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>West Ham United</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>90435</th>
+      <td>Japhet_Tanganga</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Tottenham Hotspur</td>
+      <td>Crystal Palace</td>
+      <td>1.604904</td>
+      <td>0.430493</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>1.636364</td>
+    </tr>
+    <tr>
+      <th>90436</th>
+      <td>Ravel_Morrison</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Sheffield United</td>
+      <td>Southampton</td>
+      <td>0.348678</td>
+      <td>0.526987</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>48857 rows × 88 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set validaton point/length and categorical/continuous variables</span>
@@ -13197,7 +13538,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we want to set gw and season as ordered categorical variables</span>
@@ -13220,7 +13561,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create dataset with adjusted post-validation lag numbers</span>
@@ -13237,7 +13578,20 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span> <span class="o">=</span> <span class="n">lag_train_df</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split out dependent variable</span>
@@ -13251,7 +13605,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># since position is categorical, it should be a string</span>
@@ -13278,7 +13632,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split out training and validation sets</span>
@@ -13295,10 +13649,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># need to think about imputing NaN instead of setting to zero</span>
+<span class="n">imp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">team_lag_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13311,210 +13666,14 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-53-dae7e1d43ad1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>imp<span class="ansi-blue-fg">.</span>fit<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">[</span>team_lag_vars <span class="ansi-blue-fg">+</span> player_lag_vars<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/impute/_base.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, X, y)</span>
-<span class="ansi-green-intense-fg ansi-bold">    266</span>         self <span class="ansi-blue-fg">:</span> SimpleImputer
-<span class="ansi-green-intense-fg ansi-bold">    267</span>         &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 268</span><span class="ansi-red-fg">         </span>X <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_validate_input<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    269</span>         super<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>_fit_indicator<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    270</span> 
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/impute/_base.py</span> in <span class="ansi-cyan-fg">_validate_input</span><span class="ansi-blue-fg">(self, X)</span>
-<span class="ansi-green-intense-fg ansi-bold">    240</span>                 <span class="ansi-green-fg">raise</span> new_ve <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-intense-fg ansi-bold">    241</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 242</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> ve
-<span class="ansi-green-intense-fg ansi-bold">    243</span> 
-<span class="ansi-green-intense-fg ansi-bold">    244</span>         _check_inputs_dtype<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>missing_values<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/impute/_base.py</span> in <span class="ansi-cyan-fg">_validate_input</span><span class="ansi-blue-fg">(self, X)</span>
-<span class="ansi-green-intense-fg ansi-bold">    233</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    234</span>             X = check_array(X, accept_sparse=&#39;csc&#39;, dtype=dtype,
-<span class="ansi-green-fg">--&gt; 235</span><span class="ansi-red-fg">                             force_all_finite=force_all_finite, copy=self.copy)
-</span><span class="ansi-green-intense-fg ansi-bold">    236</span>         <span class="ansi-green-fg">except</span> ValueError <span class="ansi-green-fg">as</span> ve<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    237</span>             <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#34;could not convert&#34;</span> <span class="ansi-green-fg">in</span> str<span class="ansi-blue-fg">(</span>ve<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">check_array</span><span class="ansi-blue-fg">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, warn_on_dtype, estimator)</span>
-<span class="ansi-green-intense-fg ansi-bold">    576</span>         <span class="ansi-green-fg">if</span> force_all_finite<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    577</span>             _assert_all_finite(array,
-<span class="ansi-green-fg">--&gt; 578</span><span class="ansi-red-fg">                                allow_nan=force_all_finite == &#39;allow-nan&#39;)
-</span><span class="ansi-green-intense-fg ansi-bold">    579</span> 
-<span class="ansi-green-intense-fg ansi-bold">    580</span>     <span class="ansi-green-fg">if</span> ensure_min_samples <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">_assert_all_finite</span><span class="ansi-blue-fg">(X, allow_nan, msg_dtype)</span>
-<span class="ansi-green-intense-fg ansi-bold">     58</span>                     msg_err<span class="ansi-blue-fg">.</span>format
-<span class="ansi-green-intense-fg ansi-bold">     59</span>                     (type_err,
-<span class="ansi-green-fg">---&gt; 60</span><span class="ansi-red-fg">                      msg_dtype if msg_dtype is not None else X.dtype)
-</span><span class="ansi-green-intense-fg ansi-bold">     61</span>             )
-<span class="ansi-green-intense-fg ansi-bold">     62</span>     <span class="ansi-red-fg"># for object dtype data, we only check for NaNs (GH-13254)</span>
-
-<span class="ansi-red-fg">ValueError</span>: Input contains infinity or a value too large for dtype(&#39;float64&#39;).</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># find infinities</span>
-<span class="n">X_train</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;total_points_pg_last_1&#39;</span><span class="p">])]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[83]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>gw</th>
-      <th>minutes</th>
-      <th>opponent_team_Arsenal</th>
-      <th>opponent_team_Aston Villa</th>
-      <th>opponent_team_Bournemouth</th>
-      <th>opponent_team_Brighton and Hove Albion</th>
-      <th>opponent_team_Burnley</th>
-      <th>opponent_team_Cardiff City</th>
-      <th>opponent_team_Chelsea</th>
-      <th>opponent_team_Crystal Palace</th>
-      <th>...</th>
-      <th>team_West Bromwich Albion</th>
-      <th>team_West Ham United</th>
-      <th>team_Wolverhampton Wanderers</th>
-      <th>total_points_pg_last_1</th>
-      <th>total_points_pg_last_all</th>
-      <th>total_points_team_pg_last_1</th>
-      <th>total_points_team_pg_last_1_opponent</th>
-      <th>total_points_team_pg_last_all</th>
-      <th>total_points_team_pg_last_all_opponent</th>
-      <th>was_home</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>33608</th>
-      <td>18.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-inf</td>
-      <td>3.534362</td>
-      <td>51.0</td>
-      <td>64.0</td>
-      <td>35.563636</td>
-      <td>50.436364</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>46300</th>
-      <td>1.0</td>
-      <td>90.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-inf</td>
-      <td>4.450704</td>
-      <td>60.0</td>
-      <td>64.0</td>
-      <td>54.210526</td>
-      <td>48.842105</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>2 rows × 72 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[73]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
+<pre>SimpleImputer(add_indicator=False, copy=True, fill_value=None,
+              missing_values=nan, strategy=&#39;mean&#39;, verbose=0)</pre>
 </div>
 
 </div>
@@ -13525,40 +13684,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[75]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mi">50_000</span><span class="p">,</span>
@@ -13588,7 +13714,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">rf</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
@@ -13598,59 +13724,10 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-71-6b5712342ea9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>m <span class="ansi-blue-fg">=</span> rf<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">.</span>ravel<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-70-80669aac30df&gt;</span> in <span class="ansi-cyan-fg">rf</span><span class="ansi-blue-fg">(xs, y, n_estimators, max_samples, max_features, min_samples_leaf, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>     return RandomForestRegressor(n_jobs=-1, n_estimators=n_estimators,
-<span class="ansi-green-intense-fg ansi-bold">      4</span>         max_samples<span class="ansi-blue-fg">=</span>max_samples<span class="ansi-blue-fg">,</span> max_features<span class="ansi-blue-fg">=</span>max_features<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg">         min_samples_leaf=min_samples_leaf, oob_score=True).fit(xs, y)
-</span>
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/ensemble/_forest.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, X, y, sample_weight)</span>
-<span class="ansi-green-intense-fg ansi-bold">    293</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    294</span>         <span class="ansi-red-fg"># Validate or convert input data</span>
-<span class="ansi-green-fg">--&gt; 295</span><span class="ansi-red-fg">         </span>X <span class="ansi-blue-fg">=</span> check_array<span class="ansi-blue-fg">(</span>X<span class="ansi-blue-fg">,</span> accept_sparse<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;csc&#34;</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>DTYPE<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    296</span>         y <span class="ansi-blue-fg">=</span> check_array<span class="ansi-blue-fg">(</span>y<span class="ansi-blue-fg">,</span> accept_sparse<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;csc&#39;</span><span class="ansi-blue-fg">,</span> ensure_2d<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    297</span>         <span class="ansi-green-fg">if</span> sample_weight <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">check_array</span><span class="ansi-blue-fg">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, warn_on_dtype, estimator)</span>
-<span class="ansi-green-intense-fg ansi-bold">    576</span>         <span class="ansi-green-fg">if</span> force_all_finite<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    577</span>             _assert_all_finite(array,
-<span class="ansi-green-fg">--&gt; 578</span><span class="ansi-red-fg">                                allow_nan=force_all_finite == &#39;allow-nan&#39;)
-</span><span class="ansi-green-intense-fg ansi-bold">    579</span> 
-<span class="ansi-green-intense-fg ansi-bold">    580</span>     <span class="ansi-green-fg">if</span> ensure_min_samples <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/envs/fastai/lib/python3.7/site-packages/sklearn/utils/validation.py</span> in <span class="ansi-cyan-fg">_assert_all_finite</span><span class="ansi-blue-fg">(X, allow_nan, msg_dtype)</span>
-<span class="ansi-green-intense-fg ansi-bold">     58</span>                     msg_err<span class="ansi-blue-fg">.</span>format
-<span class="ansi-green-intense-fg ansi-bold">     59</span>                     (type_err,
-<span class="ansi-green-fg">---&gt; 60</span><span class="ansi-red-fg">                      msg_dtype if msg_dtype is not None else X.dtype)
-</span><span class="ansi-green-intense-fg ansi-bold">     61</span>             )
-<span class="ansi-green-intense-fg ansi-bold">     62</span>     <span class="ansi-red-fg"># for object dtype data, we only check for NaNs (GH-13254)</span>
-
-<span class="ansi-red-fg">ValueError</span>: Input contains NaN, infinity or a value too large for dtype(&#39;float32&#39;).</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r_mse</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
@@ -13660,340 +13737,19 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_test</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 <div class="output_wrapper">
 <div class="output">
 
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>gw</th>
-      <th>minutes</th>
-      <th>opponent_team_Arsenal</th>
-      <th>opponent_team_Aston Villa</th>
-      <th>opponent_team_Bournemouth</th>
-      <th>opponent_team_Brighton and Hove Albion</th>
-      <th>opponent_team_Burnley</th>
-      <th>opponent_team_Cardiff City</th>
-      <th>opponent_team_Chelsea</th>
-      <th>opponent_team_Crystal Palace</th>
-      <th>...</th>
-      <th>team_West Bromwich Albion</th>
-      <th>team_West Ham United</th>
-      <th>team_Wolverhampton Wanderers</th>
-      <th>total_points_pg_last_1</th>
-      <th>total_points_pg_last_all</th>
-      <th>total_points_team_pg_last_1</th>
-      <th>total_points_team_pg_last_1_opponent</th>
-      <th>total_points_team_pg_last_all</th>
-      <th>total_points_team_pg_last_all_opponent</th>
-      <th>was_home</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>78390</th>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-24.545455</td>
-      <td>4.237371</td>
-      <td>25.0</td>
-      <td>35.0</td>
-      <td>55.082707</td>
-      <td>44.526316</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>78391</th>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>5.071273</td>
-      <td>86.0</td>
-      <td>55.0</td>
-      <td>54.196970</td>
-      <td>40.596491</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>78392</th>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>4.194837</td>
-      <td>36.0</td>
-      <td>23.0</td>
-      <td>49.436090</td>
-      <td>31.789474</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>78393</th>
-      <td>20.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>4.779793</td>
-      <td>70.0</td>
-      <td>20.0</td>
-      <td>41.774436</td>
-      <td>38.452632</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>78394</th>
-      <td>20.0</td>
-      <td>58.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>4.687500</td>
-      <td>35.0</td>
-      <td>25.0</td>
-      <td>44.526316</td>
-      <td>55.082707</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>82049</th>
-      <td>25.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>4.320000</td>
-      <td>20.0</td>
-      <td>23.0</td>
-      <td>38.452632</td>
-      <td>31.789474</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>82050</th>
-      <td>25.0</td>
-      <td>79.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>2.000000</td>
-      <td>4.447674</td>
-      <td>13.0</td>
-      <td>16.0</td>
-      <td>40.533835</td>
-      <td>49.721805</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>82051</th>
-      <td>25.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>12.857143</td>
-      <td>2.302017</td>
-      <td>30.0</td>
-      <td>26.0</td>
-      <td>35.242105</td>
-      <td>38.621212</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>82052</th>
-      <td>25.0</td>
-      <td>90.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>3.546372</td>
-      <td>13.0</td>
-      <td>16.0</td>
-      <td>40.533835</td>
-      <td>49.721805</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>82053</th>
-      <td>25.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-      <td>2.195122</td>
-      <td>60.0</td>
-      <td>32.0</td>
-      <td>38.421053</td>
-      <td>38.345865</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>3664 rows × 72 columns</p>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1.805422</pre>
 </div>
 
 </div>

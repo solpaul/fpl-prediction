@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import required libriaries</span>
@@ -13091,7 +13091,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to data directory</span>
@@ -13106,17 +13106,379 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;teams.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>team_code</th>
+      <th>team_1617</th>
+      <th>team_1718</th>
+      <th>team_1819</th>
+      <th>team_1920</th>
+      <th>team_2021</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arsenal</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bournemouth</td>
+      <td>91</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Burnley</td>
+      <td>90</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Chelsea</td>
+      <td>8</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Crystal Palace</td>
+      <td>31</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Everton</td>
+      <td>11</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Hull City</td>
+      <td>88</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Leicester City</td>
+      <td>13</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Liverpool</td>
+      <td>14</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Manchester City</td>
+      <td>43</td>
+      <td>10.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>11.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Manchester United</td>
+      <td>1</td>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>12.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Middlesbrough</td>
+      <td>25</td>
+      <td>12.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Southampton</td>
+      <td>20</td>
+      <td>13.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>16.0</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Stoke City</td>
+      <td>110</td>
+      <td>14.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sunderland</td>
+      <td>56</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Swansea City</td>
+      <td>80</td>
+      <td>16.0</td>
+      <td>16.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Tottenham Hotspur</td>
+      <td>6</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Watford</td>
+      <td>57</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>West Bromwich Albion</td>
+      <td>35</td>
+      <td>19.0</td>
+      <td>19.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>West Ham United</td>
+      <td>21</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>19.0</td>
+      <td>19.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Brighton and Hove Albion</td>
+      <td>36</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Huddersfield Town</td>
+      <td>38</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Newcastle United</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>13.0</td>
+      <td>15.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Cardiff City</td>
+      <td>97</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Fulham</td>
+      <td>54</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Wolverhampton Wanderers</td>
+      <td>39</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Aston Villa</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Norwich</td>
+      <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Sheffield United</td>
+      <td>49</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Leeds</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in latest training set</span>
-<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_v3.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_v4.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
 
 <span class="c1"># path to current season</span>
-<span class="n">season_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;2019-20&#39;</span><span class="p">]</span>
+<span class="n">season_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;2020-21&#39;</span><span class="p">]</span>
 
 <span class="c1"># name for current season</span>
-<span class="n">season_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1920&#39;</span><span class="p">]</span>
+<span class="n">season_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2021&#39;</span><span class="p">]</span>
 
 <span class="c1"># team codes</span>
 <span class="n">teams</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;teams.csv&#39;</span><span class="p">)</span>
@@ -13130,7 +13492,7 @@ div#notebook {
 <span class="c1"># 2019-20 market value</span>
 <span class="c1"># table was in slightly different position for 2019-20 season</span>
 <span class="c1"># should check that 2019-20 season values remain the same once season starts</span>
-<span class="n">teams_mv</span> <span class="o">=</span> <span class="n">build_season_mv</span><span class="p">(</span><span class="s1">&#39;1920&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">33</span><span class="p">))</span>
+<span class="n">teams_mv</span> <span class="o">=</span> <span class="n">build_season_mv</span><span class="p">(</span><span class="s1">&#39;2021&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">33</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -16511,10 +16873,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df_train_new = pd.read_csv(path/&#39;train_v3.csv&#39;, index_col=0, dtype={&#39;season&#39;:str})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train_new</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;train_v4.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;season&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">})</span>
 </pre></div>
 
     </div>
@@ -16539,13 +16901,355 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train_new</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>player</th>
+      <th>gw</th>
+      <th>position</th>
+      <th>minutes</th>
+      <th>team</th>
+      <th>opponent_team</th>
+      <th>relative_market_value_team</th>
+      <th>relative_market_value_opponent_team</th>
+      <th>was_home</th>
+      <th>total_points</th>
+      <th>...</th>
+      <th>threat</th>
+      <th>transfers_balance</th>
+      <th>transfers_in</th>
+      <th>transfers_out</th>
+      <th>yellow_cards</th>
+      <th>kickoff_time</th>
+      <th>season</th>
+      <th>play_proba</th>
+      <th>relative_market_value_team_season</th>
+      <th>relative_market_value_opponent_team_season</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aaron_Cresswell</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>West Ham United</td>
+      <td>Chelsea</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-15T19:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.895471</td>
+      <td>2.243698</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Aaron_Lennon</td>
+      <td>1</td>
+      <td>3</td>
+      <td>15</td>
+      <td>Everton</td>
+      <td>Tottenham Hotspur</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-13T14:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>1.057509</td>
+      <td>1.433690</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aaron_Ramsey</td>
+      <td>1</td>
+      <td>3</td>
+      <td>60</td>
+      <td>Arsenal</td>
+      <td>Liverpool</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>2</td>
+      <td>...</td>
+      <td>23.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-14T15:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>1.944129</td>
+      <td>1.465860</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abdoulaye_Doucouré</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Watford</td>
+      <td>Southampton</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-13T14:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>0.704200</td>
+      <td>0.796805</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abdul Rahman_Baba</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Chelsea</td>
+      <td>West Ham United</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2016-08-15T19:00:00Z</td>
+      <td>1617</td>
+      <td>NaN</td>
+      <td>2.243698</td>
+      <td>0.895471</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>90432</th>
+      <td>Tommy_Doyle</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-2</td>
+      <td>22</td>
+      <td>24</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.727025</td>
+      <td>0.198300</td>
+    </tr>
+    <tr>
+      <th>90433</th>
+      <td>Joseph_Anang</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>West Ham United</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>70</td>
+      <td>270</td>
+      <td>200</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>0.739196</td>
+      <td>0.338194</td>
+    </tr>
+    <tr>
+      <th>90434</th>
+      <td>Erik_Pieters</td>
+      <td>38</td>
+      <td>2</td>
+      <td>90</td>
+      <td>Burnley</td>
+      <td>Brighton and Hove Albion</td>
+      <td>0.370648</td>
+      <td>0.541184</td>
+      <td>True</td>
+      <td>3</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>139816</td>
+      <td>144388</td>
+      <td>4572</td>
+      <td>1</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>0.441799</td>
+      <td>0.476156</td>
+    </tr>
+    <tr>
+      <th>90435</th>
+      <td>Japhet_Tanganga</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Tottenham Hotspur</td>
+      <td>Crystal Palace</td>
+      <td>1.604904</td>
+      <td>0.430493</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>7999</td>
+      <td>14840</td>
+      <td>6841</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.0</td>
+      <td>2.113981</td>
+      <td>0.495374</td>
+    </tr>
+    <tr>
+      <th>90436</th>
+      <td>Ravel_Morrison</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Sheffield United</td>
+      <td>Southampton</td>
+      <td>0.348678</td>
+      <td>0.526987</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-23</td>
+      <td>7</td>
+      <td>30</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.0</td>
+      <td>0.150631</td>
+      <td>0.624210</td>
+    </tr>
+  </tbody>
+</table>
+<p>90437 rows × 37 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## now need to create the prediction set</span>
 <span class="c1"># start by reading fixtures.csv</span>
 <span class="c1"># set starting gameweek (where are we right now in the season)</span>
-<span class="n">current_gw</span> <span class="o">=</span> <span class="n">last_gw</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">current_gw</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># current_gw = last_gw + 1</span>
 <span class="n">fixtures</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;fixtures.csv&#39;</span><span class="p">)</span>
 <span class="n">fixtures</span> <span class="o">=</span> <span class="n">fixtures</span><span class="p">[</span><span class="n">fixtures</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">current_gw</span><span class="p">]</span>
 </pre></div>
@@ -16557,7 +17261,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fixtures</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -16573,7 +17277,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -16603,64 +17307,124 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
-      <th>370</th>
+      <th>0</th>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>38</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>371</th>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>372</th>
-      <td>Chelsea</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>373</th>
+      <th>1</th>
       <td>Crystal Palace</td>
-      <td>Tottenham Hotspur</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>374</th>
-      <td>Everton</td>
-      <td>Bournemouth</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>375</th>
-      <td>Leicester City</td>
-      <td>Manchester United</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>376</th>
-      <td>Manchester City</td>
-      <td>Norwich</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>377</th>
-      <td>Newcastle United</td>
-      <td>Liverpool</td>
-      <td>38</td>
-    </tr>
-    <tr>
-      <th>378</th>
       <td>Southampton</td>
-      <td>Sheffield United</td>
-      <td>38</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>379</th>
+      <th>2</th>
       <td>West Ham United</td>
+      <td>Newcastle United</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Liverpool</td>
+      <td>Leeds</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>West Bromwich Albion</td>
+      <td>Leicester City</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Tottenham Hotspur</td>
+      <td>Everton</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Brighton and Hove Albion</td>
+      <td>Chelsea</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Sheffield United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Burnley</td>
+      <td>Manchester United</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Manchester City</td>
       <td>Aston Villa</td>
-      <td>38</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Everton</td>
+      <td>West Bromwich Albion</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Leeds</td>
+      <td>Fulham</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Leicester City</td>
+      <td>Burnley</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Manchester United</td>
+      <td>Crystal Palace</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Southampton</td>
+      <td>Tottenham Hotspur</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Arsenal</td>
+      <td>West Ham United</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Aston Villa</td>
+      <td>Sheffield United</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Newcastle United</td>
+      <td>Brighton and Hove Albion</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Chelsea</td>
+      <td>Liverpool</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Wolverhampton Wanderers</td>
+      <td>Manchester City</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -16675,7 +17439,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add team codes for home and away teams</span>
@@ -16695,7 +17459,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fixtures</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16711,7 +17475,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -16744,43 +17508,43 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
+      <td>54</td>
       <td>3</td>
-      <td>57</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>90</td>
-      <td>36</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>31</td>
+      <td>20</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>38</td>
-      <td>Chelsea</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>8</td>
-      <td>39</td>
+      <td>1</td>
+      <td>West Ham United</td>
+      <td>Newcastle United</td>
+      <td>21</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>38</td>
-      <td>Crystal Palace</td>
-      <td>Tottenham Hotspur</td>
-      <td>31</td>
-      <td>6</td>
+      <td>1</td>
+      <td>Liverpool</td>
+      <td>Leeds</td>
+      <td>14</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>38</td>
-      <td>Everton</td>
-      <td>Bournemouth</td>
-      <td>11</td>
-      <td>91</td>
+      <td>1</td>
+      <td>West Bromwich Albion</td>
+      <td>Leicester City</td>
+      <td>35</td>
+      <td>13</td>
     </tr>
   </tbody>
 </table>
@@ -16795,59 +17559,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># join home team to all players for current season</span>
-<span class="n">home_df</span> <span class="o">=</span> <span class="n">fixtures</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_players</span><span class="p">,</span> 
-               <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;home_team_code&#39;</span><span class="p">,</span> 
-               <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team_1920&#39;</span><span class="p">,</span> 
-               <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-
-<span class="c1"># pull out the required fields and rename columns</span>
-<span class="n">home_df</span> <span class="o">=</span> <span class="n">home_df</span><span class="p">[[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;full_name&#39;</span><span class="p">,</span> <span class="s1">&#39;position_1920&#39;</span><span class="p">,</span> <span class="s1">&#39;cost_1920&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba_1920&#39;</span><span class="p">]]</span>
-<span class="n">home_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
-               <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;home_team&#39;</span><span class="p">:</span><span class="s1">&#39;team&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;away_team&#39;</span><span class="p">:</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;full_name&#39;</span><span class="p">:</span><span class="s1">&#39;player&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;position_1920&#39;</span><span class="p">:</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;cost_1920&#39;</span><span class="p">:</span><span class="s1">&#39;price&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;play_proba_1920&#39;</span><span class="p">:</span><span class="s1">&#39;play_proba&#39;</span><span class="p">},</span>
-              <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># add home flag</span>
-<span class="n">home_df</span><span class="p">[</span><span class="s1">&#39;was_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># join away team to all players for current season</span>
-<span class="n">away_df</span> <span class="o">=</span> <span class="n">fixtures</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_players</span><span class="p">,</span> 
-               <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;away_team_code&#39;</span><span class="p">,</span> 
-               <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team_1920&#39;</span><span class="p">,</span> 
-               <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-
-<span class="c1"># pull out the required fields and rename columns</span>
-<span class="n">away_df</span> <span class="o">=</span> <span class="n">away_df</span><span class="p">[[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span>  <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;full_name&#39;</span><span class="p">,</span> <span class="s1">&#39;position_1920&#39;</span><span class="p">,</span> <span class="s1">&#39;cost_1920&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba_1920&#39;</span><span class="p">]]</span>
-<span class="n">away_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
-               <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;away_team&#39;</span><span class="p">:</span><span class="s1">&#39;team&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;home_team&#39;</span><span class="p">:</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;full_name&#39;</span><span class="p">:</span><span class="s1">&#39;player&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;position_1920&#39;</span><span class="p">:</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;cost_1920&#39;</span><span class="p">:</span><span class="s1">&#39;price&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;play_proba_1920&#39;</span><span class="p">:</span><span class="s1">&#39;play_proba&#39;</span><span class="p">},</span>
-              <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># add home flag</span>
-<span class="n">away_df</span><span class="p">[</span><span class="s1">&#39;was_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># all_players.replace(to_replace=&#39;None&#39;, value=1, inplace=True)</span>
 </pre></div>
 
     </div>
@@ -16860,8 +17575,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at away players</span>
-<span class="n">away_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_players</span><span class="p">[</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;play_proba_2021&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;50&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -16897,71 +17611,59 @@ div#notebook {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>gw</th>
-      <th>team</th>
-      <th>opponent_team</th>
-      <th>player</th>
-      <th>position</th>
-      <th>price</th>
-      <th>play_proba</th>
-      <th>was_home</th>
+      <th>full_name</th>
+      <th>play_proba_2021</th>
+      <th>position_2021</th>
+      <th>id_2021</th>
+      <th>cost_2021</th>
+      <th>team_2021</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>38</td>
-      <td>Watford</td>
-      <td>Arsenal</td>
-      <td>José_Holebas</td>
-      <td>2</td>
-      <td>46</td>
-      <td>0</td>
-      <td>False</td>
+      <th>122</th>
+      <td>Christian_Pulisic</td>
+      <td>50</td>
+      <td>3</td>
+      <td>119</td>
+      <td>85</td>
+      <td>8</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>38</td>
-      <td>Watford</td>
-      <td>Arsenal</td>
-      <td>Christian_Kabasele</td>
-      <td>2</td>
-      <td>43</td>
-      <td>100</td>
-      <td>False</td>
+      <th>220</th>
+      <td>James_Maddison</td>
+      <td>50</td>
+      <td>3</td>
+      <td>231</td>
+      <td>70</td>
+      <td>13</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>38</td>
-      <td>Watford</td>
-      <td>Arsenal</td>
-      <td>Adam_Masina</td>
+      <th>256</th>
+      <td>Konstantinos_Tsimikas</td>
+      <td>50</td>
       <td>2</td>
-      <td>43</td>
-      <td>100</td>
-      <td>False</td>
+      <td>242</td>
+      <td>50</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>38</td>
-      <td>Watford</td>
-      <td>Arsenal</td>
-      <td>Adrian_Mariappa</td>
-      <td>2</td>
-      <td>41</td>
-      <td>100</td>
-      <td>False</td>
+      <th>262</th>
+      <td>Alex_Oxlade-Chamberlain</td>
+      <td>50</td>
+      <td>3</td>
+      <td>248</td>
+      <td>65</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>38</td>
-      <td>Watford</td>
-      <td>Arsenal</td>
-      <td>Francisco_Femenía Far</td>
-      <td>2</td>
-      <td>42</td>
-      <td>100</td>
-      <td>False</td>
+      <th>337</th>
+      <td>Matt_Ritchie</td>
+      <td>50</td>
+      <td>3</td>
+      <td>322</td>
+      <td>50</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -16976,11 +17678,72 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at home players</span>
-<span class="n">home_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># join home team to all players for current season</span>
+<span class="n">home_df</span> <span class="o">=</span> <span class="n">fixtures</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_players</span><span class="p">,</span> 
+               <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;home_team_code&#39;</span><span class="p">,</span> 
+               <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team_2021&#39;</span><span class="p">,</span> 
+               <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># pull out the required fields and rename columns</span>
+<span class="n">home_df</span> <span class="o">=</span> <span class="n">home_df</span><span class="p">[[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;full_name&#39;</span><span class="p">,</span> <span class="s1">&#39;position_2021&#39;</span><span class="p">,</span> <span class="s1">&#39;cost_2021&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba_2021&#39;</span><span class="p">]]</span>
+<span class="n">home_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
+               <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;home_team&#39;</span><span class="p">:</span><span class="s1">&#39;team&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;away_team&#39;</span><span class="p">:</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;full_name&#39;</span><span class="p">:</span><span class="s1">&#39;player&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;position_2021&#39;</span><span class="p">:</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;cost_2021&#39;</span><span class="p">:</span><span class="s1">&#39;price&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;play_proba_2021&#39;</span><span class="p">:</span><span class="s1">&#39;play_proba&#39;</span><span class="p">},</span>
+              <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># add home flag</span>
+<span class="n">home_df</span><span class="p">[</span><span class="s1">&#39;was_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># join away team to all players for current season</span>
+<span class="n">away_df</span> <span class="o">=</span> <span class="n">fixtures</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_players</span><span class="p">,</span> 
+               <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;away_team_code&#39;</span><span class="p">,</span> 
+               <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;team_2021&#39;</span><span class="p">,</span> 
+               <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># pull out the required fields and rename columns</span>
+<span class="n">away_df</span> <span class="o">=</span> <span class="n">away_df</span><span class="p">[[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span>  <span class="s1">&#39;away_team&#39;</span><span class="p">,</span> <span class="s1">&#39;home_team&#39;</span><span class="p">,</span> <span class="s1">&#39;full_name&#39;</span><span class="p">,</span> <span class="s1">&#39;position_2021&#39;</span><span class="p">,</span> <span class="s1">&#39;cost_2021&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba_2021&#39;</span><span class="p">]]</span>
+<span class="n">away_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> 
+               <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;away_team&#39;</span><span class="p">:</span><span class="s1">&#39;team&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;home_team&#39;</span><span class="p">:</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;full_name&#39;</span><span class="p">:</span><span class="s1">&#39;player&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;position_2021&#39;</span><span class="p">:</span><span class="s1">&#39;position&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;cost_2021&#39;</span><span class="p">:</span><span class="s1">&#39;price&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;play_proba_2021&#39;</span><span class="p">:</span><span class="s1">&#39;play_proba&#39;</span><span class="p">},</span>
+              <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># add home flag</span>
+<span class="n">away_df</span><span class="p">[</span><span class="s1">&#39;was_home&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_players</span><span class="p">[</span><span class="n">all_players</span><span class="p">[</span><span class="s1">&#39;full_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Fabricio_Agosto Ramírez&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -16993,7 +17756,78 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>full_name</th>
+      <th>play_proba_2021</th>
+      <th>position_2021</th>
+      <th>id_2021</th>
+      <th>cost_2021</th>
+      <th>team_2021</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>180</th>
+      <td>Fabricio_Agosto Ramírez</td>
+      <td>None</td>
+      <td>1</td>
+      <td>171</td>
+      <td>40</td>
+      <td>54</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at away players</span>
+<span class="n">away_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -17029,57 +17863,176 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>38</td>
+      <td>1</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Shkodran_Mustafi</td>
+      <td>Fulham</td>
+      <td>Mesut_Özil</td>
+      <td>3</td>
+      <td>70</td>
+      <td>None</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Arsenal</td>
+      <td>Fulham</td>
+      <td>Sokratis_Papastathopoulos</td>
       <td>2</td>
-      <td>51</td>
-      <td>0</td>
+      <td>50</td>
+      <td>None</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Arsenal</td>
+      <td>Fulham</td>
+      <td>David_Luiz Moreira Marinho</td>
+      <td>2</td>
+      <td>55</td>
+      <td>None</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>Arsenal</td>
+      <td>Fulham</td>
+      <td>Pierre-Emerick_Aubameyang</td>
+      <td>3</td>
+      <td>120</td>
+      <td>None</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>Arsenal</td>
+      <td>Fulham</td>
+      <td>Cédric_Soares</td>
+      <td>2</td>
+      <td>50</td>
+      <td>None</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># look at home players</span>
+<span class="n">home_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gw</th>
+      <th>team</th>
+      <th>opponent_team</th>
+      <th>player</th>
+      <th>position</th>
+      <th>price</th>
+      <th>play_proba</th>
+      <th>was_home</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Fabricio_Agosto Ramírez</td>
+      <td>1</td>
+      <td>40</td>
+      <td>None</td>
       <td>True</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Héctor_Bellerín</td>
-      <td>2</td>
-      <td>52</td>
-      <td>100</td>
+      <td>Kevin_McDonald</td>
+      <td>3</td>
+      <td>50</td>
+      <td>None</td>
       <td>True</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Sead_Kolasinac</td>
+      <td>Maxime_Le Marchand</td>
       <td>2</td>
-      <td>52</td>
-      <td>100</td>
+      <td>45</td>
+      <td>None</td>
       <td>True</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Ainsley_Maitland-Niles</td>
-      <td>2</td>
-      <td>45</td>
-      <td>100</td>
+      <td>Stefan_Johansen</td>
+      <td>3</td>
+      <td>50</td>
+      <td>None</td>
       <td>True</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Sokratis_Papastathopoulos</td>
-      <td>2</td>
-      <td>48</td>
-      <td>100</td>
+      <td>Tom_Cairney</td>
+      <td>3</td>
+      <td>55</td>
+      <td>None</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -17095,13 +18048,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate average minutes over last 5 gameweeks</span>
 <span class="c1"># first get last 5 gameweeks</span>
-<span class="n">recent_mins</span> <span class="o">=</span> <span class="n">df_train_new</span><span class="p">[(</span><span class="n">df_train_new</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">current_gw</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> 
-                           <span class="p">(</span><span class="n">df_train_new</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">season_names</span><span class="p">[</span><span class="mi">0</span><span class="p">])][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba&#39;</span><span class="p">]]</span>
+<span class="c1"># recent_mins = df_train_new[(df_train_new[&#39;gw&#39;] &gt;= current_gw - 5) &amp; </span>
+<span class="c1">#                            (df_train_new[&#39;season&#39;] == season_names[0])][[&#39;player&#39;, &#39;minutes&#39;, &#39;play_proba&#39;]]</span>
+
+<span class="n">recent_mins</span> <span class="o">=</span> <span class="n">df_train_new</span><span class="p">[(</span><span class="n">df_train_new</span><span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">39</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> 
+                           <span class="p">(</span><span class="n">df_train_new</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">)][[</span><span class="s1">&#39;player&#39;</span><span class="p">,</span> <span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;play_proba&#39;</span><span class="p">]]</span>
 
 <span class="c1"># exclude weeks where the player had an injury designation (i.e. keep where play_proba is 1)</span>
 <span class="n">recent_mins</span> <span class="o">=</span> <span class="n">recent_mins</span><span class="p">[</span><span class="n">recent_mins</span><span class="p">[</span><span class="s1">&#39;play_proba&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
@@ -17124,352 +18080,356 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Aaron_Connolly&#39;: 29.6,
- &#39;Aaron_Cresswell&#39;: 86.8,
- &#39;Aaron_Mooy&#39;: 53.6,
+<pre>{&#39;Aaron_Connolly&#39;: 33.2,
+ &#39;Aaron_Cresswell&#39;: 86.0,
+ &#39;Aaron_Mooy&#39;: 42.6,
  &#39;Aaron_Ramsdale&#39;: 90.0,
  &#39;Aaron_Wan-Bissaka&#39;: 76.0,
- &#39;Abdoulaye_Doucouré&#39;: 84.4,
+ &#39;Abdoulaye_Doucouré&#39;: 82.4,
  &#39;Adalberto_Peñaranda&#39;: 0.0,
- &#39;Adam_Idah&#39;: 14.6,
+ &#39;Adam_Idah&#39;: 12.6,
  &#39;Adam_Lallana&#39;: 0.0,
- &#39;Adam_Masina&#39;: 50.8,
- &#39;Adam_Smith&#39;: 69.0,
+ &#39;Adam_Masina&#39;: 63.6,
+ &#39;Adam_Smith&#39;: 62.0,
  &#39;Adam_Webster&#39;: 90.0,
- &#39;Adama_Traoré&#39;: 71.6,
- &#39;Adrian_Mariappa&#39;: 45.0,
+ &#39;Adama_Traoré&#39;: 62.6,
+ &#39;Adrian_Mariappa&#39;: 36.0,
  &#39;Adrián_San Miguel del Castillo&#39;: 0.0,
- &#39;Ahmed_El Mohamady&#39;: 40.8,
- &#39;Ainsley_Maitland-Niles&#39;: 9.8,
+ &#39;Ahmed_El Mohamady&#39;: 51.0,
+ &#39;Ainsley_Maitland-Niles&#39;: 21.0,
+ &#39;Akin_Famewo&#39;: 1.0,
  &#39;Albian_Ajeti&#39;: 0.8,
- &#39;Alex_Iwobi&#39;: 35.25,
+ &#39;Alex_Cochrane&#39;: 0.0,
+ &#39;Alex_Iwobi&#39;: 24.0,
  &#39;Alex_McCarthy&#39;: 90.0,
- &#39;Alex_Oxlade-Chamberlain&#39;: 40.0,
- &#39;Alexander_Tettey&#39;: 83.75,
+ &#39;Alex_Oxlade-Chamberlain&#39;: 40.6,
+ &#39;Alexander_Tettey&#39;: 86.0,
  &#39;Alexandre Nascimento_Costa Silva&#39;: 0.0,
  &#39;Alexandre_Jankewitz&#39;: 0.0,
- &#39;Alexandre_Lacazette&#39;: 62.8,
- &#39;Alexis_Mac Allister&#39;: 25.4,
+ &#39;Alexandre_Lacazette&#39;: 72.6,
+ &#39;Alexis_Mac Allister&#39;: 37.8,
  &#39;Alfie_Lewis&#39;: 0.0,
  &#39;Alfie_Whiteman&#39;: 0.0,
- &#39;Alireza_Jahanbakhsh&#39;: 4.0,
+ &#39;Alireza_Jahanbakhsh&#39;: 5.0,
  &#39;Alisson_Ramses Becker&#39;: 90.0,
- &#39;Allan_Saint-Maximin&#39;: 52.666666666666664,
+ &#39;Allan_Saint-Maximin&#39;: 45.0,
  &#39;Andre_Gray&#39;: 4.8,
- &#39;Andreas_Christensen&#39;: 45.0,
+ &#39;Andreas_Christensen&#39;: 27.0,
  &#39;Andreas_Pereira&#39;: 0.0,
  &#39;Andrew_Robertson&#39;: 81.0,
  &#39;Andrew_Surman&#39;: 0.0,
- &#39;Andriy_Yarmolenko&#39;: 18.6,
- &#39;Andros_Townsend&#39;: 44.6,
+ &#39;Andriy_Yarmolenko&#39;: 24.6,
+ &#39;Andros_Townsend&#39;: 61.0,
  &#39;André Filipe_Tavares Gomes&#39;: 73.66666666666667,
- &#39;Andy_Carroll&#39;: 4.5,
+ &#39;Andy_Carroll&#39;: 10.0,
  &#39;Andy_Lonergan&#39;: 0.0,
  &#39;Angelo_Ogbonna&#39;: 89.2,
  &#39;Angus_Gunn&#39;: 0.0,
  &#39;Anthony_Driscoll-Glennon&#39;: 0.0,
- &#39;Anthony_Gordon&#39;: 41.4,
- &#39;Anthony_Martial&#39;: 85.4,
- &#39;Antonio_Rüdiger&#39;: 45.0,
- &#39;Anwar_El Ghazi&#39;: 31.6,
+ &#39;Anthony_Gordon&#39;: 38.8,
+ &#39;Anthony_Martial&#39;: 87.6,
+ &#39;Antonio_Rüdiger&#39;: 63.0,
+ &#39;Anwar_El Ghazi&#39;: 17.2,
  &#39;Archie_Mair&#39;: 0.0,
  &#39;Armando_Broja&#39;: 0.0,
- &#39;Arnaut_Danjuma Groeneveld&#39;: 18.0,
- &#39;Arthur_Masuaku&#39;: 5.5,
+ &#39;Arnaut_Danjuma Groeneveld&#39;: 9.0,
+ &#39;Arthur_Masuaku&#39;: 4.4,
  &#39;Artur_Boruc&#39;: 0.0,
  &#39;Ashley_Westwood&#39;: 90.0,
  &#39;Aymeric_Laporte&#39;: 50.6,
  &#39;Ayotomiwa_Dele-Bashiru&#39;: 0.0,
- &#39;Ayoze_Pérez&#39;: 68.0,
+ &#39;Ayoze_Pérez&#39;: 57.5,
  &#39;Bailey_Peacock-Farrell&#39;: 0.0,
- &#39;Bamidele_Alli&#39;: 0.0,
+ &#39;Bamidele_Alli&#39;: 10.0,
  &#39;Ben_Davies&#39;: 90.0,
  &#39;Ben_Foster&#39;: 90.0,
  &#39;Ben_Godfrey&#39;: 90.0,
- &#39;Ben_Johnson&#39;: 36.0,
- &#39;Ben_Mee&#39;: 0.0,
- &#39;Ben_Osborn&#39;: 74.8,
+ &#39;Ben_Johnson&#39;: 54.0,
+ &#39;Ben_Osborn&#39;: 56.8,
  &#39;Beni_Baningime&#39;: 0.0,
- &#39;Benjamin_Chilwell&#39;: 45.0,
  &#39;Benjamin_Mendy&#39;: 27.8,
  &#39;Beram_Kayal&#39;: 0.0,
- &#39;Bernard_Anício Caldeira Duarte&#39;: 26.8,
- &#39;Bernardo Mota_Veiga de Carvalho e Silva&#39;: 68.8,
+ &#39;Bernard_Anício Caldeira Duarte&#39;: 26.2,
+ &#39;Bernardo Mota_Veiga de Carvalho e Silva&#39;: 51.8,
  &#39;Bernardo_Costa Da Rosa&#39;: 0.0,
- &#39;Bernardo_Fernandes da Silva Junior&#39;: 21.6,
- &#39;Billy_Gilmour&#39;: 45.5,
- &#39;Billy_Sharp&#39;: 33.4,
+ &#39;Bernardo_Fernandes da Silva Junior&#39;: 21.4,
+ &#39;Billy_Gilmour&#39;: 79.0,
+ &#39;Billy_Sharp&#39;: 40.0,
  &#39;Bobby_Thomas&#39;: 0.0,
  &#39;Brandon_Austin&#39;: 0.0,
  &#39;Brandon_Pierrick&#39;: 0.0,
- &#39;Brandon_Williams&#39;: 13.0,
- &#39;Bruno André_Cavaco Jordao&#39;: 0.0,
- &#39;Bruno Miguel_Borges Fernandes&#39;: 84.6,
- &#39;Bukayo_Saka&#39;: 61.6,
- &#39;Callum_Hudson-Odoi&#39;: 13.8,
- &#39;Callum_Wilson&#39;: 72.5,
+ &#39;Brandon_Williams&#39;: 43.0,
+ &#39;Bruno André_Cavaco Jordao&#39;: 1.2,
+ &#39;Bruno Miguel_Borges Fernandes&#39;: 83.6,
+ &#39;Bukayo_Saka&#39;: 46.6,
+ &#39;Callum_Hudson-Odoi&#39;: 13.4,
+ &#39;Callum_Wilson&#39;: 76.0,
  &#39;Caoimhin_Kelleher&#39;: 0.0,
- &#39;Charlie_Taylor&#39;: 74.75,
- &#39;Che_Adams&#39;: 54.0,
- &#39;Cheikhou_Kouyaté&#39;: 50.2,
- &#39;Chris_Basham&#39;: 78.25,
- &#39;Chris_Mepham&#39;: 0.0,
- &#39;Chris_Wood&#39;: 66.0,
+ &#39;Charlie_Taylor&#39;: 69.66666666666667,
+ &#39;Che_Adams&#39;: 57.0,
+ &#39;Cheikhou_Kouyaté&#39;: 62.2,
+ &#39;Chris_Basham&#39;: 79.5,
+ &#39;Chris_Wood&#39;: 70.8,
  &#39;Christian_Atsu&#39;: 1.2,
- &#39;Christian_Benteke&#39;: 87.0,
- &#39;Christian_Fuchs&#39;: 34.0,
+ &#39;Christian_Benteke&#39;: 90.0,
+ &#39;Christian_Fuchs&#39;: 40.333333333333336,
  &#39;Christian_Kabasele&#39;: 90.0,
- &#39;Christian_Pulisic&#39;: 71.2,
+ &#39;Christian_Pulisic&#39;: 68.6,
  &#39;Christian_Saydee&#39;: 0.0,
+ &#39;Christoph_Zimmermann&#39;: 90.0,
  &#39;Claudio_Bravo&#39;: 0.0,
  &#39;Cole_Palmer&#39;: 0.0,
  &#39;Conor_Coady&#39;: 90.0,
  &#39;Conor_Coventry&#39;: 0.0,
- &#39;Conor_Hourihane&#39;: 54.6,
+ &#39;Conor_Hourihane&#39;: 69.6,
  &#39;Craig_Cathcart&#39;: 0.0,
  &#39;Craig_Dawson&#39;: 90.0,
  &#39;Curtis_Jones&#39;: 19.4,
- &#39;Cédric_Soares&#39;: 46.8,
+ &#39;Cédric_Soares&#39;: 31.8,
  &#39;César_Azpilicueta&#39;: 90.0,
- &#39;Dale_Stephens&#39;: 62.4,
+ &#39;Dale_Stephens&#39;: 78.2,
  &#39;Dan_Burn&#39;: 74.4,
- &#39;Dan_Gosling&#39;: 46.2,
- &#39;Daniel_Castelo Podence&#39;: 42.0,
- &#39;Daniel_Ceballos Fernández&#39;: 74.8,
+ &#39;Dan_Gosling&#39;: 59.4,
+ &#39;Daniel_Castelo Podence&#39;: 48.2,
+ &#39;Daniel_Ceballos Fernández&#39;: 72.6,
  &#39;Daniel_Drinkwater&#39;: 0.0,
- &#39;Daniel_James&#39;: 6.4,
+ &#39;Daniel_James&#39;: 3.4,
  &#34;Daniel_N&#39;Lundulu&#34;: 0.0,
  &#39;Danny_Ings&#39;: 90.0,
- &#39;Danny_Rose&#39;: 51.6,
+ &#39;Danny_Rose&#39;: 66.2,
  &#39;Danny_Ward&#39;: 0.0,
- &#39;Danny_Welbeck&#39;: 64.0,
+ &#39;Danny_Welbeck&#39;: 75.6,
  &#39;Darnell_Johnson&#39;: 0.0,
  &#39;Darren_Randolph&#39;: 0.0,
- &#39;David_Brooks&#39;: 44.0,
+ &#39;David_Brooks&#39;: 48.5,
  &#39;David_Button&#39;: 0.0,
  &#39;David_Luiz Moreira Marinho&#39;: 83.8,
  &#39;David_Martin&#39;: 0.0,
- &#39;David_McGoldrick&#39;: 56.25,
- &#39;David_Silva&#39;: 59.2,
+ &#39;David_McGoldrick&#39;: 33.75,
+ &#39;David_Silva&#39;: 58.0,
  &#39;David_de Gea&#39;: 90.0,
- &#39;Davinson_Sánchez&#39;: 54.0,
- &#39;Davy_Pröpper&#39;: 53.0,
+ &#39;Davinson_Sánchez&#39;: 54.2,
+ &#39;Davy_Pröpper&#39;: 45.8,
  &#39;DeAndre_Yedlin&#39;: 28.8,
  &#39;Dean_Henderson&#39;: 90.0,
  &#39;Declan_Rice&#39;: 90.0,
  &#39;Dejan_Lovren&#39;: 0.0,
- &#39;Demarai_Gray&#39;: 14.6,
+ &#39;Demarai_Gray&#39;: 18.0,
  &#39;Dennis_Cirkin&#39;: 0.0,
- &#39;Dennis_Praet&#39;: 19.8,
+ &#39;Dennis_Praet&#39;: 18.0,
  &#39;Diego_Rico&#39;: 90.0,
- &#39;Diogo_Jota&#39;: 50.8,
- &#39;Divock_Origi&#39;: 14.0,
- &#39;Djibril_Sidibé&#39;: 29.6,
+ &#39;Diogo_Jota&#39;: 60.4,
+ &#39;Divock_Origi&#39;: 14.6,
+ &#39;Djibril_Sidibé&#39;: 33.4,
  &#39;Domingos_Quina&#39;: 0.0,
- &#39;Dominic_Calvert-Lewin&#39;: 85.4,
- &#39;Dominic_Solanke&#39;: 48.6,
+ &#39;Dominic_Calvert-Lewin&#39;: 71.4,
+ &#39;Dominic_Solanke&#39;: 48.2,
  &#39;Douglas Luiz_Soares de Paulo&#39;: 88.6,
  &#39;Dwight_Gayle&#39;: 62.4,
  &#39;Dwight_McNeil&#39;: 90.0,
  &#39;Ederson_Santana de Moraes&#39;: 90.0,
- &#39;Edward_Nketiah&#39;: 58.666666666666664,
+ &#39;Edward_Nketiah&#39;: 42.333333333333336,
  &#39;Eldin_Jakupovic&#39;: 0.0,
+ &#39;Ellis_Simms&#39;: 0.0,
  &#39;Emerson_Palmieri dos Santos&#39;: 0.4,
- &#39;Emil_Krafth&#39;: 88.25,
- &#39;Emiliano_Buendía&#39;: 60.4,
+ &#39;Emil_Krafth&#39;: 87.66666666666667,
+ &#39;Emiliano_Buendía&#39;: 53.0,
  &#39;Emiliano_Martínez&#39;: 90.0,
  &#39;Enda_Stevens&#39;: 90.0,
- &#39;Eric_Bailly&#39;: 9.0,
+ &#39;Eric_Bailly&#39;: 0.0,
  &#39;Eric_Dier&#39;: 45.0,
- &#39;Eric_Garcia&#39;: 59.2,
- &#39;Erik_Lamela&#39;: 28.0,
+ &#39;Eric_Garcia&#39;: 50.2,
+ &#39;Erik_Lamela&#39;: 26.4,
  &#39;Erik_Pieters&#39;: 84.8,
- &#39;Etienne_Capoue&#39;: 58.25,
+ &#39;Etienne_Capoue&#39;: 58.666666666666664,
  &#39;Ezequiel_Schelotto&#39;: 0.0,
  &#39;Ezri_Konsa Ngoyo&#39;: 90.0,
- &#39;Fabian_Schär&#39;: 67.5,
- &#39;Fabio Henrique_Tavares&#39;: 71.8,
+ &#39;Fabian_Schär&#39;: 90.0,
+ &#39;Fabio Henrique_Tavares&#39;: 59.8,
  &#39;Fabián_Balbuena&#39;: 0.8,
  &#39;Faustino_Anjorin&#39;: 0.0,
  &#39;Federico_Fernández&#39;: 90.0,
- &#39;Felipe Anderson_Pereira Gomes&#39;: 0.0,
- &#39;Fernando_Luiz Rosa&#39;: 39.6,
+ &#39;Felipe Anderson_Pereira Gomes&#39;: 1.5,
+ &#39;Fernando_Luiz Rosa&#39;: 30.6,
  &#39;Fikayo_Tomori&#39;: 0.0,
- &#39;Francisco_Femenía Far&#39;: 84.6,
- &#39;Frederico_Rodrigues de Paula Santos&#39;: 13.8,
- &#39;Frédéric_Guilbert&#39;: 16.25,
+ &#39;Francisco_Femenía Far&#39;: 81.0,
+ &#39;Frederico_Rodrigues de Paula Santos&#39;: 9.2,
+ &#39;Frédéric_Guilbert&#39;: 28.0,
  &#39;Gabriel Fernando_de Jesus&#39;: 75.8,
- &#39;Gary_Cahill&#39;: 48.5,
+ &#39;Gary_Cahill&#39;: 7.0,
  &#39;Gavin_Kilkenny&#39;: 0.0,
  &#39;Gedson_Carvalho Fernandes&#39;: 0.4,
  &#39;George_Baldock&#39;: 90.0,
- &#39;George_Hirst&#39;: 7.0,
- &#39;Georginio_Wijnaldum&#39;: 69.2,
- &#39;Giovani_Lo Celso&#39;: 71.2,
- &#39;Glenn_Murray&#39;: 15.0,
+ &#39;George_Hirst&#39;: 4.5,
+ &#39;Georginio_Wijnaldum&#39;: 81.4,
+ &#39;Giovani_Lo Celso&#39;: 65.0,
+ &#39;Glenn_Murray&#39;: 15.2,
  &#39;Gonçalo Bento_Soares Cardoso&#39;: 0.0,
  &#39;Granit_Xhaka&#39;: 81.0,
- &#39;Gylfi_Sigurdsson&#39;: 61.6,
- &#39;Hamza_Choudhury&#39;: 4.0,
+ &#39;Gylfi_Sigurdsson&#39;: 66.4,
+ &#39;Hamza_Choudhury&#39;: 18.2,
  &#39;Harry_Kane&#39;: 90.0,
  &#39;Harry_Lewis&#39;: 0.0,
  &#39;Harry_Maguire&#39;: 90.0,
- &#39;Harry_Wilson&#39;: 21.2,
+ &#39;Harry_Wilson&#39;: 16.8,
  &#39;Harry_Winks&#39;: 90.0,
- &#39;Harvey_Barnes&#39;: 44.6,
+ &#39;Harvey_Barnes&#39;: 45.0,
  &#39;Harvey_Elliott&#39;: 0.0,
  &#39;Harvey_White&#39;: 0.0,
  &#39;Henri_Lansbury&#39;: 0.2,
- &#39;Heung-Min_Son&#39;: 78.0,
+ &#39;Heung-Min_Son&#39;: 78.4,
  &#39;Heurelho da Silva_Gomes&#39;: 0.0,
  &#39;Hugo_Lloris&#39;: 90.0,
- &#39;Héctor_Bellerín&#39;: 37.4,
+ &#39;Héctor_Bellerín&#39;: 34.6,
  &#39;Ignacio_Pussetto&#39;: 0.0,
- &#39;Ilkay_Gündogan&#39;: 22.4,
- &#39;Indiana_Vassilev&#39;: 2.2,
- &#39;Isaac_Hayden&#39;: 42.0,
- &#39;Ismaïla_Sarr&#39;: 88.4,
+ &#39;Ilkay_Gündogan&#39;: 31.4,
+ &#39;Indiana_Vassilev&#39;: 1.2,
+ &#39;Ismaïla_Sarr&#39;: 90.0,
  &#39;Issa_Diop&#39;: 90.0,
  &#39;Jack_Grealish&#39;: 90.0,
- &#34;Jack_O&#39;Connell&#34;: 90.0,
- &#39;Jack_Robinson&#39;: 10.8,
- &#39;Jack_Rodwell&#39;: 3.0,
+ &#34;Jack_O&#39;Connell&#34;: 72.0,
+ &#39;Jack_Robinson&#39;: 18.0,
+ &#39;Jack_Rodwell&#39;: 0.0,
  &#39;Jack_Simpson&#39;: 0.0,
- &#39;Jack_Stacey&#39;: 62.0,
+ &#39;Jack_Stacey&#39;: 59.4,
  &#39;Jack_Stephens&#39;: 72.0,
  &#39;Jack_Wilshere&#39;: 2.6,
  &#39;Jack_Young&#39;: 0.0,
  &#39;Jacob_Maddox&#39;: 0.0,
- &#39;Jairo_Riedewald&#39;: 21.6,
+ &#39;Jairo_Riedewald&#39;: 13.8,
  &#39;Jake_Eastwood&#39;: 0.0,
  &#39;Jake_Vokins&#39;: 18.0,
  &#39;Jamaal_Lascelles&#39;: 0.0,
  &#39;Jamal_Lewis&#39;: 90.0,
  &#39;James_Garner&#39;: 0.0,
  &#39;James_Justin&#39;: 90.0,
- &#39;James_McArthur&#39;: 70.6,
- &#39;James_McCarthy&#39;: 49.6,
- &#39;James_Milner&#39;: 0.0,
+ &#39;James_McArthur&#39;: 70.8,
+ &#39;James_McCarthy&#39;: 63.4,
+ &#39;James_Milner&#39;: 45.0,
  &#39;James_Tarkowski&#39;: 90.0,
  &#39;James_Ward-Prowse&#39;: 90.0,
  &#39;Jamie_Vardy&#39;: 90.0,
- &#39;Jan_Bednarek&#39;: 72.0,
- &#39;Jan_Vertonghen&#39;: 18.4,
+ &#39;Jan_Bednarek&#39;: 54.0,
+ &#39;Jan_Vertonghen&#39;: 18.2,
  &#39;Jannik_Vestergaard&#39;: 90.0,
  &#39;Japhet_Tanganga&#39;: 0.0,
- &#39;Jarrad_Branthwaite&#39;: 41.8,
- &#39;Jarrod_Bowen&#39;: 86.4,
- &#39;Javier_Manquillo&#39;: 51.0,
- &#39;Jay_Rodriguez&#39;: 80.0,
+ &#39;Jarrad_Branthwaite&#39;: 59.8,
+ &#39;Jarrod_Bowen&#39;: 85.5,
+ &#39;Javier_Manquillo&#39;: 58.8,
+ &#39;Jay_Rodriguez&#39;: 79.4,
  &#39;Jed_Steer&#39;: 0.0,
  &#39;Jefferson_Lerma&#39;: 88.2,
- &#39;Jeffrey_Schlupp&#39;: 72.0,
- &#39;Jesse_Lingard&#39;: 5.6,
+ &#39;Jeffrey_Schlupp&#39;: 78.0,
+ &#39;Jesse_Lingard&#39;: 8.2,
  &#39;Jimmy_Dunne&#39;: 0.0,
+ &#39;Joel_Mumbongo&#39;: 0.0,
  &#39;Joel_Ward&#39;: 90.0,
- &#39;Joelinton Cássio_Apolinário de Lira&#39;: 30.0,
- &#39;Johann Berg_Gudmundsson&#39;: 36.0,
+ &#39;Joelinton Cássio_Apolinário de Lira&#39;: 33.0,
+ &#39;Johann Berg_Gudmundsson&#39;: 43.6,
+ &#39;John-Kymani_Gordon&#39;: 0.0,
  &#39;John_Egan&#39;: 90.0,
- &#39;John_Fleck&#39;: 30.0,
- &#39;John_Lundstram&#39;: 31.0,
+ &#39;John_Fleck&#39;: 60.0,
+ &#39;John_Lundstram&#39;: 45.75,
  &#39;John_McGinn&#39;: 83.6,
  &#39;John_Ruddy&#39;: 0.0,
  &#39;John_Stones&#39;: 42.8,
- &#39;Jonathan_Castro Otto&#39;: 73.2,
+ &#39;Jonathan_Castro Otto&#39;: 66.6,
  &#39;Jonjo_Shelvey&#39;: 85.0,
  &#39;Jonny_Evans&#39;: 90.0,
  &#39;Jordan_Ayew&#39;: 82.6,
- &#39;Jordan_Henderson&#39;: 54.0,
+ &#39;Jordan_Henderson&#39;: 79.0,
  &#39;Jordan_Pickford&#39;: 90.0,
- &#39;Jordan_Thomas&#39;: 0.0,
- &#39;Jorge Luiz_Frello Filho&#39;: 56.0,
+ &#39;Jordan_Thomas&#39;: 0.2,
+ &#39;Jorge Luiz_Frello Filho&#39;: 73.4,
  &#39;Joseph_Anang&#39;: 0.0,
  &#39;Joseph_Gomez&#39;: 90.0,
- &#39;Joseph_Willock&#39;: 16.4,
+ &#39;Joseph_Willock&#39;: 24.8,
  &#39;Josh_Benson&#39;: 0.0,
  &#39;Josh_Brownhill&#39;: 88.8,
- &#39;Josh_Martin&#39;: 5.6,
- &#39;Joshua_King&#39;: 62.0,
- &#39;Josip_Drmic&#39;: 39.6,
+ &#39;Josh_Martin&#39;: 6.2,
+ &#39;Joshua_King&#39;: 61.25,
+ &#39;Josip_Drmic&#39;: 33.0,
  &#39;José Diogo_Dalot Teixeira&#39;: 0.0,
- &#39;José Ignacio_Peleteiro Romallo&#39;: 3.2,
+ &#39;José Ignacio_Peleteiro Romallo&#39;: 0.0,
  &#39;José_Holebas&#39;: 0.0,
  &#39;José_Reina&#39;: 90.0,
- &#39;João Filipe Iria_Santos Moutinho&#39;: 74.0,
+ &#39;João Filipe Iria_Santos Moutinho&#39;: 62.6,
  &#39;João Manuel_Neves Virgínia&#39;: 0.0,
  &#39;João Pedro Cavaco_Cancelo&#39;: 45.0,
- &#39;João Pedro_Junqueira de Jesus&#39;: 0.8,
- &#39;Juan_Mata&#39;: 2.0,
- &#39;Junior_Stanislas&#39;: 67.4,
+ &#39;João Pedro_Junqueira de Jesus&#39;: 1.2,
+ &#39;Juan_Foyth&#39;: 0.0,
+ &#39;Juan_Mata&#39;: 0.0,
+ &#39;Junior_Stanislas&#39;: 59.6,
  &#39;Kaine_Hayden&#39;: 0.0,
  &#39;Karl_Darlow&#39;: 0.0,
  &#39;Kasper_Schmeichel&#39;: 90.0,
- &#39;Keinan_Davis&#39;: 31.6,
- &#39;Kelechi_Iheanacho&#39;: 39.4,
+ &#39;Keinan_Davis&#39;: 21.4,
+ &#39;Kelechi_Iheanacho&#39;: 38.2,
+ &#39;Kelland_Watts&#39;: 16.0,
  &#39;Kenny_McLean&#39;: 70.5,
- &#39;Kepa_Arrizabalaga&#39;: 90.0,
+ &#39;Kepa_Arrizabalaga&#39;: 72.0,
  &#39;Kevin_Danso&#39;: 0.0,
- &#39;Kevin_De Bruyne&#39;: 54.8,
+ &#39;Kevin_De Bruyne&#39;: 66.6,
  &#39;Kevin_Long&#39;: 90.0,
  &#39;Ki-Jana_Hoever&#39;: 0.0,
- &#39;Kieran_Tierney&#39;: 69.6,
+ &#39;Kieran_Tierney&#39;: 76.6,
  &#39;Kieron_Freeman&#39;: 0.0,
- &#39;Kortney_Hause&#39;: 60.0,
+ &#39;Kortney_Hause&#39;: 34.666666666666664,
  &#39;Kurt_Zouma&#39;: 90.0,
- &#39;Kyle_Walker&#39;: 48.6,
+ &#39;Kyle_Walker&#39;: 66.6,
  &#39;Kyle_Walker-Peters&#39;: 81.0,
- &#39;Leander_Dendoncker&#39;: 50.2,
- &#39;Leandro_Trossard&#39;: 80.4,
+ &#39;Leander_Dendoncker&#39;: 57.4,
+ &#39;Leandro_Trossard&#39;: 64.8,
  &#39;Lee_Grant&#39;: 0.0,
- &#39;Leighton_Baines&#39;: 9.0,
+ &#39;Leighton_Baines&#39;: 13.0,
+ &#39;Leon_Clarke&#39;: 20.0,
  &#39;Leonardo_Campana&#39;: 0.0,
  &#39;Lewis_Bate&#39;: 0.0,
- &#39;Lewis_Cook&#39;: 23.0,
+ &#39;Lewis_Cook&#39;: 10.0,
  &#39;Lewis_Dunk&#39;: 90.0,
  &#39;Lloyd_Kelly&#39;: 90.0,
- &#39;Lucas_Digne&#39;: 90.0,
- &#39;Lucas_Rodrigues Moura da Silva&#39;: 61.8,
- &#39;Lucas_Torreira&#39;: 23.6,
- &#39;Luka_Milivojevic&#39;: 68.4,
+ &#39;Lucas_Digne&#39;: 86.0,
+ &#39;Lucas_Rodrigues Moura da Silva&#39;: 63.6,
+ &#39;Lucas_Torreira&#39;: 25.8,
+ &#39;Luka_Milivojevic&#39;: 63.0,
  &#39;Lukas_Jensen&#39;: 0.0,
- &#39;Lukas_Rupp&#39;: 24.4,
+ &#39;Lukas_Rupp&#39;: 42.4,
  &#39;Lukasz_Fabianski&#39;: 90.0,
  &#39;Luke_Cundle&#39;: 0.0,
  &#39;Luke_Dreher&#39;: 0.0,
- &#39;Luke_Shaw&#39;: 84.66666666666667,
- &#39;Luke_Thomas&#39;: 90.0,
- &#39;Lys_Mousset&#39;: 26.4,
+ &#39;Luke_Shaw&#39;: 82.0,
+ &#39;Luke_Thomas&#39;: 88.5,
+ &#39;Lys_Mousset&#39;: 22.6,
  &#39;Maarten_Stekelenburg&#39;: 0.0,
  &#39;Mace_Goodridge&#39;: 0.0,
- &#39;Mahmoud Ahmed_Ibrahim Hassan&#39;: 82.8,
- &#39;Mamadou_Sakho&#39;: 74.8,
- &#39;Manuel_Lanzini&#39;: 11.2,
- &#39;Marc_Albrighton&#39;: 49.0,
- &#39;Marco_Stiepermann&#39;: 30.8,
- &#39;Marcos_Alonso&#39;: 42.2,
- &#39;Marcus_Rashford&#39;: 86.6,
- &#39;Mario_Vrancic&#39;: 36.0,
- &#39;Mark_Noble&#39;: 64.0,
+ &#39;Mahmoud Ahmed_Ibrahim Hassan&#39;: 83.8,
+ &#39;Mamadou_Sakho&#39;: 71.0,
+ &#39;Manuel_Lanzini&#39;: 4.6,
+ &#39;Marc_Albrighton&#39;: 36.5,
+ &#39;Marco_Stiepermann&#39;: 46.0,
+ &#39;Marcos_Alonso&#39;: 60.2,
+ &#39;Marcus_Rashford&#39;: 88.8,
+ &#39;Mario_Vrancic&#39;: 36.2,
+ &#39;Mark_Noble&#39;: 68.4,
  &#39;Mark_Travers&#39;: 0.0,
  &#39;Martin_Dubravka&#39;: 90.0,
  &#39;Martin_Kelly&#39;: 0.0,
  &#39;Martín_Montoya&#39;: 16.0,
- &#39;Marvelous_Nakamba&#39;: 11.6,
- &#39;Mason_Greenwood&#39;: 77.2,
- &#39;Mason_Holgate&#39;: 35.0,
- &#39;Mason_Mount&#39;: 53.6,
- &#39;Matej_Vydra&#39;: 40.0,
- &#39;Mateo_Kovacic&#39;: 90.0,
+ &#39;Marvelous_Nakamba&#39;: 14.4,
+ &#39;Mason_Greenwood&#39;: 77.6,
+ &#39;Mason_Mount&#39;: 55.4,
+ &#39;Matej_Vydra&#39;: 28.8,
+ &#39;Mateo_Kovacic&#39;: 88.0,
  &#39;Mathew_Ryan&#39;: 90.0,
- &#39;Matt_Doherty&#39;: 72.2,
+ &#39;Matt_Doherty&#39;: 69.6,
  &#39;Matt_Macey&#39;: 0.0,
- &#39;Matt_Ritchie&#39;: 70.8,
+ &#39;Matt_Ritchie&#39;: 84.8,
  &#39;Matt_Targett&#39;: 90.0,
  &#39;Matteo_Guendouzi&#39;: 0.0,
  &#39;Matthew_Longstaff&#39;: 5.6,
@@ -17479,150 +18439,152 @@ div#notebook {
  &#39;Max_Meyer&#39;: 3.2,
  &#39;Max_Thompson&#39;: 0.0,
  &#39;Maximillian_Aarons&#39;: 90.0,
- &#39;Mbwana_Samatta&#39;: 57.4,
+ &#39;Mbwana_Samatta&#39;: 67.6,
  &#39;Mesut_Özil&#39;: 0.0,
  &#39;Michael_Keane&#39;: 90.0,
  &#39;Michael_McGovern&#39;: 0.0,
- &#39;Michael_Obafemi&#39;: 9.8,
+ &#39;Michael_Obafemi&#39;: 10.0,
  &#39;Michael_Verrips&#39;: 0.0,
- &#39;Michail_Antonio&#39;: 84.8,
+ &#39;Michail_Antonio&#39;: 75.8,
  &#39;Michel_Vorm&#39;: 0.0,
  &#39;Michy_Batshuayi&#39;: 0.0,
- &#39;Miguel_Almirón&#39;: 71.0,
- &#39;Mohamed_Salah&#39;: 86.0,
- &#39;Moise_Kean&#39;: 15.8,
- &#39;Morgan_Gibbs-White&#39;: 0.2,
+ &#39;Miguel_Almirón&#39;: 66.8,
+ &#39;Mohamed_Salah&#39;: 73.2,
+ &#39;Moise_Kean&#39;: 27.0,
+ &#39;Morgan_Gibbs-White&#39;: 0.0,
  &#39;Moussa_Djenepo&#39;: 0.0,
- &#39;Moussa_Sissoko&#39;: 86.8,
- &#34;N&#39;Golo_Kanté&#34;: 77.0,
- &#39;Nabil_Bentaleb&#39;: 64.8,
+ &#39;Moussa_Sissoko&#39;: 84.6,
+ &#39;Nabil_Bentaleb&#39;: 65.0,
  &#39;Naby_Keita&#39;: 51.8,
  &#39;Nampalys_Mendy&#39;: 4.0,
- &#39;Nathan_Aké&#39;: 73.0,
+ &#39;Nathan_Aké&#39;: 64.5,
  &#39;Nathan_Holland&#39;: 0.0,
  &#39;Nathan_Redmond&#39;: 90.0,
- &#39;Nathaniel_Chalobah&#39;: 23.8,
+ &#39;Nathaniel_Chalobah&#39;: 7.6,
  &#39;Neal_Maupay&#39;: 74.6,
- &#39;Neco_Williams&#39;: 22.8,
- &#39;Neil_Taylor&#39;: 72.0,
- &#39;Nemanja_Matic&#39;: 67.6,
+ &#39;Neco_Williams&#39;: 39.4,
+ &#39;Neil_Taylor&#39;: 63.0,
+ &#39;Nemanja_Matic&#39;: 72.4,
  &#39;Nick_Pope&#39;: 90.0,
- &#39;Nicolas_Pépé&#39;: 37.8,
+ &#39;Nicolas_Pépé&#39;: 52.0,
  &#39;Nicolás_Otamendi&#39;: 36.0,
  &#39;Nya_Kirby&#39;: 0.0,
- &#39;Odion_Ighalo&#39;: 5.2,
- &#39;Oleksandr_Zinchenko&#39;: 49.0,
- &#39;Oliver_McBurnie&#39;: 66.75,
- &#39;Oliver_Norwood&#39;: 78.2,
- &#39;Oliver_Skipp&#39;: 1.4,
- &#39;Olivier_Giroud&#39;: 61.2,
- &#39;Ondrej_Duda&#39;: 22.0,
- &#39;Onel_Hernández&#39;: 76.0,
+ &#39;Odion_Ighalo&#39;: 3.4,
+ &#39;Oleksandr_Zinchenko&#39;: 31.0,
+ &#39;Oliver_McBurnie&#39;: 61.75,
+ &#39;Oliver_Norwood&#39;: 69.6,
+ &#39;Oliver_Skipp&#39;: 3.4,
+ &#39;Olivier_Giroud&#39;: 61.6,
+ &#39;Ondrej_Duda&#39;: 0.0,
+ &#39;Onel_Hernández&#39;: 80.0,
  &#39;Oriol_Romeu Vidal&#39;: 73.2,
  &#39;Oskar_Buur&#39;: 0.0,
  &#39;Owen_Otasowie&#39;: 0.0,
- &#39;Pablo_Fornals&#39;: 80.4,
- &#39;Pascal_Groß&#39;: 47.2,
- &#39;Patrick_van Aanholt&#39;: 86.25,
+ &#39;Pablo_Fornals&#39;: 79.0,
+ &#39;Pascal_Groß&#39;: 43.6,
+ &#39;Patrick_van Aanholt&#39;: 87.66666666666667,
  &#39;Paul_Pogba&#39;: 84.4,
  &#39;Paulo_Gazzaniga&#39;: 0.0,
- &#39;Pedro_Lomba Neto&#39;: 9.0,
- &#39;Pedro_Rodríguez Ledesma&#39;: 0.0,
+ &#39;Pedro_Lomba Neto&#39;: 18.0,
+ &#39;Pedro_Rodríguez Ledesma&#39;: 1.0,
  &#39;Phil_Bardsley&#39;: 90.0,
- &#39;Phil_Foden&#39;: 59.4,
+ &#39;Phil_Foden&#39;: 62.2,
  &#39;Phil_Jagielka&#39;: 4.4,
- &#39;Philip_Billing&#39;: 48.8,
+ &#39;Philip_Billing&#39;: 49.2,
  &#39;Pierre-Emerick_Aubameyang&#39;: 78.4,
- &#39;Pierre-Emile_Højbjerg&#39;: 34.333333333333336,
- &#39;Raheem_Sterling&#39;: 57.0,
+ &#39;Pierre-Emile_Højbjerg&#39;: 25.75,
+ &#39;Raheem_Sterling&#39;: 63.4,
  &#39;Raúl_Jiménez&#39;: 86.0,
  &#39;Reece_James&#39;: 70.8,
- &#39;Reiss_Nelson&#39;: 12.6,
- &#39;Richairo_Zivkovic&#39;: 5.2,
- &#39;Richarlison_de Andrade&#39;: 78.5,
- &#39;Riyad_Mahrez&#39;: 52.2,
- &#39;Rob_Holding&#39;: 36.0,
- &#39;Robbie_Brady&#39;: 8.75,
- &#39;Roberto_Firmino&#39;: 70.2,
- &#39;Roberto_Pereyra&#39;: 18.6,
- &#39;Rodrigo_Hernandez&#39;: 45.6,
+ &#39;Reiss_Nelson&#39;: 16.2,
+ &#39;Richairo_Zivkovic&#39;: 13.0,
+ &#39;Richarlison_de Andrade&#39;: 80.8,
+ &#39;Riyad_Mahrez&#39;: 49.6,
+ &#39;Rob_Holding&#39;: 54.0,
+ &#39;Robbie_Brady&#39;: 10.0,
+ &#39;Roberto_Firmino&#39;: 69.6,
+ &#39;Roberto_Pereyra&#39;: 34.6,
+ &#39;Rodrigo_Hernandez&#39;: 54.6,
  &#39;Romain_Saïss&#39;: 72.0,
- &#39;Ross_Barkley&#39;: 50.8,
- &#39;Ruben_Loftus-Cheek&#39;: 23.4,
+ &#39;Ross_Barkley&#39;: 33.2,
+ &#39;Ruben_Loftus-Cheek&#39;: 21.6,
  &#39;Rui Pedro_dos Santos Patrício&#39;: 90.0,
- &#39;Ryan_Bennett&#39;: 65.8,
+ &#39;Ryan_Bennett&#39;: 56.8,
  &#39;Ryan_Bertrand&#39;: 72.0,
- &#39;Ryan_Fredericks&#39;: 67.5,
+ &#39;Ryan_Fredericks&#39;: 60.0,
  &#39;Ryan_Sessegnon&#39;: 0.0,
- &#39;Rúben Diogo_da Silva Neves&#39;: 90.0,
- &#39;Rúben Gonçalo_Silva Nascimento Vinagre&#39;: 16.6,
- &#39;Sadio_Mané&#39;: 77.0,
+ &#39;Rúben Diogo_da Silva Neves&#39;: 83.6,
+ &#39;Rúben Gonçalo_Silva Nascimento Vinagre&#39;: 23.0,
+ &#39;Sadio_Mané&#39;: 64.2,
  &#39;Sam_Surridge&#39;: 2.0,
+ &#39;Sam_Woods&#39;: 0.0,
  &#39;Sander_Berge&#39;: 75.4,
  &#39;Scott_Carson&#39;: 0.0,
- &#39;Scott_Dann&#39;: 72.0,
- &#39;Scott_McTominay&#39;: 18.4,
- &#39;Sead_Kolasinac&#39;: 71.6,
- &#39;Seamus_Coleman&#39;: 63.4,
+ &#39;Scott_Dann&#39;: 90.0,
+ &#39;Scott_McTominay&#39;: 19.2,
+ &#39;Sead_Kolasinac&#39;: 60.2,
+ &#39;Seamus_Coleman&#39;: 59.6,
  &#39;Serge_Aurier&#39;: 90.0,
  &#39;Sergio_Romero&#39;: 0.0,
- &#39;Shane_Duffy&#39;: 1.0,
- &#39;Shane_Long&#39;: 26.2,
- &#39;Shkodran_Mustafi&#39;: 54.0,
+ &#39;Shane_Duffy&#39;: 0.8,
+ &#39;Shane_Long&#39;: 23.2,
+ &#39;Shkodran_Mustafi&#39;: 45.0,
  &#39;Simon_Moore&#39;: 0.0,
  &#39;Sokratis_Papastathopoulos&#39;: 0.0,
- &#39;Solomon_March&#39;: 21.4,
+ &#39;Solomon_March&#39;: 35.8,
  &#39;Stephen_Henderson&#39;: 0.0,
- &#39;Steve_Cook&#39;: 57.5,
+ &#39;Steve_Cook&#39;: 80.0,
  &#39;Steven_Alzate&#39;: 0.0,
- &#39;Steven_Bergwijn&#39;: 22.2,
- &#39;Stuart_Armstrong&#39;: 69.4,
- &#39;Sébastien_Haller&#39;: 14.0,
+ &#39;Steven_Bergwijn&#39;: 25.8,
+ &#39;Stuart_Armstrong&#39;: 57.2,
+ &#39;Sébastien_Haller&#39;: 21.75,
  &#39;Tahith_Chong&#39;: 0.0,
- &#39;Takumi_Minamino&#39;: 7.0,
- &#39;Tammy_Abraham&#39;: 32.8,
- &#39;Tanguy_Ndombele&#39;: 11.25,
+ &#39;Takumi_Minamino&#39;: 19.6,
+ &#39;Tammy_Abraham&#39;: 32.4,
+ &#39;Tanguy_Ndombele&#39;: 15.0,
  &#39;Tariq_Lamptey&#39;: 72.6,
  &#39;Taylor_Harwood-Bellis&#39;: 0.0,
  &#39;Taylor_Perry&#39;: 0.0,
- &#39;Teemu_Pukki&#39;: 36.8,
- &#39;Theo_Walcott&#39;: 55.333333333333336,
+ &#39;Teemu_Pukki&#39;: 47.4,
+ &#39;Theo_Walcott&#39;: 55.75,
  &#39;Thomas_Allan&#39;: 0.0,
  &#39;Tim_Krul&#39;: 90.0,
- &#39;Timm_Klose&#39;: 81.0,
- &#39;Timothy_Fosu-Mensah&#39;: 45.0,
+ &#39;Timm_Klose&#39;: 78.75,
+ &#39;Timothy_Fosu-Mensah&#39;: 23.0,
  &#39;Toby_Alderweireld&#39;: 90.0,
- &#39;Todd_Cantwell&#39;: 56.0,
- &#39;Tom_Cleverley&#39;: 48.4,
- &#39;Tom_Davies&#39;: 83.6,
+ &#39;Todd_Cantwell&#39;: 78.33333333333333,
+ &#39;Tom_Cleverley&#39;: 45.0,
+ &#39;Tom_Davies&#39;: 82.2,
  &#39;Tom_Trybull&#39;: 0.0,
  &#39;Tomas_Soucek&#39;: 90.0,
  &#39;Tommy_Doyle&#39;: 3.0,
- &#39;Trent_Alexander-Arnold&#39;: 76.2,
- &#39;Troy_Deeney&#39;: 73.8,
- &#39;Tyrick_Mitchell&#39;: 20.6,
+ &#39;Trent_Alexander-Arnold&#39;: 59.2,
+ &#39;Troy_Deeney&#39;: 79.2,
+ &#39;Troy_Parrott&#39;: 0.0,
+ &#39;Tyrick_Mitchell&#39;: 37.2,
  &#39;Tyrone_Mings&#39;: 90.0,
- &#39;Valentino_Lazaro&#39;: 25.6,
+ &#39;Valentino_Lazaro&#39;: 39.4,
  &#39;Vicente_Guaita&#39;: 90.0,
- &#39;Victor_Lindelöf&#39;: 78.75,
+ &#39;Victor_Lindelöf&#39;: 90.0,
  &#39;Virgil_van Dijk&#39;: 90.0,
  &#39;Wayne_Hennessey&#39;: 0.0,
- &#39;Wes_Morgan&#39;: 36.0,
+ &#39;Wes_Morgan&#39;: 54.0,
  &#39;Wilfred_Ndidi&#39;: 84.0,
  &#39;Wilfried_Zaha&#39;: 90.0,
  &#39;Will_Ferry&#39;: 0.0,
- &#39;Will_Hughes&#39;: 83.6,
- &#39;William_Smallbone&#39;: 20.2,
- &#39;Willian_Borges Da Silva&#39;: 80.6,
+ &#39;Will_Hughes&#39;: 81.6,
+ &#39;William_Smallbone&#39;: 32.0,
+ &#39;Willian_Borges Da Silva&#39;: 65.6,
  &#39;Willy_Boly&#39;: 90.0,
- &#39;Willy_Caballero&#39;: 0.0,
- &#39;Xherdan_Shaqiri&#39;: 1.75,
- &#39;Yerry_Mina&#39;: 58.0,
+ &#39;Willy_Caballero&#39;: 18.0,
+ &#39;Xherdan_Shaqiri&#39;: 1.4,
+ &#39;Yan_Valery&#39;: 0.0,
+ &#39;Yerry_Mina&#39;: 60.0,
  &#39;Yoshinori_Muto&#39;: 1.2,
- &#39;Youri_Tielemans&#39;: 85.4,
- &#39;Yves_Bissouma&#39;: 56.2,
+ &#39;Youri_Tielemans&#39;: 82.2,
+ &#39;Yves_Bissouma&#39;: 55.0,
  &#39;Zech_Medley&#39;: 0.0,
- &#39;Çaglar_Söyüncü&#39;: 82.0,
+ &#39;Çaglar_Söyüncü&#39;: 78.0,
  &#39;Ørjan_Nyland&#39;: 0.0}</pre>
 </div>
 
@@ -17634,19 +18596,19 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># concatenate home and away players</span>
 <span class="n">remaining_season_df</span> <span class="o">=</span> <span class="n">home_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">away_df</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># add home and away team market values</span>
-<span class="n">remaining_season_df</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_mv</span><span class="p">[</span><span class="n">teams_mv</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">],</span>
+<span class="n">remaining_season_df</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_mv</span><span class="p">[</span><span class="n">teams_mv</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2021&#39;</span><span class="p">],</span>
                                                 <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;team&#39;</span><span class="p">,</span> 
                                                 <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> 
                                                 <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">remaining_season_df</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_mv</span><span class="p">[</span><span class="n">teams_mv</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1920&#39;</span><span class="p">],</span>
+<span class="n">remaining_season_df</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">teams_mv</span><span class="p">[</span><span class="n">teams_mv</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2021&#39;</span><span class="p">],</span>
                                                 <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> 
                                                 <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> 
                                                 <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -17671,9 +18633,11 @@ div#notebook {
 <span class="c1"># cast position to integer</span>
 <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-<span class="c1"># add minutes based on last three fixtures</span>
+<span class="c1"># add minutes based on last five fixtures</span>
 <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">recent_mins</span><span class="p">)</span>
 <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">90</span>
 
 <span class="c1"># multiply minutes by play probability</span>
 <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">remaining_season_df</span><span class="p">[</span><span class="s1">&#39;play_proba&#39;</span><span class="p">]</span>
@@ -17686,10 +18650,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remaining_season_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remaining_season_df</span>
 </pre></div>
 
     </div>
@@ -17702,7 +18666,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -17742,753 +18706,986 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Shkodran_Mustafi</td>
-      <td>2</td>
-      <td>5.1</td>
-      <td>0.0</td>
+      <td>Fabricio_Agosto Ramírez</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.0</td>
       <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Héctor_Bellerín</td>
-      <td>2</td>
-      <td>5.2</td>
+      <td>Kevin_McDonald</td>
+      <td>3</td>
+      <td>5.0</td>
       <td>1.0</td>
       <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
       <td>1920</td>
-      <td>37.400000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Sead_Kolasinac</td>
+      <td>Maxime_Le Marchand</td>
       <td>2</td>
-      <td>5.2</td>
+      <td>4.5</td>
       <td>1.0</td>
       <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
       <td>1920</td>
-      <td>71.600000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>38</td>
+      <td>1</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Ainsley_Maitland-Niles</td>
-      <td>2</td>
-      <td>4.5</td>
+      <td>Stefan_Johansen</td>
+      <td>3</td>
+      <td>5.0</td>
       <td>1.0</td>
       <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
       <td>1920</td>
-      <td>9.800000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Sokratis_Papastathopoulos</td>
-      <td>2</td>
-      <td>4.8</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Nacho_Monreal</td>
-      <td>2</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Laurent_Koscielny</td>
-      <td>2</td>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Konstantinos_Mavropanos</td>
-      <td>2</td>
-      <td>4.3</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Carl_Jenkinson</td>
-      <td>2</td>
-      <td>4.5</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Rob_Holding</td>
-      <td>2</td>
-      <td>4.4</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>36.000000</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Pierre-Emerick_Aubameyang</td>
-      <td>4</td>
-      <td>10.9</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>78.400000</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Alexandre_Lacazette</td>
-      <td>4</td>
-      <td>9.2</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>62.800000</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Edward_Nketiah</td>
-      <td>4</td>
-      <td>4.3</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>58.666667</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Bernd_Leno</td>
       <td>1</td>
-      <td>4.8</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>38</td>
+      <td>Fulham</td>
       <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Mesut_Özil</td>
+      <td>Tom_Cairney</td>
       <td>3</td>
-      <td>6.9</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Henrikh_Mkhitaryan</td>
-      <td>3</td>
-      <td>6.7</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Granit_Xhaka</td>
-      <td>3</td>
-      <td>5.1</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>81.000000</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Lucas_Torreira</td>
-      <td>3</td>
-      <td>4.7</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>23.600000</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Mohamed_Elneny</td>
-      <td>3</td>
-      <td>4.2</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Matteo_Guendouzi</td>
-      <td>3</td>
-      <td>4.1</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>David_Luiz Moreira Marinho</td>
-      <td>2</td>
-      <td>5.7</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>83.800000</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Emiliano_Martínez</td>
-      <td>1</td>
-      <td>4.4</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>90.000000</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Calum_Chambers</td>
-      <td>2</td>
-      <td>4.3</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Daniel_Ceballos Fernández</td>
-      <td>3</td>
-      <td>5.2</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>74.800000</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Cédric_Soares</td>
-      <td>2</td>
-      <td>4.8</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>46.800000</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Nicolas_Pépé</td>
-      <td>3</td>
-      <td>8.9</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>37.800000</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Reiss_Nelson</td>
-      <td>3</td>
-      <td>5.3</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>12.600000</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Joseph_Willock</td>
-      <td>3</td>
-      <td>4.7</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>16.400000</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Gabriel Teodoro_Martinelli Silva</td>
-      <td>4</td>
-      <td>4.2</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Kieran_Tierney</td>
-      <td>2</td>
-      <td>5.3</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>69.600000</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Bukayo_Saka</td>
-      <td>3</td>
-      <td>4.7</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>61.600000</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Emile_Smith Rowe</td>
-      <td>3</td>
-      <td>4.3</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Tyreece_John-Jules</td>
-      <td>4</td>
-      <td>4.4</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Pablo_Marí</td>
-      <td>2</td>
-      <td>4.4</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Zech_Medley</td>
-      <td>2</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Matt_Macey</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>38</td>
-      <td>Arsenal</td>
-      <td>Watford</td>
-      <td>Matthew_Smith</td>
-      <td>2</td>
-      <td>4.0</td>
-      <td>1.0</td>
-      <td>True</td>
-      <td>1.496432</td>
-      <td>0.504811</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Ben_Mee</td>
-      <td>2</td>
-      <td>4.9</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
-      <td>1920</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>James_Tarkowski</td>
-      <td>2</td>
       <td>5.5</td>
       <td>1.0</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
       <td>1920</td>
-      <td>90.000000</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>19185</th>
+      <td>38</td>
+      <td>Manchester United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>Tahith_Chong</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>1.890316</td>
+      <td>0.785020</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>19186</th>
+      <td>38</td>
+      <td>Manchester United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>James_Garner</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>1.890316</td>
+      <td>0.785020</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>19187</th>
+      <td>38</td>
+      <td>Manchester United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>Brandon_Williams</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>1.890316</td>
+      <td>0.785020</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>19188</th>
+      <td>38</td>
+      <td>Manchester United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>Teden_Mengi</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>1.890316</td>
+      <td>0.785020</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>19189</th>
+      <td>38</td>
+      <td>Manchester United</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>Donny_van de Beek</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>1.890316</td>
+      <td>0.785020</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>19190 rows × 12 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remaining_season_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gw</th>
+      <th>team</th>
+      <th>opponent_team</th>
+      <th>player</th>
+      <th>position</th>
+      <th>price</th>
+      <th>play_proba</th>
+      <th>was_home</th>
+      <th>relative_market_value_team</th>
+      <th>relative_market_value_opponent_team</th>
+      <th>season</th>
+      <th>minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Fabricio_Agosto Ramírez</td>
+      <td>1</td>
+      <td>4.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Kevin_McDonald</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Maxime_Le Marchand</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Stefan_Johansen</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Tom_Cairney</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Tim_Ream</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Anthony_Knockaert</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Michael_Hector</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Cyrus_Christie</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Neeskens_Kebano</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Bobby_Decordova-Reid</td>
+      <td>4</td>
+      <td>5.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Joe_Bryan</td>
+      <td>2</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Marcus_Bettinelli</td>
+      <td>1</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Aleksandar_Mitrović</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Alfie_Mawson</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Marek_Rodák</td>
+      <td>1</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Ivan Ricardo_Neves Abreu Cavaleiro</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Josh_Onomah</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Jean Michaël_Seri</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Aboubakar_Kamara</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>André-Frank_Zambo Anguissa</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Zeze Steven_Sessegnon</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Harrison_Reed</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Antonee_Robinson</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1</td>
+      <td>Fulham</td>
+      <td>Arsenal</td>
+      <td>Mario_Lemina</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.318038</td>
+      <td>1.535042</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Gary_Cahill</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Wayne_Hennessey</td>
+      <td>1</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Mamadou_Sakho</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Vicente_Guaita</td>
+      <td>1</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>James_Tomkins</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>James_McArthur</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>James_McCarthy</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Christian_Benteke</td>
+      <td>4</td>
+      <td>5.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Cheikhou_Kouyaté</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Joel_Ward</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Martin_Kelly</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Connor_Wickham</td>
+      <td>4</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Andros_Townsend</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Luka_Milivojevic</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
+      <td>1920</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>39</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Matthew_Lowton</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Patrick_van Aanholt</td>
       <td>2</td>
-      <td>4.2</td>
-      <td>0.0</td>
+      <td>5.5</td>
+      <td>0.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>40</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Phil_Bardsley</td>
-      <td>2</td>
-      <td>4.4</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Jordan_Ayew</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>90.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>41</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Charlie_Taylor</td>
-      <td>2</td>
-      <td>4.3</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Wilfried_Zaha</td>
+      <td>3</td>
+      <td>7.0</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>42</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Kevin_Long</td>
-      <td>2</td>
-      <td>4.3</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Jeffrey_Schlupp</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>90.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>43</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Ben_Gibson</td>
-      <td>2</td>
-      <td>3.9</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Max_Meyer</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>44</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Ashley_Barnes</td>
-      <td>4</td>
-      <td>6.1</td>
-      <td>0.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Jairo_Riedewald</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>45</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Chris_Wood</td>
-      <td>4</td>
-      <td>6.2</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Nathan_Ferguson</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>0.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>66.000000</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>46</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Matej_Vydra</td>
-      <td>4</td>
-      <td>5.1</td>
-      <td>1.0</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Tyrick_Mitchell</td>
+      <td>2</td>
+      <td>4.0</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>40.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>47</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Nick_Pope</td>
       <td>1</td>
-      <td>5.2</td>
-      <td>1.0</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Brandon_Pierrick</td>
+      <td>3</td>
+      <td>4.5</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>90.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>48</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Joe_Hart</td>
       <td>1</td>
-      <td>4.2</td>
-      <td>0.0</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Scott_Dann</td>
+      <td>2</td>
+      <td>4.5</td>
+      <td>1.00</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>0.000000</td>
+      <td>90.0</td>
     </tr>
     <tr>
       <th>49</th>
-      <td>38</td>
-      <td>Burnley</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Johann Berg_Gudmundsson</td>
+      <td>1</td>
+      <td>Crystal Palace</td>
+      <td>Southampton</td>
+      <td>Eberechi_Eze</td>
       <td>3</td>
-      <td>5.9</td>
-      <td>1.0</td>
+      <td>6.0</td>
+      <td>0.75</td>
       <td>True</td>
-      <td>0.360601</td>
-      <td>0.503369</td>
+      <td>0.444240</td>
+      <td>0.497737</td>
       <td>1920</td>
-      <td>36.000000</td>
+      <td>67.5</td>
     </tr>
   </tbody>
 </table>
@@ -18503,7 +19700,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># save latest prediction set to csv</span>

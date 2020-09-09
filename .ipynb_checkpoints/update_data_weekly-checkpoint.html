@@ -13106,7 +13106,369 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;teams.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>team</th>
+      <th>team_code</th>
+      <th>team_1617</th>
+      <th>team_1718</th>
+      <th>team_1819</th>
+      <th>team_1920</th>
+      <th>team_2021</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Arsenal</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bournemouth</td>
+      <td>91</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Burnley</td>
+      <td>90</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Chelsea</td>
+      <td>8</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Crystal Palace</td>
+      <td>31</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Everton</td>
+      <td>11</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Hull City</td>
+      <td>88</td>
+      <td>7.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Leicester City</td>
+      <td>13</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>11.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Liverpool</td>
+      <td>14</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>10.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Manchester City</td>
+      <td>43</td>
+      <td>10.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>11.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Manchester United</td>
+      <td>1</td>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>14.0</td>
+      <td>12.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Middlesbrough</td>
+      <td>25</td>
+      <td>12.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Southampton</td>
+      <td>20</td>
+      <td>13.0</td>
+      <td>14.0</td>
+      <td>16.0</td>
+      <td>16.0</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Stoke City</td>
+      <td>110</td>
+      <td>14.0</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sunderland</td>
+      <td>56</td>
+      <td>15.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Swansea City</td>
+      <td>80</td>
+      <td>16.0</td>
+      <td>16.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Tottenham Hotspur</td>
+      <td>6</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Watford</td>
+      <td>57</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>18.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>West Bromwich Albion</td>
+      <td>35</td>
+      <td>19.0</td>
+      <td>19.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>West Ham United</td>
+      <td>21</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>19.0</td>
+      <td>19.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Brighton and Hove Albion</td>
+      <td>36</td>
+      <td>NaN</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Huddersfield Town</td>
+      <td>38</td>
+      <td>NaN</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Newcastle United</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>13.0</td>
+      <td>15.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Cardiff City</td>
+      <td>97</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Fulham</td>
+      <td>54</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Wolverhampton Wanderers</td>
+      <td>39</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>20.0</td>
+      <td>20.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Aston Villa</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Norwich</td>
+      <td>45</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Sheffield United</td>
+      <td>49</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>15.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Leeds</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in latest training set</span>
@@ -13140,7 +13502,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -13156,7 +13518,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13204,1202 +13566,1202 @@ div#notebook {
   </thead>
   <tbody>
     <tr>
-      <th>89721</th>
+      <th>90387</th>
       <td>Luke_Freeman</td>
-      <td>37</td>
+      <td>38</td>
       <td>3</td>
       <td>0</td>
       <td>Sheffield United</td>
-      <td>Everton</td>
-      <td>0.300107</td>
-      <td>1.032597</td>
-      <td>True</td>
+      <td>Southampton</td>
+      <td>0.348678</td>
+      <td>0.526987</td>
+      <td>False</td>
       <td>0</td>
       <td>...</td>
       <td>1</td>
-      <td>0</td>
+      <td>3</td>
       <td>0.0</td>
-      <td>-31</td>
+      <td>-30</td>
       <td>8</td>
-      <td>39</td>
+      <td>38</td>
       <td>0</td>
-      <td>2020-07-20T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>0.25</td>
     </tr>
     <tr>
-      <th>89722</th>
+      <th>90388</th>
       <td>Kelland_Watts</td>
-      <td>37</td>
+      <td>38</td>
       <td>2</td>
-      <td>0</td>
+      <td>16</td>
       <td>Newcastle United</td>
-      <td>Brighton and Hove Albion</td>
-      <td>0.603446</td>
-      <td>0.503369</td>
-      <td>False</td>
-      <td>0</td>
+      <td>Liverpool</td>
+      <td>0.611449</td>
+      <td>2.406333</td>
+      <td>True</td>
+      <td>1</td>
       <td>...</td>
-      <td>0</td>
-      <td>0</td>
+      <td>3</td>
+      <td>1</td>
       <td>0.0</td>
-      <td>289</td>
-      <td>813</td>
-      <td>524</td>
+      <td>3319</td>
+      <td>4336</td>
+      <td>1017</td>
       <td>0</td>
-      <td>2020-07-20T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
-      <td>0.00</td>
+      <td>1.00</td>
     </tr>
     <tr>
-      <th>89723</th>
+      <th>90389</th>
       <td>Shkodran_Mustafi</td>
-      <td>37</td>
+      <td>38</td>
       <td>2</td>
       <td>0</td>
       <td>Arsenal</td>
-      <td>Aston Villa</td>
-      <td>1.496432</td>
-      <td>0.532708</td>
-      <td>False</td>
+      <td>Watford</td>
+      <td>1.452343</td>
+      <td>0.472917</td>
+      <td>True</td>
       <td>0</td>
       <td>...</td>
-      <td>0</td>
-      <td>1</td>
+      <td>2</td>
+      <td>3</td>
       <td>0.0</td>
-      <td>528</td>
-      <td>1038</td>
-      <td>510</td>
+      <td>-1929</td>
+      <td>135</td>
+      <td>2064</td>
       <td>0</td>
-      <td>2020-07-21T19:15:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
-      <td>1.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>89724</th>
+      <th>90390</th>
       <td>Mace_Goodridge</td>
-      <td>37</td>
+      <td>38</td>
       <td>3</td>
       <td>0</td>
       <td>Burnley</td>
-      <td>Norwich</td>
-      <td>0.360601</td>
-      <td>0.311992</td>
-      <td>False</td>
+      <td>Brighton and Hove Albion</td>
+      <td>0.370648</td>
+      <td>0.541184</td>
+      <td>True</td>
       <td>0</td>
       <td>...</td>
       <td>2</td>
-      <td>0</td>
+      <td>1</td>
       <td>0.0</td>
-      <td>2</td>
-      <td>24</td>
-      <td>22</td>
+      <td>1</td>
+      <td>26</td>
+      <td>25</td>
       <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89725</th>
+      <th>90391</th>
       <td>Dan_Gosling</td>
-      <td>37</td>
-      <td>3</td>
-      <td>3</td>
-      <td>Bournemouth</td>
-      <td>Southampton</td>
-      <td>0.613218</td>
-      <td>0.486089</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>34</td>
-      <td>130</td>
-      <td>96</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89726</th>
-      <td>Tammy_Abraham</td>
-      <td>37</td>
-      <td>4</td>
-      <td>31</td>
-      <td>Chelsea</td>
-      <td>Liverpool</td>
-      <td>2.064820</td>
-      <td>2.451453</td>
-      <td>False</td>
-      <td>5</td>
-      <td>...</td>
-      <td>3</td>
-      <td>5</td>
-      <td>33.0</td>
-      <td>-45082</td>
-      <td>1685</td>
-      <td>46767</td>
-      <td>0</td>
-      <td>2020-07-22T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89727</th>
-      <td>Nicolás_Otamendi</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Manchester City</td>
-      <td>Watford</td>
-      <td>2.468858</td>
-      <td>0.504811</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>1153</td>
-      <td>5769</td>
-      <td>4616</td>
-      <td>0</td>
-      <td>2020-07-21T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89728</th>
-      <td>James_Daly</td>
-      <td>37</td>
-      <td>4</td>
-      <td>0</td>
-      <td>Crystal Palace</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>0.429399</td>
-      <td>0.735971</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0.0</td>
-      <td>3</td>
-      <td>16</td>
-      <td>13</td>
-      <td>0</td>
-      <td>2020-07-20T19:15:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89729</th>
-      <td>Declan_Rice</td>
-      <td>37</td>
+      <td>38</td>
       <td>3</td>
       <td>90</td>
-      <td>West Ham United</td>
-      <td>Manchester United</td>
-      <td>0.681394</td>
-      <td>1.640220</td>
-      <td>False</td>
-      <td>6</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>1654</td>
-      <td>3326</td>
-      <td>1672</td>
-      <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89730</th>
-      <td>Connor_Wickham</td>
-      <td>37</td>
-      <td>4</td>
-      <td>0</td>
-      <td>Crystal Palace</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>0.429399</td>
-      <td>0.735971</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0.0</td>
-      <td>-61</td>
-      <td>383</td>
-      <td>444</td>
-      <td>0</td>
-      <td>2020-07-20T19:15:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89731</th>
-      <td>Mark_Noble</td>
-      <td>37</td>
-      <td>3</td>
-      <td>90</td>
-      <td>West Ham United</td>
-      <td>Manchester United</td>
-      <td>0.681394</td>
-      <td>1.640220</td>
-      <td>False</td>
-      <td>3</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4.0</td>
-      <td>518</td>
-      <td>2333</td>
-      <td>1815</td>
-      <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89732</th>
-      <td>Mark_Travers</td>
-      <td>37</td>
-      <td>1</td>
-      <td>0</td>
       <td>Bournemouth</td>
-      <td>Southampton</td>
-      <td>0.613218</td>
-      <td>0.486089</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>-38</td>
-      <td>16</td>
-      <td>54</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89733</th>
-      <td>Theo_Walcott</td>
-      <td>37</td>
-      <td>3</td>
-      <td>83</td>
       <td>Everton</td>
-      <td>Sheffield United</td>
-      <td>1.032597</td>
-      <td>0.300107</td>
+      <td>0.565681</td>
+      <td>1.005607</td>
       <td>False</td>
-      <td>3</td>
-      <td>...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>8.0</td>
-      <td>456</td>
-      <td>578</td>
-      <td>122</td>
-      <td>0</td>
-      <td>2020-07-20T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89734</th>
-      <td>Alisson_Ramses Becker</td>
-      <td>37</td>
-      <td>1</td>
-      <td>90</td>
-      <td>Liverpool</td>
-      <td>Chelsea</td>
-      <td>2.451453</td>
-      <td>2.064820</td>
-      <td>True</td>
-      <td>1</td>
+      <td>2</td>
       <td>...</td>
       <td>3</td>
-      <td>5</td>
-      <td>0.0</td>
-      <td>-12140</td>
-      <td>1250</td>
-      <td>13390</td>
-      <td>0</td>
-      <td>2020-07-22T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89735</th>
-      <td>Moussa_Sissoko</td>
-      <td>37</td>
-      <td>3</td>
-      <td>90</td>
-      <td>Tottenham Hotspur</td>
-      <td>Leicester City</td>
-      <td>1.737985</td>
-      <td>1.044531</td>
-      <td>True</td>
-      <td>3</td>
-      <td>...</td>
-      <td>0</td>
-      <td>3</td>
-      <td>0.0</td>
-      <td>45</td>
-      <td>778</td>
-      <td>733</td>
-      <td>0</td>
-      <td>2020-07-19T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89736</th>
-      <td>Leroy_Sané</td>
-      <td>37</td>
-      <td>3</td>
-      <td>0</td>
-      <td>Manchester City</td>
-      <td>Watford</td>
-      <td>2.468858</td>
-      <td>0.504811</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>-53</td>
-      <td>40</td>
-      <td>93</td>
-      <td>0</td>
-      <td>2020-07-21T17:00:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89737</th>
-      <td>Jake_Vokins</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Southampton</td>
-      <td>Bournemouth</td>
-      <td>0.486089</td>
-      <td>0.613218</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>440</td>
-      <td>565</td>
-      <td>125</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89738</th>
-      <td>Jonny_Evans</td>
-      <td>37</td>
-      <td>2</td>
-      <td>90</td>
-      <td>Leicester City</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.044531</td>
-      <td>1.737985</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>3</td>
-      <td>0.0</td>
-      <td>-5875</td>
-      <td>8040</td>
-      <td>13915</td>
       <td>1</td>
-      <td>2020-07-19T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89739</th>
-      <td>Jack_Stacey</td>
-      <td>37</td>
-      <td>2</td>
-      <td>90</td>
-      <td>Bournemouth</td>
-      <td>Southampton</td>
-      <td>0.613218</td>
-      <td>0.486089</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>2.0</td>
-      <td>123</td>
-      <td>224</td>
-      <td>101</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89740</th>
-      <td>Lucas_Rodrigues Moura da Silva</td>
-      <td>37</td>
-      <td>3</td>
-      <td>76</td>
-      <td>Tottenham Hotspur</td>
-      <td>Leicester City</td>
-      <td>1.737985</td>
-      <td>1.044531</td>
-      <td>True</td>
-      <td>10</td>
-      <td>...</td>
-      <td>0</td>
-      <td>3</td>
-      <td>2.0</td>
-      <td>44</td>
-      <td>2737</td>
-      <td>2693</td>
-      <td>1</td>
-      <td>2020-07-19T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89741</th>
-      <td>Josip_Drmic</td>
-      <td>37</td>
-      <td>4</td>
-      <td>47</td>
-      <td>Norwich</td>
-      <td>Burnley</td>
-      <td>0.311992</td>
-      <td>0.360601</td>
-      <td>True</td>
-      <td>-2</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>-9</td>
-      <td>76</td>
-      <td>85</td>
-      <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89742</th>
-      <td>Odion_Ighalo</td>
-      <td>37</td>
-      <td>4</td>
-      <td>5</td>
-      <td>Manchester United</td>
-      <td>West Ham United</td>
-      <td>1.640220</td>
-      <td>0.681394</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>10.0</td>
-      <td>-944</td>
-      <td>168</td>
-      <td>1112</td>
-      <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89743</th>
-      <td>Lukas_Rupp</td>
-      <td>37</td>
-      <td>3</td>
-      <td>14</td>
-      <td>Norwich</td>
-      <td>Burnley</td>
-      <td>0.311992</td>
-      <td>0.360601</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>7</td>
-      <td>49</td>
-      <td>42</td>
-      <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89744</th>
-      <td>Divock_Origi</td>
-      <td>37</td>
-      <td>4</td>
-      <td>3</td>
-      <td>Liverpool</td>
-      <td>Chelsea</td>
-      <td>2.451453</td>
-      <td>2.064820</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>3</td>
-      <td>5</td>
-      <td>0.0</td>
-      <td>-1234</td>
-      <td>495</td>
-      <td>1729</td>
-      <td>0</td>
-      <td>2020-07-22T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89745</th>
-      <td>Bobby_Thomas</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Burnley</td>
-      <td>Norwich</td>
-      <td>0.360601</td>
-      <td>0.311992</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>51</td>
-      <td>130</td>
-      <td>79</td>
-      <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89746</th>
-      <td>José_Reina</td>
-      <td>37</td>
-      <td>1</td>
-      <td>90</td>
-      <td>Aston Villa</td>
-      <td>Arsenal</td>
-      <td>0.532708</td>
-      <td>1.496432</td>
-      <td>True</td>
-      <td>6</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>3102</td>
-      <td>5135</td>
-      <td>2033</td>
-      <td>0</td>
-      <td>2020-07-21T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89747</th>
-      <td>Brandon_Williams</td>
-      <td>37</td>
-      <td>2</td>
-      <td>90</td>
-      <td>Manchester United</td>
-      <td>West Ham United</td>
-      <td>1.640220</td>
-      <td>0.681394</td>
-      <td>True</td>
-      <td>2</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>-12618</td>
-      <td>2553</td>
-      <td>15171</td>
-      <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
-      <td>1920</td>
-      <td>0.75</td>
-    </tr>
-    <tr>
-      <th>89748</th>
-      <td>Sam_Gallagher</td>
-      <td>37</td>
-      <td>4</td>
-      <td>0</td>
-      <td>Southampton</td>
-      <td>Bournemouth</td>
-      <td>0.486089</td>
-      <td>0.613218</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>10</td>
-      <td>19</td>
-      <td>9</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89749</th>
-      <td>Wesley_Hoedt</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Southampton</td>
-      <td>Bournemouth</td>
-      <td>0.486089</td>
-      <td>0.613218</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>15</td>
-      <td>24</td>
-      <td>9</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89750</th>
-      <td>Raheem_Sterling</td>
-      <td>37</td>
-      <td>3</td>
-      <td>63</td>
-      <td>Manchester City</td>
-      <td>Watford</td>
-      <td>2.468858</td>
-      <td>0.504811</td>
-      <td>False</td>
-      <td>17</td>
-      <td>...</td>
-      <td>4</td>
-      <td>0</td>
-      <td>103.0</td>
-      <td>31987</td>
-      <td>70336</td>
-      <td>38349</td>
-      <td>0</td>
-      <td>2020-07-21T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89751</th>
-      <td>Jonathan_Kodjia</td>
-      <td>37</td>
-      <td>4</td>
-      <td>0</td>
-      <td>Aston Villa</td>
-      <td>Arsenal</td>
-      <td>0.532708</td>
-      <td>1.496432</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>-2</td>
-      <td>8</td>
-      <td>10</td>
-      <td>0</td>
-      <td>2020-07-21T19:15:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89752</th>
-      <td>Abd-Al-Ali Morakinyo Olaposi_Koiki</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Burnley</td>
-      <td>Norwich</td>
-      <td>0.360601</td>
-      <td>0.311992</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>-77</td>
-      <td>9</td>
-      <td>86</td>
-      <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89753</th>
-      <td>David_Brooks</td>
-      <td>37</td>
-      <td>3</td>
-      <td>45</td>
-      <td>Bournemouth</td>
-      <td>Southampton</td>
-      <td>0.613218</td>
-      <td>0.486089</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>2461</td>
-      <td>2681</td>
-      <td>220</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89754</th>
-      <td>Mario_Lemina</td>
-      <td>37</td>
-      <td>3</td>
-      <td>0</td>
-      <td>Southampton</td>
-      <td>Bournemouth</td>
-      <td>0.486089</td>
-      <td>0.613218</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>2</td>
-      <td>5</td>
-      <td>3</td>
-      <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89755</th>
-      <td>Diego_Rico</td>
-      <td>37</td>
-      <td>2</td>
-      <td>90</td>
-      <td>Bournemouth</td>
-      <td>Southampton</td>
-      <td>0.613218</td>
-      <td>0.486089</td>
-      <td>True</td>
-      <td>1</td>
-      <td>...</td>
-      <td>2</td>
-      <td>0</td>
       <td>1.0</td>
-      <td>5780</td>
-      <td>11939</td>
-      <td>6159</td>
+      <td>-87</td>
+      <td>95</td>
+      <td>182</td>
       <td>0</td>
-      <td>2020-07-19T13:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89756</th>
-      <td>Nacho_Monreal</td>
-      <td>37</td>
-      <td>2</td>
-      <td>0</td>
-      <td>Arsenal</td>
-      <td>Aston Villa</td>
-      <td>1.496432</td>
-      <td>0.532708</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0.0</td>
+      <th>90392</th>
+      <td>Tammy_Abraham</td>
+      <td>38</td>
       <td>4</td>
       <td>12</td>
-      <td>8</td>
-      <td>0</td>
-      <td>2020-07-21T19:15:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89757</th>
-      <td>Bernd_Leno</td>
-      <td>37</td>
-      <td>1</td>
-      <td>0</td>
-      <td>Arsenal</td>
-      <td>Aston Villa</td>
-      <td>1.496432</td>
-      <td>0.532708</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>-4237</td>
-      <td>72</td>
-      <td>4309</td>
-      <td>0</td>
-      <td>2020-07-21T19:15:00Z</td>
-      <td>1920</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>89758</th>
-      <td>George_Hirst</td>
-      <td>37</td>
-      <td>4</td>
-      <td>7</td>
-      <td>Leicester City</td>
-      <td>Tottenham Hotspur</td>
-      <td>1.044531</td>
-      <td>1.737985</td>
-      <td>False</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>3</td>
-      <td>8.0</td>
-      <td>11</td>
-      <td>21</td>
-      <td>10</td>
-      <td>0</td>
-      <td>2020-07-19T15:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89759</th>
-      <td>David_Martin</td>
-      <td>37</td>
-      <td>1</td>
-      <td>0</td>
-      <td>West Ham United</td>
-      <td>Manchester United</td>
-      <td>0.681394</td>
-      <td>1.640220</td>
-      <td>False</td>
-      <td>0</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>486</td>
-      <td>8233</td>
-      <td>7747</td>
-      <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89760</th>
-      <td>Mamadou_Sakho</td>
-      <td>37</td>
-      <td>2</td>
-      <td>22</td>
-      <td>Crystal Palace</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>0.429399</td>
-      <td>0.735971</td>
-      <td>False</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0.0</td>
-      <td>266</td>
-      <td>407</td>
-      <td>141</td>
-      <td>0</td>
-      <td>2020-07-20T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89761</th>
-      <td>Ruben_Loftus-Cheek</td>
-      <td>37</td>
-      <td>3</td>
-      <td>0</td>
       <td>Chelsea</td>
-      <td>Liverpool</td>
-      <td>2.064820</td>
-      <td>2.451453</td>
-      <td>False</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>1.999543</td>
+      <td>0.811175</td>
+      <td>True</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>2</td>
+      <td>11.0</td>
+      <td>-10050</td>
+      <td>10886</td>
+      <td>20936</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90393</th>
+      <td>Nicolás_Otamendi</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
       <td>0</td>
       <td>...</td>
-      <td>3</td>
+      <td>0</td>
       <td>5</td>
       <td>0.0</td>
-      <td>-299</td>
-      <td>156</td>
-      <td>455</td>
+      <td>-1574</td>
+      <td>7965</td>
+      <td>9539</td>
       <td>0</td>
-      <td>2020-07-22T19:15:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89762</th>
-      <td>Pascal_Groß</td>
-      <td>37</td>
+      <th>90394</th>
+      <td>James_Daly</td>
+      <td>38</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Crystal Palace</td>
+      <td>Tottenham Hotspur</td>
+      <td>0.430493</td>
+      <td>1.604904</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>125</td>
+      <td>165</td>
+      <td>40</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90395</th>
+      <td>Declan_Rice</td>
+      <td>38</td>
+      <td>3</td>
+      <td>90</td>
+      <td>West Ham United</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
+      <td>5</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>15208</td>
+      <td>18372</td>
+      <td>3164</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90396</th>
+      <td>Connor_Wickham</td>
+      <td>38</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Crystal Palace</td>
+      <td>Tottenham Hotspur</td>
+      <td>0.430493</td>
+      <td>1.604904</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>1567</td>
+      <td>2425</td>
+      <td>858</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90397</th>
+      <td>Mark_Noble</td>
+      <td>38</td>
+      <td>3</td>
+      <td>86</td>
+      <td>West Ham United</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>5818</td>
+      <td>8813</td>
+      <td>2995</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90398</th>
+      <td>Mark_Travers</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Bournemouth</td>
+      <td>Everton</td>
+      <td>0.565681</td>
+      <td>1.005607</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-73</td>
+      <td>47</td>
+      <td>120</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90399</th>
+      <td>Theo_Walcott</td>
+      <td>38</td>
       <td>3</td>
       <td>57</td>
-      <td>Brighton and Hove Albion</td>
-      <td>Newcastle United</td>
-      <td>0.503369</td>
-      <td>0.603446</td>
+      <td>Everton</td>
+      <td>Bournemouth</td>
+      <td>1.005607</td>
+      <td>0.565681</td>
       <td>True</td>
-      <td>0</td>
+      <td>4</td>
       <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>12.0</td>
-      <td>237</td>
-      <td>529</td>
-      <td>292</td>
+      <td>3</td>
       <td>1</td>
-      <td>2020-07-20T17:00:00Z</td>
+      <td>25.0</td>
+      <td>744</td>
+      <td>1071</td>
+      <td>327</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89763</th>
-      <td>Emerson_Palmieri dos Santos</td>
-      <td>37</td>
-      <td>2</td>
-      <td>2</td>
-      <td>Chelsea</td>
-      <td>Liverpool</td>
-      <td>2.064820</td>
-      <td>2.451453</td>
-      <td>False</td>
+      <th>90400</th>
+      <td>Alisson_Ramses Becker</td>
+      <td>38</td>
       <td>1</td>
+      <td>90</td>
+      <td>Liverpool</td>
+      <td>Newcastle United</td>
+      <td>2.406333</td>
+      <td>0.611449</td>
+      <td>False</td>
+      <td>2</td>
       <td>...</td>
       <td>3</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-4380</td>
+      <td>6014</td>
+      <td>10394</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90401</th>
+      <td>Moussa_Sissoko</td>
+      <td>38</td>
+      <td>3</td>
+      <td>79</td>
+      <td>Tottenham Hotspur</td>
+      <td>Crystal Palace</td>
+      <td>1.604904</td>
+      <td>0.430493</td>
+      <td>False</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>404</td>
+      <td>1393</td>
+      <td>989</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90402</th>
+      <td>Leroy_Sané</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
       <td>5</td>
       <td>0.0</td>
-      <td>-137</td>
-      <td>142</td>
-      <td>279</td>
+      <td>-61</td>
+      <td>105</td>
+      <td>166</td>
       <td>0</td>
-      <td>2020-07-22T19:15:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
-      <td>1.00</td>
+      <td>0.00</td>
     </tr>
     <tr>
-      <th>89764</th>
-      <td>John_Ruddy</td>
-      <td>37</td>
-      <td>1</td>
-      <td>0</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>Crystal Palace</td>
-      <td>0.735971</td>
-      <td>0.429399</td>
-      <td>True</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
+      <th>90403</th>
+      <td>Jake_Vokins</td>
+      <td>38</td>
       <td>2</td>
-      <td>0.0</td>
-      <td>-60</td>
-      <td>50</td>
-      <td>110</td>
       <td>0</td>
-      <td>2020-07-20T19:15:00Z</td>
-      <td>1920</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>89765</th>
-      <td>Heurelho da Silva_Gomes</td>
-      <td>37</td>
-      <td>1</td>
-      <td>0</td>
-      <td>Watford</td>
-      <td>Manchester City</td>
-      <td>0.504811</td>
-      <td>2.468858</td>
+      <td>Southampton</td>
+      <td>Sheffield United</td>
+      <td>0.526987</td>
+      <td>0.348678</td>
       <td>True</td>
       <td>0</td>
       <td>...</td>
-      <td>4</td>
-      <td>0</td>
+      <td>1</td>
+      <td>3</td>
       <td>0.0</td>
-      <td>-37</td>
-      <td>41</td>
-      <td>78</td>
+      <td>18</td>
+      <td>225</td>
+      <td>207</td>
       <td>0</td>
-      <td>2020-07-21T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89766</th>
-      <td>Tommy_Doyle</td>
-      <td>37</td>
-      <td>3</td>
+      <th>90404</th>
+      <td>Jonny_Evans</td>
+      <td>38</td>
+      <td>2</td>
+      <td>90</td>
+      <td>Leicester City</td>
+      <td>Manchester United</td>
+      <td>1.076834</td>
+      <td>1.753447</td>
+      <td>True</td>
+      <td>-2</td>
+      <td>...</td>
+      <td>2</td>
       <td>0</td>
-      <td>Manchester City</td>
-      <td>Watford</td>
-      <td>2.468858</td>
-      <td>0.504811</td>
+      <td>0.0</td>
+      <td>-24927</td>
+      <td>4624</td>
+      <td>29551</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90405</th>
+      <td>Jack_Stacey</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Bournemouth</td>
+      <td>Everton</td>
+      <td>0.565681</td>
+      <td>1.005607</td>
       <td>False</td>
       <td>0</td>
       <td>...</td>
-      <td>4</td>
-      <td>0</td>
+      <td>3</td>
+      <td>1</td>
       <td>0.0</td>
-      <td>-1</td>
-      <td>14</td>
-      <td>15</td>
+      <td>-4</td>
+      <td>156</td>
+      <td>160</td>
       <td>0</td>
-      <td>2020-07-21T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89767</th>
-      <td>Joseph_Anang</td>
-      <td>37</td>
+      <th>90406</th>
+      <td>Lucas_Rodrigues Moura da Silva</td>
+      <td>38</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Tottenham Hotspur</td>
+      <td>Crystal Palace</td>
+      <td>1.604904</td>
+      <td>0.430493</td>
+      <td>False</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8.0</td>
+      <td>14651</td>
+      <td>18373</td>
+      <td>3722</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90407</th>
+      <td>Josip_Drmic</td>
+      <td>38</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Norwich</td>
+      <td>Manchester City</td>
+      <td>0.327574</td>
+      <td>2.430397</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>76</td>
+      <td>273</td>
+      <td>197</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90408</th>
+      <td>Odion_Ighalo</td>
+      <td>38</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Manchester United</td>
+      <td>Leicester City</td>
+      <td>1.753447</td>
+      <td>1.076834</td>
+      <td>False</td>
+      <td>1</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>8.0</td>
+      <td>-890</td>
+      <td>230</td>
+      <td>1120</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90409</th>
+      <td>Lukas_Rupp</td>
+      <td>38</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Norwich</td>
+      <td>Manchester City</td>
+      <td>0.327574</td>
+      <td>2.430397</td>
+      <td>False</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>6.0</td>
+      <td>11</td>
+      <td>50</td>
+      <td>39</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90410</th>
+      <td>Divock_Origi</td>
+      <td>38</td>
+      <td>4</td>
+      <td>63</td>
+      <td>Liverpool</td>
+      <td>Newcastle United</td>
+      <td>2.406333</td>
+      <td>0.611449</td>
+      <td>False</td>
+      <td>8</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>17.0</td>
+      <td>972</td>
+      <td>2520</td>
+      <td>1548</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90411</th>
+      <td>Bobby_Thomas</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Burnley</td>
+      <td>Brighton and Hove Albion</td>
+      <td>0.370648</td>
+      <td>0.541184</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>53</td>
+      <td>182</td>
+      <td>129</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90412</th>
+      <td>José_Reina</td>
+      <td>38</td>
+      <td>1</td>
+      <td>90</td>
+      <td>Aston Villa</td>
+      <td>West Ham United</td>
+      <td>0.553818</td>
+      <td>0.709989</td>
+      <td>False</td>
+      <td>2</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>12206</td>
+      <td>15222</td>
+      <td>3016</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90413</th>
+      <td>Brandon_Williams</td>
+      <td>38</td>
+      <td>2</td>
+      <td>90</td>
+      <td>Manchester United</td>
+      <td>Leicester City</td>
+      <td>1.753447</td>
+      <td>1.076834</td>
+      <td>False</td>
+      <td>7</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>48420</td>
+      <td>57096</td>
+      <td>8676</td>
+      <td>1</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90414</th>
+      <td>Sam_Gallagher</td>
+      <td>38</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Southampton</td>
+      <td>Sheffield United</td>
+      <td>0.526987</td>
+      <td>0.348678</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>126</td>
+      <td>216</td>
+      <td>90</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90415</th>
+      <td>Wesley_Hoedt</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Southampton</td>
+      <td>Sheffield United</td>
+      <td>0.526987</td>
+      <td>0.348678</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>-10</td>
+      <td>19</td>
+      <td>29</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90416</th>
+      <td>Raheem_Sterling</td>
+      <td>38</td>
+      <td>3</td>
+      <td>90</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
+      <td>8</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>78.0</td>
+      <td>246893</td>
+      <td>265449</td>
+      <td>18556</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90417</th>
+      <td>Jonathan_Kodjia</td>
+      <td>38</td>
+      <td>4</td>
+      <td>0</td>
+      <td>Aston Villa</td>
+      <td>West Ham United</td>
+      <td>0.553818</td>
+      <td>0.709989</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-2</td>
+      <td>33</td>
+      <td>35</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90418</th>
+      <td>Abd-Al-Ali Morakinyo Olaposi_Koiki</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Burnley</td>
+      <td>Brighton and Hove Albion</td>
+      <td>0.370648</td>
+      <td>0.541184</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-93</td>
+      <td>16</td>
+      <td>109</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90419</th>
+      <td>David_Brooks</td>
+      <td>38</td>
+      <td>3</td>
+      <td>63</td>
+      <td>Bournemouth</td>
+      <td>Everton</td>
+      <td>0.565681</td>
+      <td>1.005607</td>
+      <td>False</td>
+      <td>2</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>26.0</td>
+      <td>-650</td>
+      <td>487</td>
+      <td>1137</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90420</th>
+      <td>Mario_Lemina</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Southampton</td>
+      <td>Sheffield United</td>
+      <td>0.526987</td>
+      <td>0.348678</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>-4</td>
+      <td>6</td>
+      <td>10</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90421</th>
+      <td>Diego_Rico</td>
+      <td>38</td>
+      <td>2</td>
+      <td>90</td>
+      <td>Bournemouth</td>
+      <td>Everton</td>
+      <td>0.565681</td>
+      <td>1.005607</td>
+      <td>False</td>
+      <td>7</td>
+      <td>...</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-339</td>
+      <td>12402</td>
+      <td>12741</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90422</th>
+      <td>Nacho_Monreal</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Arsenal</td>
+      <td>Watford</td>
+      <td>1.452343</td>
+      <td>0.472917</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>-15</td>
+      <td>25</td>
+      <td>40</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90423</th>
+      <td>Bernd_Leno</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Arsenal</td>
+      <td>Watford</td>
+      <td>1.452343</td>
+      <td>0.472917</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>-5272</td>
+      <td>125</td>
+      <td>5397</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90424</th>
+      <td>George_Hirst</td>
+      <td>38</td>
+      <td>4</td>
+      <td>2</td>
+      <td>Leicester City</td>
+      <td>Manchester United</td>
+      <td>1.076834</td>
+      <td>1.753447</td>
+      <td>True</td>
+      <td>1</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>17.0</td>
+      <td>78</td>
+      <td>120</td>
+      <td>42</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90425</th>
+      <td>David_Martin</td>
+      <td>38</td>
       <td>1</td>
       <td>0</td>
       <td>West Ham United</td>
-      <td>Manchester United</td>
-      <td>0.681394</td>
-      <td>1.640220</td>
-      <td>False</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
       <td>0</td>
       <td>...</td>
       <td>1</td>
       <td>1</td>
       <td>0.0</td>
-      <td>-51</td>
-      <td>97</td>
-      <td>148</td>
+      <td>4032</td>
+      <td>13902</td>
+      <td>9870</td>
       <td>0</td>
-      <td>2020-07-22T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89768</th>
+      <th>90426</th>
+      <td>Mamadou_Sakho</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Crystal Palace</td>
+      <td>Tottenham Hotspur</td>
+      <td>0.430493</td>
+      <td>1.604904</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-444</td>
+      <td>125</td>
+      <td>569</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>90427</th>
+      <td>Ruben_Loftus-Cheek</td>
+      <td>38</td>
+      <td>3</td>
+      <td>5</td>
+      <td>Chelsea</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>1.999543</td>
+      <td>0.811175</td>
+      <td>True</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>-366</td>
+      <td>163</td>
+      <td>529</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90428</th>
+      <td>Pascal_Groß</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Brighton and Hove Albion</td>
+      <td>Burnley</td>
+      <td>0.541184</td>
+      <td>0.370648</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>-404</td>
+      <td>189</td>
+      <td>593</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90429</th>
+      <td>Emerson_Palmieri dos Santos</td>
+      <td>38</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Chelsea</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>1.999543</td>
+      <td>0.811175</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>-45</td>
+      <td>230</td>
+      <td>275</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90430</th>
+      <td>John_Ruddy</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Wolverhampton Wanderers</td>
+      <td>Chelsea</td>
+      <td>0.811175</td>
+      <td>1.999543</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>-71</td>
+      <td>133</td>
+      <td>204</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90431</th>
+      <td>Heurelho da Silva_Gomes</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Watford</td>
+      <td>Arsenal</td>
+      <td>0.472917</td>
+      <td>1.452343</td>
+      <td>False</td>
+      <td>0</td>
+      <td>...</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.0</td>
+      <td>9</td>
+      <td>107</td>
+      <td>98</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90432</th>
+      <td>Tommy_Doyle</td>
+      <td>38</td>
+      <td>3</td>
+      <td>0</td>
+      <td>Manchester City</td>
+      <td>Norwich</td>
+      <td>2.430397</td>
+      <td>0.327574</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>-2</td>
+      <td>22</td>
+      <td>24</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90433</th>
+      <td>Joseph_Anang</td>
+      <td>38</td>
+      <td>1</td>
+      <td>0</td>
+      <td>West Ham United</td>
+      <td>Aston Villa</td>
+      <td>0.709989</td>
+      <td>0.553818</td>
+      <td>True</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>70</td>
+      <td>270</td>
+      <td>200</td>
+      <td>0</td>
+      <td>2020-07-26T15:00:00Z</td>
+      <td>1920</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>90434</th>
       <td>Erik_Pieters</td>
-      <td>37</td>
+      <td>38</td>
       <td>2</td>
       <td>90</td>
       <td>Burnley</td>
-      <td>Norwich</td>
-      <td>0.360601</td>
-      <td>0.311992</td>
-      <td>False</td>
-      <td>12</td>
+      <td>Brighton and Hove Albion</td>
+      <td>0.370648</td>
+      <td>0.541184</td>
+      <td>True</td>
+      <td>3</td>
       <td>...</td>
       <td>2</td>
-      <td>0</td>
-      <td>33.0</td>
-      <td>56140</td>
-      <td>58736</td>
-      <td>2596</td>
-      <td>0</td>
-      <td>2020-07-18T16:30:00Z</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>139816</td>
+      <td>144388</td>
+      <td>4572</td>
+      <td>1</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89769</th>
+      <th>90435</th>
       <td>Japhet_Tanganga</td>
-      <td>37</td>
+      <td>38</td>
       <td>2</td>
       <td>0</td>
       <td>Tottenham Hotspur</td>
-      <td>Leicester City</td>
-      <td>1.737985</td>
-      <td>1.044531</td>
-      <td>True</td>
+      <td>Crystal Palace</td>
+      <td>1.604904</td>
+      <td>0.430493</td>
+      <td>False</td>
       <td>0</td>
       <td>...</td>
-      <td>0</td>
-      <td>3</td>
+      <td>1</td>
+      <td>1</td>
       <td>0.0</td>
-      <td>10367</td>
-      <td>14553</td>
-      <td>4186</td>
+      <td>7999</td>
+      <td>14840</td>
+      <td>6841</td>
       <td>0</td>
-      <td>2020-07-19T15:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>1.00</td>
     </tr>
     <tr>
-      <th>89770</th>
+      <th>90436</th>
       <td>Ravel_Morrison</td>
-      <td>37</td>
+      <td>38</td>
       <td>3</td>
       <td>0</td>
       <td>Sheffield United</td>
-      <td>Everton</td>
-      <td>0.300107</td>
-      <td>1.032597</td>
-      <td>True</td>
+      <td>Southampton</td>
+      <td>0.348678</td>
+      <td>0.526987</td>
+      <td>False</td>
       <td>0</td>
       <td>...</td>
       <td>1</td>
-      <td>0</td>
+      <td>3</td>
       <td>0.0</td>
-      <td>-12</td>
-      <td>5</td>
-      <td>17</td>
+      <td>-23</td>
+      <td>7</td>
+      <td>30</td>
       <td>0</td>
-      <td>2020-07-20T17:00:00Z</td>
+      <td>2020-07-26T15:00:00Z</td>
       <td>1920</td>
       <td>0.00</td>
     </tr>
@@ -14417,7 +14779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># df_train[(df_train[&#39;gw&#39;]==24) &amp; (df_train[&#39;season&#39;]==&#39;1920&#39;) &amp; (df_train[&#39;team&#39;]==&#39;Liverpool&#39;)]</span>
@@ -14430,7 +14792,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># find the latest gameweek</span>
@@ -14454,13 +14816,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>38</pre>
+<pre>39</pre>
 </div>
 
 </div>

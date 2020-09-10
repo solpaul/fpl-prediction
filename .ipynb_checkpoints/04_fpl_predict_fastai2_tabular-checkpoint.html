@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import required packages</span>
@@ -13091,7 +13091,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># path to project directory</span>
@@ -13105,7 +13105,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in training dataset</span>
@@ -13128,7 +13128,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[156]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># add a bunch of lag features</span>
@@ -13152,7 +13152,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set validaton point/length and categorical/continuous variables</span>
@@ -13160,7 +13160,7 @@ div#notebook {
 <span class="n">valid_gw</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">valid_len</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">cat_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gw&#39;</span><span class="p">,</span> <span class="s1">&#39;season&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">,</span> <span class="s1">&#39;team&#39;</span><span class="p">,</span> <span class="s1">&#39;opponent_team&#39;</span><span class="p">,</span> <span class="s1">&#39;was_home&#39;</span><span class="p">]</span>
-<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">]</span>
+<span class="n">cont_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;minutes&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_team_season&#39;</span><span class="p">,</span> <span class="s1">&#39;relative_market_value_opponent_team_season&#39;</span><span class="p">]</span>
 <span class="n">dep_var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_points&#39;</span><span class="p">]</span>
 </pre></div>
 
@@ -13171,7 +13171,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[158]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we want to set gw and season as ordered categorical variables</span>
@@ -13187,7 +13187,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[159]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set as categories with correct order </span>
@@ -13205,7 +13205,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[160]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dependent variable needs to be float</span>
@@ -13219,7 +13219,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create dataset with adjusted post-validation lag numbers</span>
@@ -13238,7 +13238,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[162]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># take a look at the dataframe</span>
@@ -13261,42 +13261,44 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 71132 entries, 0 to 71131
-Data columns (total 31 columns):
- #   Column                                  Non-Null Count  Dtype   
----  ------                                  --------------  -----   
- 0   index                                   71132 non-null  int64   
- 1   was_home                                71132 non-null  bool    
- 2   position                                71132 non-null  int64   
- 3   opponent_team                           71132 non-null  object  
- 4   player                                  71132 non-null  object  
- 5   gw                                      71132 non-null  category
- 6   season                                  71132 non-null  category
- 7   team                                    71132 non-null  object  
- 8   minutes                                 71132 non-null  int64   
- 9   total_points_pg_last_all                71132 non-null  float64 
- 10  total_points_pg_last_1                  71132 non-null  float64 
- 11  total_points_pg_last_2                  71132 non-null  float64 
- 12  total_points_pg_last_3                  71132 non-null  float64 
- 13  total_points_pg_last_4                  71132 non-null  float64 
- 14  total_points_pg_last_5                  71132 non-null  float64 
- 15  total_points_pg_last_10                 71132 non-null  float64 
- 16  total_points_team_pg_last_all           71132 non-null  float64 
- 17  total_points_team_pg_last_1             71132 non-null  float64 
- 18  total_points_team_pg_last_2             71132 non-null  float64 
- 19  total_points_team_pg_last_3             71132 non-null  float64 
- 20  total_points_team_pg_last_4             71132 non-null  float64 
- 21  total_points_team_pg_last_5             71132 non-null  float64 
- 22  total_points_team_pg_last_10            71132 non-null  float64 
- 23  total_points_team_pg_last_all_opponent  71132 non-null  float64 
- 24  total_points_team_pg_last_1_opponent    71132 non-null  float64 
- 25  total_points_team_pg_last_2_opponent    71132 non-null  float64 
- 26  total_points_team_pg_last_3_opponent    71132 non-null  float64 
- 27  total_points_team_pg_last_4_opponent    71132 non-null  float64 
- 28  total_points_team_pg_last_5_opponent    71132 non-null  float64 
- 29  total_points_team_pg_last_10_opponent   71132 non-null  float64 
- 30  total_points                            71132 non-null  float64 
-dtypes: bool(1), category(2), float64(22), int64(3), object(3)
-memory usage: 15.4+ MB
+Data columns (total 33 columns):
+ #   Column                                      Non-Null Count  Dtype   
+---  ------                                      --------------  -----   
+ 0   index                                       71132 non-null  int64   
+ 1   was_home                                    71132 non-null  bool    
+ 2   position                                    71132 non-null  int64   
+ 3   player                                      71132 non-null  object  
+ 4   gw                                          71132 non-null  category
+ 5   opponent_team                               71132 non-null  object  
+ 6   team                                        71132 non-null  object  
+ 7   season                                      71132 non-null  category
+ 8   minutes                                     71132 non-null  int64   
+ 9   relative_market_value_team_season           71132 non-null  float64 
+ 10  relative_market_value_opponent_team_season  71132 non-null  float64 
+ 11  total_points_pg_last_all                    71132 non-null  float64 
+ 12  total_points_pg_last_1                      71132 non-null  float64 
+ 13  total_points_pg_last_2                      71132 non-null  float64 
+ 14  total_points_pg_last_3                      71132 non-null  float64 
+ 15  total_points_pg_last_4                      71132 non-null  float64 
+ 16  total_points_pg_last_5                      71132 non-null  float64 
+ 17  total_points_pg_last_10                     71132 non-null  float64 
+ 18  total_points_team_pg_last_all               71132 non-null  float64 
+ 19  total_points_team_pg_last_1                 71132 non-null  float64 
+ 20  total_points_team_pg_last_2                 71132 non-null  float64 
+ 21  total_points_team_pg_last_3                 71132 non-null  float64 
+ 22  total_points_team_pg_last_4                 71132 non-null  float64 
+ 23  total_points_team_pg_last_5                 71132 non-null  float64 
+ 24  total_points_team_pg_last_10                71132 non-null  float64 
+ 25  total_points_team_pg_last_all_opponent      71132 non-null  float64 
+ 26  total_points_team_pg_last_1_opponent        71132 non-null  float64 
+ 27  total_points_team_pg_last_2_opponent        71132 non-null  float64 
+ 28  total_points_team_pg_last_3_opponent        71132 non-null  float64 
+ 29  total_points_team_pg_last_4_opponent        71132 non-null  float64 
+ 30  total_points_team_pg_last_5_opponent        71132 non-null  float64 
+ 31  total_points_team_pg_last_10_opponent       71132 non-null  float64 
+ 32  total_points                                71132 non-null  float64 
+dtypes: bool(1), category(2), float64(24), int64(3), object(3)
+memory usage: 16.5+ MB
 </pre>
 </div>
 </div>
@@ -13307,7 +13309,7 @@ memory usage: 15.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[163]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create train/valid splits</span>
@@ -13325,7 +13327,7 @@ memory usage: 15.4+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[163]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13342,7 +13344,7 @@ memory usage: 15.4+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[164]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lag_train_df</span><span class="p">[</span><span class="n">cat_vars</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -13358,7 +13360,7 @@ memory usage: 15.4+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[164]:</div>
+    <div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -13382,7 +13384,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[165]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat_vars</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;player&#39;</span><span class="p">]</span>
@@ -13398,7 +13400,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[165]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -13415,7 +13417,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cont_vars</span> <span class="o">+</span> <span class="n">player_lag_vars</span> <span class="o">+</span> <span class="n">team_lag_vars</span>
@@ -13431,13 +13433,15 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[166]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&#39;minutes&#39;,
+ &#39;relative_market_value_team_season&#39;,
+ &#39;relative_market_value_opponent_team_season&#39;,
  &#39;total_points_pg_last_all&#39;,
  &#39;total_points_pg_last_1&#39;,
  &#39;total_points_pg_last_2&#39;,
@@ -13469,7 +13473,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># processors - categorify categorical variables and normalize continuous variables</span>
@@ -13486,7 +13490,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[168]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dls = to_nn.dataloaders()</span>
@@ -13500,7 +13504,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[169]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dls</span><span class="o">.</span><span class="n">show_batch</span><span class="p">()</span>
@@ -13533,129 +13537,151 @@ dtype: int64</pre>
       <th>was_home</th>
       <th>player</th>
       <th>minutes</th>
+      <th>relative_market_value_team_season</th>
+      <th>relative_market_value_opponent_team_season</th>
       <th>total_points</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>35</td>
-      <td>1819</td>
       <td>2</td>
-      <td>Manchester City</td>
-      <td>Manchester United</td>
-      <td>False</td>
-      <td>Vincent_Kompany</td>
-      <td>9.000000e+01</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>31</td>
-      <td>1819</td>
+      <td>1617</td>
       <td>3</td>
-      <td>Huddersfield Town</td>
-      <td>West Ham United</td>
-      <td>False</td>
-      <td>Aaron_Rowe</td>
-      <td>5.400000e+01</td>
+      <td>Stoke City</td>
+      <td>Manchester City</td>
+      <td>True</td>
+      <td>Joe_Allen</td>
+      <td>9.000000e+01</td>
+      <td>0.718705</td>
+      <td>2.311012</td>
       <td>1.0</td>
     </tr>
     <tr>
+      <th>1</th>
+      <td>33</td>
+      <td>1718</td>
+      <td>3</td>
+      <td>Huddersfield Town</td>
+      <td>Brighton and Hove Albion</td>
+      <td>False</td>
+      <td>Rajiv_van La Parra</td>
+      <td>8.900000e+01</td>
+      <td>0.210654</td>
+      <td>0.349181</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
       <th>2</th>
-      <td>4</td>
-      <td>1819</td>
-      <td>2</td>
-      <td>Manchester City</td>
-      <td>Newcastle United</td>
-      <td>True</td>
-      <td>Benjamin_Mendy</td>
-      <td>9.000000e+01</td>
-      <td>5.0</td>
+      <td>8</td>
+      <td>1617</td>
+      <td>3</td>
+      <td>West Ham United</td>
+      <td>Crystal Palace</td>
+      <td>False</td>
+      <td>Edimilson_Fernandes</td>
+      <td>1.300000e+01</td>
+      <td>0.895471</td>
+      <td>0.802197</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2</td>
-      <td>1819</td>
-      <td>2</td>
-      <td>Manchester City</td>
-      <td>Huddersfield Town</td>
-      <td>True</td>
-      <td>Nicolás_Otamendi</td>
-      <td>5.402212e-07</td>
-      <td>0.0</td>
+      <td>23</td>
+      <td>1617</td>
+      <td>4</td>
+      <td>Leicester City</td>
+      <td>Burnley</td>
+      <td>False</td>
+      <td>Shinji_Okazaki</td>
+      <td>1.400000e+01</td>
+      <td>0.650832</td>
+      <td>0.304218</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>31</td>
-      <td>1718</td>
+      <td>29</td>
+      <td>1617</td>
       <td>3</td>
-      <td>Liverpool</td>
-      <td>Watford</td>
-      <td>True</td>
-      <td>Ben_Woodburn</td>
-      <td>5.402212e-07</td>
-      <td>0.0</td>
+      <td>Burnley</td>
+      <td>Sunderland</td>
+      <td>False</td>
+      <td>Joey_Barton</td>
+      <td>9.000000e+01</td>
+      <td>0.304218</td>
+      <td>0.418392</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>11</td>
-      <td>1819</td>
-      <td>2</td>
-      <td>Wolverhampton Wanderers</td>
-      <td>Tottenham Hotspur</td>
+      <td>7</td>
+      <td>1718</td>
+      <td>3</td>
+      <td>West Bromwich Albion</td>
+      <td>Watford</td>
       <td>True</td>
-      <td>Jonathan_Castro Otto</td>
+      <td>Gareth_Barry</td>
       <td>9.000000e+01</td>
-      <td>4.0</td>
+      <td>0.541354</td>
+      <td>0.547242</td>
+      <td>2.0</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>14</td>
-      <td>1819</td>
-      <td>3</td>
-      <td>Cardiff City</td>
-      <td>Wolverhampton Wanderers</td>
+      <td>7</td>
+      <td>1617</td>
+      <td>2</td>
+      <td>Watford</td>
+      <td>Bournemouth</td>
       <td>True</td>
-      <td>Anthony_Pilkington</td>
-      <td>5.402212e-07</td>
+      <td>Daryl_Janmaat</td>
+      <td>3.971288e-07</td>
+      <td>0.704200</td>
+      <td>0.384921</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>29</td>
-      <td>1718</td>
-      <td>2</td>
-      <td>Southampton</td>
-      <td>Stoke City</td>
-      <td>True</td>
-      <td>Maya_Yoshida</td>
-      <td>5.402212e-07</td>
+      <td>27</td>
+      <td>1617</td>
+      <td>3</td>
+      <td>Bournemouth</td>
+      <td>Manchester United</td>
+      <td>False</td>
+      <td>Dan_Gosling</td>
+      <td>4.500000e+01</td>
+      <td>0.384921</td>
+      <td>1.983179</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>38</td>
-      <td>1819</td>
-      <td>3</td>
-      <td>Fulham</td>
-      <td>Newcastle United</td>
+      <td>26</td>
+      <td>1718</td>
+      <td>4</td>
+      <td>Arsenal</td>
+      <td>Everton</td>
       <td>True</td>
-      <td>Luca_De La Torre</td>
-      <td>5.402212e-07</td>
+      <td>Edward_Nketiah</td>
+      <td>3.971288e-07</td>
+      <td>2.073500</td>
+      <td>1.134226</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>14</td>
-      <td>1819</td>
+      <td>34</td>
+      <td>1718</td>
       <td>3</td>
+      <td>Brighton and Hove Albion</td>
       <td>Tottenham Hotspur</td>
-      <td>Arsenal</td>
-      <td>False</td>
-      <td>Lucas_Rodrigues Moura da Silva</td>
-      <td>1.100000e+01</td>
-      <td>1.0</td>
+      <td>True</td>
+      <td>Isaiah_Brown</td>
+      <td>3.971288e-07</td>
+      <td>0.349181</td>
+      <td>1.751141</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -13669,7 +13695,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[170]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set range of predictions - minimum to current max</span>
@@ -13685,7 +13711,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[171]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">learn</span> <span class="o">=</span> <span class="n">tabular_learner</span><span class="p">(</span><span class="n">dls</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="n">y_range</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span> <span class="n">ps</span><span class="o">=</span><span class="p">[</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.01</span><span class="p">],</span> <span class="n">emb_drop</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span>
@@ -13759,11 +13785,11 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[172]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># seems to work ok without the lag vars</span>
-<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="n">wd</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="n">wd</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13794,52 +13820,73 @@ dtype: int64</pre>
   <tbody>
     <tr>
       <td>0</td>
-      <td>4.710494</td>
-      <td>4.680041</td>
-      <td>2.163340</td>
-      <td>00:13</td>
+      <td>4.617392</td>
+      <td>4.823207</td>
+      <td>2.196180</td>
+      <td>00:14</td>
     </tr>
     <tr>
       <td>1</td>
-      <td>3.784971</td>
-      <td>3.862502</td>
-      <td>1.965325</td>
-      <td>00:13</td>
+      <td>4.143771</td>
+      <td>4.283218</td>
+      <td>2.069594</td>
+      <td>00:15</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>3.435681</td>
-      <td>3.940809</td>
-      <td>1.985147</td>
-      <td>00:13</td>
+      <td>3.942878</td>
+      <td>3.868781</td>
+      <td>1.966922</td>
+      <td>00:14</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>3.665566</td>
-      <td>3.907240</td>
-      <td>1.976674</td>
-      <td>00:13</td>
+      <td>3.636048</td>
+      <td>4.033024</td>
+      <td>2.008239</td>
+      <td>00:14</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>3.295397</td>
-      <td>3.800648</td>
-      <td>1.949525</td>
-      <td>00:13</td>
+      <td>3.669619</td>
+      <td>3.973552</td>
+      <td>1.993377</td>
+      <td>00:14</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>3.251440</td>
-      <td>3.705922</td>
-      <td>1.925078</td>
-      <td>00:13</td>
+      <td>3.291937</td>
+      <td>3.820120</td>
+      <td>1.954513</td>
+      <td>00:14</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>2.969594</td>
-      <td>3.731128</td>
-      <td>1.931613</td>
-      <td>00:13</td>
+      <td>3.382424</td>
+      <td>3.697486</td>
+      <td>1.922885</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>3.373975</td>
+      <td>3.685714</td>
+      <td>1.919821</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>3.206806</td>
+      <td>3.726507</td>
+      <td>1.930416</td>
+      <td>00:14</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>3.109817</td>
+      <td>3.701175</td>
+      <td>1.923844</td>
+      <td>00:14</td>
     </tr>
   </tbody>
 </table>

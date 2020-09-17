@@ -154,6 +154,9 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
     # concatenate entire season
     df_season = pd.concat(df_season, axis=0)
     
+    # remove team columns
+    df_season.drop('team', axis=1, inplace=True)
+    
     # join to player, team and team market value datasets to create season training set
     df_season = df_season.merge(all_players, left_on='element', right_on=id_season, how='left')
     df_season = df_season.merge(teams, left_on='opponent_team', right_on=id_team, how='left')
@@ -200,6 +203,7 @@ def player_lag_features(df, features, lags):
     for feature in features:
         for lag in lags:
             feature_name = feature + '_last_' + str(lag)
+            minute_name = 'minutes_last_' + str(lag)
             
             if lag == 'all':
                 df_new[feature_name] = df_new.groupby(['player'])[feature].apply(lambda x: x.cumsum() - x)
@@ -208,15 +212,16 @@ def player_lag_features(df, features, lags):
                                                                                             window=lag+1).sum() - x)
             if feature != 'minutes':
 
-                minute_name = 'minutes_last_' + str(lag)
                 pg_feature_name = feature + '_pg_last_' + str(lag)
                 player_lag_vars.append(pg_feature_name)
                 
-                df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name] 
-
+                df_new[pg_feature_name] = 90 * df_new[feature_name] / df_new[minute_name]
+                
                 # some cases of -1 points and 0 minutes cause -inf values
                 # change these to NaN
                 df_new[pg_feature_name] = df_new[pg_feature_name].replace([np.inf, -np.inf], np.nan)
+            
+            else: player_lag_vars.append(minute_name)
                 
     return df_new, player_lag_vars
 
@@ -279,18 +284,11 @@ def validation_gw_idx(df, season, gw, length):
 
     return (valid_start, valid_end)
 
-# second function to get the validation points for multiple gameweeks in a season 
-def validation_season_idx(df, season, gws, length):
-    
-    valid_idx_tups = []
-    
-    for gw in gws:
-        valid_idx_tups.append(validation_gw_idx(df, season, gw, length))
-    
-    return valid_idx_tups
-
 # function to calculate root mean squared error for preds and targs
 def r_mse(pred,y): return round(math.sqrt(((pred-y)**2).mean()), 6)
+
+# function to calculate mean absolute error for preds and targs
+def mae(pred, y):  return round(abs(pred-y).mean(), 6)
 
 # function to correct lag variables after validation point in a dataset
 # We can adapt this approach to also create validation sets with lag features
@@ -327,7 +325,7 @@ def create_lag_train(df, cat_vars, cont_vars, player_lag_vars, team_lag_vars, de
     opponent_team_lag_vals = opponent_team_lag_vals.drop('kickoff_time', axis=1)
     
     # get the validation start and end indexes
-    valid_start, valid_end = validation_season_idx(df, valid_season, [valid_gw], valid_len)[0]
+    valid_start, valid_end = validation_gw_idx(df, valid_season, valid_gw, valid_len)
     train_idx = range(valid_start)
     valid_idx = range(valid_start, valid_end + 1)    
 
@@ -347,6 +345,6 @@ def create_lag_train(df, cat_vars, cont_vars, player_lag_vars, team_lag_vars, de
     valid = valid.merge(opponent_team_lag_vals, on='opponent_team', how='left')
     
     # concatenate train and test again
-    lag_train_df = pd.concat([train, valid]).reset_index()
+    lag_train_df = pd.concat([train, valid], sort=True).reset_index(drop=True)
 
     return lag_train_df, train_idx, valid_idx

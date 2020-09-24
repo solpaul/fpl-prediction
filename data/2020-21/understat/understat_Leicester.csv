@@ -1,2 +1,3 @@
 h_a,xG,xGA,npxG,npxGA,ppda,ppda_allowed,deep,deep_allowed,scored,missed,xpts,result,date,wins,draws,loses,pts,npxGD
 a,2.95581,0.352997,1.43347,0.352997,"{'att': 179, 'def': 17}","{'att': 363, 'def': 19}",3,6,3,0,2.9074,w,2020-09-13 13:00:00,1,0,0,3,1.080473
+h,0.987365,1.52404,0.987365,1.52404,"{'att': 127, 'def': 17}","{'att': 338, 'def': 21}",14,6,4,2,0.9512,w,2020-09-20 18:00:00,1,0,0,3,-0.536675

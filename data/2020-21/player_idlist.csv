@@ -30,6 +30,7 @@ Gabriel,Magalhães,494
 Daniel,Ceballos Fernández,501
 Mohamed Naser,El Sayed Elneny,526
 Matt,Macey,527
+Rúnar Alex,Rúnarsson,547
 Emiliano,Martínez,12
 Tom,Heaton,28
 Ahmed,El Mohamady,29
@@ -58,6 +59,7 @@ Indiana,Vassilev,51
 Douglas Luiz,Soares de Paulo,52
 Matthew,Cash,496
 Ollie,Watkins,514
+Bertrand,Traoré,540
 Glenn,Murray,53
 Adam,Lallana,54
 Dale,Stephens,55
@@ -109,6 +111,8 @@ Bailey,Peacock-Farrell,99
 Dwight,McNeil,100
 Jimmy,Dunne,519
 Bobby,Thomas,520
+Josh,Benson,535
+Anthony,Driscoll-Glennon,536
 Willy,Caballero,101
 César,Azpilicueta,102
 Olivier,Giroud,103
@@ -135,6 +139,7 @@ Billy,Gilmour,124
 Benjamin,Chilwell,232
 Thiago,Thiago,490
 Kai,Havertz,500
+Edouard,Mendy,548
 Michy,Batshuayi,108
 Gary,Cahill,125
 Wayne,Hennessey,126
@@ -162,6 +167,7 @@ Brandon,Pierrick,147
 Scott,Dann,486
 Eberechi,Eze,489
 Sam,Woods,522
+Ryan,Inniss,534
 Theo,Walcott,148
 Fabian,Delph,149
 Gylfi,Sigurdsson,150
@@ -242,6 +248,7 @@ James,Justin,239
 Luke,Thomas,240
 Timothy,Castagne,498
 Nampalys,Mendy,518
+Cengiz,Ünder,541
 Pablo,Hernández Domínguez,193
 Francisco,Casilla Cortés,194
 Liam,Cooper,195
@@ -267,6 +274,8 @@ Leif,Davis,214
 Oliver,Casey,215
 Robin,Koch,491
 Rodrigo,Moreno,492
+Elia,Caprile,532
+Mateusz,Bogusz,533
 James,Milner,241
 Konstantinos,Tsimikas,242
 Georginio,Wijnaldum,243
@@ -292,6 +301,8 @@ Rhian,Brewster,262
 Curtis,Jones,263
 Neco,Williams,264
 Harvey,Elliott,265
+Diogo,Jota,468
+Thiago,Alcántara do Nascimento,531
 Fernando,Luiz Rosa,266
 Claudio,Bravo,267
 Sergio,Agüero,268
@@ -315,6 +326,9 @@ Tommy,Doyle,285
 Rodrigo,Hernandez,286
 Ferran,Torres,287
 Eric,Garcia,288
+Adrián,Bernabé,537
+Zack,Steffen,538
+Liam,Delap,539
 Sergio,Romero,289
 Juan,Mata,290
 David,de Gea,291
@@ -453,6 +467,8 @@ Juan,Foyth,406
 Matt,Doherty,457
 Joe,Hart,482
 Cameron,Carter-Vickers,521
+Sergio,Reguilón,542
+Gareth,Bale,543
 David,Button,56
 Callum,Robinson,358
 Kieran,Gibbs,407
@@ -478,6 +494,7 @@ Grady,Diangana,446
 Matheus,Pereira,481
 Cedric,Kipre,499
 Branislav,Ivanovic,530
+Conor,Gallagher,544
 Mark,Noble,427
 Robert,Snodgrass,428
 David,Martin,429
@@ -517,7 +534,6 @@ Leander,Dendoncker,464
 Adama,Traoré,465
 Rúben Diogo,da Silva Neves,466
 Oskar,Buur,467
-Diogo,Jota,468
 Daniel,Castelo Podence,469
 Max,Kilman,470
 Rúben Gonçalo,Silva Nascimento Vinagre,471
@@ -529,3 +545,5 @@ Leonardo,Campana,476
 Fabio,Silva,504
 Fernando,Marçal,505
 Vitor,Ferreira,515
+Ki-Jana,Hoever,545
+Nélson,Cabral Semedo,546

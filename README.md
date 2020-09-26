@@ -17,6 +17,8 @@ There is a sequence of four notebooks that goes through the entire process taken
 
 These models have been validated by looking at their performance each gameweek of the 2019/20 season. For each gameweek we fit the model using all historical data prior to that week, and then calculate the mean absolute error for the following 6 gameweeks. The performance of each model across the season is summarised in the following chart:
 
+![comparison chart](charts/comparison_chart.png)
+
 XGBoost is the top performer currently, so this is the approach used to generate forecasts prior to each gameweek.
 
 There are a further three jupyter notebooks:

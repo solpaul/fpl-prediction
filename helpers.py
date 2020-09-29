@@ -232,31 +232,61 @@ def team_lag_features(df, features, lags):
     
     for feature in features:
         feature_team_name = feature + '_team'
+#         feature_conceded_team_name = feature_team_name + '_conceded'
         feature_team = (df.groupby(['team', 'season', 'gw',
                                    'kickoff_time', 'opponent_team'])
                         [feature].sum().rename(feature_team_name).reset_index())
+        
+        # join back for points conceded
+#         feature_team = feature_team.merge(feature_team,
+#                            left_on=['team', 'season', 'gw',
+#                                     'kickoff_time', 'opponent_team'],
+#                            right_on=['opponent_team', 'season', 'gw',
+#                                      'kickoff_time', 'team'],
+#                            how='left',
+#                            suffixes = ('', '_conceded'))
+        
+#         feature_team.drop(['team_conceded', 'opponent_team_conceded'], axis=1, inplace=True)
                 
         for lag in lags:
             feature_name = feature + '_team_last_' + str(lag)
+#             feature_conceded_name = feature + '_team_conceded_last_' + str(lag)
             pg_feature_name = feature + '_team_pg_last_' + str(lag)
-            team_lag_vars.append(pg_feature_name)
+#             pg_feature_conceded_name = feature + '_team_conceded_pg_last_' + str(lag)
+            
+            team_lag_vars.extend([pg_feature_name])#, pg_feature_conceded_name])
             
             if lag == 'all':
                 feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
                                               .apply(lambda x: x.cumsum() - x))
                 
+#                 feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
+#                                               .apply(lambda x: x.cumsum() - x))
+                
                 feature_team[pg_feature_name] = (feature_team[feature_name]
                                                  / feature_team.groupby('team').cumcount())
+                
+#                 feature_team[pg_feature_conceded_name] = (feature_team[feature_conceded_name]
+#                                                  / feature_team.groupby('team').cumcount())
                 
             else:
                 feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
                                               .apply(lambda x: x.rolling(min_periods=1, 
                                                                          window=lag + 1).sum() - x))
                 
+#                 feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
+#                                               .apply(lambda x: x.rolling(min_periods=1, 
+#                                                                          window=lag + 1).sum() - x))
+                
                 feature_team[pg_feature_name] = (feature_team[feature_name] / 
                                                  feature_team.groupby('team')[feature_team_name]
                                                  .apply(lambda x: x.rolling(min_periods=1, 
                                                                             window=lag + 1).count() - 1))
+                
+#                 feature_team[pg_feature_conceded_name] = (feature_team[feature_name] / 
+#                                                  feature_team.groupby('team')[feature_conceded_name]
+#                                                  .apply(lambda x: x.rolling(min_periods=1, 
+#                                                                             window=lag + 1).count() - 1))
         
         df_new = df.merge(feature_team, 
                           on=['team', 'season', 'gw', 'kickoff_time', 'opponent_team'], 

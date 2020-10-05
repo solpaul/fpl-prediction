@@ -30,3 +30,16 @@ And one supporting python script:
 + helpers.py - various functions used throughout, all of which are described in one of the above process notebooks.
 
 Finally, predictions for all previous gameweeks are provided in the history folder with separate sub-folders for each season.
+
+### Setup:
+
+For the non neural net notebooks I downloaded and installed anaconda and then set up an enivronment with jupyter, xgboost, pandas, matplotlib, requests, lxml and dtreeviz as follows:
+
+```
+conda create -n fplenv python=3.7
+conda activate fplenv
+conda install jupyter py-xgboost pandas matplotlib requests lxml
+pip install dtreeviz
+```
+
+For neural nets (04_fpl_predict_fastai2_tabular.ipynb) I use fastai/PyTorch (installation instructions at https://docs.fast.ai/#Installing) but I recommend using a cloud instance with a GPU - I currently use Paperspace Gradient which has the option of free GPUs (if available) and has a fastai container available with everything already installed and ready to use.

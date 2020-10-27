@@ -13,7 +13,7 @@ def build_players(path, season_paths, season_names, teams):
 
     for season_path in season_paths:
         players = pd.read_csv(season_path/'players_raw.csv', 
-                               usecols=['first_name', 'second_name', 'id', 
+                               usecols=['first_name', 'second_name', 'web_name', 'id', 
                                         'team_code', 'element_type', 'now_cost',
                                         'chance_of_playing_next_round'])
         season_players.append(players)
@@ -229,6 +229,7 @@ def player_lag_features(df, features, lags):
 # team level lag features
 def team_lag_features(df, features, lags):
     team_lag_vars = []
+    df_new = df.copy()
     
     for feature in features:
         feature_team_name = feature + '_team'
@@ -288,7 +289,7 @@ def team_lag_features(df, features, lags):
 #                                                  .apply(lambda x: x.rolling(min_periods=1, 
 #                                                                             window=lag + 1).count() - 1))
         
-        df_new = df.merge(feature_team, 
+        df_new = df_new.merge(feature_team, 
                           on=['team', 'season', 'gw', 'kickoff_time', 'opponent_team'], 
                           how='left')
         
@@ -298,11 +299,11 @@ def team_lag_features(df, features, lags):
                  how='left',
                  suffixes = ('', '_opponent'))
         
-        team_lag_vars = team_lag_vars + [team_lag_var + '_opponent' for team_lag_var in team_lag_vars]
-        
         df_new.drop(['team_opponent', 'opponent_team_opponent'], axis=1, inplace=True)
         
-        return df_new, team_lag_vars
+    team_lag_vars = team_lag_vars + [team_lag_var + '_opponent' for team_lag_var in team_lag_vars]  
+
+    return df_new, team_lag_vars
     
 # functions to get validation set indexes
 # training will always be from start of data up to valid-start

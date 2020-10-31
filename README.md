@@ -24,7 +24,7 @@ XGBoost is the top performer currently, so this is the approach used to generate
 There are a further three jupyter notebooks:
 + initial_fpl_data_clean.ipynb - The original process to take the raw data and create training and prediction datasets
 + update_data_weekly.ipynb - The notebook run each week to take the raw data and create updated training and prediction datasets
-+ fpl_predict_fastai_tabular.ipynb - The notebook fun each week to train a model using all historical data and predict the remainder of the current season
++ fpl_predict_fastai_tabular.ipynb - The notebook run each week to train a model using all historical data and predict the remainder of the current season
 
 And one supporting python script:
 + helpers.py - various functions used throughout, all of which are described in one of the above process notebooks.

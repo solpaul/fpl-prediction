@@ -101,7 +101,7 @@ def build_season_mv(season, header_row, team_rows):
     # create market values dataframe
     Dict={title:column for (title,column) in col}
     df=pd.DataFrame(Dict)
-    
+        
     # convert market value string to float for millions of euros
     values = [float(item[0].replace(',', '.').replace('€', '').replace('bn', '').replace('m', '')) 
               for item in df['Total MV'].str.split(" ", 1)]
@@ -120,7 +120,7 @@ def build_season_mv(season, header_row, team_rows):
                   'Wolves': 'Wolverhampton Wanderers',
                   'Brighton': 'Brighton and Hove Albion',
                   'Newcastle': 'Newcastle United',
-                  'Sheffield Utd.': 'Sheffield United',
+                  'Sheff Utd': 'Sheffield United',
                   'West Brom': 'West Bromwich Albion',
                   'Swansea': 'Swansea City',
                   'Huddersfield': 'Huddersfield Town',

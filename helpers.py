@@ -39,7 +39,8 @@ def build_players(path, season_paths, season_names, teams):
                                     'team_code':'team_' + season,
                                     'element_type': 'position_' + season,
                                     'now_cost': 'cost_' + season,
-                                    'chance_of_playing_next_round': 'play_proba_' + season},
+                                    'chance_of_playing_next_round': 'play_proba_' + season,
+                                    'web_name': 'web_name_' + season},
                            inplace=True)
         
     return all_players

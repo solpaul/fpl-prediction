@@ -4,6 +4,10 @@ import numpy as np
 import requests
 import lxml.html as lh
 import math
+import json
+from bs4 import BeautifulSoup
+import re
+import backoff
 
 
 
@@ -24,7 +28,7 @@ def build_players(path, season_paths, season_names, teams):
 
     # create full name field for each player
     for players in season_players:
-        players['full_name'] = players['first_name'] + '_' + players['second_name']
+        players['full_name'] = players['first_name'] + ' ' + players['second_name']
         players.drop(['first_name', 'second_name'], axis=1, inplace=True)
 
     # create series of all unique player names
@@ -191,6 +195,131 @@ def build_season(path, season, all_players, teams, teams_mv, gw=range(1, 39)):
     
     return df_season
 
+
+### functions to scrape fbref data
+# get stats (given by features) for all players/teams
+# for season pages given by season_urls
+def get_stats(features, season_urls, url_base):
+    seasons_list = []
+    
+    for url, season_name in zip(season_urls['url'], season_urls['season']):
+        print(season_name)
+        print(url)
+        season_table = get_table(url)
+        team_urls = get_urls(['squad'], 'squad', season_table, url_base)
+        season_df = get_season_stats(features, team_urls, url_base)
+        season_df.insert(0, 'season', season_name)
+        seasons_list.append(season_df)
+    
+    df = pd.concat(seasons_list, ignore_index=True)
+    return df
+
+# get stats (given by features) for all players 
+# for team pages given by team_urls
+def get_season_stats(features, team_urls, url_base):
+    teams_list = []
+    
+    for url, team_name in zip(team_urls['url'], team_urls['squad']):
+        print(team_name)
+        print(url)
+        team_table = get_table(url)
+        player_urls = get_urls(['player', 'games'], 'matches', team_table, url_base)
+        team_df = get_team_stats(features, player_urls)
+        teams_list.append(team_df)
+        
+    df = pd.concat(teams_list, ignore_index=True)
+    return df
+
+# get stats (given by features)
+# for all players given by player_urls
+def get_team_stats(features, player_urls):
+    players_list = []
+    player_urls_played = player_urls[player_urls['games'] != '0']
+
+    for url, player_name in zip(player_urls_played['url'], player_urls_played['player']):
+        print(player_name)
+        player_table = get_table(url)
+        player_df = get_player_stats(features, player_table)
+        player_df.insert(0, 'player', player_name)
+        if len(player_df) > 0:
+            players_list.append(player_df[player_df['comp'] == 'Premier League'])
+
+    df = pd.concat(players_list, ignore_index=True)
+    return df
+
+# get game by game player stats for one season
+# date always included by default
+def get_player_stats(features, player_table):
+    pre_dict = dict()    
+    table_rows = player_table.find_all('tr')    
+    for row in table_rows:
+        if(row.find('td',{"data-stat":'xg'}) != None):
+            date = row.find('th',{"data-stat":'date'}).text.strip().encode().decode("utf-8")
+            if date != '':
+                if 'date' in pre_dict:
+                    pre_dict['date'].append(date)
+                else:
+                    pre_dict['date'] = [date]
+                for f in features:
+                    text = row.find('td',{"data-stat":f}).text.strip().encode().decode("utf-8")
+                    if f in pre_dict:
+                        pre_dict[f].append(text)
+                    else:
+                        pre_dict[f] = [text]
+    df = pd.DataFrame.from_dict(pre_dict)
+    return df
+
+def backoff_hdlr(details):
+    print ("Backing off {wait:0.1f} seconds afters {tries} tries "
+           "calling function {target} with args {args} and kwargs "
+           "{kwargs}".format(**details))
+
+# get a table on any page, defaults to first one
+@backoff.on_exception(
+    backoff.expo,
+    (IndexError, requests.exceptions.RequestException),
+    max_tries=5,
+    on_backoff=backoff_hdlr
+)
+def get_table(url, table_no=0):
+    res = requests.get(url)
+    ## The next two lines get around the issue with comments breaking the parsing.
+    comm = re.compile("<!--|-->")
+    soup = BeautifulSoup(comm.sub("",res.text),'lxml')
+    all_tables = soup.findAll("tbody")    
+    table = all_tables[table_no]
+    return table
+
+# get text and urls for a given field
+def get_urls(text_fields, url_field, table, url_base):
+    pre_dict = dict()    
+    table_rows = table.find_all('tr')
+    for row in table_rows:
+        if(row.find('th',{"scope":"row"}) != None):
+            for f in text_fields:
+                if(row.find('th',{"data-stat":f}) != None):
+                    text = row.find('th',{"data-stat":f}).text.strip().encode().decode("utf-8")
+                else:
+                    text = row.find('td',{"data-stat":f}).text.strip().encode().decode("utf-8")
+                if f in pre_dict:
+                    pre_dict[f].append(text)
+                else: 
+                    pre_dict[f] = [text]
+                
+            if row.find('th',{"data-stat":url_field}) != None:
+                url = url_base + row.find('th',{"data-stat":url_field}).find('a').get('href')
+#                 url = url_base + row.find('a')['href']
+            else:
+                url = url_base + row.find('td',{"data-stat":url_field}).find('a').get('href')
+
+            if 'url' in pre_dict:
+                pre_dict['url'].append(url)
+            else: 
+                pre_dict['url'] = [url]
+                
+    df = pd.DataFrame.from_dict(pre_dict)
+    return df
+
 # function to generate player lag features
 # player level lag features
 def player_lag_features(df, features, lags):    
@@ -234,27 +363,27 @@ def team_lag_features(df, features, lags):
     
     for feature in features:
         feature_team_name = feature + '_team'
-#         feature_conceded_team_name = feature_team_name + '_conceded'
+        feature_conceded_team_name = feature_team_name + '_conceded'
         feature_team = (df.groupby(['team', 'season', 'gw',
                                    'kickoff_time', 'opponent_team'])
                         [feature].sum().rename(feature_team_name).reset_index())
         
         # join back for points conceded
-#         feature_team = feature_team.merge(feature_team,
-#                            left_on=['team', 'season', 'gw',
-#                                     'kickoff_time', 'opponent_team'],
-#                            right_on=['opponent_team', 'season', 'gw',
-#                                      'kickoff_time', 'team'],
-#                            how='left',
-#                            suffixes = ('', '_conceded'))
+        feature_team = feature_team.merge(feature_team,
+                           left_on=['team', 'season', 'gw',
+                                    'kickoff_time', 'opponent_team'],
+                           right_on=['opponent_team', 'season', 'gw',
+                                     'kickoff_time', 'team'],
+                           how='left',
+                           suffixes = ('', '_conceded'))
         
-#         feature_team.drop(['team_conceded', 'opponent_team_conceded'], axis=1, inplace=True)
+        feature_team.drop(['team_conceded', 'opponent_team_conceded'], axis=1, inplace=True)
                 
         for lag in lags:
             feature_name = feature + '_team_last_' + str(lag)
-#             feature_conceded_name = feature + '_team_conceded_last_' + str(lag)
+            feature_conceded_name = feature + '_team_conceded_last_' + str(lag)
             pg_feature_name = feature + '_team_pg_last_' + str(lag)
-#             pg_feature_conceded_name = feature + '_team_conceded_pg_last_' + str(lag)
+            pg_feature_conceded_name = feature + '_team_conceded_pg_last_' + str(lag)
             
             team_lag_vars.extend([pg_feature_name])#, pg_feature_conceded_name])
             
@@ -262,33 +391,33 @@ def team_lag_features(df, features, lags):
                 feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
                                               .apply(lambda x: x.cumsum() - x))
                 
-#                 feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
-#                                               .apply(lambda x: x.cumsum() - x))
+                feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
+                                              .apply(lambda x: x.cumsum() - x))
                 
                 feature_team[pg_feature_name] = (feature_team[feature_name]
                                                  / feature_team.groupby('team').cumcount())
                 
-#                 feature_team[pg_feature_conceded_name] = (feature_team[feature_conceded_name]
-#                                                  / feature_team.groupby('team').cumcount())
+                feature_team[pg_feature_conceded_name] = (feature_team[feature_conceded_name]
+                                                 / feature_team.groupby('team').cumcount())
                 
             else:
                 feature_team[feature_name] = (feature_team.groupby('team')[feature_team_name]
                                               .apply(lambda x: x.rolling(min_periods=1, 
                                                                          window=lag + 1).sum() - x))
                 
-#                 feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
-#                                               .apply(lambda x: x.rolling(min_periods=1, 
-#                                                                          window=lag + 1).sum() - x))
+                feature_team[feature_conceded_name] = (feature_team.groupby('team')[feature_conceded_team_name]
+                                              .apply(lambda x: x.rolling(min_periods=1, 
+                                                                         window=lag + 1).sum() - x))
                 
                 feature_team[pg_feature_name] = (feature_team[feature_name] / 
                                                  feature_team.groupby('team')[feature_team_name]
                                                  .apply(lambda x: x.rolling(min_periods=1, 
                                                                             window=lag + 1).count() - 1))
                 
-#                 feature_team[pg_feature_conceded_name] = (feature_team[feature_name] / 
-#                                                  feature_team.groupby('team')[feature_conceded_name]
-#                                                  .apply(lambda x: x.rolling(min_periods=1, 
-#                                                                             window=lag + 1).count() - 1))
+                feature_team[pg_feature_conceded_name] = (feature_team[feature_conceded_name] / 
+                                                 feature_team.groupby('team')[feature_conceded_name]
+                                                 .apply(lambda x: x.rolling(min_periods=1, 
+                                                                            window=lag + 1).count() - 1))
         
         df_new = df_new.merge(feature_team, 
                           on=['team', 'season', 'gw', 'kickoff_time', 'opponent_team'], 

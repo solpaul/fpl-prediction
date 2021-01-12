@@ -5,7 +5,7 @@ The data folder contains the following:
 + Player data for each gameweek since the start of the 2016/17 season (one folder with various csv files for each season)
 + fixtures.csv - Remaining fixtures for the current season
 + teams.csv - Team names and global IDs, plus specific IDs for each season
-+ train_v5.csv - The current training dataset containing all historic data
++ train_v7.csv - The current training dataset containing all historic data
 + remaining_season.csv - A dataset with rows for each player's remaining fixtures in the current season, for use in predicting the remainder of the current season each week
 
 There is a sequence of four notebooks that goes through the entire process taken to train, validate and select the forecast model:

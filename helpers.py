@@ -376,7 +376,7 @@ def team_lag_features(df, features, lags):
                                      'kickoff_time', 'team'],
                            how='left',
                            suffixes = ('', '_conceded'))
-        
+                
         feature_team.drop(['team_conceded', 'opponent_team_conceded'], axis=1, inplace=True)
                 
         for lag in lags:
@@ -460,30 +460,32 @@ def create_lag_train(df, cat_vars, cont_vars, player_lag_vars, team_lag_vars, de
 
     # get all the lag data for the current season up to the first validation gameweek
     player_lag_vals = df[(df['season'] == valid_season) & 
-                         (df['gw'] <= valid_gw)][['player', 'kickoff_time'] + player_lag_vars]
+                         (df['gw'] >= valid_gw)][['player', 'kickoff_time'] + player_lag_vars]
     
     team_lag_vals = df[(df['season'] == valid_season) & 
-                       (df['gw'] <= valid_gw)][['team', 'kickoff_time'] + 
+                       (df['gw'] >= valid_gw)][['team', 'kickoff_time'] + 
                                                [x for x in team_lag_vars if "opponent" not in x]].drop_duplicates()
                                                
     opponent_team_lag_vals = df[(df['season'] == valid_season) & 
-                                (df['gw'] <= valid_gw)][['opponent_team', 'kickoff_time'] + 
+                                (df['gw'] >= valid_gw)][['opponent_team', 'kickoff_time'] + 
                                                         [x for x in team_lag_vars if "opponent" in x]].drop_duplicates()
+    
     
     # get the last available lag data for each player
     # for most it will be the first validation week
     # but sometimes teams have blank gameweeks
     # in these cases it will be the previous gameweek
     player_lag_vals = player_lag_vals[player_lag_vals['kickoff_time'] == 
-                                      player_lag_vals.groupby('player')['kickoff_time'].transform('max')]
+                                      player_lag_vals.groupby('player')['kickoff_time'].transform('min')]
     team_lag_vals = team_lag_vals[team_lag_vals['kickoff_time'] == 
-                                  team_lag_vals.groupby('team')['kickoff_time'].transform('max')]
+                                  team_lag_vals.groupby('team')['kickoff_time'].transform('min')]
     opponent_team_lag_vals = opponent_team_lag_vals[opponent_team_lag_vals['kickoff_time'] == 
-                                                    opponent_team_lag_vals.groupby('opponent_team')['kickoff_time'].transform('max')]
+                                                    opponent_team_lag_vals.groupby('opponent_team')['kickoff_time'].transform('min')]
                                                                     
     player_lag_vals = player_lag_vals.drop('kickoff_time', axis=1)
     team_lag_vals = team_lag_vals.drop('kickoff_time', axis=1)
     opponent_team_lag_vals = opponent_team_lag_vals.drop('kickoff_time', axis=1)
+    
     
     # get the validation start and end indexes
     valid_start, valid_end = validation_gw_idx(df, valid_season, valid_gw, valid_len)
@@ -504,7 +506,7 @@ def create_lag_train(df, cat_vars, cont_vars, player_lag_vars, team_lag_vars, de
     valid = valid.merge(player_lag_vals, on='player', how='left')
     valid = valid.merge(team_lag_vals, on='team', how='left')
     valid = valid.merge(opponent_team_lag_vals, on='opponent_team', how='left')
-    
+        
     # concatenate train and test again
     lag_train_df = pd.concat([train, valid], sort=True).reset_index(drop=True)
 

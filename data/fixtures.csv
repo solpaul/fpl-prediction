@@ -170,7 +170,7 @@ Southampton,Liverpool,17
 Tottenham Hotspur,Leeds,17
 West Bromwich Albion,Arsenal,17
 Arsenal,Crystal Palace,18
-Aston Villa,Tottenham Hotspur,34
+Aston Villa,Tottenham Hotspur,29
 Fulham,Manchester United,19
 Leeds,Southampton,25
 Leicester City,Chelsea,19
@@ -280,14 +280,14 @@ Newcastle United,Aston Villa,28
 Southampton,Brighton and Hove Albion,28
 Wolverhampton Wanderers,Liverpool,28
 Brighton and Hove Albion,Newcastle United,29
-Burnley,Leicester City,29
-Crystal Palace,Manchester United,29
+Burnley,Leicester City,26
+Crystal Palace,Manchester United,26
 Fulham,Leeds,29
-Liverpool,Chelsea,29
-Manchester City,Wolverhampton Wanderers,29
-Sheffield United,Aston Villa,29
-Tottenham Hotspur,Southampton,29
-West Bromwich Albion,Everton,29
+Liverpool,Chelsea,26
+Manchester City,Wolverhampton Wanderers,26
+Sheffield United,Aston Villa,26
+Tottenham Hotspur,Southampton,34
+West Bromwich Albion,Everton,26
 West Ham United,Arsenal,29
 Arsenal,Liverpool,30
 Aston Villa,Fulham,30
@@ -321,11 +321,11 @@ Southampton,Crystal Palace,32
 Wolverhampton Wanderers,Sheffield United,32
 Arsenal,Everton,33
 Aston Villa,West Bromwich Albion,33
-Fulham,Tottenham Hotspur,33
+Fulham,Tottenham Hotspur,26
 Leeds,Manchester United,33
 Leicester City,Crystal Palace,33
 Liverpool,Newcastle United,33
-Manchester City,Southampton,33
+Manchester City,Southampton,27
 Sheffield United,Brighton and Hove Albion,33
 West Ham United,Chelsea,33
 Wolverhampton Wanderers,Burnley,33

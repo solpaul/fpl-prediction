@@ -180,7 +180,7 @@ Wolverhampton Wanderers,Everton,18
 Liverpool,Burnley,19
 Manchester City,Brighton and Hove Albion,18
 Arsenal,Newcastle United,19
-Aston Villa,Everton,38
+Aston Villa,Everton,35
 Fulham,Chelsea,19
 Leeds,Brighton and Hove Albion,19
 Leicester City,Southampton,19
@@ -317,7 +317,7 @@ Leeds,Liverpool,32
 Leicester City,West Bromwich Albion,32
 Manchester United,Burnley,32
 Newcastle United,West Ham United,32
-Southampton,Crystal Palace,38
+Southampton,Crystal Palace,35
 Wolverhampton Wanderers,Sheffield United,32
 Arsenal,Everton,33
 Aston Villa,West Bromwich Albion,33
@@ -334,7 +334,7 @@ Burnley,West Ham United,34
 Chelsea,Fulham,34
 Crystal Palace,Manchester City,34
 Everton,Aston Villa,34
-Manchester United,Liverpool,34
+Manchester United,Liverpool,35
 Newcastle United,Arsenal,34
 Southampton,Leicester City,34
 Tottenham Hotspur,Sheffield United,34
@@ -352,9 +352,9 @@ Wolverhampton Wanderers,Brighton and Hove Albion,35
 Brighton and Hove Albion,West Ham United,36
 Burnley,Leeds,36
 Everton,Sheffield United,36
-Manchester United,Leicester City,36
+Manchester United,Leicester City,35
 West Bromwich Albion,Liverpool,36
-Chelsea,Arsenal,36
+Chelsea,Arsenal,35
 Newcastle United,Manchester City,36
 Southampton,Fulham,36
 Tottenham Hotspur,Wolverhampton Wanderers,36

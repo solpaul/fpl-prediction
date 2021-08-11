@@ -19,17 +19,15 @@ These models have been validated by looking at their performance each gameweek o
 
 ![comparison chart](charts/comparison_chart.png)
 
-XGBoost is the top performer currently, so this is the approach used to generate forecasts prior to each gameweek.
+The LSTM model is the top performer currently, so this is the approach used to generate forecasts prior to each gameweek.
 
 There are a further three jupyter notebooks:
 + initial_fpl_data_clean.ipynb - The original process to take the raw data and create training and prediction datasets
-+ update_data_weekly.ipynb - The notebook run each week to take the raw data and create updated training and prediction datasets
++ update_data_weekly.ipynb - The notebook previously run each week with the XGBoost model to take the raw data and create updated training and prediction datasets
 + fpl_predict_fastai_tabular.ipynb - The notebook run each week to train a model using all historical data and predict the remainder of the current season
 
 And one supporting python script:
 + util.py - various functions used throughout, all of which are described in one of the above process notebooks.
-
-Finally, predictions for all previous gameweeks are provided in the history folder with separate sub-folders for each season.
 
 ### Local setup:
 

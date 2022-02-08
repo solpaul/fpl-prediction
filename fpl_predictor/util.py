@@ -83,7 +83,7 @@ def build_season_mv(season, header_row, team_rows):
         T=tr_elements[j]
 
         #If row is not of size 10, the //tr data is not from our table 
-        if len(T)!=10:
+        if len(T)!=7:
             break
 
         #i is the index of our column
@@ -110,7 +110,7 @@ def build_season_mv(season, header_row, team_rows):
         
     # convert market value string to float for millions of euros
     values = [float(item[0].replace(',', '.').replace('€', '').replace('bn', '').replace('m', '')) 
-              for item in df['Total MV'].str.split(" ", 1)]
+              for item in df['Total market value'].str.split(" ", 1)]
     values = [item*10**3 if item < 3 else item for item in values]
     
     # to remove effect of inflation, take relative market value for each season

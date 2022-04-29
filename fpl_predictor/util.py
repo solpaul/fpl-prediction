@@ -279,7 +279,7 @@ def backoff_hdlr(details):
 @backoff.on_exception(
     backoff.expo,
     (IndexError, requests.exceptions.RequestException),
-    max_tries=5,
+    max_tries=10,
     on_backoff=backoff_hdlr
 )
 def get_table(url, table_no=0):
